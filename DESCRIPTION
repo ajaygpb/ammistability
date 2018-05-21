@@ -1,0 +1,32 @@
+Package: AMMIStbP
+Type: Package
+Title: Additive Main Effects and Multiplicative Interaction Model Stability Parameters
+Version: 0.0.0.9000
+Authors@R: c(
+    person(c("Ajay ", "Basapura Chandrashekar"),
+    email = "ajaygpb@yahoo.co.in",
+    role = c("aut", "cre")),
+    person(c("J.", "Aravind"),
+    email = "j.aravind@icar.gov.in",
+    role = c("aut"),
+    comment = c(ORCID = "0000-0002-4791-442X")),
+    person(c("R.", "Abdul Fiyaz"),
+    email = "fiyaz.ra@icar.gov.in",
+    role = "aut"))
+Description:  Computes various stability parameters from AMMI analysis results
+    such as  1. Modified AMMI Stability Value (MASV) 2. SIPC, 3. AMGE 4. Eigen
+    value stability parameter (EV), 5. Zi 6. FA 7. Di
+Copyright: 2017-2018, ICAR-NBPGR
+License: GPL-2 | GPL-3
+Encoding: UTF-8
+Depends: R (>= 3.0.1)
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1
+Imports:
+    agricolae,
+    Rdpack
+Suggests:
+    knitr,
+    rmarkdown,
+	  pander
+RdMacros: Rdpack

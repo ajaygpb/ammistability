@@ -1,0 +1,10 @@
+cova<-cov(model$genXenv)
+values<-eigen(cova)
+D1<-sqrt((values$values[1]*model$biplot[,3])^2)
+D2<-sqrt((values$values[2]*model$biplot[,4])^2)
+D3<-sqrt((values$values[3]*model$biplot[,5])^2)
+D<-D1+D2+D3
+FA<-D1^2+D2^2+D3^2
+rf<-rank(FA)
+rFA<-data.frame(FA,rf)
+rFA

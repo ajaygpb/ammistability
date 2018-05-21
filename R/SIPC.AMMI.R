@@ -1,0 +1,9 @@
+cova<-cov(model$genXenv)
+values<-eigen(cova)
+SIPC1<-(sqrt(values$values[1])*model$biplot[,3])
+SIPC2<-(sqrt(values$values[2])*model$biplot[,4])
+SIPC3<-(sqrt(values$values[3])*model$biplot[,5])
+SIPC<-SIPC1+SIPC2+SIPC3
+rs<-rank(SIPC)
+rSIPC<-data.frame(SIPC1,SIPC2,SIPC3,SIPC,rs)
+rSIPC
