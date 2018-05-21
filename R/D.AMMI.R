@@ -1,3 +1,5 @@
+# check
+
 cova<-cov(model$genXenv)
 values<-eigen(cova)
 D1<-sqrt((values$values[1]*model$biplot[,3])^2)
