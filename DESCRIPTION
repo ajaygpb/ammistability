@@ -30,3 +30,5 @@ Suggests:
     rmarkdown,
 	  pander
 RdMacros: Rdpack
+URL: http://github.com/ajaygpb/AMMIStbp
+BugReports: http://github.com/ajaygpb/AMMIStbp/issues
