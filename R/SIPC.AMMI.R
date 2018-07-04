@@ -1,3 +1,9 @@
+
+
+#' The closer the SIPC scores are to zero, the more stable the genotypes are across test environments
+
+
+
 cova<-cov(model$genXenv)
 values<-eigen(cova)
 SIPC1<-(sqrt(values$values[1])*model$biplot[,3])
