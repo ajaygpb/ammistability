@@ -1,0 +1,157 @@
+---
+title: "The **AMMIStbP** package: A brief introduction"
+header-includes:
+- \usepackage{fancyhdr}
+- \usepackage{wrapfig}
+- \pagestyle{fancy}
+- \fancyhead[LE,RO]{\slshape \rightmark}
+- \fancyhead[LO,RE]{The germinationmetrics package{:} A brief introduction}
+- \fancyfoot[C]{\thepage}
+- \usepackage{hyperref}
+- \hypersetup{colorlinks=true}
+- \hypersetup{linktoc=all}
+- \hypersetup{linkcolor=blue}
+- \usepackage{pdflscape}
+- \usepackage{booktabs}
+- \usepackage[table]{xcolor}
+- \newcommand{\blandscape}{\begin{landscape}}
+- \newcommand{\elandscape}{\end{landscape}}
+output:
+  pdf_document:
+    dev: cairo_pdf
+    fig_caption: no
+  html_document:
+    df_print: paged
+csl: frontiers.csl
+bibliography: REFERENCES.bib
+link-citations: yes
+toc: no
+vignette: |
+  %\VignetteIndexEntry{Introduction}
+  %\usepackage[utf8]{inputenc}
+  %\VignetteEngine{knitr::rmarkdown_notangle}
+---
+
+\begin{center}
+ {\it Ajay B. C., J. Aravind^2^ and R. Abdul Fiyaz}
+\end{center}
+
+\begin{center}
+ ^2^ICAR-National Bureau of Plant Genetic Resources, New Delhi
+\end{center}
+
+\begin{center}
+`r Sys.Date()`
+\end{center}
+
+\begin{center}
+\vspace{6pt}
+\hrule
+\end{center}
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  comment = "",
+  fig.cap = ""
+)
+```
+
+\tableofcontents
+
+
+
+The package `AMMIStbP` is .........
+
+## Installation
+The package can be installed using the following functions:
+
+```{r, eval=FALSE}
+# Install from CRAN
+install.packages('AMMIStbP', dependencies=TRUE)
+
+# Install development version from Github
+devtools::install_github("ajaygpb/AMMIStbP")
+
+```
+
+Then the package can be loaded using the function
+```{r}
+library(AMMIStbP)
+```
+
+## AMMI
+
+The AMMI equation
+
+$$Y_{ijk} = \mu + \alpha_{i} + \beta_{j} + \sum_{k=1}^{N}\lambda_{k}\gamma_{ik}\delta_{jk} + \rho_{ij} + \varepsilon_{ijk}$$
+
+Where, $Y_{ijk}$ is the yield of i^th^ genotype in environment E for replicate r, $\mu$ is the total yield mean, $\alpha_{i}$ is the mean deviation of i^th^ genotype (genotype mean minus total yield mean), $\beta_{j}$ is the mean deviation of j^th^ environment, $\lambda_{k}$ is the singular value for IPCA axis $N$, $\gamma_{ik}$ is the i^th^ genotype eigenvector value for IPCA axis $N$, $\delta_{jk}$ is the  j^th^ environment eigenvector value for IPCA axis $N$, $\rho_{ij}$ is the residual, and $\varepsilon_{ijk}$ is the error.
+
+## AMMI stability parameters
+
+The details about AMMI stability parameters/indices implemented in `AMMIStbP` are described in Table 1.
+
+\newpage
+\blandscape
+
+\rowcolors{2}{gray!25}{white}
+\renewcommand{\arraystretch}{1.3}
+
+**Table 1 :** AMMI stability parameters/indices implemented in `AMMIStbP`.
+\footnotesize
+```{r, echo = FALSE, eval = TRUE}
+load("stability.rda")
+
+indices$`function` <- paste("`", indices$`function`, "`", sep = "")
+
+# indices$Details <- gsub("\\r\\n\\r\\n", "$$\\\\, $$", indices$Details)
+# indices$Details <- gsub("$$\\, $$$$", "$$", indices$Details, fixed = TRUE)
+#indices$Details <- paste(indices$Details, "$$\\\\, $$", sep = "")
+
+indices$Details <- gsub("\\r\\n", "\\\\\n", indices$Details)
+
+#indices$Details <- gsub("\\r\\n\\r\\n", "##", indices$Details)
+#indices$Details <- gsub("##", "\\\n", indices$Details)
+
+indices$Reference <- gsub("\\[|\\]", "", indices$Reference)
+#indices <- indices[-27,]
+
+```
+
+
+```{r, echo = FALSE, eval = TRUE}
+pander::pander(indices, style='multiline',
+               split.cell = c(15, 18, 50, 10, 10, 10),
+               justify = c('left'), split.table = Inf, keep.line.breaks = TRUE,
+               use.hyphening = FALSE, missing = "")
+```
+
+\elandscape
+
+\newpage
+
+#### Examples
+
+## Citing `AMMIStbP`
+
+```{r, echo = FALSE, collapse = TRUE}
+suppressMessages(cit <- citation("AMMIStbP"))
+yr <- format(Sys.Date(), "%Y")
+cit[1]$year <- yr
+oc <- class(cit)
+
+cit <- unclass(cit)
+attr(cit[[1]],"textVersion") <- gsub("\\(\\)",
+                                     paste("\\(", yr, "\\)", sep = ""),
+                                     attr(cit[[1]],"textVersion"))
+class(cit) <- oc
+cit
+```
+
+## Session Info
+
+```{r}
+sessionInfo()
+```
+
+## References
