@@ -1,11 +1,13 @@
 ---
 title: "The **AMMIStbP** package: A brief introduction"
+author: Ajay B. C.^1^, J. Aravind^2^ and R. Abdul Fiyaz^3^
+date: '`r Sys.Date()`'
 header-includes:
 - \usepackage{fancyhdr}
 - \usepackage{wrapfig}
 - \pagestyle{fancy}
 - \fancyhead[LE,RO]{\slshape \rightmark}
-- \fancyhead[LO,RE]{The germinationmetrics package{:} A brief introduction}
+- \fancyhead[LO,RE]{The AMMIStbP package{:} A brief introduction}
 - \fancyfoot[C]{\thepage}
 - \usepackage{hyperref}
 - \hypersetup{colorlinks=true}
@@ -33,17 +35,11 @@ vignette: |
 ---
 
 \begin{center}
- {\it Ajay B. C., J. Aravind^2^ and R. Abdul Fiyaz}
-\end{center}
+1. RRS, ICAR-Directorate of Groundnut Research, Anantapur.
 
-\begin{center}
- 1. RRS, ICAR-Directorate of Groundnut Research, Anantapur 
- 2. ICAR-National Bureau of Plant Genetic Resources, New Delhi
- 3. ICAR-Indian Institute of Rice Research, Hyderabad
-\end{center}
+2. ICAR-National Bureau of Plant Genetic Resources, New Delhi.
 
-\begin{center}
-`r Sys.Date()`
+3. ICAR-Indian Institute of Rice Research, Hyderabad.
 \end{center}
 
 \begin{center}
@@ -77,21 +73,26 @@ devtools::install_github("ajaygpb/AMMIStbP")
 ```
 
 Then the package can be loaded using the function
-```{r}
-library(AMMIStbP)
+```{r, eval=FALSE}
+library(AMMIStbP) # change eval
 ```
+
 
 ## AMMI
 
 The AMMI equation
 
-$$Y_{ijk} = \mu + \alpha_{i} + \beta_{j} + \sum_{k=1}^{N}\lambda_{k}\gamma_{ik}\delta_{jk} + \rho_{ij} + \varepsilon_{ijk}$$
+$$Y_{ij} = \mu + \alpha_{i} + \beta_{j} + \sum_{n=1}^{N}\lambda_{n}\gamma_{in}\delta_{jn} + \rho_{ij}$$
 
-Where, $Y_{ijk}$ is the yield of i^th^ genotype in environment E for replicate r, $\mu$ is the total yield mean, $\alpha_{i}$ is the mean deviation of i^th^ genotype (genotype mean minus total yield mean), $\beta_{j}$ is the mean deviation of j^th^ environment, $\lambda_{k}$ is the singular value for IPCA axis $N$, $\gamma_{ik}$ is the i^th^ genotype eigenvector value for IPCA axis $N$, $\delta_{jk}$ is the  j^th^ environment eigenvector value for IPCA axis $N$, $\rho_{ij}$ is the residual, and $\varepsilon_{ijk}$ is the error.
+Where, $Y_{ij}$ is the yield of $i$^th^ genotype in $j$^th^ environment, $\mu$ is the grand mean, $\alpha_{i}$ is the genotype deviation from the grand mean, $\beta_{j}$ is the environment deviation, $N$ is the total number of interaction principal components (IPCs), $\lambda_{n}$ is the is the singular value for IPC $n$ and correspondingly $\lambda_{n}^{2}$  is its eigen value, $\gamma_{in}$ is the eigenvector value for $i$^th^ genotype, $\delta_{jn}$  is the eigenvector value for $j$^th^ environment and $\rho_{ij}$ is the residual.
+
+
 
 ## AMMI stability parameters
 
 The details about AMMI stability parameters/indices implemented in `AMMIStbP` are described in Table 1.
+
+
 
 \newpage
 \blandscape
@@ -104,51 +105,52 @@ The details about AMMI stability parameters/indices implemented in `AMMIStbP` ar
 ```{r, echo = FALSE, eval = TRUE}
 load("stability.rda")
 
-indices$`function` <- paste("`", indices$`function`, "`", sep = "")
+stabparams$`function` <- paste("`", stabparams$`function`, "`", sep = "")
 
-# indices$Details <- gsub("\\r\\n\\r\\n", "$$\\\\, $$", indices$Details)
-# indices$Details <- gsub("$$\\, $$$$", "$$", indices$Details, fixed = TRUE)
-#indices$Details <- paste(indices$Details, "$$\\\\, $$", sep = "")
+# stabparams$Details <- gsub("\\r\\n\\r\\n", "$$\\\\, $$", stabparams$Details)
+# stabparams$Details <- gsub("$$\\, $$$$", "$$", stabparams$Details, fixed = TRUE)
+#stabparams$Details <- paste(stabparams$Details, "$$\\\\, $$", sep = "")
 
-indices$Details <- gsub("\\r\\n", "\\\\\n", indices$Details)
+stabparams$Details <- gsub("\\r\\n", "\\\\\n", stabparams$Details)
 
-#indices$Details <- gsub("\\r\\n\\r\\n", "##", indices$Details)
-#indices$Details <- gsub("##", "\\\n", indices$Details)
+#stabparams$Details <- gsub("\\r\\n\\r\\n", "##", stabparams$Details)
+#stabparams$Details <- gsub("##", "\\\n", stabparams$Details)
 
-indices$Reference <- gsub("\\[|\\]", "", indices$Reference)
-#indices <- indices[-27,]
+stabparams$Reference <- gsub("\\[|\\]", "", stabparams$Reference)
+stabparams <- stabparams[-c(1),]
+rownames(stabparams) <- NULL
+
 
 ```
 
-
 ```{r, echo = FALSE, eval = TRUE}
-pander::pander(indices, style='multiline',
+pander::pander(stabparams, style='multiline',
                split.cell = c(15, 18, 50, 10, 10, 10),
                justify = c('left'), split.table = Inf, keep.line.breaks = TRUE,
                use.hyphening = FALSE, missing = "")
 ```
 
+Where, $Y_{ij}$ is the yield of $i$^th^ genotype in $j$^th^ environment, $\mu$ is the grand mean, $\alpha_{i}$ is the genotype deviation from the grand mean, $\beta_{j}$ is the environment deviation, $N$ is the total number of interaction principal components (IPCs), $N'$ is the number of significant IPCAs (number of IPC that were retained in the AMMI model via F tests), $\lambda_{n}$ is the is the singular value for IPC $n$ and correspondingly $\lambda_{n}^{2}$  is its eigen value, $\gamma_{in}$ is the eigenvector value for $i$^th^ genotype, $\delta_{jn}$  is the eigenvector value for $j$^th^ environment and $\rho_{ij}$ is the residual.
+
+$SSIPC_{1}$, $SSIPC_{2}$, $\cdots$, $SSIPC_{n}$ are the sum of squares of the 1^st^, 2^nd^, ..., and $n$^th^ IPC.
+$PC_{1}$, $PC_{2}$, $\cdots$, $PC_{n}$ are the scores of 1^st^, 2^nd^, ..., and $n$^th^ IPC.
+
+$\theta_{n}$ is the percentage IPC sum of squares (IPCSS) explained by the interaction effect.
+
+$E$ is the number of environments.
+
 \elandscape
 
 \newpage
 
-#### Examples
+## Yield Stability Index
 
-## Citing `AMMIStbP`
+The most stable genotype need not necessarily be the high yielding genotype. As we need to select the the most stable and highest yielding genotypes, Yield stability index ($YSI$) was proposed (@farshadfar_ammi_2011, @jambhulkar_stability_2017). $YSI$ is a simultaneous selection index for yield and yield stability which is computed by summation of the ranks of the stability index/parameter and the ranks of the mean yields. $YSI$ is computed for all the stability parameters/indices implemented in this package.
 
-```{r, echo = FALSE, collapse = TRUE}
-suppressMessages(cit <- citation("AMMIStbP"))
-yr <- format(Sys.Date(), "%Y")
-cit[1]$year <- yr
-oc <- class(cit)
+$$YSI = R_{SP} + R_{Y}$$
 
-cit <- unclass(cit)
-attr(cit[[1]],"textVersion") <- gsub("\\(\\)",
-                                     paste("\\(", yr, "\\)", sep = ""),
-                                     attr(cit[[1]],"textVersion"))
-class(cit) <- oc
-cit
-```
+Where, $R_{SP}$ is the stability parameter/index rank of the genotype and R_{Y} is the mean yield rank of the genotype.
+
 
 ## Session Info
 
