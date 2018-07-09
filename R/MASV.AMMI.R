@@ -61,7 +61,13 @@
 #' @examples
 MASV.AMMI <- function(model, n, alpha = 0.05) {
 
-  alpha <- 0.05
+  if (!is(model, "AMMI")) {
+    stop('"model" is not of class "AMMI"')
+  }
+
+  if (!(0 < alpha && alpha < 1)) {
+    stop('"alpha" should be between 0 and 1 (0 < alpha <1)')
+  }
 
   # Find number of significant IPCs according to F test
   if (missing(n) | is.null(n)) {
