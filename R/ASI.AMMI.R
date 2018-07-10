@@ -41,17 +41,24 @@
 #' @examples
 ASI.AMMI <- function(model, n, alpha = 0.05) {
 
+  # Check model class
   if (!is(model, "AMMI")) {
     stop('"model" is not of class "AMMI"')
   }
 
+  # Check alpha value
   if (!(0 < alpha && alpha < 1)) {
-    stop('"alpha" should be between 0 and 1 (0 < alpha <1)')
+    stop('"alpha" should be between 0 and 1 (0 < alpha < 1)')
   }
 
   # Find number of significant IPCs according to F test
   if (missing(n) | is.null(n)) {
     n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
+  }
+
+  # Check for n
+  if (n %% 1 != 0 && length(n) != 1) {
+    stop('"n" is not an integer vector of unit length')
   }
 
   A <- model$biplot[, 1:4]
