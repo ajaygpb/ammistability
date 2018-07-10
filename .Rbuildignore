@@ -2,3 +2,8 @@
 ^\.Rproj\.user$
 ^temp\.txt$
 ^Release\.R$
+^vignettes/stability\.xlsx$
+^vignettes/Introduction\.tex$
+^vignettes/Introduction\.aux$
+^vignettes/Introduction\.out$
+^AMMIStbP\.pdf$
