@@ -21,7 +21,7 @@
 #'
 #' \deqn{YSI = R_{MASV} + R_{Y}}
 #'
-#' Where, \eqn{R_{MASV}} is the MASV rank of the genotype and \deqn{R_{Y}} is
+#' Where, \eqn{R_{MASV}} is the MASV rank of the genotype and \eqn{R_{Y}} is
 #' the mean yield rank of the genotype.
 #'
 #' @note In Zali et al., (2012), the formula for both AMMI stability value (ASV)

@@ -39,7 +39,7 @@ The Yield Stability Index (\eqn{YSI}) is computed as follows:
 
 \deqn{YSI = R_{ASI} + R_{Y}}
 
-Where, \eqn{R_{ASI}} is the ASI rank of the genotype and \deqn{R_{Y}} is
+Where, \eqn{R_{ASI}} is the ASI rank of the genotype and \eqn{R_{Y}} is
 the mean yield rank of the genotype.
 }
 \references{
