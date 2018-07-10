@@ -3,8 +3,9 @@
 #' \code{MASV.AMMI} computes the Modified AMMI Stability Value (MASV) (Zali et
 #' al., 2012; Please see \strong{Note}) from a modified formula of AMMI
 #' Stability Value (ASV) (Purchase et al. 1997). This formula calculates AMMI
-#' stability value considering all significant principal components. Using MASV,
-#' the Modified Yield stability Index (YSI) is also calculated.
+#' stability value considering all significant interaction principal components
+#' in the AMMI model. Using MASV, the Yield stability Index (YSI) is also
+#' calculated.
 #'
 #' The Modified AMMI Stability Value (\eqn{MASV}) is computed as follows:
 #'
@@ -12,9 +13,16 @@
 #' \times PC_{n}  \right )^2   + \left (PC_{N'}  \right )^2}}
 #'
 #' Where, \eqn{SSIPC_{1}}, \eqn{SSIPC_{2}}, \eqn{\cdots}, \eqn{SSIPC_{n}} are
-#' the sum of squares of the 1st, 2nd, ..., and \eqn{n}th interaction
-#' principal component (IPC); and \eqn{PC_{1}}, \eqn{PC_{2}}, \eqn{\cdots},
-#' \eqn{PC_{n}} are the scores of 1st, 2nd, ..., and \eqn{n}th IPC.
+#' the sum of squares of the 1st, 2nd, ..., and \eqn{n}th interaction principal
+#' component (IPC); and \eqn{PC_{1}}, \eqn{PC_{2}}, \eqn{\cdots}, \eqn{PC_{n}}
+#' are the scores of 1st, 2nd, ..., and \eqn{n}th IPC.
+#'
+#' The Yield Stability Index (\eqn{YSI}) is computed as follows:
+#'
+#' \deqn{YSI = R_{MASV} + R_{Y}}
+#'
+#' Where, \eqn{R_{MASV}} is the MASV rank of the genotype and \deqn{R_{Y}} is
+#' the mean yield rank of the genotype.
 #'
 #' @note In Zali et al., (2012), the formula for both AMMI stability value (ASV)
 #'   was found to be erroneus, when compared with the original publications
@@ -95,5 +103,6 @@ MASV.AMMI <- function(model, n, alpha = 0.05) {
   Rx <- rank(-W[,2])
   YSI_MASV <- rk + Rx
   ranking <- data.frame(MASV, YSI_MASV, rMASV = rk, rY = Rx, means = W[,2])
-  invisible(ranking)
+
+  return(ranking)
 }
