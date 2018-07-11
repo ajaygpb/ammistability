@@ -1,7 +1,7 @@
 
 ## `AMMIStbP`: Additive Main Effects and Multiplicative Interaction Model Stability Parameters
 
-###### Version : [0.0.0.9000](https://ajaygpb.github.io/AMMIStbP/articles/Introduction.html#version-history); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [0.0.0.9000](https://ajaygpb.github.io/AMMIStbP/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Ajay, B. C.<sup>1</sup>, Aravind, J.<sup>2</sup>, and Abdul Fiyaz, R.<sup>3</sup>*
 
@@ -10,6 +10,23 @@
 3.  ICAR-Indian Institute of Rice Research, Hyderabad
 
 -----
+
+[![minimal R
+version](https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg)](https://cran.r-project.org/)
+[![License: GPL
+v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version-last-release/AMMIStbp)](https://cran.r-project.org/package=AMMIStbp)
+<!-- [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/AMMIStbp?color=green)](https://CRAN.R-project.org/package=AMMIStbp) -->
+<!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/ajaygpb/AMMIStbp) -->
+[![develVersion](https://img.shields.io/badge/devel%20version-0.0.0.9000-orange.svg)](https://github.com/ajaygpb/AMMIStbp)
+<!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/ajaygpb/AMMIStbp/total.svg)] -->
+[![Project Status:
+WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2018--07--12-yellowgreen.svg)](/commits/master)
+<!-- [![Rdoc](http://www.rdocumentation.org/badges/version/AMMIStbp)](http://www.rdocumentation.org/packages/AMMIStbp) -->
+<!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963) -->
+<!-- [![Analytics](https://pro-pulsar-193905.appspot.com/UA-116683292-1/welcome-page)](https://github.com/ajaygpb/google-analytics-beacon) -->
 
 -----
 
@@ -44,6 +61,14 @@ news(package='AMMIStbP')
 
 ## Links
 
+<!-- [CRAN page](https://cran.r-project.org/package=AMMIStbP) -->
+
+[Github page](https://github.com/ajaygpb/AMMIStbP)
+
+<!-- [Github website](https://ajaygpb.github.io/AMMIStbP/) -->
+
+<!-- [Zenodo DOI](https://doi.org/10.5281/zenodo.1310011) -->
+
 ## Citing `AMMIStbP`
 
 To cite the methods in the package
@@ -69,7 +94,7 @@ citation("AMMIStbP")
     
       @Manual{,
         title = {AMMIStbP: Additive Main Effects and Multiplicative Interaction Model Stability Parameters},
-        author = {{Ajay  Basapura Chandrashekar} and {J. Aravind} and {R. Abdul Fiyaz}},
+        author = {{Ajay Basapura Chandrashekar} and {J. Aravind} and {R. Abdul Fiyaz}},
         note = {R package version 0.0.0.9000},
         url = {http://github.com/ajaygpb/AMMIStbp},
         year = {2018},
