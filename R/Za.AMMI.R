@@ -1,10 +1,91 @@
-Za1 = model$biplot[,3]*model$analysis[1,1]
-Za1<-Za1[-c(53:56)]
-Za2 = model$biplot[,4]*model$analysis[2,1]
-Za2<-Za2[-c(53:56)]
-Za3 = model$biplot[,5]*model$analysis[3,1]
-Za3<-Za3[-c(53:56)]
-Za = Za1+Za2+Za3
-rZ<-rank(Z)
-rZi<-data.frame(Za1,Za2,Za3,Za,rZa)
-rZi
+#' Absolute value of the Relative Contribution of IPCs to the Interaction
+#'
+#' \code{ZA.AMMI} computes the Absolute value of the Relative Contribution of
+#' IPCs to the Interaction (Za) (Zali, 2012) considering all significant
+#' interaction principal components (IPCs) in the AMMI model. Using Za, the
+#' Yield stability Index (YSI) is also calculated.
+#'
+#' The Absolute value of the Relative Contribution of IPCs to the Interaction
+#' (\eqn{D_{Za}}) is computed as follows:
+#'
+#' \deqn{Za = \sum_{i=1}^{N'}\left | \theta_{n}\gamma_{in} \right |}
+#'
+#' Where, \eqn{N'} is the number of significant IPCAs (number of IPC that were
+#' retained in the AMMI model via F tests); and \eqn{\gamma_{in}} is the
+#' eigenvector value for \eqn{i}th genotype; and \eqn{\theta_{n}} is the
+#' percentage sum of squares explained by \eqn{n}th principal component
+#' interaction effect.
+#'
+#' The Yield Stability Index (\eqn{YSI}) is computed as follows:
+#'
+#' \deqn{YSI = R_{Za} + R_{Y}}
+#'
+#' Where, \eqn{R_{Za}} is the Za rank of the
+#' genotype and \eqn{R_{Y}} is the mean yield rank of the genotype.
+#'
+#' @inheritParams MASV.AMMI
+#'
+#' @return
+#'
+#' @importFrom agricolae tapply.stat
+#' @importFrom agricolae AMMI
+#' @export
+#'
+#' @references
+#'
+#' \insertRef{zali_evaluation_2012}{AMMIStbP}
+#'
+#' @examples
+ZA.AMMI <- function(model, n, alpha = 0.05) {
+
+  # Check model class
+  if (!is(model, "AMMI")) {
+    stop('"model" is not of class "AMMI"')
+  }
+
+  # Check alpha value
+  if (!(0 < alpha && alpha < 1)) {
+    stop('"alpha" should be between 0 and 1 (0 < alpha < 1)')
+  }
+
+  # Find number of significant IPCs according to F test
+  if (missing(n) | is.null(n)) {
+    n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
+  }
+
+  # Check for n
+  if (n %% 1 != 0 && length(n) != 1) {
+    stop('"n" is not an integer vector of unit length')
+  }
+
+  # Za1 = model$biplot[,3]*model$analysis[1,1]
+  # Za1<-Za1[-c(53:56)]
+  # Za2 = model$biplot[,4]*model$analysis[2,1]
+  # Za2<-Za2[-c(53:56)]
+  # Za3 = model$biplot[,5]*model$analysis[3,1]
+  # Za3<-Za3[-c(53:56)]
+  # Za = Za1+Za2+Za3
+  # rZ<-rank(Z)
+  # rZi<-data.frame(Za1,Za2,Za3,Za,rZa)
+  # rZi
+
+  # GxE matrix
+  ge <- array(model$genXenv, dim(model$genXenv), dimnames(model$genXenv))
+  # SVD
+  svdge <- svd(ge)
+  gamma.n <- svdge$u[,1:n]
+
+  theta.n <- model$analysis[1:n,]$percent/100
+
+  Za <- rowSums(abs(theta.n * gamma.n))
+
+  rk <- rank(Za)
+  B <- model$means
+  W <- tapply.stat(B[,3],B[,2],function(x) mean(x,rm.na = TRUE))
+  Rx <- rank(-W[,2])
+  YSI_Za <- rk + Rx
+  ranking <- data.frame(Za, YSI_Za, rZa = rk, rY = Rx, means = W[,2])
+
+  return(ranking)
+
+}
