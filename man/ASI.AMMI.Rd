@@ -13,7 +13,8 @@ ASI.AMMI(model, n, alpha = 0.05)
 \item{n}{The number of principal components to be considered for computation.
 The default value is the number of significant IPCs.}
 
-\item{alpha}{Type I error probability (Significance level) to be}
+\item{alpha}{Type I error probability (Significance level) to be considered
+to identify the number of significant IPCs.}
 }
 \value{
 
@@ -21,8 +22,8 @@ The default value is the number of significant IPCs.}
 \description{
 \code{ASI.AMMI} computes the AMMI Stability Index (ASI) (Jambhulkar et al.,
 2014; Jambhulkar et al., 2015; Jambhulkar et al., 2017) considering the first
-two interaction principal components in the AMMI model. Using ASI, the Yield
-stability Index (YSI) is also calculated.
+two interaction principal components (IPCs) in the AMMI model. Using ASI, the
+Yield stability Index (YSI) is also calculated.
 }
 \details{
 The AMMI Stability Index (\eqn{ASI}) is computed as follows:
@@ -30,17 +31,17 @@ The AMMI Stability Index (\eqn{ASI}) is computed as follows:
 \deqn{ASI = \sqrt{\left [ PC_{1}^{2} \times \theta_{1}^{2} \right ]+\left [
 PC_{2}^{2} \times \theta_{2}^{2} \right ]}}
 
-Where, \eqn{PC_{1}} and \eqn{PC_{2}} are the scores of 1st and 2nd
-interaction principal components (IPCs) respectively; and \eqn{\theta_{1}} and
-\eqn{\theta_{2}} are percentage sum of squares explained by the 1st and 2nd
-principal component interaction effect respectively.
+Where, \eqn{PC_{1}} and \eqn{PC_{2}} are the scores of 1st and 2nd IPCs
+respectively; and \eqn{\theta_{1}} and \eqn{\theta_{2}} are percentage sum of
+squares explained by the 1st and 2nd principal component interaction effect
+respectively.
 
 The Yield Stability Index (\eqn{YSI}) is computed as follows:
 
 \deqn{YSI = R_{ASI} + R_{Y}}
 
-Where, \eqn{R_{ASI}} is the ASI rank of the genotype and \eqn{R_{Y}} is
-the mean yield rank of the genotype.
+Where, \eqn{R_{ASI}} is the ASI rank of the genotype and \eqn{R_{Y}} is the
+mean yield rank of the genotype.
 }
 \references{
 \insertRef{jambhulkar_ammi_2014}{AMMIStbP}

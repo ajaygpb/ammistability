@@ -13,7 +13,8 @@ MASV.AMMI(model, n, alpha = 0.05)
 \item{n}{The number of principal components to be considered for computation.
 The default value is the number of significant IPCs.}
 
-\item{alpha}{Type I error probability (Significance level) to be}
+\item{alpha}{Type I error probability (Significance level) to be considered
+to identify the number of significant IPCs.}
 }
 \value{
 
@@ -23,7 +24,7 @@ The default value is the number of significant IPCs.}
 al., 2012; Please see \strong{Note}) from a modified formula of AMMI
 Stability Value (ASV) (Purchase et al. 1997). This formula calculates AMMI
 stability value considering all significant interaction principal components
-in the AMMI model. Using MASV, the Yield stability Index (YSI) is also
+(IPCs) in the AMMI model. Using MASV, the Yield stability Index (YSI) is also
 calculated.
 }
 \details{
@@ -33,16 +34,16 @@ The Modified AMMI Stability Value (\eqn{MASV}) is computed as follows:
 \times PC_{n}  \right )^2   + \left (PC_{N'}  \right )^2}}
 
 Where, \eqn{SSIPC_{1}}, \eqn{SSIPC_{2}}, \eqn{\cdots}, \eqn{SSIPC_{n}} are
-the sum of squares of the 1st, 2nd, ..., and \eqn{n}th interaction principal
-component (IPC); and \eqn{PC_{1}}, \eqn{PC_{2}}, \eqn{\cdots}, \eqn{PC_{n}}
-are the scores of 1st, 2nd, ..., and \eqn{n}th IPC.
+the sum of squares of the 1st, 2nd, ..., and \eqn{n}th IPC; and \eqn{PC_{1}},
+\eqn{PC_{2}}, \eqn{\cdots}, \eqn{PC_{n}} are the scores of 1st, 2nd, ..., and
+\eqn{n}th IPC.
 
 The Yield Stability Index (\eqn{YSI}) is computed as follows:
 
 \deqn{YSI = R_{MASV} + R_{Y}}
 
-Where, \eqn{R_{MASV}} is the MASV rank of the genotype and \eqn{R_{Y}} is
-the mean yield rank of the genotype.
+Where, \eqn{R_{MASV}} is the MASV rank of the genotype and \eqn{R_{Y}} is the
+mean yield rank of the genotype.
 }
 \note{
 In Zali et al., (2012), the formula for both AMMI stability value (ASV)

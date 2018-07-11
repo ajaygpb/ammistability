@@ -2,7 +2,7 @@
 #'
 #' \code{AVAMGE.AMMI} computes the Sum Across Environments of Absolute Value of
 #' GEI Modelled by AMMI (AVAMGE) (Zali et al., 2012) considering all significant
-#' interaction principal components in the AMMI model. Using AVAMGE, the Yield
+#' interaction principal components (IPCs) in the AMMI model. Using AVAMGE, the Yield
 #' stability Index (YSI) is also calculated.
 #'
 #' The Sum Across Environments of Absolute Value of GEI Modelled by AMMI
@@ -12,7 +12,7 @@
 #' \gamma_{in} \delta_{jn}  \right |}
 #'
 #'
-#' Where, \eqn{N'} is the number of significant IPCAs (number of IPC that were
+#' Where, \eqn{N'} is the number of significant IPCs (number of IPC that were
 #' retained in the AMMI model via F tests); \eqn{\lambda_{n}} is the is the
 #' singular value for IPC \eqn{n} and correspondingly \eqn{\lambda_{n}^{2}}  is
 #' its eigen value; \eqn{\gamma_{in}} is the eigenvector value for \eqn{i}th

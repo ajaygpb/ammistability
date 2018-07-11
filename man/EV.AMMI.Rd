@@ -13,15 +13,17 @@ EV.AMMI(model, n, alpha = 0.05)
 \item{n}{The number of principal components to be considered for computation.
 The default value is the number of significant IPCs.}
 
-\item{alpha}{Type I error probability (Significance level) to be}
+\item{alpha}{Type I error probability (Significance level) to be considered
+to identify the number of significant IPCs.}
 }
 \value{
 
 }
 \description{
 \code{EV.AMMI} computes the Sums of the Averages of the Squared Eigenvector
-Values (EV) (Zobel, 1994) all significant interaction principal components in
-the AMMI model. Using EV, the Yield stability Index (YSI) is also calculated.
+Values (EV) (Zobel, 1994) considering all significant interaction principal
+components (IPCs) in the AMMI model. Using EV, the Yield stability Index (YSI) is
+also calculated.
 }
 \details{
 The Averages of the Squared Eigenvector Values (\eqn{EV}) is computed as
@@ -29,7 +31,7 @@ follows:
 
 \deqn{EV = \sum_{n=1}^{N'}\frac{\gamma_{in}^2}{N'}}
 
-Where, \eqn{N'} is the number of significant IPCAs (number of IPC that were
+Where, \eqn{N'} is the number of significant IPCs (number of IPC that were
 retained in the AMMI model via F tests); and \eqn{\gamma_{in}} is the
 eigenvector value for \eqn{i}th genotype.
 

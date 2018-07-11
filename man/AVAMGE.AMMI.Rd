@@ -13,7 +13,8 @@ AVAMGE.AMMI(model, n, alpha = 0.05)
 \item{n}{The number of principal components to be considered for computation.
 The default value is the number of significant IPCs.}
 
-\item{alpha}{Type I error probability (Significance level) to be}
+\item{alpha}{Type I error probability (Significance level) to be considered
+to identify the number of significant IPCs.}
 }
 \value{
 
@@ -21,7 +22,7 @@ The default value is the number of significant IPCs.}
 \description{
 \code{AVAMGE.AMMI} computes the Sum Across Environments of Absolute Value of
 GEI Modelled by AMMI (AVAMGE) (Zali et al., 2012) considering all significant
-interaction principal components in the AMMI model. Using AVAMGE, the Yield
+interaction principal components (IPCs) in the AMMI model. Using AVAMGE, the Yield
 stability Index (YSI) is also calculated.
 }
 \details{
@@ -31,7 +32,7 @@ The Sum Across Environments of Absolute Value of GEI Modelled by AMMI
 \deqn{AV_{(AMGE)} = \sum_{j=1}^{E} \sum_{n=1}^{N'} \left |\lambda_{n}
 \gamma_{in} \delta_{jn}  \right |}
 
-Where, \eqn{N'} is the number of significant IPCAs (number of IPC that were
+Where, \eqn{N'} is the number of significant IPCs (number of IPC that were
 retained in the AMMI model via F tests); \eqn{\lambda_{n}} is the is the
 singular value for IPC \eqn{n} and correspondingly \eqn{\lambda_{n}^{2}}  is
 its eigen value; \eqn{\gamma_{in}} is the eigenvector value for \eqn{i}th

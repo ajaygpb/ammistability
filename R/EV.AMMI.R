@@ -1,15 +1,16 @@
 #' Averages of the Squared Eigenvector Values
 #'
 #' \code{EV.AMMI} computes the Sums of the Averages of the Squared Eigenvector
-#' Values (EV) (Zobel, 1994) all significant interaction principal components in
-#' the AMMI model. Using EV, the Yield stability Index (YSI) is also calculated.
+#' Values (EV) (Zobel, 1994) considering all significant interaction principal
+#' components (IPCs) in the AMMI model. Using EV, the Yield stability Index (YSI) is
+#' also calculated.
 #'
 #' The Averages of the Squared Eigenvector Values (\eqn{EV}) is computed as
 #' follows:
 #'
 #' \deqn{EV = \sum_{n=1}^{N'}\frac{\gamma_{in}^2}{N'}}
 #'
-#' Where, \eqn{N'} is the number of significant IPCAs (number of IPC that were
+#' Where, \eqn{N'} is the number of significant IPCs (number of IPC that were
 #' retained in the AMMI model via F tests); and \eqn{\gamma_{in}} is the
 #' eigenvector value for \eqn{i}th genotype.
 #'
@@ -68,16 +69,16 @@ EV.AMMI <- function(model, n, alpha = 0.05) {
   ge <- array(model$genXenv, dim(model$genXenv), dimnames(model$genXenv))
   # SVD
   svdge <- svd(ge)
-  gamma <- svdge$u[,1:n]
+  gamma.n <- svdge$u[,1:n]
 
-  EV <- rowSums(gamma^2/n)
+  EV <- rowSums(gamma.n^2/n)
 
   rk <- rank(EV)
   B <- model$means
   W <- tapply.stat(B[,3],B[,2],function(x) mean(x,rm.na = TRUE))
   Rx <- rank(-W[,2])
   YSI_EV <- rk + Rx
-  ranking <- data.frame(MASV, YSI_EV, rEV = rk, rY = Rx, means = W[,2])
+  ranking <- data.frame(EV, YSI_EV, rEV = rk, rY = Rx, means = W[,2])
 
   return(ranking)
 
