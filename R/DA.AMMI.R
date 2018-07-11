@@ -1,0 +1,90 @@
+#' Annicchiarico's D Parameter
+#'
+#' \code{DA.AMMI} computes the Annicchiarico's D Parameter values
+#' (\eqn{\textrm{D}_{\textrm{a}}}) (Annicchiarico, 1997) considering all
+#' significant interaction principal components (IPCs) in the AMMI model. It is
+#' the unsquared Euclidean distance from the origin of significant IPC axes in
+#' the AMMI model. Using \eqn{\textrm{D}_{\textrm{a}}}, the Yield stability
+#' Index (YSI) is also calculated.
+#'
+#' The Annicchiarico's D Parameter value (\eqn{D_{a}}) is computed as follows:
+#'
+#' \deqn{D_{a} = \sqrt{\sum_{n=1}^{N'}(\lambda_{n}\gamma_{in})^2}}
+#'
+#' Where, \eqn{N'} is the number of significant IPCAs (number of IPC that were
+#' retained in the AMMI model via F tests); \eqn{\lambda_{n}} is the is the
+#' singular value for IPC \eqn{n} and correspondingly \eqn{\lambda_{n}^{2}}  is
+#' its eigen value; and \eqn{\gamma_{in}} is the eigenvector value for \eqn{i}th
+#' genotype.
+#'
+#' The Yield Stability Index (\eqn{YSI}) is computed as follows:
+#'
+#' \deqn{YSI = R_{D_{a}} + R_{Y}}
+#'
+#' Where, \eqn{R_{D_{a}}} is the \eqn{\textrm{D}_{\textrm{a}}} rank of the
+#' genotype and \eqn{R_{Y}} is the mean yield rank of the genotype.
+#'
+#' @inheritParams MASV.AMMI
+#'
+#' @return
+#'
+#' @importFrom agricolae tapply.stat
+#' @importFrom agricolae AMMI
+#' @export
+#'
+#' @references
+#'
+#' \insertRef{annicchiarico_joint_1997}{AMMIStbP}
+#'
+#' @examples
+DA.AMMI <- function(model, n, alpha = 0.05) {
+
+  # Check model class
+  if (!is(model, "AMMI")) {
+    stop('"model" is not of class "AMMI"')
+  }
+
+  # Check alpha value
+  if (!(0 < alpha && alpha < 1)) {
+    stop('"alpha" should be between 0 and 1 (0 < alpha < 1)')
+  }
+
+  # Find number of significant IPCs according to F test
+  if (missing(n) | is.null(n)) {
+    n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
+  }
+
+  # Check for n
+  if (n %% 1 != 0 && length(n) != 1) {
+    stop('"n" is not an integer vector of unit length')
+  }
+
+  # cova<-cov(model$genXenv)
+  # values<-eigen(cova)
+  # D1<-sqrt((values$values[1]*model$biplot[,3])^2)
+  # D2<-sqrt((values$values[2]*model$biplot[,4])^2)
+  # D3<-sqrt((values$values[3]*model$biplot[,5])^2)
+  # D<-D1+D2+D3
+  # rd<-rank(D)
+  # rD<-data.frame(D1,D2,D3,D,rd)
+  # rD
+
+  # GxE matrix
+  ge <- array(model$genXenv, dim(model$genXenv), dimnames(model$genXenv))
+  # SVD
+  svdge <- svd(ge)
+  lambda.n <- svdge$d[1:n]
+  gamma.n <- svdge$u[,1:n]
+
+  DA <- sqrt(rowSums((lambda.n*gamma.n)^2))
+
+  rk <- rank(DA)
+  B <- model$means
+  W <- tapply.stat(B[,3],B[,2],function(x) mean(x,rm.na = TRUE))
+  Rx <- rank(-W[,2])
+  YSI_DA <- rk + Rx
+  ranking <- data.frame(DA, YSI_DA, rDA = rk, rY = Rx, means = W[,2])
+
+  return(ranking)
+
+}
