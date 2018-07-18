@@ -3,11 +3,12 @@
 
 ###### Version : [0.0.0.9000](https://ajaygpb.github.io/AMMIStbP/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
 
-##### *Ajay, B. C.<sup>1</sup>, Aravind, J.<sup>2</sup>, and Abdul Fiyaz, R.<sup>3</sup>*
+##### *Ajay, B. C.<sup>1</sup>, Aravind, J.<sup>2</sup>, Abdul Fiyaz, R.<sup>3</sup> and S. K. Bera<sup>4</sup>*
 
 1.  RRS, ICAR-Directorate of Groundnut Research, Anantapur
 2.  ICAR-National Bureau of Plant Genetic Resources, New Delhi
 3.  ICAR-Indian Institute of Rice Research, Hyderabad
+4.  ICAR-Directorate of Groundnut Research, Junagadh
 
 -----
 
@@ -23,10 +24,10 @@ v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org
 [![Project Status:
 WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2018--07--12-yellowgreen.svg)](/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2018--07--19-yellowgreen.svg)](/commits/master)
 <!-- [![Rdoc](http://www.rdocumentation.org/badges/version/AMMIStbp)](http://www.rdocumentation.org/packages/AMMIStbp) -->
 <!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963) -->
-<!-- [![Analytics](https://pro-pulsar-193905.appspot.com/UA-116683292-1/welcome-page)](https://github.com/ajaygpb/google-analytics-beacon) -->
+<!-- [![Analytics](https://pro-pulsar-193905.appspot.com/UA-116683292-1/welcome-page)](https://github.com/aravind-j/google-analytics-beacon) -->
 
 -----
 
@@ -85,17 +86,16 @@ citation("AMMIStbP")
     
     To cite package 'AMMIStbP' in publications use:
     
-      Ajay Basapura Chandrashekar, J. Aravind and R. Abdul Fiyaz (NA).
-      AMMIStbP: Additive Main Effects and Multiplicative Interaction
-      Model Stability Parameters. R package version 0.0.0.9000.
-      http://github.com/ajaygpb/AMMIStbp
+      Ajay Basapura Chandrashekar, J. Aravind, R. Abdul Fiyaz and S.
+      K. Bera (NA). AMMIStbP: Additive Main Effects and Multiplicative
+      Interaction Model Stability Parameters. R package version
+      0.0.0.9000. http://github.com/ajaygpb/AMMIStbp
     
     A BibTeX entry for LaTeX users is
     
       @Manual{,
         title = {AMMIStbP: Additive Main Effects and Multiplicative Interaction Model Stability Parameters},
-        author = {{Ajay Basapura Chandrashekar} and {J. Aravind} and {R. Abdul Fiyaz}},
+        author = {{Ajay Basapura Chandrashekar} and {J. Aravind} and {R. Abdul Fiyaz} and {S. K. Bera}},
         note = {R package version 0.0.0.9000},
         url = {http://github.com/ajaygpb/AMMIStbp},
-        year = {2018},
       }
