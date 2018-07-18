@@ -36,6 +36,18 @@ WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org
 Package is not stable at present. It is under development. Please use
 only after release of stable version.
 
+## Description
+
+Provides functions to compute various germination indices such as
+germinability, median germination time, mean germination time, mean
+germination rate, speed of germination, Timson’s index, germination
+value, coefficient of uniformity of germination, uncertainty of
+germination process, synchrony of germination etc. from germination
+count data. Includes functions for fitting cumulative seed germination
+curves using four-parameter hill function and computation of associated
+parameters. See the vignette for more, including full list of citations
+for the methods implemented.
+
 ## Installation
 
 ### Install development version from Github

@@ -49,6 +49,9 @@ devtools::load_all(".")
 
 Package is not stable at present. It is under development. Please use only after release of stable version.
 
+## Description
+`r gsub("\\n", " ", packageDescription("germinationmetrics", fields = "Description"))`
+
 ## Installation
 
 ### Install development version from Github

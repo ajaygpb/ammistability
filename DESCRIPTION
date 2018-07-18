@@ -16,9 +16,20 @@ Authors@R: c(
     person(c("S.", "K.", "Bera"),
     email = "berask67@yahoo.co.in",
     role = "aut"))
-Description:  Computes various stability parameters from AMMI analysis results
-    such as  1. Modified AMMI Stability Value (MASV) 2. SIPC, 3. AMGE 4. Eigen
-    value stability parameter (EV), 5. Zi 6. FA 7. Di
+Description:  Computes various stability parameters from Additive Main Effects
+    and Multiplicative Interaction (AMMI) analysis results such as  Modified
+    AMMI Stability Value (MASV), Sums of the Absolute Value of the Interaction
+    Principal Component Scores (SIPC), Sum Across Environments of
+    Genotype-Environment Interaction Modelled by AMMI (AMGE), Sum Across 
+    Environments of Absolute Value of Genotype-Environment Interaction Modelled
+    by AMMI (AV_(AMGE)), AMMI Stability Index (ASI), AMMI Based Stability
+    Parameter (ASTAB), Annicchiarico's D Parameter (DA), Zhang's D Parameter
+    (DZ), Averages of the Squared Eigenvector Values (EV), Stability Measure
+    Based on Fitted AMMI Model (FA), Absolute Value of the Relative Contribution
+    of IPCs to the Interaction (Za). Further calculates the Simultaneous
+    Selection Index for Yield and Stability from the computed stability
+    parameters. See the vignette for complete list of citations for the methods
+    implemented.
 Copyright: 2017-2018, ICAR-DGR
 License: GPL-2 | GPL-3
 Encoding: UTF-8
