@@ -37,18 +37,14 @@ test and \eqn{\alpha} is the ratio of the weights given to the stability
 components (\eqn{w_{2}}) and yield (\eqn{w_{1}}) with a restriction that
 \eqn{w_{1} + w_{2} = 1}. The weights can be specified as required.
 
-\tabular{rrr}{
-\strong{\eqn{\alpha}} \tab \strong{\eqn{w_{1}}} \tab \strong{\eqn{w_{2}}}\cr
-1.00 \tab 0.5 \tab 0.5\cr
-0.67 \tab 0.6 \tab 0.4\cr
-0.43 \tab 0.7 \tab 0.3\cr
-0.25 \tab 0.8 \tab 0.2\cr
-}
+\tabular{rrr}{ \strong{\eqn{\alpha}} \tab \strong{\eqn{w_{1}}} \tab
+\strong{\eqn{w_{2}}}\cr 1.00 \tab 0.5 \tab 0.5\cr 0.67 \tab 0.6 \tab 0.4\cr
+0.43 \tab 0.7 \tab 0.3\cr 0.25 \tab 0.8 \tab 0.2\cr }
 
 The SSI proposed by Farshadfar (2008) is called the Genotype stability index
-(GSI) or Yield stability index (YSI) (Farshadfar et al., 2011) and is
-computed by summation of the ranks of the stability index/parameter and the
-ranks of the mean yields.
+(GSI) or Yield stability index (YSI) (Farshadfar et al., 2011) and is computed
+by summation of the ranks of the stability index/parameter and the ranks of
+the mean yields.
 
 \deqn{GSI = YSI = R_{SP} + R_{Y}}
 
@@ -61,4 +57,12 @@ Where, \eqn{R_{SP}} is the stability parameter/index rank of the genotype and
 \insertRef{farshadfar_incorporation_2008}{AMMIStbP}
 
 \insertRef{farshadfar_ammi_2011}{AMMIStbP}
+}
+\seealso{
+\code{\link[AMMIStbP]{AMGE.AMMI}}, \code{\link[AMMIStbP]{ASI.AMMI}},
+ \code{\link[AMMIStbP]{ASTAB.AMMI}}, \code{\link[AVAMGE]{AMGE.AMMI}},
+ \code{\link[AMMIStbP]{DA.AMMI}}, \code{\link[AMMIStbP]{DZ.AMMI}},
+ \code{\link[AMMIStbP]{EV.AMMI}}, \code{\link[AMMIStbP]{FA.AMMI}},
+ \code{\link[AMMIStbP]{MASV.AMMI}}, \code{\link[AMMIStbP]{SIPC.AMMI}},
+ \code{\link[AMMIStbP]{ZA.AMMI}}
 }

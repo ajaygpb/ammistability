@@ -36,8 +36,8 @@ Yield and Stability (SSI) is also calculated according to the argument
 \code{ssi.method}.
 }
 \details{
-The Absolute value of the Relative Contribution of IPCs to the Interaction
-(\eqn{D_{Za}}) is computed as follows:
+The Stability Measure Based on Fitted AMMI Model
+(\eqn{FA}) is computed as follows:
 
 \deqn{FA = \sum_{n=1}^{N'}\lambda_{n}^{2}\gamma_{in}^{2}}
 

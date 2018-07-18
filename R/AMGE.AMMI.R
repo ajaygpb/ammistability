@@ -1,10 +1,10 @@
 #' Sum Across Environments of GEI Modelled by AMMI
 #'
-#' \code{AMGE.AMMI} computes the Sum Across Environments of GEI Modelled by AMMI
-#' (AMGE) (Sneller et al., 1997) considering all significant interaction
-#' principal components (IPCs) in the AMMI model. Using AMGE, the Simultaneous
-#' Selection Index for Yield and Stability (SSI) is also calculated according to
-#' the argument \code{ssi.method}.
+#' \code{AMGE.AMMI} computes the Sum Across Environments of Genotype-Environment
+#' Interaction (GEI) Modelled by AMMI (AMGE) (Sneller et al., 1997) considering
+#' all significant interaction principal components (IPCs) in the AMMI model.
+#' Using AMGE, the Simultaneous Selection Index for Yield and Stability (SSI) is
+#' also calculated according to the argument \code{ssi.method}.
 #'
 #' The Sum Across Environments of GEI Modelled by AMMI (\eqn{AMGE}) is computed
 #' as follows:

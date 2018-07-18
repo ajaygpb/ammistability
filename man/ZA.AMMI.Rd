@@ -2,7 +2,7 @@
 % Please edit documentation in R/ZA.AMMI.R
 \name{ZA.AMMI}
 \alias{ZA.AMMI}
-\title{Absolute value of the Relative Contribution of IPCs to the Interaction}
+\title{Absolute Value of the Relative Contribution of IPCs to the Interaction}
 \usage{
 ZA.AMMI(model, n, alpha = 0.05, ssi.method = c("farshadfar", "rao"),
   a = 1)
@@ -29,14 +29,14 @@ computation of SSI when \code{method = "rao"} (See
 
 }
 \description{
-\code{ZA.AMMI} computes the Absolute value of the Relative Contribution of
+\code{ZA.AMMI} computes the Absolute Value of the Relative Contribution of
 IPCs to the Interaction (Za) (Zali, 2012) considering all significant
 interaction principal components (IPCs) in the AMMI model. Using Za, the
 Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
 according to the argument \code{ssi.method}.
 }
 \details{
-The Absolute value of the Relative Contribution of IPCs to the Interaction
+The Absolute Value of the Relative Contribution of IPCs to the Interaction
 (\eqn{D_{Za}}) is computed as follows:
 
 \deqn{Za = \sum_{i=1}^{N'}\left | \theta_{n}\gamma_{in} \right |}
