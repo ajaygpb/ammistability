@@ -18,9 +18,20 @@
 #' genotype.
 #'
 #' When \eqn{N'} is replaced by 1 (only first IPC axis is considered for
-#' computation), then the parameter \eqn{FP} can be estimated.
+#' computation), then the parameter \eqn{FP} can be estimated (Zali et al., 2012).
 #'
 #' \deqn{FP = \lambda_{1}^{2}\gamma_{i1}^{2}}
+#'
+#' When \eqn{N'} is replaced by 2 (only first two IPC axes are considered for
+#' computation), then the parameter \eqn{B} can be estimated  (Zali et al., 2012).
+#'
+#' \deqn{B = \sum_{n=1}^{2}\lambda_{n}^{2}\gamma_{in}^{2}}
+#'
+#' When \eqn{N'} is replaced by \eqn{N} (All the IPC axes are considered for
+#' computation), then the parameter estimated is equivalent to Wricke's
+#' ecovalence (Wricke, 1962; Zali et al., 2012).
+#'
+#' \deqn{W_{(AMMI)} = \sum_{n=1}^{N}\lambda_{n}^{2}\gamma_{in}^{2}}
 #'
 #' @inheritParams MASV.AMMI
 #'
@@ -30,6 +41,8 @@
 #' @export
 #'
 #' @references
+#'
+#' \insertRef{wricke_method_1962}{AMMIStbP}
 #'
 #' \insertRef{raju_study_2002}{AMMIStbP}
 #'

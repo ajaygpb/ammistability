@@ -14,11 +14,10 @@
 #'
 #'
 #' Where, \eqn{N'} is the number of significant IPCs (number of IPC that were
-#' retained in the AMMI model via F tests); \eqn{\lambda_{n}} is the is the
-#' singular value for IPC \eqn{n} and correspondingly \eqn{\lambda_{n}^{2}}  is
-#' its eigen value; \eqn{\gamma_{in}} is the eigenvector value for \eqn{i}th
-#' genotype; and \eqn{\delta_{jn}}  is the eigenvector value for \eqn{j}th
-#' environment.
+#' retained in the AMMI model via F tests); \eqn{\lambda_{n}} is the singular
+#' value for IPC \eqn{n} and correspondingly \eqn{\lambda_{n}^{2}}  is its eigen
+#' value; \eqn{\gamma_{in}} is the eigenvector value for \eqn{i}th genotype; and
+#' \eqn{\delta_{jn}}  is the eigenvector value for \eqn{j}th environment.
 #'
 #' @inheritParams MASV.AMMI
 #'
