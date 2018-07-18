@@ -3,7 +3,8 @@
 #' \code{ZA.AMMI} computes the Absolute value of the Relative Contribution of
 #' IPCs to the Interaction (Za) (Zali, 2012) considering all significant
 #' interaction principal components (IPCs) in the AMMI model. Using Za, the
-#' Yield stability Index (YSI) is also calculated.
+#' Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
+#' according to the argument \code{ssi.method}.
 #'
 #' The Absolute value of the Relative Contribution of IPCs to the Interaction
 #' (\eqn{D_{Za}}) is computed as follows:
@@ -11,23 +12,15 @@
 #' \deqn{Za = \sum_{i=1}^{N'}\left | \theta_{n}\gamma_{in} \right |}
 #'
 #' Where, \eqn{N'} is the number of significant IPCAs (number of IPC that were
-#' retained in the AMMI model via F tests); and \eqn{\gamma_{in}} is the
+#' retained in the AMMI model via F tests); \eqn{\gamma_{in}} is the
 #' eigenvector value for \eqn{i}th genotype; and \eqn{\theta_{n}} is the
 #' percentage sum of squares explained by \eqn{n}th principal component
 #' interaction effect.
-#'
-#' The Yield Stability Index (\eqn{YSI}) is computed as follows:
-#'
-#' \deqn{YSI = R_{Za} + R_{Y}}
-#'
-#' Where, \eqn{R_{Za}} is the Za rank of the
-#' genotype and \eqn{R_{Y}} is the mean yield rank of the genotype.
 #'
 #' @inheritParams MASV.AMMI
 #'
 #' @return
 #'
-#' @importFrom agricolae tapply.stat
 #' @importFrom agricolae AMMI
 #' @export
 #'
@@ -35,8 +28,11 @@
 #'
 #' \insertRef{zali_evaluation_2012}{AMMIStbP}
 #'
+#' @seealso \code{\link[AMMIStbP]{SSI}}
+#'
 #' @examples
-ZA.AMMI <- function(model, n, alpha = 0.05) {
+ZA.AMMI <- function(model, n, alpha = 0.05,
+                    ssi.method = c("farshadfar", "rao"), a = 1) {
 
   # Check model class
   if (!is(model, "AMMI")) {
@@ -49,7 +45,7 @@ ZA.AMMI <- function(model, n, alpha = 0.05) {
   }
 
   # Find number of significant IPCs according to F test
-  if (missing(n) | is.null(n)) {
+  if (missing(n) || is.null(n)) {
     n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
   }
 
@@ -57,6 +53,8 @@ ZA.AMMI <- function(model, n, alpha = 0.05) {
   if (n %% 1 != 0 && length(n) != 1) {
     stop('"n" is not an integer vector of unit length')
   }
+
+  ssi.method <- match.arg(ssi.method)
 
   # Za1 = model$biplot[,3]*model$analysis[1,1]
   # Za1<-Za1[-c(53:56)]
@@ -79,12 +77,12 @@ ZA.AMMI <- function(model, n, alpha = 0.05) {
 
   Za <- rowSums(abs(theta.n * gamma.n))
 
-  rk <- rank(Za)
   B <- model$means
-  W <- tapply.stat(B[,3],B[,2],function(x) mean(x,rm.na = TRUE))
-  Rx <- rank(-W[,2])
-  YSI_Za <- rk + Rx
-  ranking <- data.frame(Za, YSI_Za, rZa = rk, rY = Rx, means = W[,2])
+  W <- aggregate(B$Yield, by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
+  SSI_Za <- SSI(y = W$x, sp = Za, gen = W$Group.1,
+                method = ssi.method, a = a)
+  ranking <- SSI_Za
+  colnames(ranking) <- c("Za", "SSI", "rZa", "rY", "means")
 
   return(ranking)
 

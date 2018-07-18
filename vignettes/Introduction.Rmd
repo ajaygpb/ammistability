@@ -145,15 +145,41 @@ Where,
 
 \newpage
 
-## Yield Stability Index
+## Simultaneous Selection Indices for Yield and Stability
 
-The most stable genotype need not necessarily be the high yielding genotype. As we need to select the the most stable and highest yielding genotypes, Yield stability index ($YSI$) was proposed (@farshadfar_ammi_2011, @jambhulkar_stability_2017). $YSI$ is a simultaneous selection index for yield and yield stability which is computed by summation of the ranks of the stability index/parameter and the ranks of the mean yields. $YSI$ is computed for all the stability parameters/indices implemented in this package.
+The most stable genotype need not necessarily be the high yielding genotype. Hence, simultaneous selection indices (SSIs) have been proposed for the selection of the most stable as well as highest yielding genotypes.
 
-$$YSI = R_{SP} + R_{Y}$$
+A family of simultaneous selection indices ($I_{i}$) were proposed by @rao_use_2005 similar to those proposed by @bajpai_new_2000 by incorporating the AMMI Based Stability Parameter ($ASTAB$) and Yield as components. These indices consist of yield component, measured as the ratio of the average performance of the $i$th genotype to the overall mean performance of the genotypes under test and a stability component, measured as the ratio of stability information ($\frac{1}{ASTAB}$) of the $i$th genotype to the mean stability information of the genotypes under test.
+
+$$I_{i} = \frac{\overline{Y}_{i}}{\overline{Y}_{..}} + \alpha \frac{\frac{1}{ASTAB_{i}}}{\frac{1}{T}\sum_{i=1}^{T}\frac{1}{ASTAB_{i}}}$$
+
+Where $ASTAB_{i}$ is the stability measure of the $i$th genotype under AMMI procedure;  $Y_{i}$ is mean performance of $i$th genotype; $Y_{..}$ is the overall mean; $T$ is the number of genotypes under test and $\alpha$ is the ratio of the weights given to the stability components ($w_{2}$) and yield ($w_{1}$) with a restriction that $w_{1} + w_{2} = 1$. The weights can be specified as required (Table 2).
+
+**Table 2 :** $\alpha$ and corresponding weights ($w_{1}$ and $w_{2}$)
+```{r, echo = FALSE, eval = TRUE}
+w1 = c(0.5, 0.6, 0.7, 0.8)
+w2 = c(0.5, 0.4, 0.3, 0.2)
+a = round(w2/w1, 2)
+
+alph <- data.frame(alpha = a, w1, w2)
+
+knitr::kable(alph, row.names = FALSE, col.names = c("$\\alpha$", "$w_{1}$", "$w_{2}$"))
+
+``` 
+
+In `AMMIStbP`, the above expression has been implemented for all the stability parameters ($SP$) including ASTAB.
+
+$$I_{i} = \frac{\overline{Y}_{i}}{\overline{Y}_{..}} + \alpha \frac{\frac{1}{SP_{i}}}{\frac{1}{T}\sum_{i=1}^{T}\frac{1}{SP_{i}}}$$
+
+Genotype stability index ($GSI$) [@farshadfar_incorporation_2008] or Yield stability index ($YSI$) [@farshadfar_ammi_2011; @jambhulkar_stability_2017] is a simultaneous selection index for yield and yield stability which is computed by summation of the ranks of the stability index/parameter and the ranks of the mean yields. $YSI$ is computed for all the stability parameters/indices implemented in this package.
+
+$$GSI = YSI = R_{SP} + R_{Y}$$
 
 Where, $R_{SP}$ is the stability parameter/index rank of the genotype and $R_{Y}$ is the mean yield rank of the genotype.
 
-#### Examples
+The function `SSI` implements both these indices in `AMMIStbP`. Further, for each of the stability parameter functions, the simultaneous selection index is also computed by either of these functions as specifiend by the argument `ssi.method`. 
+
+## Examples
 
 ## Citing `AMMIStbP`
 

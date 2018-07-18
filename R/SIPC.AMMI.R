@@ -2,8 +2,9 @@
 #'
 #' \code{SIPC.AMMI} computes the Sums of the Absolute Value of the IPC Scores
 #' (ASI) (Sneller et al., 1997) considering all significant interaction
-#' principal components (IPCs) in the AMMI model. Using SIPC, the Yield
-#' stability Index (YSI) is also calculated.
+#' principal components (IPCs) in the AMMI model. Using SIPC, the Simultaneous
+#' Selection Index for Yield and Stability (SSI) is also calculated according to
+#' the argument \code{ssi.method}.
 #'
 #' The Sums of the Absolute Value of the IPC Scores (\eqn{SIPC}) is computed as
 #' follows:
@@ -25,18 +26,10 @@
 #' The closer the SIPC scores are to zero, the more stable the genotypes are
 #' across test environments.
 #'
-#' The Yield Stability Index (\eqn{YSI}) is computed as follows:
-#'
-#' \deqn{YSI = R_{SIPC} + R_{Y}}
-#'
-#' Where, \eqn{R_{SIPC}} is the SIPC rank of the genotype and \eqn{R_{Y}} is the
-#' mean yield rank of the genotype.
-#'
 #' @inheritParams MASV.AMMI
 #'
 #' @return
 #'
-#' @importFrom agricolae tapply.stat
 #' @importFrom agricolae AMMI
 #' @export
 #'
@@ -44,8 +37,11 @@
 #'
 #' \insertRef{sneller_repeatability_1997}{AMMIStbP}
 #'
+#' @seealso \code{\link[AMMIStbP]{SSI}}
+#'
 #' @examples
-SIPC.AMMI <- function(model, n, alpha = 0.05) {
+SIPC.AMMI <- function(model, n, alpha = 0.05,
+                      ssi.method = c("farshadfar", "rao"), a = 1) {
 
   # Check model class
   if (!is(model, "AMMI")) {
@@ -58,7 +54,7 @@ SIPC.AMMI <- function(model, n, alpha = 0.05) {
   }
 
   # Find number of significant IPCs according to F test
-  if (missing(n) | is.null(n)) {
+  if (missing(n) || is.null(n)) {
     n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
   }
 
@@ -66,6 +62,8 @@ SIPC.AMMI <- function(model, n, alpha = 0.05) {
   if (n %% 1 != 0 && length(n) != 1) {
     stop('"n" is not an integer vector of unit length')
   }
+
+  ssi.method <- match.arg(ssi.method)
 
 # cova <- cov(model$genXenv)
 # values <- eigen(cova)
@@ -91,12 +89,12 @@ SIPC.AMMI <- function(model, n, alpha = 0.05) {
 
   SIPC <- unname(rowSums(apply(A, 2, FUN = abs)))
 
-  rk <- rank(SIPC)
   B <- model$means
-  W <- tapply.stat(B[,3],B[,2],function(x) mean(x,rm.na = TRUE))
-  Rx <- rank(-W[,2])
-  YSI_SIPC <- rk + Rx
-  ranking <- data.frame(SIPC, YSI_SIPC, rSIPC = rk, rY = Rx, means = W[,2])
+  W <- aggregate(B$Yield, by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
+  SSI_SIPC <- SSI(y = W$x, sp = SIPC, gen = W$Group.1,
+                  method = ssi.method, a = a)
+  ranking <- SSI_SIPC
+  colnames(ranking) <- c("SIPC", "SSI", "rASIPC", "rY", "means")
 
   return(ranking)
 

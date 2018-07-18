@@ -5,7 +5,8 @@
 #' (\eqn{\textrm{D}_{\textrm{z}}}) (Zhang, 1998) considering all significant
 #' interaction principal components (IPCs) in the AMMI model. It is the distance
 #' of IPC  point  from  origin  in space. Using \eqn{\textrm{D}_{\textrm{z}}},
-#' the Yield stability Index (YSI) is also calculated.
+#' the Simultaneous Selection Index for Yield and Stability (SSI) is also
+#' calculated according to the argument \code{ssi.method}.
 #'
 #' The Zhang's D Parameter value (\eqn{D_{z}}) is computed as follows:
 #'
@@ -15,18 +16,10 @@
 #' retained in the AMMI model via F tests); and \eqn{\gamma_{in}} is the
 #' eigenvector value for \eqn{i}th genotype.
 #'
-#' The Yield Stability Index (\eqn{YSI}) is computed as follows:
-#'
-#' \deqn{YSI = R_{D_{z}} + R_{Y}}
-#'
-#' Where, \eqn{R_{D_{z}}} is the \eqn{\textrm{D}_{\textrm{z}}} rank of the
-#' genotype and \eqn{R_{Y}} is the mean yield rank of the genotype.
-#'
 #' @inheritParams MASV.AMMI
 #'
 #' @return
 #'
-#' @importFrom agricolae tapply.stat
 #' @importFrom agricolae AMMI
 #' @export
 #'
@@ -34,8 +27,11 @@
 #'
 #' \insertRef{zhang_analysis_1998}{AMMIStbP}
 #'
+#' @seealso \code{\link[AMMIStbP]{SSI}}
+#'
 #' @examples
-DZ.AMMI <- function(model, n, alpha = 0.05) {
+DZ.AMMI <- function(model, n, alpha = 0.05,
+                    ssi.method = c("farshadfar", "rao"), a = 1) {
 
   # Check model class
   if (!is(model, "AMMI")) {
@@ -48,7 +44,7 @@ DZ.AMMI <- function(model, n, alpha = 0.05) {
   }
 
   # Find number of significant IPCs according to F test
-  if (missing(n) | is.null(n)) {
+  if (missing(n) || is.null(n)) {
     n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
   }
 
@@ -56,6 +52,8 @@ DZ.AMMI <- function(model, n, alpha = 0.05) {
   if (n %% 1 != 0 && length(n) != 1) {
     stop('"n" is not an integer vector of unit length')
   }
+
+  ssi.method <- match.arg(ssi.method)
 
   # GxE matrix
   ge <- array(model$genXenv, dim(model$genXenv), dimnames(model$genXenv))
@@ -65,12 +63,12 @@ DZ.AMMI <- function(model, n, alpha = 0.05) {
 
   DZ <- sqrt(rowSums((gamma.n)^2))
 
-  rk <- rank(DZ)
   B <- model$means
-  W <- tapply.stat(B[,3],B[,2],function(x) mean(x,rm.na = TRUE))
-  Rx <- rank(-W[,2])
-  YSI_DZ <- rk + Rx
-  ranking <- data.frame(DZ, YSI_DZ, rDZ = rk, rY = Rx, means = W[,2])
+  W <- aggregate(B$Yield, by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
+  SSI_DZ <- SSI(y = W$x, sp = DZ, gen = W$Group.1,
+                method = ssi.method, a = a)
+  ranking <- SSI_DZ
+  colnames(ranking) <- c("DZ", "SSI", "rDZ", "rY", "means")
 
   return(ranking)
 

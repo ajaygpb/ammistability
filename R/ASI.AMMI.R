@@ -3,7 +3,8 @@
 #' \code{ASI.AMMI} computes the AMMI Stability Index (ASI) (Jambhulkar et al.,
 #' 2014; Jambhulkar et al., 2015; Jambhulkar et al., 2017) considering the first
 #' two interaction principal components (IPCs) in the AMMI model. Using ASI, the
-#' Yield stability Index (YSI) is also calculated.
+#' Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
+#' according to the argument \code{ssi.method}.
 #'
 #' The AMMI Stability Index (\eqn{ASI}) is computed as follows:
 #'
@@ -17,16 +18,10 @@
 #'
 #' The Yield Stability Index (\eqn{YSI}) is computed as follows:
 #'
-#' \deqn{YSI = R_{ASI} + R_{Y}}
-#'
-#' Where, \eqn{R_{ASI}} is the ASI rank of the genotype and \eqn{R_{Y}} is the
-#' mean yield rank of the genotype.
-#'
 #' @inheritParams MASV.AMMI
 #'
 #' @return
 #'
-#' @importFrom agricolae tapply.stat
 #' @importFrom agricolae AMMI
 #' @export
 #'
@@ -38,8 +33,11 @@
 #'
 #' \insertRef{jambhulkar_stability_2017}{AMMIStbP}
 #'
+#' @seealso \code{\link[AMMIStbP]{SSI}}
+#'
 #' @examples
-ASI.AMMI <- function(model, n, alpha = 0.05) {
+ASI.AMMI <- function(model, n, alpha = 0.05,
+                     ssi.method = c("farshadfar", "rao"), a = 1) {
 
   # Check model class
   if (!is(model, "AMMI")) {
@@ -52,7 +50,7 @@ ASI.AMMI <- function(model, n, alpha = 0.05) {
   }
 
   # Find number of significant IPCs according to F test
-  if (missing(n) | is.null(n)) {
+  if (missing(n) || is.null(n)) {
     n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
   }
 
@@ -60,6 +58,8 @@ ASI.AMMI <- function(model, n, alpha = 0.05) {
   if (n %% 1 != 0 && length(n) != 1) {
     stop('"n" is not an integer vector of unit length')
   }
+
+  ssi.method <- match.arg(ssi.method)
 
   A <- model$biplot[, 1:4]
   A <- A[A[, 1] == "GEN", -c(1, 2)]
@@ -69,12 +69,12 @@ ASI.AMMI <- function(model, n, alpha = 0.05) {
 
   ASI <- sqrt(((A[,"PC1"]^2) + (th1^2)) + ((A[,"PC2"]^2) + (th2^2)))
 
-  rk <- rank(ASI)
   B <- model$means
-  W <- tapply.stat(B[,3],B[,2],function(x) mean(x,rm.na = TRUE))
-  Rx <- rank(-W[,2])
-  YSI_ASI <- rk + Rx
-  ranking <- data.frame(ASI, YSI_ASI, rASI = rk, rY = Rx, means = W[,2])
+  W <- aggregate(B$Yield, by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
+  SSI_ASI <- SSI(y = W$x, sp = ASI, gen = W$Group.1,
+                 method = ssi.method, a = a)
+  ranking <- SSI_ASI
+  colnames(ranking) <- c("ASI", "SSI", "rASI", "rY", "means")
 
   return(ranking)
 

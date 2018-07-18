@@ -2,8 +2,9 @@
 #'
 #' \code{EV.AMMI} computes the Sums of the Averages of the Squared Eigenvector
 #' Values (EV) (Zobel, 1994) considering all significant interaction principal
-#' components (IPCs) in the AMMI model. Using EV, the Yield stability Index (YSI) is
-#' also calculated.
+#' components (IPCs) in the AMMI model. Using EV, the Simultaneous Selection
+#' Index for Yield and Stability (SSI) is also calculated according to the
+#' argument \code{ssi.method}.
 #'
 #' The Averages of the Squared Eigenvector Values (\eqn{EV}) is computed as
 #' follows:
@@ -14,18 +15,10 @@
 #' retained in the AMMI model via F tests); and \eqn{\gamma_{in}} is the
 #' eigenvector value for \eqn{i}th genotype.
 #'
-#' The Yield Stability Index (\eqn{YSI}) is computed as follows:
-#'
-#' \deqn{YSI = R_{EV} + R_{Y}}
-#'
-#' Where, \eqn{R_{EV}} is the EV rank of the genotype and \eqn{R_{Y}} is the
-#' mean yield rank of the genotype.
-#'
 #' @inheritParams MASV.AMMI
 #'
 #' @return
 #'
-#' @importFrom agricolae tapply.stat
 #' @importFrom agricolae AMMI
 #' @export
 #'
@@ -33,8 +26,11 @@
 #'
 #' \insertRef{zobel_stress_1994}{AMMIStbP}
 #'
+#' @seealso \code{\link[AMMIStbP]{SSI}}
+#'
 #' @examples
-EV.AMMI <- function(model, n, alpha = 0.05) {
+EV.AMMI <- function(model, n, alpha = 0.05,
+                    ssi.method = c("farshadfar", "rao"), a = 1) {
 
   # Check model class
   if (!is(model, "AMMI")) {
@@ -47,7 +43,7 @@ EV.AMMI <- function(model, n, alpha = 0.05) {
   }
 
   # Find number of significant IPCs according to F test
-  if (missing(n) | is.null(n)) {
+  if (missing(n) || is.null(n)) {
     n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
   }
 
@@ -56,6 +52,7 @@ EV.AMMI <- function(model, n, alpha = 0.05) {
     stop('"n" is not an integer vector of unit length')
   }
 
+  ssi.method <- match.arg(ssi.method)
 
 # EV1<-model$biplot[,3]^2
 # EV2<-model$biplot[,4]^2
@@ -73,12 +70,12 @@ EV.AMMI <- function(model, n, alpha = 0.05) {
 
   EV <- rowSums(gamma.n^2/n)
 
-  rk <- rank(EV)
   B <- model$means
-  W <- tapply.stat(B[,3],B[,2],function(x) mean(x,rm.na = TRUE))
-  Rx <- rank(-W[,2])
-  YSI_EV <- rk + Rx
-  ranking <- data.frame(EV, YSI_EV, rEV = rk, rY = Rx, means = W[,2])
+  W <- aggregate(B$Yield, by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
+  SSI_EV <- SSI(y = W$x, sp = EV, gen = W$Group.1,
+                method = ssi.method, a = a)
+  ranking <- SSI_EV
+  colnames(ranking) <- c("EV", "SSI", "rEV", "rY", "means")
 
   return(ranking)
 

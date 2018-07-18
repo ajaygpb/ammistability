@@ -4,8 +4,9 @@
 #' (\eqn{\textrm{D}_{\textrm{a}}}) (Annicchiarico, 1997) considering all
 #' significant interaction principal components (IPCs) in the AMMI model. It is
 #' the unsquared Euclidean distance from the origin of significant IPC axes in
-#' the AMMI model. Using \eqn{\textrm{D}_{\textrm{a}}}, the Yield stability
-#' Index (YSI) is also calculated.
+#' the AMMI model. Using \eqn{\textrm{D}_{\textrm{a}}}, the Simultaneous
+#' Selection Index for Yield and Stability (SSI) is also calculated according to
+#' the argument \code{ssi.method}.
 #'
 #' The Annicchiarico's D Parameter value (\eqn{D_{a}}) is computed as follows:
 #'
@@ -19,16 +20,10 @@
 #'
 #' The Yield Stability Index (\eqn{YSI}) is computed as follows:
 #'
-#' \deqn{YSI = R_{D_{a}} + R_{Y}}
-#'
-#' Where, \eqn{R_{D_{a}}} is the \eqn{\textrm{D}_{\textrm{a}}} rank of the
-#' genotype and \eqn{R_{Y}} is the mean yield rank of the genotype.
-#'
 #' @inheritParams MASV.AMMI
 #'
 #' @return
 #'
-#' @importFrom agricolae tapply.stat
 #' @importFrom agricolae AMMI
 #' @export
 #'
@@ -36,8 +31,11 @@
 #'
 #' \insertRef{annicchiarico_joint_1997}{AMMIStbP}
 #'
+#' @seealso \code{\link[AMMIStbP]{SSI}}
+#'
 #' @examples
-DA.AMMI <- function(model, n, alpha = 0.05) {
+DA.AMMI <- function(model, n, alpha = 0.05,
+                    ssi.method = c("farshadfar", "rao"), a = 1) {
 
   # Check model class
   if (!is(model, "AMMI")) {
@@ -50,7 +48,7 @@ DA.AMMI <- function(model, n, alpha = 0.05) {
   }
 
   # Find number of significant IPCs according to F test
-  if (missing(n) | is.null(n)) {
+  if (missing(n) || is.null(n)) {
     n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
   }
 
@@ -58,6 +56,8 @@ DA.AMMI <- function(model, n, alpha = 0.05) {
   if (n %% 1 != 0 && length(n) != 1) {
     stop('"n" is not an integer vector of unit length')
   }
+
+  ssi.method <- match.arg(ssi.method)
 
   # cova<-cov(model$genXenv)
   # values<-eigen(cova)
@@ -78,12 +78,12 @@ DA.AMMI <- function(model, n, alpha = 0.05) {
 
   DA <- sqrt(rowSums((lambda.n*gamma.n)^2))
 
-  rk <- rank(DA)
   B <- model$means
-  W <- tapply.stat(B[,3],B[,2],function(x) mean(x,rm.na = TRUE))
-  Rx <- rank(-W[,2])
-  YSI_DA <- rk + Rx
-  ranking <- data.frame(DA, YSI_DA, rDA = rk, rY = Rx, means = W[,2])
+  W <- aggregate(B$Yield, by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
+  SSI_DA <- SSI(y = W$x, sp = DA, gen = W$Group.1,
+                method = ssi.method, a = a)
+  ranking <- SSI_DA
+  colnames(ranking) <- c("ASI", "SSI", "rASI", "rY", "means")
 
   return(ranking)
 

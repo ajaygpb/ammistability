@@ -4,8 +4,9 @@
 #' al., 2012; Please see \strong{Note}) from a modified formula of AMMI
 #' Stability Value (ASV) (Purchase et al. 1997). This formula calculates AMMI
 #' stability value considering all significant interaction principal components
-#' (IPCs) in the AMMI model. Using MASV, the Yield stability Index (YSI) is also
-#' calculated.
+#' (IPCs) in the AMMI model. Using MASV, the Simultaneous Selection Index for
+#' Yield and Stability (SSI) is also calculated according to the argument
+#' \code{ssi.method}.
 #'
 #' The Modified AMMI Stability Value (\eqn{MASV}) is computed as follows:
 #'
@@ -50,10 +51,15 @@
 #'   The default value is the number of significant IPCs.
 #' @param alpha Type I error probability (Significance level) to be considered
 #'   to identify the number of significant IPCs.
+#' @param ssi.method The method for the computation of simultaneous selection
+#'   index. Either \code{"farshadfar"} or \code{"rao"} (See
+#'   \code{\link[AMMIStbP]{SSI}}).
+#' @param a The ratio of the weights given to the stability components for
+#'   computation of SSI when \code{method = "rao"} (See
+#'   \code{\link[AMMIStbP]{SSI}}).
 #'
 #' @return
 #'
-#' @importFrom agricolae tapply.stat
 #' @importFrom agricolae AMMI
 #' @export
 #'
@@ -67,8 +73,11 @@
 #'
 #' \insertRef{zali_evaluation_2012}{AMMIStbP}
 #'
+#' @seealso \code{\link[AMMIStbP]{SSI}}
+#'
 #' @examples
-MASV.AMMI <- function(model, n, alpha = 0.05) {
+MASV.AMMI <- function(model, n, alpha = 0.05,
+                      ssi.method = c("farshadfar", "rao"), a = 1) {
 
   # Check model class
   if (!is(model, "AMMI")) {
@@ -81,7 +90,7 @@ MASV.AMMI <- function(model, n, alpha = 0.05) {
   }
 
   # Find number of significant IPCs according to F test
-  if (missing(n) | is.null(n)) {
+  if (missing(n) || is.null(n)) {
     n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
   }
 
@@ -89,6 +98,8 @@ MASV.AMMI <- function(model, n, alpha = 0.05) {
   if (n %% 1 != 0 && length(n) != 1) {
     stop('"n" is not an integer vector of unit length')
   }
+
+  ssi.method <- match.arg(ssi.method)
 
   A <- model$biplot
   A <- A[A[,1] == "GEN",-c(1,2)]
@@ -105,12 +116,12 @@ MASV.AMMI <- function(model, n, alpha = 0.05) {
   MASV <- MASV + (A[,max(seq_along(A))]^2)
   MASV <- sqrt(MASV)
 
-  rk <- rank(MASV)
   B <- model$means
-  W <- tapply.stat(B[,3],B[,2],function(x) mean(x,rm.na = TRUE))
-  Rx <- rank(-W[,2])
-  YSI_MASV <- rk + Rx
-  ranking <- data.frame(MASV, YSI_MASV, rMASV = rk, rY = Rx, means = W[,2])
+  W <- aggregate(B$Yield, by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
+  SSI_MASV <- SSI(y = W$x, sp = MASV, gen = W$Group.1,
+                  method = ssi.method, a = a)
+  ranking <- SSI_MASV
+  colnames(ranking) <- c("MASV", "SSI", "rMASV", "rY", "means")
 
   return(ranking)
 }

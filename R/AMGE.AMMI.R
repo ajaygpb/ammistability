@@ -2,8 +2,9 @@
 #'
 #' \code{AMGE.AMMI} computes the Sum Across Environments of GEI Modelled by AMMI
 #' (AMGE) (Sneller et al., 1997) considering all significant interaction
-#' principal components (IPCs) in the AMMI model. Using AMGE, the Yield stability Index
-#' (YSI) is also calculated.
+#' principal components (IPCs) in the AMMI model. Using AMGE, the Simultaneous
+#' Selection Index for Yield and Stability (SSI) is also calculated according to
+#' the argument \code{ssi.method}.
 #'
 #' The Sum Across Environments of GEI Modelled by AMMI (\eqn{AMGE}) is computed
 #' as follows:
@@ -19,18 +20,10 @@
 #' genotype; and \eqn{\delta_{jn}}  is the eigenvector value for \eqn{j}th
 #' environment.
 #'
-#' The Yield Stability Index (\eqn{YSI}) is computed as follows:
-#'
-#' \deqn{YSI = R_{AMGE} + R_{Y}}
-#'
-#' Where, \eqn{R_{AMGE}} is the SIPC rank of the genotype and \eqn{R_{Y}} is the
-#' mean yield rank of the genotype.
-#'
 #' @inheritParams MASV.AMMI
 #'
 #' @return
 #'
-#' @importFrom agricolae tapply.stat
 #' @importFrom agricolae AMMI
 #' @export
 #'
@@ -38,8 +31,11 @@
 #'
 #' \insertRef{sneller_repeatability_1997}{AMMIStbP}
 #'
+#' @seealso \code{\link[AMMIStbP]{SSI}}
+#'
 #' @examples
-AMGE.AMMI <- function(model, n, alpha = 0.05) {
+AMGE.AMMI <- function(model, n, alpha = 0.05,
+                      ssi.method = c("farshadfar", "rao"), a = 1) {
 
   # Check model class
   if (!is(model, "AMMI")) {
@@ -52,7 +48,7 @@ AMGE.AMMI <- function(model, n, alpha = 0.05) {
   }
 
   # Find number of significant IPCs according to F test
-  if (missing(n) | is.null(n)) {
+  if (missing(n) || is.null(n)) {
     n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
   }
 
@@ -60,6 +56,8 @@ AMGE.AMMI <- function(model, n, alpha = 0.05) {
   if (n %% 1 != 0 && length(n) != 1) {
     stop('"n" is not an integer vector of unit length')
   }
+
+  ssi.method <- match.arg(ssi.method)
 
   # GxE matrix
   ge <- array(model$genXenv, dim(model$genXenv), dimnames(model$genXenv))
@@ -73,12 +71,12 @@ AMGE.AMMI <- function(model, n, alpha = 0.05) {
 
   AMGE <- rowSums(ge.n)
 
-  rk <- rank(AMGE)
   B <- model$means
-  W <- tapply.stat(B[,3],B[,2],function(x) mean(x,rm.na = TRUE))
-  Rx <- rank(-W[,2])
-  YSI_AMGE <- rk + Rx
-  ranking <- data.frame(AMGE, YSI_AMGE, rAMGE = rk, rY = Rx, means = W[,2])
+  W <- aggregate(B$Yield, by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
+  SSI_AMGE <- SSI(y = W$x, sp = AMGE, gen = W$Group.1,
+                  method = ssi.method, a = a)
+  ranking <- SSI_AMGE
+  colnames(ranking) <- c("AMGE", "SSI", "rAMGE", "rY", "means")
 
   return(ranking)
 
