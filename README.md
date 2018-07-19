@@ -3,12 +3,11 @@
 
 ###### Version : [0.0.0.9000](https://ajaygpb.github.io/AMMIStbP/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
 
-##### *Ajay, B. C.<sup>1</sup>, Aravind, J.<sup>2</sup>, Abdul Fiyaz, R.<sup>3</sup> and S. K. Bera<sup>4</sup>*
+##### *Ajay, B. C.<sup>1</sup>, Aravind, J.<sup>2</sup> and Abdul Fiyaz, R.<sup>3</sup>*
 
 1.  RRS, ICAR-Directorate of Groundnut Research, Anantapur
 2.  ICAR-National Bureau of Plant Genetic Resources, New Delhi
 3.  ICAR-Indian Institute of Rice Research, Hyderabad
-4.  ICAR-Directorate of Groundnut Research, Junagadh
 
 -----
 

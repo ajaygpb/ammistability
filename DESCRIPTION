@@ -12,9 +12,6 @@ Authors@R: c(
     comment = c(ORCID = "0000-0002-4791-442X")),
     person(c("R.", "Abdul Fiyaz"),
     email = "fiyaz.ra@icar.gov.in",
-    role = "aut"),
-    person(c("S.", "K.", "Bera"),
-    email = "berask67@yahoo.co.in",
     role = "aut"))
 Description:  Computes various stability parameters from Additive Main Effects
     and Multiplicative Interaction (AMMI) analysis results such as  Modified

@@ -1,6 +1,6 @@
 ---
 title: "The **AMMIStbP** package: A brief introduction"
-author: Ajay B. C.^1^, J. Aravind^2^, R. Abdul Fiyaz^3^ and S. K. Bera^4^
+author: Ajay B. C.^1^, J. Aravind^2^, R. and Abdul Fiyaz^3^
 date: '`r Sys.Date()`'
 header-includes:
 - \usepackage{fancyhdr}
