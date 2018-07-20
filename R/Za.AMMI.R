@@ -111,7 +111,7 @@ ZA.AMMI <- function(model, n, alpha = 0.05,
 
   theta.n <- model$analysis[1:n,]$percent/100
 
-  Za <- rowSums(abs(theta.n * gamma.n))
+  Za <- rowSums(abs(gamma.n %*% diag(theta.n)))
 
   B <- model$means
   W <- aggregate(B$Yield, by = list(model$means$GEN), FUN = mean, na.rm = TRUE)

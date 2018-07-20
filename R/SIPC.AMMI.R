@@ -117,7 +117,7 @@ SIPC.AMMI <- function(model, n, alpha = 0.05,
   # svdge <- svd(ge)
   # lambda.n <- svdge$d[1:n]
   # gamma.n <- svdge$u[,1:n]
-  # A <- sqrt(lambda.n)*gamma.n
+  # A <- gamma.n %*% diag(sqrt(lambda.n))
 
   A <- model$biplot
   A <- A[A[,1] == "GEN",-c(1,2)]

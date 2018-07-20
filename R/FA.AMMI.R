@@ -135,7 +135,7 @@ FA.AMMI <- function(model, n, alpha = 0.05,
   gamma.n <- svdge$u[,1:n]
   lambda.n <- svdge$d[1:n]
 
-  FA <- rowSums((lambda.n^2) * (gamma.n^2))
+  FA <- rowSums((gamma.n^2) %*% diag(lambda.n^2))
 
   B <- model$means
   W <- aggregate(B$Yield, by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
