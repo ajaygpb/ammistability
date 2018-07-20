@@ -28,15 +28,7 @@
 #' @importFrom agricolae AMMI
 #' @export
 #'
-#' @references
-#'
-#' \insertRef{jambhulkar_ammi_2014}{AMMIStbP}
-#'
-#' \insertRef{jambhulkar_genotype_2015}{AMMIStbP}
-#'
-#' \insertRef{jambhulkar_stability_2017}{AMMIStbP}
-#'
-#' @seealso \code{\link[AMMIStbP]{SSI}}
+#' @seealso \code{\link[AMMIStbP]{MASI}}, \code{\link[AMMIStbP]{SSI}}
 #'
 #' @examples
 #' library(agricolae)

@@ -82,14 +82,14 @@ MASI.AMMI(model, ssi.method = "rao")
 # Changing the ratio of weights for Rao's SSI
 MASI.AMMI(model, ssi.method = "rao", a = 0.43)
 
-}
-\references{
-\insertRef{jambhulkar_ammi_2014}{AMMIStbP}
+# ASI.AMMI same as MASI.AMMI with n = 2
 
-\insertRef{jambhulkar_genotype_2015}{AMMIStbP}
+a <- ASI.AMMI(model)
+b <- MASI.AMMI(model, n = 2)
 
-\insertRef{jambhulkar_stability_2017}{AMMIStbP}
+identical(a$ASI, b$MASI)
+
 }
 \seealso{
-\code{\link[AMMIStbP]{SSI}}
+\code{\link[AMMIStbP]{MASI}}, \code{\link[AMMIStbP]{SSI}}
 }
