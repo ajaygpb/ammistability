@@ -47,8 +47,8 @@ The Modified AMMI Stability Index (\eqn{MASI}) is computed as follows:
 
 \deqn{MASI = \sqrt{ \sum_{n=1}^{N'} PC_{n}^{2} \times \theta_{n}^{2}}}
 
-Where, \eqn{PC_{n}} are the scores of nth IPC; and \eqn{\theta_{n}} is the
-percentage sum of squares explained by the nth principal component
+Where, \eqn{PC_{n}} are the scores of \eqn{n}th IPC; and \eqn{\theta_{n}} is
+the percentage sum of squares explained by the \eqn{n}th principal component
 interaction effect.
 }
 \examples{
