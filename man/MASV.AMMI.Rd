@@ -26,7 +26,14 @@ computation of SSI when \code{method = "rao"} (See
 \code{\link[AMMIStbP]{SSI}}).}
 }
 \value{
+A data frame with the following columns:  \item{MASV}{The MASV
+  values.} \item{SSI}{The computed values of simultaneous selection index for
+  yield and stability.} \item{rMASV}{The ranks of MASV values.} \item{rY}{The
+  ranks of the mean yield of genotypes.} \item{means}{The mean yield of the
+  genotypes.}
 
+  The names of the genotypes are indicated as the row names of the data
+  frame.
 }
 \description{
 \code{MASV.AMMI} computes the Modified AMMI Stability Value (MASV) (Zali et
@@ -75,6 +82,38 @@ In Zali et al., (2012), the formula for both AMMI stability value (ASV)
   \strong{MASV (Zali et al., 2012)} \deqn{MASV = \sqrt{\sum_{n=1}^{N'-1}\left
   ( \frac{SSIPC_{n}}{SSIPC_{n+1}} \right ) \times (PC_{n})^2   + \left
   (PC_{N'}  \right )^2}}
+}
+\examples{
+library(agricolae)
+data(plrv)
+
+# AMMI model
+model <- with(plrv, AMMI(Locality, Genotype, Rep, Yield, console = FALSE))
+
+# ANOVA
+model$ANOVA
+
+# IPC F test
+model$analysis
+
+# Mean yield and IPC scores
+model$biplot
+
+# G*E matrix (deviations from mean)
+array(model$genXenv, dim(model$genXenv), dimnames(model$genXenv))
+
+# With default n (N') and default ssi.method (farshadfar)
+MASV.AMMI(model)
+
+# With n = 4 and default ssi.method (farshadfar)
+MASV.AMMI(model, n = 4)
+
+# With default n (N') and ssi.method = "rao"
+MASV.AMMI(model, ssi.method = "rao")
+
+# Changing the ratio of weights for Rao's SSI
+MASV.AMMI(model, ssi.method = "rao", a = 0.43)
+
 }
 \references{
 \insertRef{purchase_parametric_1997}{AMMIStbP}

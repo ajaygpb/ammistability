@@ -19,6 +19,15 @@ Either \code{"farshadfar"} or \code{"rao"} (See \strong{Details}).}
 \item{a}{The ratio of the weights given to the stability components for
 computation of SSI when \code{method = "rao"} (See \strong{Details}).}
 }
+\value{
+A data frame with the following columns:  \item{SP}{The stability
+  parameter values.} \item{SSI}{The computed values of simultaneous selection
+  index for yield and stability.} \item{rSP}{The ranks of the stability
+  parameter.} \item{rY}{The ranks of the mean yield of genotypes.}
+  \item{means}{The mean yield of the genotypes.}
+
+  The names of the genotypes are indicated as the row names of the data frame.
+}
 \description{
 \code{SSI} computes the Simultaneous Selection Index for Yield and Stability
 (SSI) according to the methods specified in the argument \code{method}.
@@ -60,9 +69,28 @@ Where, \eqn{R_{SP}} is the stability parameter/index rank of the genotype and
 }
 \seealso{
 \code{\link[AMMIStbP]{AMGE.AMMI}}, \code{\link[AMMIStbP]{ASI.AMMI}},
- \code{\link[AMMIStbP]{ASTAB.AMMI}}, \code{\link[AVAMGE]{AMGE.AMMI}},
- \code{\link[AMMIStbP]{DA.AMMI}}, \code{\link[AMMIStbP]{DZ.AMMI}},
- \code{\link[AMMIStbP]{EV.AMMI}}, \code{\link[AMMIStbP]{FA.AMMI}},
- \code{\link[AMMIStbP]{MASV.AMMI}}, \code{\link[AMMIStbP]{SIPC.AMMI}},
- \code{\link[AMMIStbP]{ZA.AMMI}}
+  \code{\link[AMMIStbP]{ASTAB.AMMI}}, \code{\link[AVAMGE]{AMGE.AMMI}},
+  \code{\link[AMMIStbP]{DA.AMMI}}, \code{\link[AMMIStbP]{DZ.AMMI}},
+  \code{\link[AMMIStbP]{EV.AMMI}}, \code{\link[AMMIStbP]{FA.AMMI}},
+  \code{\link[AMMIStbP]{MASV.AMMI}}, \code{\link[AMMIStbP]{SIPC.AMMI}},
+  \code{\link[AMMIStbP]{ZA.AMMI}}
+
+ @examples
+library(agricolae)
+data(plrv)
+model <- with(plrv, AMMI(Locality, Genotype, Rep, Yield, console=FALSE))
+
+yield <- aggregate(model$means$Yield, by= list(model$means$GEN),
+               FUN=mean, na.rm=TRUE)[,2]
+stab <- DZ.AMMI(model)$DZ
+genotypes <- rownames(DZ.AMMI(model))
+
+# With default ssi.method (farshadfar)
+SSI(y = yield, sp = stab, gen = genotypes)
+
+# With  ssi.method = "rao"
+SSI(y = yield, sp = stab, gen = genotypes, method = "rao")
+
+# Changing the ratio of weights for Rao's SSI
+SSI(y = yield, sp = stab, gen = genotypes, method = "rao", a = 0.43)
 }

@@ -21,7 +21,13 @@
 #'
 #' @inheritParams MASV.AMMI
 #'
-#' @return
+#' @return A data frame with the following columns:  \item{DA}{The DA
+#'  values.} \item{SSI}{The computed values of simultaneous selection index for
+#'  yield and stability.} \item{rDA}{The ranks of DA values.}
+#'  \item{rY}{The ranks of the mean yield of genotypes.} \item{means}{The mean
+#'  yield of the genotypes.}
+#'
+#'  The names of the genotypes are indicated as the row names of the data frame.
 #'
 #' @importFrom agricolae AMMI
 #' @export
@@ -33,6 +39,36 @@
 #' @seealso \code{\link[AMMIStbP]{SSI}}
 #'
 #' @examples
+#' library(agricolae)
+#' data(plrv)
+#'
+#' # AMMI model
+#' model <- with(plrv, AMMI(Locality, Genotype, Rep, Yield, console = FALSE))
+#'
+#' # ANOVA
+#' model$ANOVA
+#'
+#' # IPC F test
+#' model$analysis
+#'
+#' # Mean yield and IPC scores
+#' model$biplot
+#'
+#' # G*E matrix (deviations from mean)
+#' array(model$genXenv, dim(model$genXenv), dimnames(model$genXenv))
+#'
+#' # With default n (N') and default ssi.method (farshadfar)
+#' DA.AMMI(model)
+#'
+#' # With n = 4 and default ssi.method (farshadfar)
+#' DA.AMMI(model, n = 4)
+#'
+#' # With default n (N') and ssi.method = "rao"
+#' DA.AMMI(model, ssi.method = "rao")
+#'
+#' # Changing the ratio of weights for Rao's SSI
+#' DA.AMMI(model, ssi.method = "rao", a = 0.43)
+#'
 DA.AMMI <- function(model, n, alpha = 0.05,
                     ssi.method = c("farshadfar", "rao"), a = 1) {
 
@@ -82,7 +118,7 @@ DA.AMMI <- function(model, n, alpha = 0.05,
   SSI_DA <- SSI(y = W$x, sp = DA, gen = W$Group.1,
                 method = ssi.method, a = a)
   ranking <- SSI_DA
-  colnames(ranking) <- c("ASI", "SSI", "rASI", "rY", "means")
+  colnames(ranking) <- c("DA", "SSI", "rDA", "rY", "means")
 
   return(ranking)
 

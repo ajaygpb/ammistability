@@ -26,7 +26,12 @@ computation of SSI when \code{method = "rao"} (See
 \code{\link[AMMIStbP]{SSI}}).}
 }
 \value{
+A data frame with the following columns:  \item{ASTAB}{The ASTAB values.}
+ \item{SSI}{The computed values of simultaneous selection index for yield and
+ stability.} \item{rASTAB}{The ranks of ASTAB values.} \item{rY}{The ranks of
+ the mean yield of genotypes.} \item{means}{The mean yield of the genotypes.}
 
+ The names of the genotypes are indicated as the row names of the data frame.
 }
 \description{
 \code{ASTAB.AMMI} computes the AMMI Based Stability Parameter (ASTAB) (Rao
@@ -46,6 +51,38 @@ retained in the AMMI model via F tests); \eqn{\lambda_{n}} is the is the
 singular value for IPC \eqn{n} and correspondingly \eqn{\lambda_{n}^{2}}  is
 its eigen value; and \eqn{\gamma_{in}} is the eigenvector value for \eqn{i}th
 genotype.
+}
+\examples{
+library(agricolae)
+data(plrv)
+
+# AMMI model
+model <- with(plrv, AMMI(Locality, Genotype, Rep, Yield, console = FALSE))
+
+# ANOVA
+model$ANOVA
+
+# IPC F test
+model$analysis
+
+# Mean yield and IPC scores
+model$biplot
+
+# G*E matrix (deviations from mean)
+array(model$genXenv, dim(model$genXenv), dimnames(model$genXenv))
+
+# With default n (N') and default ssi.method (farshadfar)
+ASTAB.AMMI(model)
+
+# With n = 4 and default ssi.method (farshadfar)
+ASTAB.AMMI(model, n = 4)
+
+# With default n (N') and ssi.method = "rao"
+ASTAB.AMMI(model, ssi.method = "rao")
+
+# Changing the ratio of weights for Rao's SSI
+ASTAB.AMMI(model, ssi.method = "rao", a = 0.43)
+
 }
 \references{
 \insertRef{rao_use_2005}{AMMIStbP}

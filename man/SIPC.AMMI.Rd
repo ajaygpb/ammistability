@@ -26,7 +26,13 @@ computation of SSI when \code{method = "rao"} (See
 \code{\link[AMMIStbP]{SSI}}).}
 }
 \value{
+A data frame with the following columns:  \item{SIPC}{The SIPC
+ values.} \item{SSI}{The computed values of simultaneous selection index for
+ yield and stability.} \item{rSIPC}{The ranks of SIPC values.}
+ \item{rY}{The ranks of the mean yield of genotypes.} \item{means}{The mean
+ yield of the genotypes.}
 
+ The names of the genotypes are indicated as the row names of the data frame.
 }
 \description{
 \code{SIPC.AMMI} computes the Sums of the Absolute Value of the IPC Scores
@@ -54,6 +60,38 @@ scores of 1th, 2th, ..., and \eqn{n}th IPC.
 
 The closer the SIPC scores are to zero, the more stable the genotypes are
 across test environments.
+}
+\examples{
+library(agricolae)
+data(plrv)
+
+# AMMI model
+model <- with(plrv, AMMI(Locality, Genotype, Rep, Yield, console = FALSE))
+
+# ANOVA
+model$ANOVA
+
+# IPC F test
+model$analysis
+
+# Mean yield and IPC scores
+model$biplot
+
+# G*E matrix (deviations from mean)
+array(model$genXenv, dim(model$genXenv), dimnames(model$genXenv))
+
+# With default n (N') and default ssi.method (farshadfar)
+SIPC.AMMI(model)
+
+# With n = 4 and default ssi.method (farshadfar)
+SIPC.AMMI(model, n = 4)
+
+# With default n (N') and ssi.method = "rao"
+SIPC.AMMI(model, ssi.method = "rao")
+
+# Changing the ratio of weights for Rao's SSI
+SIPC.AMMI(model, ssi.method = "rao", a = 0.43)
+
 }
 \references{
 \insertRef{sneller_repeatability_1997}{AMMIStbP}

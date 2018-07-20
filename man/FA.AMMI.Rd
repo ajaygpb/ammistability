@@ -26,7 +26,14 @@ computation of SSI when \code{method = "rao"} (See
 \code{\link[AMMIStbP]{SSI}}).}
 }
 \value{
+A data frame with the following columns:  \item{FA}{The FA values.}
+  \item{SSI}{The computed values of simultaneous selection index for yield
+  and stability.} \item{rFA}{The ranks of FA values.} \item{rY}{The ranks of
+  the mean yield of genotypes.} \item{means}{The mean yield of the
+  genotypes.}
 
+  The names of the genotypes are indicated as the row names of the data
+  frame.
 }
 \description{
 \code{FA.AMMI} computes the Stability Measure Based on Fitted AMMI Model (FA)
@@ -36,8 +43,8 @@ Yield and Stability (SSI) is also calculated according to the argument
 \code{ssi.method}.
 }
 \details{
-The Stability Measure Based on Fitted AMMI Model
-(\eqn{FA}) is computed as follows:
+The Stability Measure Based on Fitted AMMI Model (\eqn{FA}) is computed as
+follows:
 
 \deqn{FA = \sum_{n=1}^{N'}\lambda_{n}^{2}\gamma_{in}^{2}}
 
@@ -48,12 +55,14 @@ its eigen value; and \eqn{\gamma_{in}} is the eigenvector value for \eqn{i}th
 genotype.
 
 When \eqn{N'} is replaced by 1 (only first IPC axis is considered for
-computation), then the parameter \eqn{FP} can be estimated (Zali et al., 2012).
+computation), then the parameter \eqn{FP} can be estimated (Zali et al.,
+2012).
 
 \deqn{FP = \lambda_{1}^{2}\gamma_{i1}^{2}}
 
 When \eqn{N'} is replaced by 2 (only first two IPC axes are considered for
-computation), then the parameter \eqn{B} can be estimated  (Zali et al., 2012).
+computation), then the parameter \eqn{B} can be estimated  (Zali et al.,
+2012).
 
 \deqn{B = \sum_{n=1}^{2}\lambda_{n}^{2}\gamma_{in}^{2}}
 
@@ -62,6 +71,38 @@ computation), then the parameter estimated is equivalent to Wricke's
 ecovalence (Wricke, 1962; Zali et al., 2012).
 
 \deqn{W_{(AMMI)} = \sum_{n=1}^{N}\lambda_{n}^{2}\gamma_{in}^{2}}
+}
+\examples{
+library(agricolae)
+data(plrv)
+
+# AMMI model
+model <- with(plrv, AMMI(Locality, Genotype, Rep, Yield, console = FALSE))
+
+# ANOVA
+model$ANOVA
+
+# IPC F test
+model$analysis
+
+# Mean yield and IPC scores
+model$biplot
+
+# G*E matrix (deviations from mean)
+array(model$genXenv, dim(model$genXenv), dimnames(model$genXenv))
+
+# With default n (N') and default ssi.method (farshadfar)
+FA.AMMI(model)
+
+# With n = 4 and default ssi.method (farshadfar)
+FA.AMMI(model, n = 4)
+
+# With default n (N') and ssi.method = "rao"
+FA.AMMI(model, ssi.method = "rao")
+
+# Changing the ratio of weights for Rao's SSI
+FA.AMMI(model, ssi.method = "rao", a = 0.43)
+
 }
 \references{
 \insertRef{wricke_method_1962}{AMMIStbP}
