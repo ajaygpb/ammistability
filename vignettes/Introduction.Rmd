@@ -147,7 +147,7 @@ Where,
 
 \newpage
 
-## Simultaneous Selection Indices for Yield and Stability
+## Simultaneous selection indices for yield and stability
 
 The most stable genotype need not necessarily be the highest yielding genotype. Hence, simultaneous selection indices (SSIs) have been proposed for the selection of stable as well as high yielding genotypes.
 
