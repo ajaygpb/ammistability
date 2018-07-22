@@ -86,7 +86,7 @@ The AMMI equation
 
 $$Y_{ij} = \mu + \alpha_{i} + \beta_{j} + \sum_{n=1}^{N}\lambda_{n}\gamma_{in}\delta_{jn} + \rho_{ij}$$
 
-Where, $Y_{ij}$ is the yield of $i$th genotype in $j$th environment, $\mu$ is the grand mean, $\alpha_{i}$ is the genotype deviation from the grand mean, $\beta_{j}$ is the environment deviation, $N$ is the total number of interaction principal components (IPCs), $\lambda_{n}$ is the is the singular value for IPC $n$ and correspondingly $\lambda_{n}^{2}$  is its eigen value, $\gamma_{in}$ is the eigenvector value for $i$th genotype, $\delta_{jn}$  is the eigenvector value for $j$th environment and $\rho_{ij}$ is the residual.
+Where, $Y_{ij}$ is the yield of the $i$th genotype in the $j$th environment, $\mu$ is the grand mean, $\alpha_{i}$ is the genotype deviation from the grand mean, $\beta_{j}$ is the environment deviation, $N$ is the total number of interaction principal components (IPCs), $\lambda_{n}$ is the is the singular value for $n$th IPC and correspondingly $\lambda_{n}^{2}$  is its eigen value, $\gamma_{in}$ is the eigenvector value for $i$th genotype, $\delta_{jn}$  is the eigenvector value for the $j$th environment and $\rho_{ij}$ is the residual.
 
 
 
@@ -135,9 +135,9 @@ pander::pander(stabparams, style='multiline',
 Where,
   $N$ is the total number of interaction principal components (IPCs);
   $N'$ is the number of significant IPCAs (number of IPC that were retained in the AMMI model via F tests);
-  $\lambda_{n}$ is the is the singular value for IPC $n$ and correspondingly $\lambda_{n}^{2}$  is its eigen value;
+  $\lambda_{n}$ is the is the singular value for $n$th IPC and correspondingly $\lambda_{n}^{2}$  is its eigen value;
   $\gamma_{in}$ is the eigenvector value for $i$th genotype;
-  $\delta_{jn}$  is the eigenvector value for $j$th environment;
+  $\delta_{jn}$  is the eigenvector value for the $j$th environment;
   $SSIPC_{1}$, $SSIPC_{2}$, $\cdots$, $SSIPC_{n}$ are the sum of squares of the 1st, 2th, ..., and $n$th IPC;
   $PC_{1}$, $PC_{2}$, $\cdots$, $PC_{n}$ are the scores of 1st, 2th, ..., and $n$th IPC;
   $\theta_{n}$ is the percentage sum of squares explained by $n$th principal component interaction effect; and
