@@ -26,13 +26,14 @@ computation of SSI when \code{method = "rao"} (See
 \code{\link[AMMIStbP]{SSI}}).}
 }
 \value{
-A data frame with the following columns:  \item{EV}{The EV
- values.} \item{SSI}{The computed values of simultaneous selection index for
- yield and stability.} \item{rEV}{The ranks of EV values.}
- \item{rY}{The ranks of the mean yield of genotypes.} \item{means}{The mean
- yield of the genotypes.}
+A data frame with the following columns:  \item{EV}{The EV values.}
+  \item{SSI}{The computed values of simultaneous selection index for yield
+  and stability.} \item{rEV}{The ranks of EV values.} \item{rY}{The ranks of
+  the mean yield of genotypes.} \item{means}{The mean yield of the
+  genotypes.}
 
- The names of the genotypes are indicated as the row names of the data frame.
+  The names of the genotypes are indicated as the row names of the data
+  frame.
 }
 \description{
 \code{EV.AMMI} computes the Sums of the Averages of the Squared Eigenvector
@@ -42,14 +43,19 @@ Index for Yield and Stability (SSI) is also calculated according to the
 argument \code{ssi.method}.
 }
 \details{
-The Averages of the Squared Eigenvector Values (\eqn{EV}) is computed as
-follows:
+The Averages of the Squared Eigenvector Values
+(\ifelse{html}{\out{<i>EV</i>}}{\eqn{EV}}) is computed as follows:
 
-\deqn{EV = \sum_{n=1}^{N'}\frac{\gamma_{in}^2}{N'}}
+\ifelse{html}{\out{<p style="text-align: center;"><i>EV =
+<big>&sum;</big><sup>N'</sup><sub style="line-height: 1.8; margin-left:
+-2ex;">n=1</sub> <sup>&gamma;<sup>2</sup><sub style="line-height: 1.8;
+margin-left: -1ex;">in</sub></sup> &frasl; <sub>N'</sub></i></p>}}{\deqn{EV =
+\sum_{n=1}^{N'}\frac{\gamma_{in}^2}{N'}}}
 
-Where, \eqn{N'} is the number of significant IPCs (number of IPC that were
-retained in the AMMI model via F tests); and \eqn{\gamma_{in}} is the
-eigenvector value for \eqn{i}th genotype.
+Where, \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is the number of significant
+IPCs (number of IPC that were retained in the AMMI model via F tests); and
+\ifelse{html}{\out{<i>&gamma;<sub>in<sub></i>}}{\eqn{\gamma_{in}}} is the
+eigenvector value for \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th genotype.
 }
 \examples{
 library(agricolae)

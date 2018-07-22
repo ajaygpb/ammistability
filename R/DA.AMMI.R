@@ -1,33 +1,45 @@
 #' Annicchiarico's D Parameter
 #'
 #' \code{DA.AMMI} computes the Annicchiarico's D Parameter values
-#' (\eqn{\textrm{D}_{\textrm{a}}}) (Annicchiarico, 1997) considering all
-#' significant interaction principal components (IPCs) in the AMMI model. It is
-#' the unsquared Euclidean distance from the origin of significant IPC axes in
-#' the AMMI model. Using \eqn{\textrm{D}_{\textrm{a}}}, the Simultaneous
-#' Selection Index for Yield and Stability (SSI) is also calculated according to
-#' the argument \code{ssi.method}.
+#' (\ifelse{html}{\out{D<sub>a</sub>}}{\eqn{\textrm{D}_{\textrm{a}}}})
+#' (Annicchiarico, 1997) considering all significant interaction principal
+#' components (IPCs) in the AMMI model. It is the unsquared Euclidean distance
+#' from the origin of significant IPC axes in the AMMI model. Using
+#' \ifelse{html}{\out{D<sub>a</sub>}}{\eqn{\textrm{D}_{\textrm{a}}}}, the
+#' Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
+#' according to the argument \code{ssi.method}.
 #'
-#' The Annicchiarico's D Parameter value (\eqn{D_{a}}) is computed as follows:
+#' The Annicchiarico's D Parameter value
+#' (\ifelse{html}{\out{<i>D<sub>a</sub></i>}}{\eqn{D_{a}}}) is computed as
+#' follows:
 #'
-#' \deqn{D_{a} = \sqrt{\sum_{n=1}^{N'}(\lambda_{n}\gamma_{in})^2}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><i>D<sub>a</sub> =
+#' &radic;<span
+#' style="text-decoration:overline"><big>&sum;</big><sup>N'</sup><sub
+#' style="line-height: 1.8; margin-left: -2ex;">n=1</sub>
+#' (&lambda;<sub>n</sub>&gamma;<sub>in</sub>)<sup>2</sup></span></i></p>}}{\deqn{D_{a}
+#' = \sqrt{\sum_{n=1}^{N'}(\lambda_{n}\gamma_{in})^2}}}
 #'
-#' Where, \eqn{N'} is the number of significant IPCAs (number of IPC that were
-#' retained in the AMMI model via F tests); \eqn{\lambda_{n}} is the singular
-#' value for IPC \eqn{n} and correspondingly \eqn{\lambda_{n}^{2}}  is its eigen
-#' value; and \eqn{\gamma_{in}} is the eigenvector value for \eqn{i}th genotype.
-#'
-#' The Yield Stability Index (\eqn{YSI}) is computed as follows:
+#' Where, \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is the number of significant
+#' IPCs (number of IPC that were retained in the AMMI model via F tests);
+#' \ifelse{html}{\out{<i>&lambda;<sub>n</sub></i>}}{\eqn{\lambda_{n}}} is the
+#' singular value for \ifelse{html}{\out{<i>n</i>}}{\eqn{n}}th IPC and
+#' correspondingly \ifelse{html}{\out{<i>&lambda;<sup>2</sup><sub
+#' style="line-height: 1.8; margin-left:
+#' -1ex;">n</sub></i>}}{\eqn{\lambda_{n}^{2}}} is its eigen value; and
+#' \ifelse{html}{\out{<i>&gamma;<sub>in<sub></i>}}{\eqn{\gamma_{in}}} is the
+#' eigenvector value for \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th genotype.
 #'
 #' @inheritParams MASV.AMMI
 #'
-#' @return A data frame with the following columns:  \item{DA}{The DA
-#'  values.} \item{SSI}{The computed values of simultaneous selection index for
-#'  yield and stability.} \item{rDA}{The ranks of DA values.}
-#'  \item{rY}{The ranks of the mean yield of genotypes.} \item{means}{The mean
-#'  yield of the genotypes.}
+#' @return A data frame with the following columns:  \item{DA}{The DA values.}
+#'   \item{SSI}{The computed values of simultaneous selection index for yield
+#'   and stability.} \item{rDA}{The ranks of DA values.} \item{rY}{The ranks of
+#'   the mean yield of genotypes.} \item{means}{The mean yield of the
+#'   genotypes.}
 #'
-#'  The names of the genotypes are indicated as the row names of the data frame.
+#'   The names of the genotypes are indicated as the row names of the data
+#'   frame.
 #'
 #' @importFrom agricolae AMMI
 #' @export

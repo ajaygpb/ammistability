@@ -26,12 +26,14 @@ computation of SSI when \code{method = "rao"} (See
 \code{\link[AMMIStbP]{SSI}}).}
 }
 \value{
-A data frame with the following columns:  \item{ASTAB}{The ASTAB values.}
- \item{SSI}{The computed values of simultaneous selection index for yield and
- stability.} \item{rASTAB}{The ranks of ASTAB values.} \item{rY}{The ranks of
- the mean yield of genotypes.} \item{means}{The mean yield of the genotypes.}
+A data frame with the following columns:  \item{ASTAB}{The ASTAB
+  values.} \item{SSI}{The computed values of simultaneous selection index for
+  yield and stability.} \item{rASTAB}{The ranks of ASTAB values.}
+  \item{rY}{The ranks of the mean yield of genotypes.} \item{means}{The mean
+  yield of the genotypes.}
 
- The names of the genotypes are indicated as the row names of the data frame.
+  The names of the genotypes are indicated as the row names of the data
+  frame.
 }
 \description{
 \code{ASTAB.AMMI} computes the AMMI Based Stability Parameter (ASTAB) (Rao
@@ -41,16 +43,24 @@ Index for Yield and Stability (SSI) is also calculated according to the
 argument \code{ssi.method}.
 }
 \details{
-The AMMI Based Stability Parameter value (\eqn{ASTAB}) is computed as
-follows:
+The AMMI Based Stability Parameter value
+(\ifelse{html}{\out{<i>ASTAB</i>}}{\eqn{ASTAB}}) is computed as follows:
 
-\deqn{ASTAB = \sum_{n=1}^{N'}\lambda_{n}\gamma_{in}^{2}}
+\ifelse{html}{\out{<p style="text-align: center;"><i>ASTAB =
+&sum;<sup>N'</sup><sub style="line-height: 1.8; margin-left: -2ex;">n=1</sub>
+&lambda;<sub>n</sub> &gamma;<sup>2</sup><sub style="line-height: 1.8;
+margin-left: -1ex;">in</sub></i></p>}}{\deqn{ASTAB =
+\sum_{n=1}^{N'}\lambda_{n}\gamma_{in}^{2}}}
 
-Where, \eqn{N'} is the number of significant IPCAs (number of IPC that were
-retained in the AMMI model via F tests); \eqn{\lambda_{n}} is the is the
-singular value for IPC \eqn{n} and correspondingly \eqn{\lambda_{n}^{2}}  is
-its eigen value; and \eqn{\gamma_{in}} is the eigenvector value for \eqn{i}th
-genotype.
+Where, \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is the number of significant
+IPCs (number of IPC that were retained in the AMMI model via F tests);
+\ifelse{html}{\out{<i>&lambda;<sub>n</sub></i>}}{\eqn{\lambda_{n}}} is the
+singular value for \ifelse{html}{\out{<i>n</i>}}{\eqn{n}}th IPC and
+correspondingly \ifelse{html}{\out{<i>&lambda;<sup>2</sup><sub
+style="line-height: 1.8; margin-left:
+-1ex;">n</sub></i>}}{\eqn{\lambda_{n}^{2}}} is its eigen value; and
+\ifelse{html}{\out{<i>&gamma;<sub>in<sub></i>}}{\eqn{\gamma_{in}}} is the
+eigenvector value for \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th genotype.
 }
 \examples{
 library(agricolae)

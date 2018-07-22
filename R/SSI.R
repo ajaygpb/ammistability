@@ -3,32 +3,56 @@
 #' \code{SSI} computes the Simultaneous Selection Index for Yield and Stability
 #' (SSI) according to the methods specified in the argument \code{method}.
 #'
-#' The SSI proposed by Rao and Prabhakaran (2005) (\eqn{I_{i}}) is computed as
+#' The SSI according to Rao and Prabhakaran (2005)
+#' (\ifelse{html}{\out{<i>I<sub>i</sub></i>}}{\eqn{I_{i}}}) is computed as
 #' follows:
 #'
-#' \deqn{I_{i} = \frac{\overline{Y}_{i}}{\overline{Y}_{..}} + \alpha
-#' \frac{\frac{1}{SP_{i}}}{\frac{1}{T}\sum_{i=1}^{T}\frac{1}{SP_{i}}}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><em>I<sub>i</sub> =
+#' <big>[</big><sup><span style="text-decoration:overline">Y</span><sub>i</sub>
+#' </sup>&frasl;<sup> </sup><sub><span
+#' style="text-decoration:overline">Y</span></sub><sub>..</sub><big>]</big> +
+#' &alpha; <big>[</big><sup>(1/SP<sub>i</sub>)</sup> <big>&frasl;</big>
+#' <sub>((1/T) <big>&sum;</big><sup>T</sup><sub style="line-height: 1.8;
+#' margin-left: -1ex;">i=1</sub>
+#' (1/SPi))</sub><big>]</big></em></p>}}{\deqn{I_{i} =
+#' \frac{\overline{Y}_{i}}{\overline{Y}_{..}} + \alpha
+#' \frac{\frac{1}{SP_{i}}}{\frac{1}{T}\sum_{i=1}^{T}\frac{1}{SP_{i}}}}}
 #'
-#' Where \eqn{SP_{i}} is the stability measure of the \eqn{i}th genotype under
-#' AMMI procedure;  \eqn{Y_{i}} is mean performance of \eqn{i}th genotype;
-#' \eqn{Y_{..}} is the overall mean; \eqn{T} is the number of genotypes under
-#' test and \eqn{\alpha} is the ratio of the weights given to the stability
-#' components (\eqn{w_{2}}) and yield (\eqn{w_{1}}) with a restriction that
-#' \eqn{w_{1} + w_{2} = 1}. The weights can be specified as required.
+#' Where \ifelse{html}{\out{<i>SP<sub>i</sub></i>}}{\eqn{SP_{i}}} is the
+#' stability measure of the \ifelse{html}{\out{<i>i</sub></i>}}{\eqn{i}}th
+#' genotype under AMMI procedure; \ifelse{html}{\out{<i><span
+#' style="text-decoration:overline">Y</span><sub>i</sub></i>}}{\eqn{\overline{Y}_{i}}}
+#' is mean performance of \ifelse{html}{\out{<i>i</sub></i>}}{\eqn{i}}th
+#' genotype; \ifelse{html}{\out{<i><span
+#' style="text-decoration:overline">Y</span><sub>..</sub></i>}}{\eqn{\overline{Y}_{..}}}
+#' is the overall mean; \ifelse{html}{\out{<i>T</sub></i>}}{\eqn{T}} is the
+#' number of genotypes under test and
+#' \ifelse{html}{\out{<i>&alpha;</sub></i>}}{\eqn{\alpha}} is the ratio of the
+#' weights given to the stability components
+#' (\ifelse{html}{\out{<i>w<sub>2</sub></i>}}{\eqn{w_{2}}}) and yield
+#' (\ifelse{html}{\out{<i>w<sub>1</sub></i>}}{\eqn{w_{1}}}) with a restriction
+#' that \ifelse{html}{\out{<i>w<sub>1</sub> + w<sub>2</sub> = 1</i>}}{\eqn{w_{1}
+#' + w_{2} = 1}}. The weights can be specified as required.
 #'
-#' \tabular{rrr}{ \strong{\eqn{\alpha}} \tab \strong{\eqn{w_{1}}} \tab
-#' \strong{\eqn{w_{2}}}\cr 1.00 \tab 0.5 \tab 0.5\cr 0.67 \tab 0.6 \tab 0.4\cr
-#' 0.43 \tab 0.7 \tab 0.3\cr 0.25 \tab 0.8 \tab 0.2\cr }
+#' \tabular{rrr}{ \strong{\ifelse{html}{\out{<i>&alpha;</i>}}{\eqn{\alpha}}}
+#' \tab \strong{\ifelse{html}{\out{<i>w<sub>1</sub></i>}}{\eqn{w_{1}}}} \tab
+#' \strong{\ifelse{html}{\out{<i>w<sub>2</sub></i>}}{\eqn{w_{2}}}}\cr 1.00 \tab
+#' 0.5 \tab 0.5\cr 0.67 \tab 0.6 \tab 0.4\cr 0.43 \tab 0.7 \tab 0.3\cr 0.25 \tab
+#' 0.8 \tab 0.2\cr }
 #'
 #' The SSI proposed by Farshadfar (2008) is called the Genotype stability index
-#' (GSI) or Yield stability index (YSI) (Farshadfar et al., 2011) and is computed
-#' by summation of the ranks of the stability index/parameter and the ranks of
-#' the mean yields.
+#' (\ifelse{html}{\out{GSI}}{\eqn{GSI}}) or Yield stability index
+#' (\ifelse{html}{\out{YSI}}{\eqn{YSI}}) (Farshadfar et al., 2011) and is
+#' computed by summation of the ranks of the stability index/parameter and the
+#' ranks of the mean yields.
 #'
-#' \deqn{GSI = YSI = R_{SP} + R_{Y}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><em>GSI = YSI =
+#' R<sub>SP</sub> + R<sub>Y</sub></em></p>}}{\deqn{GSI = YSI = R_{SP} + R_{Y}}}
 #'
-#' Where, \eqn{R_{SP}} is the stability parameter/index rank of the genotype and
-#' \eqn{R_{Y}} is the mean yield rank of the genotype.
+#' Where, \ifelse{html}{\out{<i>R<sub>SP</sub></i>}}{\eqn{R_{SP}}} is the
+#' stability parameter/index rank of the genotype and
+#' \ifelse{html}{\out{<i>R<sub>Y</sub></i>}}{\eqn{R_{Y}}} is the mean yield rank
+#' of the genotype.
 #'
 #' @param y A numeric vector of the mean yield/performance of genotypes.
 #' @param sp A numeric vector of the stability paramter/index of the genotypes.
@@ -44,7 +68,8 @@
 #'   parameter.} \item{rY}{The ranks of the mean yield of genotypes.}
 #'   \item{means}{The mean yield of the genotypes.}
 #'
-#'   The names of the genotypes are indicated as the row names of the data frame.
+#'   The names of the genotypes are indicated as the row names of the data
+#'   frame.
 #'
 #' @export
 #'
@@ -63,7 +88,7 @@
 #'   \code{\link[AMMIStbP]{MASV.AMMI}}, \code{\link[AMMIStbP]{SIPC.AMMI}},
 #'   \code{\link[AMMIStbP]{ZA.AMMI}}
 #'
-#'  @examples
+#' @examples
 #' library(agricolae)
 #' data(plrv)
 #' model <- with(plrv, AMMI(Locality, Genotype, Rep, Yield, console=FALSE))

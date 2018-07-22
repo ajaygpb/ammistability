@@ -26,13 +26,14 @@ computation of SSI when \code{method = "rao"} (See
 \code{\link[AMMIStbP]{SSI}}).}
 }
 \value{
-A data frame with the following columns:  \item{Za}{The Za
- values.} \item{SSI}{The computed values of simultaneous selection index for
- yield and stability.} \item{rZa}{The ranks of Za values.}
- \item{rY}{The ranks of the mean yield of genotypes.} \item{means}{The mean
- yield of the genotypes.}
+A data frame with the following columns:  \item{Za}{The Za values.}
+  \item{SSI}{The computed values of simultaneous selection index for yield
+  and stability.} \item{rZa}{The ranks of Za values.} \item{rY}{The ranks of
+  the mean yield of genotypes.} \item{means}{The mean yield of the
+  genotypes.}
 
- The names of the genotypes are indicated as the row names of the data frame.
+  The names of the genotypes are indicated as the row names of the data
+  frame.
 }
 \description{
 \code{ZA.AMMI} computes the Absolute Value of the Relative Contribution of
@@ -43,15 +44,21 @@ according to the argument \code{ssi.method}.
 }
 \details{
 The Absolute Value of the Relative Contribution of IPCs to the Interaction
-(\eqn{D_{Za}}) is computed as follows:
+(\ifelse{html}{\out{<i>Za</i>}}{\eqn{Za}}) is computed as follows:
 
-\deqn{Za = \sum_{i=1}^{N'}\left | \theta_{n}\gamma_{in} \right |}
+\ifelse{html}{\out{<p style="text-align: center;"><em>Za =
+&sum;<sup>N'</sup><sub style="line-height: 1.8; margin-left:
+-2ex;">n=1</sub>|&theta;<sub>n</sub>&gamma;<sub>in</sub>|</em></p>}}{\deqn{Za
+= \sum_{i=1}^{N'}\left | \theta_{n}\gamma_{in} \right |}}
 
-Where, \eqn{N'} is the number of significant IPCAs (number of IPC that were
-retained in the AMMI model via F tests); \eqn{\gamma_{in}} is the
-eigenvector value for \eqn{i}th genotype; and \eqn{\theta_{n}} is the
-percentage sum of squares explained by \eqn{n}th principal component
-interaction effect.
+Where, \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is the number of significant
+IPCAs (number of IPC that were retained in the AMMI model via F tests);
+\ifelse{html}{\out{<i>&gamma;<sub>in<sub></i>}}{\eqn{\gamma_{in}}} is the
+eigenvector value for \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th genotype; and
+\ifelse{html}{\out{<i>&theta;<sub>n</sub></i>}}{\eqn{\theta_{n}}} is the
+percentage sum of squares explained by the
+\ifelse{html}{\out{<i>n</i>}}{\eqn{n}}th principal component interaction
+effect..
 }
 \examples{
 library(agricolae)

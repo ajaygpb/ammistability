@@ -36,15 +36,25 @@ Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
 according to the argument \code{ssi.method}.
 }
 \details{
-The AMMI Stability Index (\eqn{ASI}) is computed as follows:
+The AMMI Stability Index (\ifelse{html}{\out{<i>ASI</i>}}{\eqn{ASI}}) is
+computed as follows:
 
-\deqn{ASI = \sqrt{\left [ PC_{1}^{2} \times \theta_{1}^{2} \right ]+\left [
-PC_{2}^{2} \times \theta_{2}^{2} \right ]}}
+\ifelse{html}{\out{<p style="text-align: center;"><i>ASI = &radic;<span
+style="text-decoration:overline">[PC<sup>2</sup><sub style="line-height: 1.8;
+margin-left: -1ex;">1</sub> &times; &theta;<sup>2</sup><sub
+style="line-height: 1.8; margin-left: -1ex;">1</sub>] + [PC<sup>2</sup><sub
+style="line-height: 1.8; margin-left: -1ex;">2</sub> &times;
+&theta;<sup>2</sup><sub style="line-height: 1.8; margin-left:
+-1ex;">2</sub>]</span></i></p>}}{\deqn{ASI = \sqrt{\left [ PC_{1}^{2} \times
+\theta_{1}^{2} \right ]+\left [ PC_{2}^{2} \times \theta_{2}^{2} \right ]}}}
 
-Where, \eqn{PC_{1}} and \eqn{PC_{2}} are the scores of 1st and 2nd IPCs
-respectively; and \eqn{\theta_{1}} and \eqn{\theta_{2}} are percentage sum of
-squares explained by the 1st and 2nd principal component interaction effect
-respectively.
+Where, \ifelse{html}{\out{<i>PC<sub>1</sub></i>}}{\eqn{PC_{1}}} and
+\ifelse{html}{\out{<i>PC<sub>2</sub></i>}}{\eqn{PC_{2}}} are the scores of
+1st and 2nd IPCs respectively; and
+\ifelse{html}{\out{<i>&theta;<sub>1</sub></i>}}{\eqn{\theta_{1}}} and
+\ifelse{html}{\out{<i>&theta;<sub>2</sub></i>}}{\eqn{\theta_{2}}} are
+percentage sum of squares explained by the 1st and 2nd principal component
+interaction effect respectively.
 }
 \examples{
 library(agricolae)

@@ -43,12 +43,21 @@ Stability (SSI) is also calculated according to the argument
 \code{ssi.method}.
 }
 \details{
-The Modified AMMI Stability Index (\eqn{MASI}) is computed as follows:
+The Modified AMMI Stability Index
+(\ifelse{html}{\out{<i>MASI</i>}}{\eqn{MASI}}) is computed as follows:
 
-\deqn{MASI = \sqrt{ \sum_{n=1}^{N'} PC_{n}^{2} \times \theta_{n}^{2}}}
+\ifelse{html}{\out{<p style="text-align: center;"><i>MASI = &radic;<span
+style="text-decoration:overline"> &sum;<sup>N';</sup><sub
+style="line-height: 1.8; margin-left: -2ex;">n=1</sub> PC<sup>2</sup><sub
+style="line-height: 1.8; margin-left: -1ex;">n</sub> &times;
+&theta;<sup>2</sup><sub style="line-height: 1.8; margin-left:
+-1ex;">n</sub></span></i></p>}}{\deqn{MASI = \sqrt{ \sum_{n=1}^{N'}
+PC_{n}^{2} \times \theta_{n}^{2}}}}
 
-Where, \eqn{PC_{n}} are the scores of \eqn{n}th IPC; and \eqn{\theta_{n}} is
-the percentage sum of squares explained by the \eqn{n}th principal component
+Where, \ifelse{html}{\out{<i>PC<sub>n</sub></i>}}{\eqn{PC_{n}}} are the
+scores of \ifelse{html}{\out{<i>n</i>}}{\eqn{n}}th IPC; and
+\ifelse{html}{\out{<i>&theta;<sub>n</sub></i>}}{\eqn{\theta_{n}}} is the
+percentage sum of squares explained by the \ifelse{html}{\out{<i>n</i>}}{\eqn{n}}th principal component
 interaction effect.
 }
 \examples{

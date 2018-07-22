@@ -26,31 +26,42 @@ computation of SSI when \code{method = "rao"} (See
 \code{\link[AMMIStbP]{SSI}}).}
 }
 \value{
-A data frame with the following columns:  \item{DZ}{The DZ
- values.} \item{SSI}{The computed values of simultaneous selection index for
- yield and stability.} \item{rDZ}{The ranks of DZ values.}
- \item{rY}{The ranks of the mean yield of genotypes.} \item{means}{The mean
- yield of the genotypes.}
+A data frame with the following columns:  \item{DZ}{The DZ values.}
+  \item{SSI}{The computed values of simultaneous selection index for yield
+  and stability.} \item{rDZ}{The ranks of DZ values.} \item{rY}{The ranks of
+  the mean yield of genotypes.} \item{means}{The mean yield of the
+  genotypes.}
 
- The names of the genotypes are indicated as the row names of the data frame.
+  The names of the genotypes are indicated as the row names of the data
+  frame.
 }
 \description{
 \code{DZ.AMMI} computes the Zhang's D Parameter values or AMMI statistic
 coefficient or AMMI distance or AMMI stability index
-(\eqn{\textrm{D}_{\textrm{z}}}) (Zhang, 1998) considering all significant
-interaction principal components (IPCs) in the AMMI model. It is the distance
-of IPC  point  from  origin  in space. Using \eqn{\textrm{D}_{\textrm{z}}},
-the Simultaneous Selection Index for Yield and Stability (SSI) is also
-calculated according to the argument \code{ssi.method}.
+(\ifelse{html}{\out{D<sub>z</sub>}}{\eqn{\textrm{D}_{\textrm{z}}}}) (Zhang,
+1998) considering all significant interaction principal components (IPCs) in
+the AMMI model. It is the distance of IPC  point  from  origin  in space.
+Using \ifelse{html}{\out{D<sub>z</sub>}}{\eqn{\textrm{D}_{\textrm{z}}}}, the
+Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
+according to the argument \code{ssi.method}.
 }
 \details{
-The Zhang's D Parameter value (\eqn{D_{z}}) is computed as follows:
+The Zhang's D Parameter value
+(\ifelse{html}{\out{<i>D<sub>z</sub></i>}}{\eqn{D_{z}}}) is computed as
+follows:
 
-\deqn{D_{z} = \sqrt{\sum_{n=1}^{N'}\gamma_{in}^{2}}}
+\ifelse{html}{\out{<p style="text-align: center;"><i>D<sub>z</sub> =
+&radic;<span
+style="text-decoration:overline"><big>&sum;</big><sup>N'</sup><sub
+style="line-height: 1.8; margin-left: -2ex;">n=1</sub>
+&gamma;<sup>2</sup><sub style="line-height: 1.8; margin-left:
+-1ex;">in</sub></span></i></p>}}{\deqn{D_{z} =
+\sqrt{\sum_{n=1}^{N'}\gamma_{in}^{2}}}}
 
-Where, \eqn{N'} is the number of significant IPCAs (number of IPC that were
-retained in the AMMI model via F tests); and \eqn{\gamma_{in}} is the
-eigenvector value for \eqn{i}th genotype.
+Where, \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is the number of significant
+IPCs (number of IPC that were retained in the AMMI model via F tests); and
+\ifelse{html}{\out{<i>&gamma;<sub>in<sub></i>}}{\eqn{\gamma_{in}}} is the
+eigenvector value for \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th genotype.
 }
 \examples{
 library(agricolae)

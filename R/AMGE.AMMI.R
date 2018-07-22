@@ -6,18 +6,26 @@
 #' Using AMGE, the Simultaneous Selection Index for Yield and Stability (SSI) is
 #' also calculated according to the argument \code{ssi.method}.
 #'
-#' The Sum Across Environments of GEI Modelled by AMMI (\eqn{AMGE}) is computed
-#' as follows:
+#' The Sum Across Environments of GEI Modelled by AMMI
+#' (\ifelse{html}{\out{<i>AMGE</i>}}{\eqn{AMGE}}) is computed as follows:
 #'
-#' \deqn{AMGE = \sum_{j=1}^{E} \sum_{n=1}^{N'} \lambda_{n} \gamma_{in}
-#' \delta_{jn}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><i>AMGE =
+#' <big>&sum;</big><sup>E</sup><sub style="line-height: 1.8; margin-left:
+#' -1ex;">j=1</sub><big>&sum;</big><sup>N'</sup><sub style="line-height: 1.8;
+#' margin-left: -2ex;">n=1</sub>
+#' &lambda;<sub>n</sub>&gamma;<sub>in</sub>&delta;<sub>jn</sub></i></p>}}{\deqn{AMGE
+#' = \sum_{j=1}^{E} \sum_{n=1}^{N'} \lambda_{n} \gamma_{in} \delta_{jn}}}
 #'
-#'
-#' Where, \eqn{N'} is the number of significant IPCs (number of IPC that were
-#' retained in the AMMI model via F tests); \eqn{\lambda_{n}} is the singular
-#' value for IPC \eqn{n} and correspondingly \eqn{\lambda_{n}^{2}}  is its eigen
-#' value; \eqn{\gamma_{in}} is the eigenvector value for \eqn{i}th genotype; and
-#' \eqn{\delta_{jn}}  is the eigenvector value for \eqn{j}th environment.
+#' Where, \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is the number of significant
+#' IPCs (number of IPC that were retained in the AMMI model via F tests);
+#' \ifelse{html}{\out{<i>&lambda;<sub>n</sub></i>}}{\eqn{\lambda_{n}}} is the
+#' singular value for \ifelse{html}{\out{<i>n</i>}}{\eqn{n}}th IPC and correspondingly
+#' \ifelse{html}{\out{<i>&lambda;<sup>2</sup><sub style="line-height: 1.8;
+#' margin-left: -1ex;">n</sub></i>}}{\eqn{\lambda_{n}^{2}}} is its eigen value;
+#' \ifelse{html}{\out{<i>&gamma;<sub>in<sub></i>}}{\eqn{\gamma_{in}}} is the
+#' eigenvector value for \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th genotype; and
+#' \ifelse{html}{\out{<i>&delta;<sub>jn<sub></i>}}{\eqn{\delta{jn}}} is the
+#' eigenvector value for the \ifelse{html}{\out{<i>j</i>}}{\eqn{j}}th environment.
 #'
 #' @inheritParams MASV.AMMI
 #'
@@ -27,7 +35,8 @@
 #'   ranks of the mean yield of genotypes.} \item{means}{The mean yield of the
 #'   genotypes.}
 #'
-#'   The names of the genotypes are indicated as the row names of the data frame.
+#'   The names of the genotypes are indicated as the row names of the data
+#'   frame.
 #'
 #' @importFrom agricolae AMMI
 #' @export
@@ -38,7 +47,7 @@
 #'
 #' @seealso \code{\link[AMMIStbP]{SSI}}
 #'
-#'  @examples
+#' @examples
 #' library(agricolae)
 #' data(plrv)
 #'
