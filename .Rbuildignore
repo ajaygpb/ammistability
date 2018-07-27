@@ -11,3 +11,7 @@
 ^vignettes/Introduction\.aux$
 ^vignettes/Introduction\.out$
 ^AMMIStbP\.pdf$
+^vignettes$
+^_pkgdown\.yml$
+^pkgdown$
+^test\.docx$
