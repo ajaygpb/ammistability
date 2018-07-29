@@ -323,7 +323,8 @@ ammistability <- function(model, n, alpha = 0.05,
   spcorrg <- ggcorrplot(spcorr, hc.order = FALSE, type = "lower",
                         outline.col = "white", p.mat = sppmat,
                         ggtheme = theme_bw, show.diag = TRUE, lab = TRUE)
-
+  spcorrg <- spcorrg +
+    ggtitle("Correlation between different\nAMMI stability parameters")
 
   # SSI corr
   del <- names(SSI) %in% c("genotype", "means")
@@ -341,7 +342,8 @@ ammistability <- function(model, n, alpha = 0.05,
   ssicorrg <- ggcorrplot(ssicorr, hc.order = FALSE, type = "lower",
                          outline.col = "white", p.mat = ssipmat,
                          ggtheme = theme_bw, show.diag = TRUE, lab = TRUE)
-
+  ssicorrg <- ssicorrg +
+    ggtitle("Correlation between simultaneous selection indices\nfrom different AMMI stability parameters")
 
   # SP SSI corr
   colnames(SSI) <- paste(colnames(SSI), "_SSI", sep = "")
@@ -364,7 +366,12 @@ ammistability <- function(model, n, alpha = 0.05,
 
   spssicorrg <- ggcorrplot(spssicorr, hc.order = FALSE, type = "lower",
                            outline.col = "white", p.mat = spssipmat,
-                           ggtheme = theme_bw, show.diag = TRUE, lab = TRUE)
+                           ggtheme = theme_bw, show.diag = TRUE, lab = TRUE,
+                           title = )
+
+  spssicorrg <- spssicorrg +
+    ggtitle("Correlation between different AMMI stability parameters\nand corresponding simultaneous selection indices")
+
 
   # Bump plots/ slopegraph
   #-------------------------------------------------------------------------------
@@ -376,7 +383,8 @@ ammistability <- function(model, n, alpha = 0.05,
                              force.grouping = TRUE, point.size = point.size,
                              point.alpha = point.alpha, line.size = line.size,
                              line.alpha = line.alpha, text.size = text.size,
-                             legend.position = "none")
+                             legend.position = "none") +
+    ggtitle("Slopegraph of ranks of mean yields and AMMI stability parameters")
 
   SSIrank <- rankdf(df = SSI, decreasing = "means",
                     increasing = names(SSI)[!(names(SSI) %in% c("genotype", "means"))])
@@ -385,7 +393,8 @@ ammistability <- function(model, n, alpha = 0.05,
                               force.grouping = TRUE, point.size = point.size,
                               point.alpha = point.alpha, line.size = line.size,
                               line.alpha = line.alpha, text.size = text.size,
-                              legend.position = "none")
+                              legend.position = "none") +
+    ggtitle("Slopegraph of ranks of mean yields and simultaneous selction indices")
   details <- sps
 
   out <- list(Details = details,
