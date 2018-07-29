@@ -104,5 +104,5 @@ AVAMGE.AMMI(model, ssi.method = "rao", a = 0.43)
 \insertRef{zali_evaluation_2012}{AMMIStbP}
 }
 \seealso{
-\code{\link[AMMIStbP]{SSI}}
+\code{\link[agricolae]{AMMI}}, \code{\link[AMMIStbP]{SSI}}
 }

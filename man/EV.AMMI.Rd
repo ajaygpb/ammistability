@@ -93,5 +93,5 @@ EV.AMMI(model, ssi.method = "rao", a = 0.43)
 \insertRef{zobel_stress_1994}{AMMIStbP}
 }
 \seealso{
-\code{\link[AMMIStbP]{SSI}}
+\code{\link[agricolae]{AMMI}}, \code{\link[AMMIStbP]{SSI}}
 }

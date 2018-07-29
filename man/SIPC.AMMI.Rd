@@ -114,5 +114,5 @@ SIPC.AMMI(model, ssi.method = "rao", a = 0.43)
 \insertRef{sneller_repeatability_1997}{AMMIStbP}
 }
 \seealso{
-\code{\link[AMMIStbP]{SSI}}
+\code{\link[agricolae]{AMMI}}, \code{\link[AMMIStbP]{SSI}}
 }

@@ -49,7 +49,7 @@
 #'
 #' \insertRef{zali_evaluation_2012}{AMMIStbP}
 #'
-#' @seealso \code{\link[AMMIStbP]{SSI}}
+#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[AMMIStbP]{SSI}}
 #'
 #' @examples
 #' library(agricolae)

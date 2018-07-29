@@ -114,7 +114,7 @@ SSI(y = yield, sp = stab, gen = genotypes, method = "rao", a = 0.43)
 }
 \seealso{
 \code{\link[AMMIStbP]{AMGE.AMMI}}, \code{\link[AMMIStbP]{ASI.AMMI}},
-  \code{\link[AMMIStbP]{ASTAB.AMMI}}, \code{\link[AVAMGE]{AMGE.AMMI}},
+  \code{\link[AMMIStbP]{ASTAB.AMMI}}, \code{\link[AVAMGE]{AVAMGE.AMMI}},
   \code{\link[AMMIStbP]{DA.AMMI}}, \code{\link[AMMIStbP]{DZ.AMMI}},
   \code{\link[AMMIStbP]{EV.AMMI}}, \code{\link[AMMIStbP]{FA.AMMI}},
   \code{\link[AMMIStbP]{MASV.AMMI}}, \code{\link[AMMIStbP]{SIPC.AMMI}},

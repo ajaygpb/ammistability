@@ -103,5 +103,5 @@ DA.AMMI(model, ssi.method = "rao", a = 0.43)
 \insertRef{annicchiarico_joint_1997}{AMMIStbP}
 }
 \seealso{
-\code{\link[AMMIStbP]{SSI}}
+\code{\link[agricolae]{AMMI}}, \code{\link[AMMIStbP]{SSI}}
 }

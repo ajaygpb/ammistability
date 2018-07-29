@@ -43,7 +43,7 @@
 #'
 #' \insertRef{rao_use_2005}{AMMIStbP}
 #'
-#' @seealso \code{\link[AMMIStbP]{SSI}}
+#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[AMMIStbP]{SSI}}
 #'
 #' @examples
 #' library(agricolae)

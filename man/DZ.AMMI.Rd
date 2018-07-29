@@ -99,5 +99,5 @@ DZ.AMMI(model, ssi.method = "rao", a = 0.43)
 \insertRef{zhang_analysis_1998}{AMMIStbP}
 }
 \seealso{
-\code{\link[AMMIStbP]{SSI}}
+\code{\link[agricolae]{AMMI}}, \code{\link[AMMIStbP]{SSI}}
 }
