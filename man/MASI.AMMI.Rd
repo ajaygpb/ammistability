@@ -46,13 +46,12 @@ Stability (SSI) is also calculated according to the argument
 The Modified AMMI Stability Index
 (\ifelse{html}{\out{<i>MASI</i>}}{\eqn{MASI}}) is computed as follows:
 
-\ifelse{html}{\out{<p style="text-align: center;"><i>MASI = &radic;<span
-style="text-decoration:overline"> &sum;<sup>N';</sup><sub style="line-height:
-1.8; margin-left: -2ex;">n=1</sub> PC<sup>2</sup><sub style="line-height:
-1.8; margin-left: -1ex;">n</sub> &times; &theta;<sup>2</sup><sub
-style="line-height: 1.8; margin-left:
--1ex;">n</sub></span></i></p>}}{\deqn{MASI = \sqrt{ \sum_{n=1}^{N'}
-PC_{n}^{2} \times \theta_{n}^{2}}}}
+\ifelse{html}{\out{<p style="text-align: center;"><i>MASI = <big>&radic;[
+&sum;</big><sup>N';</sup><sub style="line-height: 1.8; margin-left:
+-4ex;">n=1</sub> PC<sup>2</sup><sub style="line-height: 1.8; margin-left:
+-1ex;">n</sub> &times; &theta;<sup>2</sup><sub style="line-height: 1.8;
+margin-left: -1ex;">n</sub><big>]</big></i></p>}}{\deqn{MASI = \sqrt{
+\sum_{n=1}^{N'} PC_{n}^{2} \times \theta_{n}^{2}}}}
 
 Where, \ifelse{html}{\out{<i>PC<sub>n</sub></i>}}{\eqn{PC_{n}}} are the
 scores of \ifelse{html}{\out{<i>n</i>}}{\eqn{n}}th IPC; and

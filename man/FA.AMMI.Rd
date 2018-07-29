@@ -48,7 +48,7 @@ The Stability Measure Based on Fitted AMMI Model
 
 \ifelse{html}{\out{<p style="text-align: center;"><i>FA =
 <big>&sum;</big><sup>N'</sup><sub style="line-height: 1.8; margin-left:
--2ex;">n=1</sub> &lambda;<sup>2</sup><sub style="line-height: 1.8;
+-3ex;">n=1</sub> &lambda;<sup>2</sup><sub style="line-height: 1.8;
 margin-left: -1ex;">n</sub>&gamma;<sup>2</sup><sub style="line-height: 1.8;
 margin-left: -1ex;">in</sub></i></p>}}{\deqn{FA =
 \sum_{n=1}^{N'}\lambda_{n}^{2}\gamma_{in}^{2}}}

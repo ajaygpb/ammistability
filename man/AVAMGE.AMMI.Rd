@@ -50,7 +50,7 @@ computed as follows:
 \ifelse{html}{\out{<p style="text-align: center;"><i>AV<sub>(AMGE)</sub> =
 <big>&sum;</big><sup>E</sup><sub style="line-height: 1.8; margin-left:
 -1ex;">j=1</sub><big>&sum;</big><sup>N'</sup><sub style="line-height:
-1.8; margin-left: -2ex;">n=1</sub>
+1.8; margin-left: -3ex;">n=1</sub>
 |&lambda;<sub>n</sub>&gamma;<sub>in</sub>&delta;<sub>jn</sub>|</i></p>}}{\deqn{AV_{(AMGE)}
 = \sum_{j=1}^{E} \sum_{n=1}^{N'} \left |\lambda_{n} \gamma_{in} \delta_{jn}
 \right |}}

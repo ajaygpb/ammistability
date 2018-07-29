@@ -47,7 +47,7 @@ The AMMI Based Stability Parameter value
 (\ifelse{html}{\out{<i>ASTAB</i>}}{\eqn{ASTAB}}) is computed as follows:
 
 \ifelse{html}{\out{<p style="text-align: center;"><i>ASTAB =
-&sum;<sup>N'</sup><sub style="line-height: 1.8; margin-left: -2ex;">n=1</sub>
+&sum;<sup>N'</sup><sub style="line-height: 1.8; margin-left: -3ex;">n=1</sub>
 &lambda;<sub>n</sub> &gamma;<sup>2</sup><sub style="line-height: 1.8;
 margin-left: -1ex;">in</sub></i></p>}}{\deqn{ASTAB =
 \sum_{n=1}^{N'}\lambda_{n}\gamma_{in}^{2}}}

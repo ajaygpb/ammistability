@@ -13,11 +13,10 @@
 #' (\ifelse{html}{\out{<i>D<sub>a</sub></i>}}{\eqn{D_{a}}}) is computed as
 #' follows:
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><i>D<sub>a</sub> =
-#' &radic;<span
-#' style="text-decoration:overline"><big>&sum;</big><sup>N'</sup><sub
-#' style="line-height: 1.8; margin-left: -2ex;">n=1</sub>
-#' (&lambda;<sub>n</sub>&gamma;<sub>in</sub>)<sup>2</sup></span></i></p>}}{\deqn{D_{a}
+#' \ifelse{html}{\out{<p style="text-align: center;"><em>D<sub>a</sub>
+#' =&radic;<big>[&sum;</big><sup>N'</sup><sub style="line-height: 1.8;
+#' margin-left: -3ex;">n=1</sub>
+#' (&lambda;<sub>n</sub>&gamma;<sub>in</sub>)<sup>2</sup>]</em></p>}}{\deqn{D_{a}
 #' = \sqrt{\sum_{n=1}^{N'}(\lambda_{n}\gamma_{in})^2}}}
 #'
 #' Where, \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is the number of significant
@@ -102,6 +101,11 @@ DA.AMMI <- function(model, n, alpha = 0.05,
   # Check for n
   if (n %% 1 != 0 && length(n) != 1) {
     stop('"n" is not an integer vector of unit length')
+  }
+
+  # Check if n > N
+  if (n > nrow(model$analysis)) {
+    stop('"n" is greater than the number of IPCs in "model"')
   }
 
   ssi.method <- match.arg(ssi.method)

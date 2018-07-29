@@ -11,7 +11,7 @@
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>SIPC =
 #' &sum;<sup>N'</sup><sub style="line-height: 1.8; margin-left:
-#' -2ex;">n=1</sub>|&lambda;<sup>0.5</sup><sub style="line-height: 1.8;
+#' -3ex;">n=1</sub>|&lambda;<sup>0.5</sup><sub style="line-height: 1.8;
 #' margin-left: -2ex;">n</sub>
 #' &gamma;<sub>in</sub>|</em></p></body>}}{\deqn{SIPC = \sum_{n=1}^{N'} \left |
 #' \lambda_{n}^{0.5}\gamma_{in} \right |}}
@@ -113,6 +113,11 @@ SIPC.AMMI <- function(model, n, alpha = 0.05,
   # Check for n
   if (n %% 1 != 0 && length(n) != 1) {
     stop('"n" is not an integer vector of unit length')
+  }
+
+  # Check if n > N
+  if (n > nrow(model$analysis)) {
+    stop('"n" is greater than the number of IPCs in "model"')
   }
 
   ssi.method <- match.arg(ssi.method)

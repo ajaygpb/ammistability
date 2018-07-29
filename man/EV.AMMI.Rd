@@ -48,7 +48,7 @@ The Averages of the Squared Eigenvector Values
 
 \ifelse{html}{\out{<p style="text-align: center;"><i>EV =
 <big>&sum;</big><sup>N'</sup><sub style="line-height: 1.8; margin-left:
--2ex;">n=1</sub> <sup>&gamma;<sup>2</sup><sub style="line-height: 1.8;
+-3ex;">n=1</sub> <sup>&gamma;<sup>2</sup><sub style="line-height: 1.8;
 margin-left: -1ex;">in</sub></sup> &frasl; <sub>N'</sub></i></p>}}{\deqn{EV =
 \sum_{n=1}^{N'}\frac{\gamma_{in}^2}{N'}}}
 

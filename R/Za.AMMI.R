@@ -11,7 +11,7 @@
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>Za =
 #' &sum;<sup>N'</sup><sub style="line-height: 1.8; margin-left:
-#' -2ex;">n=1</sub>|&theta;<sub>n</sub>&gamma;<sub>in</sub>|</em></p>}}{\deqn{Za
+#' -3ex;">n=1</sub>|&theta;<sub>n</sub>&gamma;<sub>in</sub>|</em></p>}}{\deqn{Za
 #' = \sum_{i=1}^{N'}\left | \theta_{n}\gamma_{in} \right |}}
 #'
 #' Where, \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is the number of significant
@@ -95,6 +95,11 @@ ZA.AMMI <- function(model, n, alpha = 0.05,
   # Check for n
   if (n %% 1 != 0 && length(n) != 1) {
     stop('"n" is not an integer vector of unit length')
+  }
+
+  # Check if n > N
+  if (n > nrow(model$analysis)) {
+    stop('"n" is greater than the number of IPCs in "model"')
   }
 
   ssi.method <- match.arg(ssi.method)

@@ -48,7 +48,7 @@ follows:
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>SIPC =
 &sum;<sup>N'</sup><sub style="line-height: 1.8; margin-left:
--2ex;">n=1</sub>|&lambda;<sup>0.5</sup><sub style="line-height: 1.8;
+-3ex;">n=1</sub>|&lambda;<sup>0.5</sup><sub style="line-height: 1.8;
 margin-left: -2ex;">n</sub>
 &gamma;<sub>in</sub>|</em></p></body>}}{\deqn{SIPC = \sum_{n=1}^{N'} \left |
 \lambda_{n}^{0.5}\gamma_{in} \right |}}

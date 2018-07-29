@@ -51,11 +51,9 @@ The Zhang's D Parameter value
 follows:
 
 \ifelse{html}{\out{<p style="text-align: center;"><i>D<sub>z</sub> =
-&radic;<span
-style="text-decoration:overline"><big>&sum;</big><sup>N'</sup><sub
-style="line-height: 1.8; margin-left: -2ex;">n=1</sub>
-&gamma;<sup>2</sup><sub style="line-height: 1.8; margin-left:
--1ex;">in</sub></span></i></p>}}{\deqn{D_{z} =
+&radic;<big>[&sum;</big><sup>N'</sup><sub style="line-height: 1.8;
+margin-left: -3ex;">n=1</sub> &gamma;<sup>2</sup><sub style="line-height:
+1.8; margin-left: -1ex;">in</sub><big>]</big></i></p>}}{\deqn{D_{z} =
 \sqrt{\sum_{n=1}^{N'}\gamma_{in}^{2}}}}
 
 Where, \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is the number of significant

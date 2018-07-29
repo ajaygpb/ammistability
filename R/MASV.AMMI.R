@@ -11,11 +11,11 @@
 #' The Modified AMMI Stability Value
 #' (\ifelse{html}{\out{<i>MASV</i>}}{\eqn{MASV}}) is computed as follows:
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><i>MASV = &radic;<span
-#' style="text-decoration:overline">&sum;<sup>N'-1</sup><sub style="line-height:
-#' 1.8; margin-left: -4ex;">n=1</sub>((SSIPC<sub>n</sub> &frasl;
-#' SSIPC<sub>n+1</sub>) &times; PC<sub>1</sub>)<sup>2</sup> +
-#' (PC<sub>N'</sub>)<sup>2</sup></span></i></p>}}{\deqn{MASV =
+#' \ifelse{html}{\out{<p style="text-align: center;"><i>MASV =
+#' <big>&radic;[&sum;</big><sup>N'-1</sup><sub style="line-height: 1.8;
+#' margin-left: -5ex;">n=1</sub>((<sup>SSIPC<sub>n</sub></sup> &frasl;
+#' <sub>SSIPC<sub>n+1</sub></sub>) &times; PC<sub>1</sub>)<sup>2</sup> +
+#' (PC<sub>N'</sub>)<sup>2</sup><big>]</big></i></p>}}{\deqn{MASV =
 #' \sqrt{\sum_{n=1}^{N'-1}\left (\frac{SSIPC_{n}}{SSIPC_{n+1}} \times PC_{n}
 #' \right )^2   + \left (PC_{N'}  \right )^2}}}
 #'
@@ -35,18 +35,17 @@
 #'   (Purchase 1997; Purchase et al., 1999; Purchase et al., 2000).
 #'
 #'   \strong{ASV (Zali et al., 2012)} \ifelse{html}{\out{<p style="text-align:
-#'   center;"><i>ASV = &radic;<span
-#'   style="text-decoration:overline">(SSIPC<sub>1</sub> &frasl;
-#'   SSIPC<sub>2</sub>) &times; (PC<sub>1</sub>)<sup>2</sup> +
-#'   (PC<sub>2</sub>)<sup>2</sup></span></i></p>}}{\deqn{ASV = \sqrt{\left (
-#'   \frac{SSIPC_{1}}{SSIPC_{2}} \right ) \times (PC_{1})^2   + \left (PC_{2}
-#'   \right )^2}}}
+#'   center;"><i>ASV = <big>&radic;[</big>(<sup>SSIPC<sub>1</sub></sup>
+#'   <sub>&frasl; SSIPC<sub>2</sub></sub>) &times; (PC<sub>1</sub>)<sup>2</sup>
+#'   + (PC<sub>2</sub>)<sup>2</sup><big>]</big></i></p>}}{\deqn{ASV =
+#'   \sqrt{\left ( \frac{SSIPC_{1}}{SSIPC_{2}} \right ) \times (PC_{1})^2   +
+#'   \left (PC_{2} \right )^2}}}
 #'
 #'   \strong{ASV (Purchase 1997; Purchase et al., 1999; Purchase et al., 2000)}
-#'   \ifelse{html}{\out{<p style="text-align: center;"><i>ASV = &radic;<span
-#'   style="text-decoration:overline">((SSIPC<sub>1</sub> &frasl;
-#'   SSIPC<sub>2</sub>) &times; PC<sub>1</sub>)<sup>2</sup> +
-#'   (PC<sub>2</sub>)<sup>2</sup></span></i></p>}}{\deqn{ASV = \sqrt{\left
+#'   \ifelse{html}{\out{<p style="text-align: center;"><i>ASV =
+#'   <big>&radic;[</big>((<sup>SSIPC<sub>1</sub></sup> &frasl;
+#'   <sub>SSIPC<sub>2</sub></sub>) &times; PC<sub>1</sub>)<sup>2</sup> +
+#'   (PC<sub>2</sub>)<sup>2</sup><big>]</big></i></p>}}{\deqn{ASV = \sqrt{\left
 #'   (\frac{SSIPC_{1}}{SSIPC_{2}} \times PC_{1}  \right )^2   + \left (PC_{2}
 #'   \right )^2}}}
 #'
@@ -55,11 +54,11 @@
 #'   one in \code{MASV.AMMI}.
 #'
 #'   \strong{MASV (Zali et al., 2012)} \ifelse{html}{\out{<p style="text-align:
-#'   center;"><i>MASV = &radic;<span
-#'   style="text-decoration:overline">&sum;<sup>N'-1</sup><sub
-#'   style="line-height: 1.8; margin-left: -4ex;">n=1</sub>(SSIPC<sub>n</sub>
-#'   &frasl; SSIPC<sub>n+1</sub>) &times; (PC<sub>1</sub>)<sup>2</sup> +
-#'   (PC<sub>N'</sub>)<sup>2</sup></span></i></p>}}{\deqn{MASV =
+#'   center;"><i>MASV = <big>&radic;[&sum;</big><sup>N'-1</sup><sub
+#'   style="line-height: 1.8; margin-left:
+#'   -5ex;">n=1</sub>(<sup>SSIPC<sub>n</sub></sup> &frasl;
+#'   <sub>SSIPC<sub>n+1</sub></sub>) &times; (PC<sub>1</sub>)<sup>2</sup> +
+#'   (PC<sub>N'</sub>)<sup>2</sup><big>]</big></i></p>}}{\deqn{MASV =
 #'   \sqrt{\sum_{n=1}^{N'-1}\left ( \frac{SSIPC_{n}}{SSIPC_{n+1}} \right )
 #'   \times (PC_{n})^2   + \left (PC_{N'}  \right )^2}}}
 #'
@@ -153,6 +152,11 @@ MASV.AMMI <- function(model, n, alpha = 0.05,
   # Check for n
   if (n %% 1 != 0 && length(n) != 1) {
     stop('"n" is not an integer vector of unit length')
+  }
+
+  # Check if n > N
+  if (n > nrow(model$analysis)) {
+    stop('"n" is greater than the number of IPCs in "model"')
   }
 
   ssi.method <- match.arg(ssi.method)

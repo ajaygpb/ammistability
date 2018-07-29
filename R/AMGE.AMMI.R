@@ -11,8 +11,8 @@
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><i>AMGE =
 #' <big>&sum;</big><sup>E</sup><sub style="line-height: 1.8; margin-left:
-#' -1ex;">j=1</sub><big>&sum;</big><sup>N'</sup><sub style="line-height: 1.8;
-#' margin-left: -2ex;">n=1</sub>
+#' -3ex;">j=1</sub><big>&sum;</big><sup>N'</sup><sub style="line-height: 1.8;
+#' margin-left: -3ex;">n=1</sub>
 #' &lambda;<sub>n</sub>&gamma;<sub>in</sub>&delta;<sub>jn</sub></i></p>}}{\deqn{AMGE
 #' = \sum_{j=1}^{E} \sum_{n=1}^{N'} \lambda_{n} \gamma_{in} \delta_{jn}}}
 #'
@@ -99,6 +99,11 @@ AMGE.AMMI <- function(model, n, alpha = 0.05,
   # Check for n
   if (n %% 1 != 0 && length(n) != 1) {
     stop('"n" is not an integer vector of unit length')
+  }
+
+  # Check if n > N
+  if (n > nrow(model$analysis)) {
+    stop('"n" is greater than the number of IPCs in "model"')
   }
 
   ssi.method <- match.arg(ssi.method)
