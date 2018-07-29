@@ -35,6 +35,8 @@ VignetteBuilder: knitr
 RoxygenNote: 6.0.1
 Imports:
     agricolae,
+    ggcorrplot,
+    ggplot2,
     Rdpack
 Suggests:
     knitr,
