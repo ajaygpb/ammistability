@@ -140,7 +140,10 @@
 #' # AMMI model
 #' model <- with(plrv, AMMI(Locality, Genotype, Rep, Yield, console = FALSE))
 #'
-#' ammistability(model)
+#' ammistability(model, AMGE = TRUE, ASI = FALSE, ASV = TRUE, ASTAB = FALSE,
+#'               AVAMGE = FALSE, DA = FALSE, DZ = FALSE, EV = TRUE,
+#'               FA = FALSE, MASI = FALSE, MASV = TRUE, SIPC = TRUE,
+#'               ZA = FALSE)
 ammistability <- function(model, n, alpha = 0.05,
                           ssi.method = c("farshadfar", "rao"), a = 1,
                           AMGE = TRUE, ASI = TRUE, ASV = TRUE, ASTAB = TRUE,
