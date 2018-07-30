@@ -1,0 +1,59 @@
+template:
+  params:
+    bootswatch: paper
+    ganalytics: UA-123032895-1
+
+development:
+    mode: unreleased
+
+url: https://ajaygpb.github.io/ammistability/
+
+navbar:
+  title: ammistability
+  type: default
+  left:
+    - icon: fa-home fa-lg
+      text: Home
+      href: /index.html
+    - icon: fa-code
+      text: Reference
+      href: reference/index.html
+    - icon: fa-file-o
+      text: Introduction
+      href: articles/Introduction.html
+    - icon: fa-newspaper-o
+      text: News
+      href: news/index.html
+  right:
+    - icon: fa-github-alt
+      text: Github
+      href: https://github.com/ajaygpb/ammistability
+
+reference:
+    - title: Stability parameters
+      contents:
+         - '`AMGE.AMMI`'
+         - '`ASI.AMMI`'
+         - '`ASTAB.AMMI`'
+         - '`AVAMGE.AMMI`'
+         - '`DA.AMMI`'
+         - '`DZ.AMMI`'
+         - '`EV.AMMI`'
+         - '`FA.AMMI`'
+         - '`MASI.AMMI`'
+         - '`MASV.AMMI`'
+         - '`SIPC.AMMI`'
+         - '`ZA.AMMI`'
+
+    - title: Simultaneous selection index
+      contents:
+         - '`SSI`'
+
+    - title: Wrapper function
+      contents:
+         - '`ammistability`'
+
+    - title: Helper functions
+      contents:
+         - '`rankdf`'
+         - '`rankslopegraph`'
