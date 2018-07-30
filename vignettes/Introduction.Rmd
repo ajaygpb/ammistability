@@ -1,5 +1,5 @@
 ---
-title: "The **AMMIStbP** package: A brief introduction"
+title: "The **ammistability** package: A brief introduction"
 author: Ajay B. C.^1^, J. Aravind^2^, R. and Abdul Fiyaz^3^
 date: '`r Sys.Date()`'
 header-includes:
@@ -7,7 +7,7 @@ header-includes:
 - \usepackage{wrapfig}
 - \pagestyle{fancy}
 - \fancyhead[LE,RO]{\slshape \rightmark}
-- \fancyhead[LO,RE]{The AMMIStbP package{:} A brief introduction}
+- \fancyhead[LO,RE]{The ammistability package{:} A brief introduction}
 - \fancyfoot[C]{\thepage}
 - \usepackage{hyperref}
 - \hypersetup{colorlinks=true}
@@ -60,23 +60,23 @@ knitr::opts_chunk$set(
 
 
 
-The package `AMMIStbP` is .........
+The package `ammistability` is .........
 
 ## Installation
 The package can be installed using the following functions:
 
 ```{r, eval=FALSE}
 # Install from CRAN
-install.packages('AMMIStbP', dependencies=TRUE)
+install.packages('ammistability', dependencies=TRUE)
 
 # Install development version from Github
-devtools::install_github("ajaygpb/AMMIStbP")
+devtools::install_github("ajaygpb/ammistability")
 
 ```
 
 Then the package can be loaded using the function
 ```{r, eval=FALSE}
-library(AMMIStbP) # change eval
+library(ammistability) # change eval
 ```
 
 
@@ -92,7 +92,7 @@ Where, $Y_{ij}$ is the yield of the $i$th genotype in the $j$th environment, $\m
 
 ## AMMI stability parameters
 
-The details about AMMI stability parameters/indices implemented in `AMMIStbP` are described in Table 1.
+The details about AMMI stability parameters/indices implemented in `ammistability` are described in Table 1.
 
 
 
@@ -102,7 +102,7 @@ The details about AMMI stability parameters/indices implemented in `AMMIStbP` ar
 \rowcolors{2}{gray!25}{white}
 \renewcommand{\arraystretch}{1.3}
 
-**Table 1 :** AMMI stability parameters/indices implemented in `AMMIStbP`.
+**Table 1 :** AMMI stability parameters/indices implemented in `ammistability`.
 \footnotesize
 ```{r, echo = FALSE, eval = TRUE}
 load("stability.rda")
@@ -169,7 +169,7 @@ knitr::kable(alph, row.names = FALSE, col.names = c("$\\alpha$", "$w_{1}$", "$w_
 
 ``` 
 
-In `AMMIStbP`, the above expression has been implemented for all the stability parameters ($SP$) including ASTAB.
+In `ammistability`, the above expression has been implemented for all the stability parameters ($SP$) including ASTAB.
 
 $$I_{i} = \frac{\overline{Y}_{i}}{\overline{Y}_{..}} + \alpha \frac{\frac{1}{SP_{i}}}{\frac{1}{T}\sum_{i=1}^{T}\frac{1}{SP_{i}}}$$
 
@@ -179,16 +179,16 @@ $$GSI = YSI = R_{SP} + R_{Y}$$
 
 Where, $R_{SP}$ is the stability parameter/index rank of the genotype and $R_{Y}$ is the mean yield rank of the genotype.
 
-The function `SSI` implements both these indices in `AMMIStbP`. Further, for each of the stability parameter functions, the simultaneous selection index is also computed by either of these functions as specifiend by the argument `ssi.method`. 
+The function `SSI` implements both these indices in `ammistability`. Further, for each of the stability parameter functions, the simultaneous selection index is also computed by either of these functions as specifiend by the argument `ssi.method`. 
 
 ## Examples
 
-## Citing `AMMIStbP`
+## Citing `ammistability`
 
 ```{r, echo = FALSE, collapse = TRUE}
-detach("package:AMMIStbP", unload=TRUE)
-suppressPackageStartupMessages(library(AMMIStbP))
-cit <- citation("AMMIStbP")
+detach("package:ammistability", unload=TRUE)
+suppressPackageStartupMessages(library(ammistability))
+cit <- citation("ammistability")
 # yr <- format(Sys.Date(), "%Y")
 # cit[1]$year <- yr
 # oc <- class(cit)

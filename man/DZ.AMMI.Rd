@@ -19,11 +19,11 @@ to identify the number of significant IPCs.}
 
 \item{ssi.method}{The method for the computation of simultaneous selection
 index. Either \code{"farshadfar"} or \code{"rao"} (See
-\code{\link[AMMIStbP]{SSI}}).}
+\code{\link[ammistability]{SSI}}).}
 
 \item{a}{The ratio of the weights given to the stability components for
 computation of SSI when \code{method = "rao"} (See
-\code{\link[AMMIStbP]{SSI}}).}
+\code{\link[ammistability]{SSI}}).}
 }
 \value{
 A data frame with the following columns:  \item{DZ}{The DZ values.}
@@ -94,8 +94,8 @@ DZ.AMMI(model, ssi.method = "rao", a = 0.43)
 
 }
 \references{
-\insertRef{zhang_analysis_1998}{AMMIStbP}
+\insertRef{zhang_analysis_1998}{ammistability}
 }
 \seealso{
-\code{\link[agricolae]{AMMI}}, \code{\link[AMMIStbP]{SSI}}
+\code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{SSI}}
 }

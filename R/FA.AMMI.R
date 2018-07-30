@@ -76,13 +76,13 @@
 #'
 #' @references
 #'
-#' \insertRef{wricke_method_1962}{AMMIStbP}
+#' \insertRef{wricke_method_1962}{ammistability}
 #'
-#' \insertRef{raju_study_2002}{AMMIStbP}
+#' \insertRef{raju_study_2002}{ammistability}
 #'
-#' \insertRef{zali_evaluation_2012}{AMMIStbP}
+#' \insertRef{zali_evaluation_2012}{ammistability}
 #'
-#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[AMMIStbP]{SSI}}
+#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{SSI}}
 #'
 #' @examples
 #' library(agricolae)

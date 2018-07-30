@@ -37,8 +37,8 @@
 #' @importFrom agricolae AMMI
 #' @export
 #'
-#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[AMMIStbP]{ASI.AMMI}},
-#'   \code{\link[AMMIStbP]{SSI}}
+#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{ASI.AMMI}},
+#'   \code{\link[ammistability]{SSI}}
 #'
 #' @examples
 #' library(agricolae)

@@ -47,9 +47,9 @@
 #'
 #' @references
 #'
-#' \insertRef{zali_evaluation_2012}{AMMIStbP}
+#' \insertRef{zali_evaluation_2012}{ammistability}
 #'
-#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[AMMIStbP]{SSI}}
+#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{SSI}}
 #'
 #' @examples
 #' library(agricolae)

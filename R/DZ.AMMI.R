@@ -40,9 +40,9 @@
 #'
 #' @references
 #'
-#' \insertRef{zhang_analysis_1998}{AMMIStbP}
+#' \insertRef{zhang_analysis_1998}{ammistability}
 #'
-#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[AMMIStbP]{SSI}}
+#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{SSI}}
 #'
 #' @examples
 #' library(agricolae)

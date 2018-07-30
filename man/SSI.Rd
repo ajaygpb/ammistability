@@ -106,17 +106,17 @@ SSI(y = yield, sp = stab, gen = genotypes, method = "rao", a = 0.43)
 
 }
 \references{
-\insertRef{rao_use_2005}{AMMIStbP}
+\insertRef{rao_use_2005}{ammistability}
 
-\insertRef{farshadfar_incorporation_2008}{AMMIStbP}
+\insertRef{farshadfar_incorporation_2008}{ammistability}
 
-\insertRef{farshadfar_ammi_2011}{AMMIStbP}
+\insertRef{farshadfar_ammi_2011}{ammistability}
 }
 \seealso{
-\code{\link[AMMIStbP]{AMGE.AMMI}}, \code{\link[AMMIStbP]{ASI.AMMI}},
-  \code{\link[AMMIStbP]{ASTAB.AMMI}}, \code{\link[AVAMGE]{AVAMGE.AMMI}},
-  \code{\link[AMMIStbP]{DA.AMMI}}, \code{\link[AMMIStbP]{DZ.AMMI}},
-  \code{\link[AMMIStbP]{EV.AMMI}}, \code{\link[AMMIStbP]{FA.AMMI}},
-  \code{\link[AMMIStbP]{MASV.AMMI}}, \code{\link[AMMIStbP]{SIPC.AMMI}},
-  \code{\link[AMMIStbP]{ZA.AMMI}}
+\code{\link[ammistability]{AMGE.AMMI}}, \code{\link[ammistability]{ASI.AMMI}},
+  \code{\link[ammistability]{ASTAB.AMMI}}, \code{\link[AVAMGE]{AVAMGE.AMMI}},
+  \code{\link[ammistability]{DA.AMMI}}, \code{\link[ammistability]{DZ.AMMI}},
+  \code{\link[ammistability]{EV.AMMI}}, \code{\link[ammistability]{FA.AMMI}},
+  \code{\link[ammistability]{MASV.AMMI}}, \code{\link[ammistability]{SIPC.AMMI}},
+  \code{\link[ammistability]{ZA.AMMI}}
 }

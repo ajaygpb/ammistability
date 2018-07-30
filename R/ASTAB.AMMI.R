@@ -41,9 +41,9 @@
 #'
 #' @references
 #'
-#' \insertRef{rao_use_2005}{AMMIStbP}
+#' \insertRef{rao_use_2005}{ammistability}
 #'
-#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[AMMIStbP]{SSI}}
+#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{SSI}}
 #'
 #' @examples
 #' library(agricolae)

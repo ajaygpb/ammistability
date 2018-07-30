@@ -36,9 +36,9 @@
 #'
 #' @references
 #'
-#' \insertRef{zobel_stress_1994}{AMMIStbP}
+#' \insertRef{zobel_stress_1994}{ammistability}
 #'
-#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[AMMIStbP]{SSI}}
+#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{SSI}}
 #'
 #' @examples
 #' library(agricolae)

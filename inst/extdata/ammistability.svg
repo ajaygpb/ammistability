@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: SketchAPI 5.1.37 <https://api.sketch.io/> -->
+
+<svg
+   xmlns:sketchjs="https://sketch.io/dtd/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   sketchjs:metadata="eyJ0aXRsZSI6IkxvZ29NYWtyIiwiZGVzY3JpcHRpb24iOiJtYWRlIHdpdGggaHR0cDovL2xvZ29tYWtyLmNvbSIsIm1ldGFkYXRhIjp7InVzZXJBZ2VudCI6eyJ1c2VyQWdlbnQiOiJNb3ppbGxhLzUuMCAoWDExOyBVYnVudHU7IExpbnV4IHg4Nl82NDsgcnY6NTYuMCkgR2Vja28vMjAxMDAxMDEgRmlyZWZveC81Ni4wIiwiZWRnZSI6ZmFsc2UsImZpcmVmb3giOnRydWUsImllIjpmYWxzZSwib3BlcmEiOmZhbHNlLCJjaHJvbWUiOmZhbHNlLCJzYWZhcmkiOmZhbHNlLCJibGFja2JlcnJ5IjpmYWxzZSwibWFjIjpmYWxzZSwid2luZG93cyI6ZmFsc2UsImxpbnV4Ijp0cnVlLCJhbmRyb2lkIjpmYWxzZSwiaW9zIjpmYWxzZSwiX21vYmlsZSI6ZmFsc2UsImNvcmRvdmEiOmZhbHNlLCJwaGFudG9tIjpmYWxzZSwiY2hyb21lQXBwIjpmYWxzZSwibm9kZSI6ZmFsc2UsIm5vZGV3ZWJraXQiOmZhbHNlLCJsYW5nIjoiZW4tdXMiLCJoaXN0b3J5Ijp0cnVlLCJjaG9vc2VFbnRyeSI6ZmFsc2UsImNhbnZhcyI6dHJ1ZSwiY3NzQmFja2dyb3VuZEJsZW5kTW9kZSI6ImJhY2tncm91bmRCbGVuZE1vZGUiLCJjc3NCYWNrZ3JvdW5kQ2xpcCI6ImJhY2tncm91bmRDbGlwIiwiY3NzRmlsdGVyIjoiZmlsdGVyIiwiY3NzVGV4dEZpbGxDb2xvciI6IndlYmtpdFRleHRGaWxsQ29sb3IiLCJjc3NUcmFuc2Zvcm0iOiJ0cmFuc2Zvcm0iLCJjc3NUcmFuc2Zvcm1PcmlnaW4iOiJ0cmFuc2Zvcm1PcmlnaW4iLCJjdHhfaW1hZ2VTbW9vdGhpbmciOnRydWUsImN0eF9saW5lRGFzaCI6dHJ1ZSwiY3R4X2JsaXAiOnRydWUsImdjbyI6eyJzb3VyY2Utb3ZlciI6dHJ1ZSwic291cmNlLWluIjp0cnVlLCJzb3VyY2Utb3V0Ijp0cnVlLCJzb3VyY2UtYXRvcCI6dHJ1ZSwiZGVzdGluYXRpb24tb3ZlciI6dHJ1ZSwiZGVzdGluYXRpb24taW4iOnRydWUsImRlc3RpbmF0aW9uLW91dCI6dHJ1ZSwiZGVzdGluYXRpb24tYXRvcCI6dHJ1ZSwibGlnaHRlciI6dHJ1ZSwiY29weSI6dHJ1ZSwieG9yIjp0cnVlLCJfX2NvbXBvc2l0ZSI6dHJ1ZSwibm9ybWFsIjp0cnVlLCJtdWx0aXBseSI6dHJ1ZSwic2NyZWVuIjp0cnVlLCJvdmVybGF5Ijp0cnVlLCJkYXJrZW4iOnRydWUsImxpZ2h0ZW4iOnRydWUsImNvbG9yLWRvZGdlIjp0cnVlLCJjb2xvci1idXJuIjp0cnVlLCJoYXJkLWxpZ2h0Ijp0cnVlLCJzb2Z0LWxpZ2h0Ijp0cnVlLCJkaWZmZXJlbmNlIjp0cnVlLCJleGNsdXNpb24iOnRydWUsImh1ZSI6dHJ1ZSwic2F0dXJhdGlvbiI6dHJ1ZSwiY29sb3IiOnRydWUsImx1bWlub3NpdHkiOnRydWUsIl9fYmxlbmQiOnRydWV9LCJfcGl4ZWxSYXRpbyI6MSwicGl4ZWxSYXRpbyI6MSwiaWRiIjp0cnVlLCJpbmNvZ25pdG8iOmZhbHNlLCJpb19ibG9iIjp0cnVlLCJpZGJfYmxvYiI6dHJ1ZSwiY2xpcGJvYXJkIjp0cnVlfX0sImNsaXBQYXRoIjp7ImVuYWJsZWQiOnRydWV9LCJleHBvcnREUEkiOjcyLCJleHBvcnRGb3JtYXQiOiJwbmciLCJleHBvcnRRdWFsaXR5IjowLjk1LCJzY2FsZSI6MSwidW5pdHMiOiIlIiwid2lkdGgiOjEwMCwiaGVpZ2h0IjoxMDAsInBhZ2VzIjp7Imxlbmd0aCI6MSwiZGF0YSI6W3sid2lkdGgiOjEwMCwiaGVpZ2h0IjoxMDB9XX19"
+   width="1.73in"
+   height="2in"
+   viewBox="463.36046 86 155.70001 180"
+   sketchjs:version="5.1.37"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="ammistability.svg"
+   inkscape:export-filename="C:\Users\J. Aravind\Dropbox\R packages\Extras\hex logos\ammistability.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
+  <metadata
+     id="metadata25">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs23">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3828"
+       is_visible="true" />
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="715"
+     id="namedview21"
+     showgrid="false"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="-18.806683"
+     inkscape:cy="114.2229"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2"
+     showguides="false"
+     units="in" />
+  <path
+     style="fill:#c0c3be;fill-opacity:1;stroke:none"
+     d="m 504.58018,239.38481 -36.3562,-20.99425 0.0718,-42.33409 0.0725,-42.33397 36.44609,-21.04974 36.44607,-21.049767 1.87049,1.071512 c 1.02883,0.589336 17.43959,10.065705 36.46825,21.058715 l 34.59781,19.98706 0,42.31338 0,42.3133 -36.28443,21.00394 c -19.95632,11.55218 -36.43994,21.00484 -36.62997,21.0061 -0.19004,10e-4 -16.70573,-9.44536 -36.70163,-20.99219 z"
+     id="path4525"
+     inkscape:connector-curvature="0" />
+  <g
+     transform="matrix(1.2500001,0,0,-1.6595986,-80.67824,520.16039)"
+     inkscape:label="sig"
+     id="g5326">
+    <g
+       id="g5328">
+      <g
+         id="g8488"
+         transform="translate(25.479999,122)">
+        <path
+           d="m 472.03094,135.25901 57.29761,-24.94487 0,-49.876924 -57.29761,-24.944871 -57.29761,24.944871 0,49.876924 z m 0,4.34666 -62.28001,-27.11481 0,-54.230363 62.28001,-27.114806 62.28001,27.114806 0,54.230363 z"
+           id="path4"
+           style="fill:#000000;fill-opacity:1"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+  </g>
+  <g
+     id="g4167"
+     transform="matrix(1.0513643,0,0,1.0513643,-30.662021,-3.6186866)">
+    <text
+       sodipodi:linespacing="125%"
+       id="text3801-8"
+       y="163.16092"
+       x="517.8009"
+       style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:29.64869881px;line-height:125%;font-family:'Lucida Console';-inkscape-font-specification:'Sans Oblique';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-weight:normal;font-size:35.00000381px;font-family:'Tw Cen MT Condensed Extra Bold';-inkscape-font-specification:'Tw Cen MT Condensed Extra Bold';fill:#000000;fill-opacity:1;"
+         y="163.16092"
+         x="517.8009"
+         id="tspan3803-8"
+         sodipodi:role="line">ammi</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3801-1-2"
+       y="191.10155"
+       x="552.49396"
+       style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:29.64870071px;line-height:125%;font-family:'Lucida Console';-inkscape-font-specification:'Sans Oblique';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-weight:normal;font-size:35.00000381px;font-family:'Tw Cen MT Condensed Extra Bold';-inkscape-font-specification:'Tw Cen MT Condensed Extra Bold';fill:#000000;fill-opacity:1;"
+         y="191.10155"
+         x="552.49396"
+         id="tspan3803-7-7"
+         sodipodi:role="line">stability</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3801"
+       y="161.66328"
+       x="516.38647"
+       style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35.00000381px;line-height:125%;font-family:'Lucida Console';-inkscape-font-specification:'Sans Oblique';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-weight:normal;font-size:35.00000381px;font-family:'Tw Cen MT Condensed Extra Bold';-inkscape-font-specification:'Tw Cen MT Condensed Extra Bold';fill:#ffffff;fill-opacity:1"
+         y="161.66328"
+         x="516.38647"
+         id="tspan3803"
+         sodipodi:role="line">ammi</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3801-1"
+       y="189.60391"
+       x="551.07953"
+       style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:29.64870071px;line-height:125%;font-family:'Lucida Console';-inkscape-font-specification:'Sans Oblique';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-weight:normal;font-size:35.00000381px;font-family:'Tw Cen MT Condensed Extra Bold';-inkscape-font-specification:'Tw Cen MT Condensed Extra Bold';fill:#ffffff;fill-opacity:1"
+         y="189.60391"
+         x="551.07953"
+         id="tspan3803-7"
+         sodipodi:role="line">stability</tspan></text>
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:30px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="378.80685"
+     y="500.45239"
+     id="text4175"
+     sodipodi:linespacing="125%"
+     transform="matrix(0.8644112,-0.50278548,0.50278554,0.8644112,0,0)"><tspan
+       sodipodi:role="line"
+       id="tspan4177"
+       x="378.80685"
+       y="500.45239"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.62500048px;font-family:'Tw Cen MT Condensed';-inkscape-font-specification:'Tw Cen MT Condensed, ';fill:#ffffff;fill-opacity:1">github.com/ajaygpb/ammistability</tspan></text>
+</svg>

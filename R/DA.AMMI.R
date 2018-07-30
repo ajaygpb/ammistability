@@ -45,9 +45,9 @@
 #'
 #' @references
 #'
-#' \insertRef{annicchiarico_joint_1997}{AMMIStbP}
+#' \insertRef{annicchiarico_joint_1997}{ammistability}
 #'
-#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[AMMIStbP]{SSI}}
+#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{SSI}}
 #'
 #' @examples
 #' library(agricolae)

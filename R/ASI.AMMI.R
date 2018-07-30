@@ -31,10 +31,10 @@
 #'   \code{\link[agricolae]{AMMI}}).
 #' @param ssi.method The method for the computation of simultaneous selection
 #'   index. Either \code{"farshadfar"} or \code{"rao"} (See
-#'   \code{\link[AMMIStbP]{SSI}}).
+#'   \code{\link[ammistability]{SSI}}).
 #' @param a The ratio of the weights given to the stability components for
 #'   computation of SSI when \code{method = "rao"} (See
-#'   \code{\link[AMMIStbP]{SSI}}).
+#'   \code{\link[ammistability]{SSI}}).
 #'
 #' @return A data frame with the following columns:  \item{ASI}{The ASI values.}
 #'   \item{SSI}{The computed values of simultaneous selection index for yield
@@ -50,13 +50,13 @@
 #'
 #' @references
 #'
-#' \insertRef{jambhulkar_ammi_2014}{AMMIStbP}
+#' \insertRef{jambhulkar_ammi_2014}{ammistability}
 #'
-#' \insertRef{jambhulkar_genotype_2015}{AMMIStbP}
+#' \insertRef{jambhulkar_genotype_2015}{ammistability}
 #'
-#' \insertRef{jambhulkar_stability_2017}{AMMIStbP}
+#' \insertRef{jambhulkar_stability_2017}{ammistability}
 #'
-#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[AMMIStbP]{SSI}}
+#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{SSI}}
 #'
 #' @examples
 #' library(agricolae)

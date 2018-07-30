@@ -19,11 +19,11 @@ to identify the number of significant IPCs.}
 
 \item{ssi.method}{The method for the computation of simultaneous selection
 index. Either \code{"farshadfar"} or \code{"rao"} (See
-\code{\link[AMMIStbP]{SSI}}).}
+\code{\link[ammistability]{SSI}}).}
 
 \item{a}{The ratio of the weights given to the stability components for
 computation of SSI when \code{method = "rao"} (See
-\code{\link[AMMIStbP]{SSI}}).}
+\code{\link[ammistability]{SSI}}).}
 }
 \value{
 A data frame with the following columns:  \item{SIPC}{The SIPC
@@ -111,8 +111,8 @@ SIPC.AMMI(model, ssi.method = "rao", a = 0.43)
 
 }
 \references{
-\insertRef{sneller_repeatability_1997}{AMMIStbP}
+\insertRef{sneller_repeatability_1997}{ammistability}
 }
 \seealso{
-\code{\link[agricolae]{AMMI}}, \code{\link[AMMIStbP]{SSI}}
+\code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{SSI}}
 }

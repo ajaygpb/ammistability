@@ -1,4 +1,4 @@
-Package: AMMIStbP
+Package: ammistability
 Type: Package
 Title: Additive Main Effects and Multiplicative Interaction Model Stability Parameters
 Version: 0.0.0.9000
@@ -43,5 +43,5 @@ Suggests:
     rmarkdown,
 	  pander
 RdMacros: Rdpack
-URL: http://github.com/ajaygpb/AMMIStbp
-BugReports: http://github.com/ajaygpb/AMMIStbp/issues
+URL: http://github.com/ajaygpb/ammistability
+BugReports: http://github.com/ajaygpb/ammistability/issues
