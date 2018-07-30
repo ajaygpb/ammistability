@@ -167,6 +167,66 @@ Where,
 
 \newpage
 
+#### Examples
+
+```{r, echo = FALSE}
+# Function saved in functions.R file
+getCode <- function(myFunction, myPackage) {
+  out <- example(myFunction, myPackage, ask = FALSE, character.only = TRUE,
+          prompt.prefix = "", give.lines = TRUE)
+  maxn <- grep(pattern = "### ** Examples", x = out, fixed = TRUE)
+  out <- out[-(1:maxn)]
+  
+  return(out)
+}
+library(ammistability)
+require(ammistability)
+```
+
+#### `AMGE.AMMI()`
+```{r, runCode, code = getCode("AMGE.AMMI", "ammistability")}
+```
+
+#### `ASI.AMMI()`
+```{r, runCode, code = getCode("ASI.AMMI", "ammistability")}
+```
+
+#### `ASTAB.AMMI()`
+```{r, runCode, code = getCode("ASTAB.AMMI", "ammistability")}
+```
+
+#### `AVAMGE.AMMI()`
+```{r, runCode, code = getCode("AVAMGE.AMMI", "ammistability")}
+```
+
+#### `DA.AMMI()`
+```{r, runCode, code = getCode("DA.AMMI", "ammistability")}
+```
+
+#### `DZ.AMMI()`
+```{r, runCode, code = getCode("DZ.AMMI", "ammistability")}
+```
+
+#### `EV.AMMI()`
+```{r, runCode, code = getCode("EV.AMMI", "ammistability")}
+```
+
+#### `FA.AMMI()`
+```{r, runCode, code = getCode("FA.AMMI", "ammistability")}
+```
+
+#### `MASV.AMMI()`
+```{r, runCode, code = getCode("MASI.AMMI", "ammistability")}
+```
+
+#### `SIPC.AMMI()`
+```{r, runCode, code = getCode("SIPC.AMMI", "ammistability")}
+```
+
+#### `ZA.AMMI()`
+```{r, runCode, code = getCode("AMGE.AMMI", "ammistability")}
+```
+
 ## Simultaneous selection indices for yield and stability
 
 The most stable genotype need not necessarily be the highest yielding genotype. Hence, simultaneous selection indices (SSIs) have been proposed for the selection of stable as well as high yielding genotypes.
@@ -201,7 +261,69 @@ Where, $R_{SP}$ is the stability parameter/index rank of the genotype and $R_{Y}
 
 The function `SSI` implements both these indices in `ammistability`. Further, for each of the stability parameter functions, the simultaneous selection index is also computed by either of these functions as specifiend by the argument `ssi.method`. 
 
-## Examples
+#### Examples
+
+```{r, echo = FALSE}
+# Function saved in functions.R file
+getCode <- function(myFunction, myPackage) {
+  out <- example(myFunction, myPackage, ask = FALSE, character.only = TRUE,
+          prompt.prefix = "", give.lines = TRUE)
+  maxn <- grep(pattern = "### ** Examples", x = out, fixed = TRUE)
+  out <- out[-(1:maxn)]
+  
+  return(out)
+}
+library(ammistability)
+require(ammistability)
+```
+
+#### `SSI()`
+```{r, runCode, code = getCode("SSI", "ammistability")}
+```
+
+
+## Citing `ammistability`
+
+```{r, echo = FALSE, collapse = TRUE}
+# detach("package:ammistability", unload=TRUE)
+suppressPackageStartupMessages(library(ammistability))
+cit <- citation("ammistability")
+# yr <- format(Sys.Date(), "%Y")
+# cit[1]$year <- yr
+# oc <- class(cit)
+# 
+# cit <- unclass(cit)
+# attr(cit[[1]],"textVersion") <- gsub("\\(\\)",
+#                                      paste("\\(", yr, "\\)", sep = ""),
+#                                      attr(cit[[1]],"textVersion"))
+# class(cit) <- oc
+cit
+```
+
+## Wrapper function
+
+ammistability is a wrapper....
+
+#### Examples
+
+```{r, echo = FALSE}
+# Function saved in functions.R file
+getCode <- function(myFunction, myPackage) {
+  out <- example(myFunction, myPackage, ask = FALSE, character.only = TRUE,
+          prompt.prefix = "", give.lines = TRUE)
+  maxn <- grep(pattern = "### ** Examples", x = out, fixed = TRUE)
+  out <- out[-(1:maxn)]
+  
+  return(out)
+}
+library(ammistability)
+require(ammistability)
+```
+
+#### `ammistability()`
+```{r, runCode, code = getCode("ammistability", "ammistability")}
+```
+
 
 ## Citing `ammistability`
 
