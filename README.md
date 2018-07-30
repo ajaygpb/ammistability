@@ -1,5 +1,5 @@
 
-## `ammistability`: Additive Main Effects and Multiplicative Interaction Model Stability Parameters
+## `ammistability`: Additive Main Effects and Multiplicative Interaction Model Stability Parameters <img src="https://raw.githubusercontent.com/ajaygpb/ammistability/master/inst/extdata/ammistability.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;">
 
 ###### Version : [0.0.0.9000](https://ajaygpb.github.io/ammistability/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
 
@@ -26,7 +26,7 @@ WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org
 [![Last-changedate](https://img.shields.io/badge/last%20change-2018--07--30-yellowgreen.svg)](/commits/master)
 <!-- [![Rdoc](http://www.rdocumentation.org/badges/version/ammistability)](http://www.rdocumentation.org/packages/ammistability) -->
 <!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963) -->
-<!-- [![Analytics](https://pro-pulsar-193905.appspot.com/UA-116683292-1/welcome-page)](https://github.com/aravind-j/google-analytics-beacon) -->
+[![Analytics](https://pro-pulsar-193905.appspot.com/UA-123032895-2/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
 
 -----
 
@@ -83,30 +83,32 @@ news(package='ammistability')
 
 ## Citing `ammistability`
 
-To cite the methods in the package
-    use:
+To cite the methods in the package use:
 
 ``` r
 citation("ammistability")
 ```
 
-    Warning in citation("ammistability"): no date field in DESCRIPTION file of
-    package 'ammistability'
-    Warning in citation("ammistability"): could not determine year for
-    'ammistability' from package DESCRIPTION file
-    
-    To cite package 'ammistability' in publications use:
-    
-      Ajay Basapura Chandrashekar, J. Aravind and R. Abdul Fiyaz (NA).
-      ammistability: Additive Main Effects and Multiplicative
-      Interaction Model Stability Parameters. R package version
-      0.0.0.9000. http://github.com/ajaygpb/ammistability
-    
-    A BibTeX entry for LaTeX users is
-    
-      @Manual{,
-        title = {ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters},
-        author = {{Ajay Basapura Chandrashekar} and {J. Aravind} and {R. Abdul Fiyaz}},
-        note = {R package version 0.0.0.9000},
-        url = {http://github.com/ajaygpb/ammistability},
-      }
+``` 
+
+To cite the R package 'ammistability' in publications use:
+
+  Ajay B. C., J. Aravind, and R. Abdul Fiyaz (2018).
+  ammistability: Additive Main Effects and Multiplicative
+  Interaction Model Stability Parameters. R package version
+  0.0.0.9000, https://ajaygpb.github.io/ammistability/.
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters},
+    author = {{Ajay Basapura Chandrashekar} and {J. Aravind} and {R. Abdul Fiyaz}},
+    year = {2018},
+    note = {R package version 0.0.0.9000},
+    note = {https://ajaygpb.github.io/ammistability/},
+  }
+
+This free and open-source software implements academic research by
+the authors and co-workers. If you use it, please support the
+project by citing the package.
+```
