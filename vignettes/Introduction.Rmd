@@ -183,48 +183,53 @@ library(ammistability)
 require(ammistability)
 ```
 
+#### AMMI model from `agricolae::AMMI`
+```{r, runCode, code = getCode("AMGE.AMMI", "ammistability")[(1:19)]}
+```
+
+
 #### `AMGE.AMMI()`
-```{r, runCode, code = getCode("AMGE.AMMI", "ammistability")}
+```{r, runCode, code = getCode("AMGE.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `ASI.AMMI()`
-```{r, runCode, code = getCode("ASI.AMMI", "ammistability")}
+```{r, runCode, code = getCode("ASI.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `ASTAB.AMMI()`
-```{r, runCode, code = getCode("ASTAB.AMMI", "ammistability")}
+```{r, runCode, code = getCode("ASTAB.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `AVAMGE.AMMI()`
-```{r, runCode, code = getCode("AVAMGE.AMMI", "ammistability")}
+```{r, runCode, code = getCode("AVAMGE.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `DA.AMMI()`
-```{r, runCode, code = getCode("DA.AMMI", "ammistability")}
+```{r, runCode, code = getCode("DA.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `DZ.AMMI()`
-```{r, runCode, code = getCode("DZ.AMMI", "ammistability")}
+```{r, runCode, code = getCode("DZ.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `EV.AMMI()`
-```{r, runCode, code = getCode("EV.AMMI", "ammistability")}
+```{r, runCode, code = getCode("EV.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `FA.AMMI()`
-```{r, runCode, code = getCode("FA.AMMI", "ammistability")}
+```{r, runCode, code = getCode("FA.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `MASV.AMMI()`
-```{r, runCode, code = getCode("MASI.AMMI", "ammistability")}
+```{r, runCode, code = getCode("MASI.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `SIPC.AMMI()`
-```{r, runCode, code = getCode("SIPC.AMMI", "ammistability")}
+```{r, runCode, code = getCode("SIPC.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `ZA.AMMI()`
-```{r, runCode, code = getCode("AMGE.AMMI", "ammistability")}
+```{r, runCode, code = getCode("AMGE.AMMI", "ammistability")[-(1:19)]}
 ```
 
 ## Simultaneous selection indices for yield and stability
@@ -281,25 +286,6 @@ require(ammistability)
 ```{r, runCode, code = getCode("SSI", "ammistability")}
 ```
 
-
-## Citing `ammistability`
-
-```{r, echo = FALSE, collapse = TRUE}
-# detach("package:ammistability", unload=TRUE)
-suppressPackageStartupMessages(library(ammistability))
-cit <- citation("ammistability")
-# yr <- format(Sys.Date(), "%Y")
-# cit[1]$year <- yr
-# oc <- class(cit)
-# 
-# cit <- unclass(cit)
-# attr(cit[[1]],"textVersion") <- gsub("\\(\\)",
-#                                      paste("\\(", yr, "\\)", sep = ""),
-#                                      attr(cit[[1]],"textVersion"))
-# class(cit) <- oc
-cit
-```
-
 ## Wrapper function
 
 ammistability is a wrapper....
@@ -342,7 +328,6 @@ cit <- citation("ammistability")
 # class(cit) <- oc
 cit
 ```
-
 
 ## Session Info
 
