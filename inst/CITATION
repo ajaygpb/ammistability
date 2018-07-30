@@ -1,0 +1,32 @@
+citHeader("To cite the R package 'ammistability' in publications use:")
+
+if(!exists("meta") || is.null(meta)) meta <- packageDescription("ammistability")
+year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
+if (!length(year)) {
+ year <- format(packageDate("ammistability"), "%Y")
+}
+vers <- paste("R package version", meta$Version)
+
+citEntry(entry  = "Manual",
+         title  = "ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters",
+         author = personList(person(c("Ajay", "Basapura Chandrashekar"),
+                                    email = "ajaygpb@yahoo.co.in",
+                                    role = c("aut", "cre")),
+                            person(c("J.", "Aravind"),
+                                    email = "j.aravind@icar.gov.in",
+                                    role = c("aut"),
+                                    comment = c(ORCID = "0000-0002-4791-442X")),
+                            person(c("R.", "Abdul Fiyaz"),
+                                    email = "fiyaz.ra@icar.gov.in",
+                                    role = "aut")),
+         year = year,
+         textVersion = paste(
+           "Ajay B. C., J. Aravind, and R. Abdul Fiyaz (",
+           year, ").  ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters. ",
+           vers, ", ", "https://ajaygpb.github.io/ammistability/",
+           ".", sep=""),
+         note = {c(paste(vers), "https://ajaygpb.github.io/ammistability/")})
+           
+citFooter("This free and open-source software implements academic
+research by the authors and co-workers. If you use it, please support
+the project by citing the package.")
