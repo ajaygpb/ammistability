@@ -30,11 +30,6 @@ WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org
 
 -----
 
-## Warning
-
-Package is not stable at present. It is under development. Please use
-only after release of stable version.
-
 ## Description
 
 Computes various stability parameters from Additive Main Effects and
@@ -98,17 +93,16 @@ citation("ammistability")
 
 To cite the R package 'ammistability' in publications use:
 
-  Ajay B. C., J. Aravind, and R. Abdul Fiyaz (2018).
-  ammistability: Additive Main Effects and Multiplicative
-  Interaction Model Stability Parameters. R package version
-  0.0.0.9000, https://ajaygpb.github.io/ammistability/.
+  Ajay B. C., J. Aravind, and R. Abdul Fiyaz (NA).  ammistability:
+  Additive Main Effects and Multiplicative Interaction Model
+  Stability Parameters. R package version 0.0.0.9000,
+  https://ajaygpb.github.io/ammistability/.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters},
     author = {{Ajay Basapura Chandrashekar} and {J. Aravind} and {R. Abdul Fiyaz}},
-    year = {2018},
     note = {R package version 0.0.0.9000},
     note = {https://ajaygpb.github.io/ammistability/},
   }
