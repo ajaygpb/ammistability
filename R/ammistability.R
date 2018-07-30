@@ -11,27 +11,28 @@
 #' \code{ammistability} computes the following stability parameters from an AMMI
 #' model.
 #'
-#' \describe{ \item{\link[ammistability:AMGE.AMMI]{Sum Across Environments of GEI
-#' Modelled by AMMI (AMGE)}}{Sneller et al., 1997}
-#' \item{\link[ammistability:ASI.AMMI]{AMMI Stability Index (ASI)}}{Jambhulkar et
-#' al., 2014; Jambhulkar et al., 2015; Jambhulkar et al., 2017}
-#' \item{\link[ammistability:MASV.AMMI]{AMMI Stability Value (ASV)}}{Purchase 1997;
-#' Purchase et al., 1999; Purchase et al., 2000}
-#' \item{\link[ammistability:ASTAB.AMMI]{AMMI Based Stability Parameter (ASTAB)}}{Rao
-#' and Prabhakaran, 2005} \item{\link[ammistability:AVAMGE.AMMI]{Sum Across
-#' Environments of Absolute Value of GEI Modelled by AMMI (AVAMGE)}}{Zali et
-#' al., 2012} \item{\link[ammistability:DA.AMMI]{Annicchiarico's D Parameter
-#' (DA)}}{Annicchiarico, 1997} \item{\link[ammistability:DZ.AMMI]{Zhang's D Parameter
-#' (DZ)}}{Zhang, 1998} \item{\link[ammistability:EV.AMMI]{Averages of the Squared
-#' Eigenvector Values (EV)}}{Zobel, 1994}
-#' \item{\link[ammistability:FA.AMMI]{Stability Measure Based on Fitted AMMI Model
-#' (FA)}}{Raju, 2002} \item{\link[ammistability:MASI.AMMI]{Modified AMMI Stability
-#' Index (MASI)}}{Ajay et al., 2018} \item{\link[ammistability:MASV.AMMI]{Modified
-#' AMMI Stability Value (MASV)}}{Zali et al., 2012}
-#' \item{\link[ammistability:SIPC.AMMI]{Sums of the Absolute Value of the IPC Scores
-#' (SIPC)}}{Sneller et al., 1997} \item{\link[ammistability:ZA.AMMI]{Absolute Value
-#' of the Relative Contribution of IPCs to the Interaction (Za)}}{Zali et al.,
-#' 2012} }
+#' \describe{ \item{\link[ammistability:AMGE.AMMI]{Sum Across Environments of
+#' GEI Modelled by AMMI (AMGE)}}{Sneller et al., 1997}
+#' \item{\link[ammistability:ASI.AMMI]{AMMI Stability Index (ASI)}}{Jambhulkar
+#' et al., 2014; Jambhulkar et al., 2015; Jambhulkar et al., 2017}
+#' \item{\link[ammistability:MASV.AMMI]{AMMI Stability Value (ASV)}}{Purchase
+#' 1997; Purchase et al., 1999; Purchase et al., 2000}
+#' \item{\link[ammistability:ASTAB.AMMI]{AMMI Based Stability Parameter
+#' (ASTAB)}}{Rao and Prabhakaran, 2005}
+#' \item{\link[ammistability:AVAMGE.AMMI]{Sum Across Environments of Absolute
+#' Value of GEI Modelled by AMMI (AVAMGE)}}{Zali et al., 2012}
+#' \item{\link[ammistability:DA.AMMI]{Annicchiarico's D Parameter
+#' (DA)}}{Annicchiarico, 1997} \item{\link[ammistability:DZ.AMMI]{Zhang's D
+#' Parameter (DZ)}}{Zhang, 1998} \item{\link[ammistability:EV.AMMI]{Averages of
+#' the Squared Eigenvector Values (EV)}}{Zobel, 1994}
+#' \item{\link[ammistability:FA.AMMI]{Stability Measure Based on Fitted AMMI
+#' Model (FA)}}{Raju, 2002} \item{\link[ammistability:MASI.AMMI]{Modified AMMI
+#' Stability Index (MASI)}}{Ajay et al., 2018}
+#' \item{\link[ammistability:MASV.AMMI]{Modified AMMI Stability Value
+#' (MASV)}}{Zali et al., 2012} \item{\link[ammistability:SIPC.AMMI]{Sums of the
+#' Absolute Value of the IPC Scores (SIPC)}}{Sneller et al., 1997}
+#' \item{\link[ammistability:ZA.AMMI]{Absolute Value of the Relative
+#' Contribution of IPCs to the Interaction (Za)}}{Zali et al., 2012} }
 #'
 #' @inheritParams MASV.AMMI
 #' @param AMGE If \code{TRUE}, computes AMGE (see \strong{Details}). Default is
@@ -77,17 +78,32 @@
 #' @param text.size Size of text annotations plotted in the slopegraphs. Must be
 #'   numeric.
 #'
-#' @return
+#' @return A list with the following components: \item{Details}{A data frame
+#'   indicating the stability parameters computed and the method used for
+#'   computing the SSI.} \item{Stability Parameters}{A data frame of computed
+#'   stability parameters.} \item{Simultaneous Selection Indices}{A data frame
+#'   of computed SSIs.} \item{SP Correlation}{A data frame of correlation
+#'   between stability parameters.} \item{SSI Correlation}{A data frame of
+#'   correlation between SSIs.} \item{SP and SSI Correlation}{A data frame of
+#'   correlation between stability parameters and SSIs.} \item{SP
+#'   Correlogram}{Correlogram of stability parameters.} \item{SSI
+#'   Correlogram}{Correlogram of SSIs.} \item{SP and SSI
+#'   Correlogram}{Correlogram of stability parameters and SSIs.} \item{SP
+#'   Slopegraph}{Slopegraph of stability parameters.} \item{SSI
+#'   Slopegraph}{Slopegraph of SSIs.}
+#'
 #' @import ggcorrplot
 #' @export
 #'
-#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{AMGE.AMMI}},
-#'   \code{\link[ammistability]{ASI.AMMI}}, \code{\link[ammistability]{ASTAB.AMMI}},
-#'   \code{\link[AVAMGE]{AMGE.AMMI}}, \code{\link[ammistability]{DA.AMMI}},
-#'   \code{\link[ammistability]{DZ.AMMI}}, \code{\link[ammistability]{EV.AMMI}},
-#'   \code{\link[ammistability]{FA.AMMI}}, \code{\link[ammistability]{MASV.AMMI}},
-#'   \code{\link[ammistability]{SIPC.AMMI}}, \code{\link[ammistability]{ZA.AMMI}},
-#'   \code{\link[SSI]{SSI.AMMI}}
+#' @seealso \code{\link[agricolae]{AMMI}},
+#'   \code{\link[ammistability]{AMGE.AMMI}},
+#'   \code{\link[ammistability]{ASI.AMMI}},
+#'   \code{\link[ammistability]{ASTAB.AMMI}}, \code{\link[AVAMGE]{AMGE.AMMI}},
+#'   \code{\link[ammistability]{DA.AMMI}}, \code{\link[ammistability]{DZ.AMMI}},
+#'   \code{\link[ammistability]{EV.AMMI}}, \code{\link[ammistability]{FA.AMMI}},
+#'   \code{\link[ammistability]{MASV.AMMI}},
+#'   \code{\link[ammistability]{SIPC.AMMI}},
+#'   \code{\link[ammistability]{ZA.AMMI}}, \code{\link[SSI]{SSI.AMMI}}
 #'
 #' @references
 #'
@@ -395,7 +411,11 @@ ammistability <- function(model, n, alpha = 0.05,
                               line.alpha = line.alpha, text.size = text.size,
                               legend.position = "none") +
     ggtitle("Slopegraph of ranks of mean yields and simultaneous selction indices")
-  details <- sps
+  details <- list(`Stability parameters estimated` =  as.character(sps[sps$logical, ]$sp),
+                  `SSI method` = ifelse(ssi.method == "rao",
+                                        paste("Rao and Prabhakaran (2005)",
+                                              "with a =", a),
+                                        "Farshadfar (2008)"))
 
   out <- list(Details = details,
               `Stability Parameters` = SP,

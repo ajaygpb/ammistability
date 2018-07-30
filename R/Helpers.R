@@ -1,22 +1,49 @@
-#' Title
+#' Rank Slopegraph
 #'
-#' @param df
-#' @param names
-#' @param group
-#' @param force.grouping
-#' @param line.size
-#' @param line.alpha
-#' @param line.col
-#' @param point.size
-#' @param point.alpha
-#' @param point.col
-#' @param legend.position
+#' Create a slopegraph or bump chart from a data frame of ranks.
 #'
-#' @return
+#' @param df A data frame of records.
+#' @param names The name of the column having the names of the records.
+#' @param group Optional. The name of the column with a grouping variable.
+#' @param force.grouping If \code{TRUE}, the column specified in the argument
+#'   \code{names} will be considered as a grouping variable for plotting the
+#'   slopegraphs. (Each record will be represented by a different colour).
+#'   Default is \code{TRUE}.
+#' @param line.size Size of lines plotted. Must be numeric.
+#' @param line.alpha Transparency of lines plotted. Must be
+#'   numeric.
+#' @param line.col Default is \code{TRUE}. Overrides colouring by
+#'   \code{force.grouping} argument.
+#' @param point.size Size of points plotted. Must be numeric.
+#' @param point.alpha Transparency of points plotted. Must be
+#'   numeric.
+#' @param point.col Default is \code{TRUE}. Overrides colouring by
+#'   \code{force.grouping} argument.
+#' @param text.size Size of text annotations plotted. Must be
+#'   numeric.
+#' @param legend.position Position of the legend in the plot.
+#'
+#' @references
+#'
+#' \insertRef{tufte_visual_1986}{ammistability}
+#'
+#' @return The slopegraph as a \code{ggplot2} grob.
 #' @import ggplot2
 #' @export
 #'
 #' @examples
+#' library(agricolae)
+#' data(soil)
+#'
+#' dec <- c("pH", "EC")
+#' inc <- c("CaCO3", "MO", "CIC", "P", "K", "sand",
+#'          "slime", "clay", "Ca", "Mg", "K2", "Na", "Al_H", "K_Mg", "Ca_Mg",
+#'          "B", "Cu", "Fe", "Mn", "Zn")
+#'
+#' soilrank <- rankdf(soil, increasing = inc, decreasing = dec)
+#' soilrank
+#' soilslopeg <- rankslopegraph(soilrank, names = "place")
+#' soilslopeg
 rankslopegraph <- function(df, names, group, force.grouping = TRUE,
                            line.size = 1, line.alpha = 0.5, line.col = NULL,
                            point.size = 1, point.alpha = 0.5, point.col = NULL,
@@ -31,10 +58,11 @@ rankslopegraph <- function(df, names, group, force.grouping = TRUE,
 
   dfmelt <- reshape2::melt(df, id.vars = ids)
 
-
   # # consolidate duplicated ranks
   # dfmelt2 <- aggregate(. ~value+variable, data=dfmelt,
   #                     function(x) paste(unique(x), collapse = "\n"))
+
+  dfmelt[, names] <- as.character(dfmelt[, names])
 
   dfmelt <- transform(dfmelt, lab1 = ave(get(names), variable, value,
                                          FUN = toString))
@@ -95,18 +123,30 @@ rankslopegraph <- function(df, names, group, force.grouping = TRUE,
 }
 
 
-
-#' Title
+#' Ranks in a data.frame
 #'
-#' @param df
-#' @param increasing
-#' @param decreasing
+#' @param df A data frame.
+#' @param increasing A character vector of column names of the data frame to be
+#'   ranked in increasing order.
+#' @param decreasing A character vector of column names of the data frame to be
+#'   ranked in decreasing order.
 #' @param ...
 #'
-#' @return
+#' @return A data frame with the ranks computed in the columns specified in
+#'   arguments \code{increasing} and \code{decreasing}.
 #' @export
 #'
 #' @examples
+#' library(agricolae)
+#' data(soil)
+#'
+#' dec <- c("pH", "EC")
+#' inc <- c("CaCO3", "MO", "CIC", "P", "K", "sand",
+#'          "slime", "clay", "Ca", "Mg", "K2", "Na", "Al_H", "K_Mg", "Ca_Mg",
+#'          "B", "Cu", "Fe", "Mn", "Zn")
+#'
+#' soilrank <- rankdf(soil, increasing = inc, decreasing = dec)
+#' soilrank
 rankdf <- function(df, increasing, decreasing, ...) {
   df[, decreasing] <- lapply(df[, decreasing, drop=FALSE],
                              function(x) rank(-x, ...))

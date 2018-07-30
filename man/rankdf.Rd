@@ -2,13 +2,37 @@
 % Please edit documentation in R/Helpers.R
 \name{rankdf}
 \alias{rankdf}
-\title{Title}
+\title{Ranks in a data.frame}
 \usage{
 rankdf(df, increasing, decreasing, ...)
 }
 \arguments{
+\item{df}{A data frame.}
+
+\item{increasing}{A character vector of column names of the data frame to be
+ranked in increasing order.}
+
+\item{decreasing}{A character vector of column names of the data frame to be
+ranked in decreasing order.}
+
 \item{...}{}
 }
+\value{
+A data frame with the ranks computed in the columns specified in
+  arguments \code{increasing} and \code{decreasing}.
+}
 \description{
-Title
+Ranks in a data.frame
+}
+\examples{
+library(agricolae)
+data(soil)
+
+dec <- c("pH", "EC")
+inc <- c("CaCO3", "MO", "CIC", "P", "K", "sand",
+         "slime", "clay", "Ca", "Mg", "K2", "Na", "Al_H", "K_Mg", "Ca_Mg",
+         "B", "Cu", "Fe", "Mn", "Zn")
+
+soilrank <- rankdf(soil, increasing = inc, decreasing = dec)
+soilrank
 }
