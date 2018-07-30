@@ -49,7 +49,7 @@ devtools::load_all(".")
 Package is not stable at present. It is under development. Please use only after release of stable version.
 
 ## Description
-`r gsub("\\n", " ", packageDescription("germinationmetrics", fields = "Description"))`
+`r gsub("\\n", " ", packageDescription("ammistability", fields = "Description"))`
 
 ## Installation
 
@@ -90,7 +90,7 @@ citation("ammistability")
 ```
 
 ```{r, echo = FALSE}
-detach("package:ammistability", unload=TRUE)
+# detach("package:ammistability", unload=TRUE)
 suppressPackageStartupMessages(library(ammistability))
 cit <- citation("ammistability")
 # yr <- format(Sys.Date(), "%Y")

@@ -206,7 +206,7 @@ The function `SSI` implements both these indices in `ammistability`. Further, fo
 ## Citing `ammistability`
 
 ```{r, echo = FALSE, collapse = TRUE}
-detach("package:ammistability", unload=TRUE)
+# detach("package:ammistability", unload=TRUE)
 suppressPackageStartupMessages(library(ammistability))
 cit <- citation("ammistability")
 # yr <- format(Sys.Date(), "%Y")

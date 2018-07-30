@@ -37,15 +37,20 @@ only after release of stable version.
 
 ## Description
 
-Provides functions to compute various germination indices such as
-germinability, median germination time, mean germination time, mean
-germination rate, speed of germination, Timson’s index, germination
-value, coefficient of uniformity of germination, uncertainty of
-germination process, synchrony of germination etc. from germination
-count data. Includes functions for fitting cumulative seed germination
-curves using four-parameter hill function and computation of associated
-parameters. See the vignette for more, including full list of citations
-for the methods implemented.
+Computes various stability parameters from Additive Main Effects and
+Multiplicative Interaction (AMMI) analysis results such as Modified AMMI
+Stability Value (MASV), Sums of the Absolute Value of the Interaction
+Principal Component Scores (SIPC), Sum Across Environments of
+Genotype-Environment Interaction Modelled by AMMI (AMGE), Sum Across
+Environments of Absolute Value of Genotype-Environment Interaction
+Modelled by AMMI (AV\_(AMGE)), AMMI Stability Index (ASI), Modified ASI
+(MASI), AMMI Based Stability Parameter (ASTAB), Annicchiarico’s D
+Parameter (DA), Zhang’s D Parameter (DZ), Averages of the Squared
+Eigenvector Values (EV), Stability Measure Based on Fitted AMMI Model
+(FA), Absolute Value of the Relative Contribution of IPCs to the
+Interaction (Za). Further calculates the Simultaneous Selection Index
+for Yield and Stability from the computed stability parameters. See the
+vignette for complete list of citations for the methods implemented.
 
 ## Installation
 
