@@ -40,8 +40,6 @@ devtools::load_all(".")
 <!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963) -->
 [![Analytics](https://pro-pulsar-193905.appspot.com/UA-123032895-2/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
 
-
-
 ***
 
 ## Description
@@ -74,7 +72,7 @@ news(package='ammistability')
 
 [Github page](https://github.com/ajaygpb/ammistability)
 
-<!-- [Github website](https://ajaygpb.github.io/ammistability/) -->
+[Github website](https://ajaygpb.github.io/ammistability/)
 
 <!-- [Zenodo DOI](https://doi.org/10.5281/zenodo.1310011) -->
 
