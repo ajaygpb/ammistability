@@ -132,7 +132,8 @@ rankslopegraph <- function(df, names, group, force.grouping = TRUE,
 #'   ranked in increasing order.
 #' @param decreasing A character vector of column names of the data frame to be
 #'   ranked in decreasing order.
-#' @param ...
+#' @param ... Additional arguments to be passed on to
+#'   \code{\link[base:rank]{rank()}}.
 #'
 #' @return A data frame with the ranks computed in the columns specified in
 #'   arguments \code{increasing} and \code{decreasing}.

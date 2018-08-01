@@ -15,7 +15,8 @@ ranked in increasing order.}
 \item{decreasing}{A character vector of column names of the data frame to be
 ranked in decreasing order.}
 
-\item{...}{}
+\item{...}{Additional arguments to be passed on to
+\code{\link[base:rank]{rank()}}.}
 }
 \value{
 A data frame with the ranks computed in the columns specified in
