@@ -1,10 +1,12 @@
 #' Modified AMMI Stability Index
 #'
-#' \code{MASI.AMMI} computes the Modified AMMI Stability Index (MASI)
-#' considering all significant interaction principal components (IPCs) in the
-#' AMMI model. Using MASI, the Simultaneous Selection Index for Yield and
-#' Stability (SSI) is also calculated according to the argument
-#' \code{ssi.method}.
+#' \code{MASI.AMMI} computes the Modified AMMI Stability Index (MASI) from a
+#' modified formula of AMMI Stability Index (ASI) (Jambhulkar et al., 2014;
+#' Jambhulkar et al., 2015; Jambhulkar et al., 2017).  Unlike ASI, MASI
+#' calculates stability value considering all significant interaction principal
+#' components (IPCs) in the AMMI model. Using MASI, the Simultaneous Selection
+#' Index for Yield and Stability (SSI) is also calculated according to the
+#' argument \code{ssi.method}.
 #'
 #' The Modified AMMI Stability Index
 #' (\ifelse{html}{\out{<i>MASI</i>}}{\eqn{MASI}}) is computed as follows:
@@ -39,8 +41,16 @@
 #' @importFrom agricolae AMMI
 #' @export
 #'
-#' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{ASI.AMMI}},
-#'   \code{\link[ammistability]{SSI}}
+#' @references
+#'
+#' \insertRef{jambhulkar_ammi_2014}{ammistability}
+#'
+#' \insertRef{jambhulkar_genotype_2015}{ammistability}
+#'
+#' \insertRef{jambhulkar_stability_2017}{ammistability}
+#'
+#' @seealso \code{\link[agricolae]{AMMI}},
+#'   \code{\link[ammistability]{ASI.AMMI}}, \code{\link[ammistability]{SSI}}
 #'
 #' @examples
 #' library(agricolae)
