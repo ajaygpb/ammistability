@@ -100,12 +100,13 @@
 #' @seealso \code{\link[agricolae]{AMMI}},
 #'   \code{\link[ammistability]{AMGE.AMMI}},
 #'   \code{\link[ammistability]{ASI.AMMI}},
-#'   \code{\link[ammistability]{ASTAB.AMMI}}, \code{\link[AVAMGE]{AMGE.AMMI}},
+#'   \code{\link[ammistability]{ASTAB.AMMI}},
+#'   \code{\link[ammistability]{AMGE.AMMI}},
 #'   \code{\link[ammistability]{DA.AMMI}}, \code{\link[ammistability]{DZ.AMMI}},
 #'   \code{\link[ammistability]{EV.AMMI}}, \code{\link[ammistability]{FA.AMMI}},
 #'   \code{\link[ammistability]{MASV.AMMI}},
 #'   \code{\link[ammistability]{SIPC.AMMI}},
-#'   \code{\link[ammistability]{ZA.AMMI}}, \code{\link[ammistability]{SSI.AMMI}}
+#'   \code{\link[ammistability]{ZA.AMMI}}, \code{\link[ammistability]{SSI}}
 #'
 #' @references
 #'
