@@ -342,7 +342,7 @@ ammistability <- function(model, n, alpha = 0.05,
   spcorrdf <- data.frame(spcorrdf, stringsAsFactors = FALSE)
 
   spcorrg <- ggcorrplot(spcorr, hc.order = FALSE, type = "lower",
-                        outline.col = "white", p.mat = sppmat,
+                        outline.color = "white", p.mat = sppmat,
                         ggtheme = theme_bw, show.diag = TRUE, lab = TRUE)
   spcorrg <- spcorrg +
     ggtitle("Correlation between different\nAMMI stability parameters")
@@ -361,7 +361,7 @@ ammistability <- function(model, n, alpha = 0.05,
   ssicorrdf <- data.frame(ssicorrdf, stringsAsFactors = FALSE)
 
   ssicorrg <- ggcorrplot(ssicorr, hc.order = FALSE, type = "lower",
-                         outline.col = "white", p.mat = ssipmat,
+                         outline.color = "white", p.mat = ssipmat,
                          ggtheme = theme_bw, show.diag = TRUE, lab = TRUE)
   ssicorrg <- ssicorrg +
     ggtitle("Correlation between simultaneous selection indices\nfrom different AMMI stability parameters")
@@ -386,7 +386,7 @@ ammistability <- function(model, n, alpha = 0.05,
   spssicorrdf <- data.frame(spssicorrdf, stringsAsFactors = FALSE)
 
   spssicorrg <- ggcorrplot(spssicorr, hc.order = FALSE, type = "lower",
-                           outline.col = "white", p.mat = spssipmat,
+                           outline.color = "white", p.mat = spssipmat,
                            ggtheme = theme_bw, show.diag = TRUE, lab = TRUE,
                            title = )
 
