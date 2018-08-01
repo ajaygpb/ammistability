@@ -113,10 +113,13 @@ SSI(y = yield, sp = stab, gen = genotypes, method = "rao", a = 0.43)
 \insertRef{farshadfar_ammi_2011}{ammistability}
 }
 \seealso{
-\code{\link[ammistability]{AMGE.AMMI}}, \code{\link[ammistability]{ASI.AMMI}},
-  \code{\link[ammistability]{ASTAB.AMMI}}, \code{\link[AVAMGE]{AVAMGE.AMMI}},
+\code{\link[ammistability]{AMGE.AMMI}},
+  \code{\link[ammistability]{ASI.AMMI}},
+  \code{\link[ammistability]{ASTAB.AMMI}},
+  \code{\link[ammistability]{AVAMGE.AMMI}},
   \code{\link[ammistability]{DA.AMMI}}, \code{\link[ammistability]{DZ.AMMI}},
   \code{\link[ammistability]{EV.AMMI}}, \code{\link[ammistability]{FA.AMMI}},
-  \code{\link[ammistability]{MASV.AMMI}}, \code{\link[ammistability]{SIPC.AMMI}},
+  \code{\link[ammistability]{MASV.AMMI}},
+  \code{\link[ammistability]{SIPC.AMMI}},
   \code{\link[ammistability]{ZA.AMMI}}
 }

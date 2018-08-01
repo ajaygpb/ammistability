@@ -192,5 +192,5 @@ ammistability(model, AMGE = TRUE, ASI = FALSE, ASV = TRUE, ASTAB = FALSE,
   \code{\link[ammistability]{EV.AMMI}}, \code{\link[ammistability]{FA.AMMI}},
   \code{\link[ammistability]{MASV.AMMI}},
   \code{\link[ammistability]{SIPC.AMMI}},
-  \code{\link[ammistability]{ZA.AMMI}}, \code{\link[SSI]{SSI.AMMI}}
+  \code{\link[ammistability]{ZA.AMMI}}, \code{\link[ammistability]{SSI.AMMI}}
 }
