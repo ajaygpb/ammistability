@@ -37,6 +37,9 @@ Imports:
     agricolae,
     ggcorrplot,
     ggplot2,
+    methods,
+    reshape2,
+    stats,
     Rdpack
 Suggests:
     knitr,
