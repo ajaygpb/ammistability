@@ -10,8 +10,7 @@
 ^vignettes/Introduction\.tex$
 ^vignettes/Introduction\.aux$
 ^vignettes/Introduction\.out$
-^AMMIStbP\.pdf$
-^vignettes$
+^ammistability\.pdf$
 ^_pkgdown\.yml$
 ^pkgdown$
 ^test\.docx$
