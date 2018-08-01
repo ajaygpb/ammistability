@@ -28,6 +28,8 @@
 #' \insertRef{tufte_visual_1986}{ammistability}
 #'
 #' @return The slopegraph as a \code{ggplot2} grob.
+#' @importFrom stats ave
+#' @importFrom reshape2 melt
 #' @import ggplot2
 #' @export
 #'

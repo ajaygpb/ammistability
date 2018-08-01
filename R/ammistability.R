@@ -92,6 +92,8 @@
 #'   Slopegraph}{Slopegraph of stability parameters.} \item{SSI
 #'   Slopegraph}{Slopegraph of SSIs.}
 #'
+#' @importFrom methods is
+#' @importFrom stats cor
 #' @import ggcorrplot
 #' @export
 #'
