@@ -1,6 +1,6 @@
 ---
 title: "The **ammistability** package: A brief introduction"
-author: Ajay B. C.^1^, J. Aravind^2^, R. and Abdul Fiyaz^3^
+author: Ajay B. C.^1^, J. Aravind^2^, and R. Abdul Fiyaz^3^
 date: '`r Sys.Date()`'
 header-includes:
 - \usepackage{fancyhdr}
@@ -67,20 +67,9 @@ knitr::opts_chunk$set(
 
 ## Overview <img src="https://raw.githubusercontent.com/ajaygpb/ammistability/master/inst/extdata/ammistability.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;">
 
-The package `ammistability` is .........
+The package `ammistability` is a collection of functions for the computation of various stability parameters from the results of Additive Main Effects and Multiplicative Interaction (AMMI) analysis computed by the  [`AMMI`](https://www.rdocumentation.org/packages/agricolae/versions/1.2-8/topics/AMMI) function of [`agricolae`](https://CRAN.R-project.org/package=agricolae) package.
 
-
-
-
-
-
-
-
-
-
-
-
-
+The goal of this vignette is to introduce the users to these functions and get started in describing sequentially recorded germination count data. This document assumes a basic knowledge of `R` programming language.
 
 ## Installation
 The package can be installed using the following functions:
@@ -95,8 +84,8 @@ devtools::install_github("ajaygpb/ammistability")
 ```
 
 Then the package can be loaded using the function
-```{r, eval=FALSE}
-library(ammistability) # change eval
+```{r, eval=TRUE}
+library(ammistability)
 ```
 
 
@@ -221,7 +210,7 @@ require(ammistability)
 ```
 
 #### `MASV.AMMI()`
-```{r, runCode, code = getCode("MASI.AMMI", "ammistability")[-(1:19)]}
+```{r, runCode, code = getCode("MASV.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `SIPC.AMMI()`
