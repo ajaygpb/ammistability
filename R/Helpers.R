@@ -150,10 +150,21 @@ rankslopegraph <- function(df, names, group, force.grouping = TRUE,
 #'
 #' soilrank <- rankdf(soil, increasing = inc, decreasing = dec)
 #' soilrank
-rankdf <- function(df, increasing, decreasing, ...) {
-  df[, decreasing] <- lapply(df[, decreasing, drop=FALSE],
-                             function(x) rank(-x, ...))
-  df[, increasing] <- lapply(df[, increasing, drop=FALSE],
-                             function(x) rank(x, ...))
+rankdf <-
+function(df, increasing = NULL, decreasing = NULL, ...) {
+   if((missing(decreasing) || is.null(decreasing)) &&
+      (missing(increasing) || is.null(increasing))) {
+     stop('Both "increasing" and "decreasing" are missing')
+   }
+
+  if(!missing(decreasing) || !is.null(decreasing)) {
+    df[, decreasing] <- lapply(df[, decreasing, drop=FALSE],
+                               function(x) rank(-x, ...))
+  }
+  if(!missing(increasing) || !is.null(increasing)) {
+    df[, increasing] <- lapply(df[, increasing, drop=FALSE],
+                               function(x) rank(x, ...))
+  }
+
   return(df)
 }

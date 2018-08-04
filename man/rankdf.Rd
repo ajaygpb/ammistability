@@ -4,7 +4,7 @@
 \alias{rankdf}
 \title{Ranks in a data.frame}
 \usage{
-rankdf(df, increasing, decreasing, ...)
+rankdf(df, increasing = NULL, decreasing = NULL, ...)
 }
 \arguments{
 \item{df}{A data frame.}
