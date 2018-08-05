@@ -3,16 +3,20 @@ Type: Package
 Title: Additive Main Effects and Multiplicative Interaction Model Stability Parameters
 Version: 0.0.0.9000
 Authors@R: c(
-    person(c("Ajay", "Basapura Chandrashekar"),
-    email = "ajaygpb@yahoo.co.in",
-    role = c("aut", "cre")),
-    person(c("J.", "Aravind"),
-    email = "j.aravind@icar.gov.in",
-    role = c("aut"),
-    comment = c(ORCID = "0000-0002-4791-442X")),
-    person(c("R.", "Abdul Fiyaz"),
-    email = "fiyaz.ra@icar.gov.in",
-    role = "aut"))
+    person(family = "Ajay", given  = c("B.", "C."),
+           email = "ajaygpb@yahoo.co.in",
+           role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-7222-8483")),
+    person(family = "Aravind", given = "J.",
+           email = "j.aravind@icar.gov.in",
+           role = c("aut"),
+           comment = c(ORCID = "0000-0002-4791-442X")),
+    person(given = "R.", family = c("Abdul", "Fiyaz"),
+           email = "fiyaz.ra@icar.gov.in",
+           role = "aut"),
+    person("ICAR",
+           role = c("cph"),
+           comment = c(url = "https://www.icar.org.in")))
 Description:  Computes various stability parameters from Additive Main Effects
     and Multiplicative Interaction (AMMI) analysis results such as  Modified
     AMMI Stability Value (MASV), Sums of the Absolute Value of the Interaction
