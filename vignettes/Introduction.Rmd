@@ -89,21 +89,20 @@ library(ammistability)
 ```
 
 
-## AMMI
+## AMMI model
+The difference in response of genotypes to different environmental conditions is known as Genotype-Environment Interaction (GEI). Understanding the nature and structure of this interaction is critical for plant breeders to select for genotypes with wide or specific adaptability. One of the most popular techniques to achieve this is by fitting the Additive Main Effects and Multiplicative Interaction (AMMI) model to the results of multi environment trials [@gauch_model_1988; @gauch_statistical_1992]. 
 
-The AMMI equation
+The AMMI equation is described as follows.
 
 $$Y_{ij} = \mu + \alpha_{i} + \beta_{j} + \sum_{n=1}^{N}\lambda_{n}\gamma_{in}\delta_{jn} + \rho_{ij}$$
 
 Where, $Y_{ij}$ is the yield of the $i$th genotype in the $j$th environment, $\mu$ is the grand mean, $\alpha_{i}$ is the genotype deviation from the grand mean, $\beta_{j}$ is the environment deviation, $N$ is the total number of interaction principal components (IPCs), $\lambda_{n}$ is the is the singular value for $n$th IPC and correspondingly $\lambda_{n}^{2}$  is its eigen value, $\gamma_{in}$ is the eigenvector value for $i$th genotype, $\delta_{jn}$  is the eigenvector value for the $j$th environment and $\rho_{ij}$ is the residual.
 
-
-
 ## AMMI stability parameters
 
+Although the AMMI model can aid in determining genotypes with wide or specific adaptability, it fails to rank genotypes according to their stability. Several measures have been developed over the years to indicate the stability of genotypes from the results of AMMI analysis (Table 1.).
+
 The details about AMMI stability parameters/indices implemented in `ammistability` are described in Table 1.
-
-
 
 \newpage
 \blandscape
@@ -218,7 +217,7 @@ require(ammistability)
 ```
 
 #### `ZA.AMMI()`
-```{r, runCode, code = getCode("AMGE.AMMI", "ammistability")[-(1:19)]}
+```{r, runCode, code = getCode("ZA.AMMI", "ammistability")[-(1:19)]}
 ```
 
 ## Simultaneous selection indices for yield and stability
@@ -253,7 +252,7 @@ $$GSI = YSI = R_{SP} + R_{Y}$$
 
 Where, $R_{SP}$ is the stability parameter/index rank of the genotype and $R_{Y}$ is the mean yield rank of the genotype.
 
-The function `SSI` implements both these indices in `ammistability`. Further, for each of the stability parameter functions, the simultaneous selection index is also computed by either of these functions as specifiend by the argument `ssi.method`. 
+The function `SSI` implements both these indices in `ammistability`. Further, for each of the stability parameter functions, the simultaneous selection index is also computed by either of these functions as specified by the argument `ssi.method`. 
 
 #### Examples
 
@@ -277,7 +276,7 @@ require(ammistability)
 
 ## Wrapper function
 
-ammistability is a wrapper....
+A function `ammistability` has also been implemented which is a wrapper around all the available functions in the package to compute simultaneously multiple AMMI stability parameters along with the corresponding SSIs. Correlation among the computed values as well as visualization of the differences in genotype ranks for the computed parameters is also generated.
 
 #### Examples
 
@@ -298,7 +297,6 @@ require(ammistability)
 #### `ammistability()`
 ```{r, runCode, code = getCode("ammistability", "ammistability")}
 ```
-
 
 ## Citing `ammistability`
 
