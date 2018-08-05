@@ -72,7 +72,7 @@ rankslopegraph <- function(df, names, group, force.grouping = TRUE,
   # dfmelt$lab1 <- dfmelt[, names]
   dfmelt$lab2 <- dfmelt$value
 
-  dpcheck <- dfmelt[,c("variable","value")]
+  dpcheck <- dfmelt[, c("variable", "value")]
   dfmelt[duplicated(dpcheck), ]$lab1 <- NA
   dfmelt[duplicated(dpcheck), ]$lab2 <- NA
 
@@ -110,9 +110,9 @@ rankslopegraph <- function(df, names, group, force.grouping = TRUE,
 
   slopeg <- slopeg +
     geom_text(aes_string(label = "lab1"), size = text.size,
-              vjust = 0 + 0, na.rm = TRUE, nudge_y = point.size/5) +
+              vjust = 0 + 0, na.rm = TRUE, nudge_y = point.size / 5) +
     geom_text(aes_string(label = "lab2"), size = text.size,
-              vjust = 1 - 0, na.rm = TRUE, nudge_y = -point.size/10) +
+              vjust = 1 - 0, na.rm = TRUE, nudge_y = -point.size / 10) +
     scale_y_reverse(breaks = 1:max(dfmelt$value)) +
     ylab("Rank") +
     theme_bw() +
@@ -158,11 +158,11 @@ function(df, increasing = NULL, decreasing = NULL, ...) {
    }
 
   if(!missing(decreasing) || !is.null(decreasing)) {
-    df[, decreasing] <- lapply(df[, decreasing, drop=FALSE],
+    df[, decreasing] <- lapply(df[, decreasing, drop = FALSE],
                                function(x) rank(-x, ...))
   }
   if(!missing(increasing) || !is.null(increasing)) {
-    df[, increasing] <- lapply(df[, increasing, drop=FALSE],
+    df[, increasing] <- lapply(df[, increasing, drop = FALSE],
                                function(x) rank(x, ...))
   }
 

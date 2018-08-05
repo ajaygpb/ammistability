@@ -93,7 +93,7 @@ ASTAB.AMMI <- function(model, n, alpha = 0.05,
 
   # Find number of significant IPCs according to F test
   if (missing(n) || is.null(n)) {
-    n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
+    n <- sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
   }
 
   # Check for n
@@ -112,7 +112,7 @@ ASTAB.AMMI <- function(model, n, alpha = 0.05,
   ge <- array(model$genXenv, dim(model$genXenv), dimnames(model$genXenv))
   # SVD
   svdge <- svd(ge)
-  gamma.n <- svdge$u[,1:n]
+  gamma.n <- svdge$u[, 1:n]
   lambda.n <- svdge$d[1:n]
 
   ASTAB <- rowSums(((gamma.n)^2) %*% diag(lambda.n))

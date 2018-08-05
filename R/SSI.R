@@ -55,7 +55,7 @@
 #' of the genotype.
 #'
 #' @param y A numeric vector of the mean yield/performance of genotypes.
-#' @param sp A numeric vector of the stability paramter/index of the genotypes.
+#' @param sp A numeric vector of the stability parameter/index of the genotypes.
 #' @param gen A character vector of the names of the genotypes.
 #' @param method The method for the computation of simultaneous selection index.
 #'   Either \code{"farshadfar"} or \code{"rao"} (See \strong{Details}).
@@ -135,7 +135,7 @@ SSI <- function(y, sp, gen, method = c("farshadfar", "rao"), a = 1) {
     if (!is.numeric(a) || length(a) != 1) {
       stop("'a' should be a numeric vector of length 1")
     }
-    SSI <- (y/mean(y)) + (a * ((1/sp)/mean(1/sp))) # Rao's I
+    SSI <- (y / mean(y)) + (a * ((1 / sp)/mean(1 / sp))) # Rao's I
   }
 
   if (method == "farshadfar") {

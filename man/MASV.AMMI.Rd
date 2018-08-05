@@ -69,7 +69,7 @@ IPC; and \ifelse{html}{\out{<i>PC<sub>1</sub></i>}}{\eqn{PC_{1}}},
 }
 \note{
 In Zali et al., (2012), the formula for both AMMI stability value (ASV)
-  was found to be erroneus, when compared with the original publications
+  was found to be erroneous, when compared with the original publications
   (Purchase 1997; Purchase et al., 1999; Purchase et al., 2000).
 
   \strong{ASV (Zali et al., 2012)} \ifelse{html}{\out{<p style="text-align:

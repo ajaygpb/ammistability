@@ -38,9 +38,9 @@
 #' @param AMGE If \code{TRUE}, computes AMGE (see \strong{Details}). Default is
 #'   \code{TRUE}.
 #' @param ASI If \code{TRUE}, computes ASI (see \strong{Details}). \code{n = 2}
-#'   will beused in this case. Default is \code{TRUE}.
+#'   will be used in this case. Default is \code{TRUE}.
 #' @param ASV If \code{TRUE}, computes ASV (see \strong{Details}). \code{n = 2}
-#'   will beused in this case. Default is \code{TRUE}.
+#'   will be used in this case. Default is \code{TRUE}.
 #' @param ASTAB If \code{TRUE}, computes ASTAB (see \strong{Details}). Default
 #'   is \code{TRUE}.
 #' @param AVAMGE If \code{TRUE}, computes AVAMGE (see \strong{Details}). Default
@@ -169,7 +169,7 @@ ammistability <- function(model, n, alpha = 0.05,
 
   # Find number of significant IPCs according to F test
   if (missing(n) || is.null(n)) {
-    n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
+    n <- sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
   }
 
   # Check for n
@@ -183,7 +183,7 @@ ammistability <- function(model, n, alpha = 0.05,
                             "EV", "FA", "MASI", "MASV", "SIPC", "ZA"),
                     logical = c(AMGE, ASI, ASV, ASTAB, AVAMGE, DA, DZ,
                                 EV, FA, MASI, MASV, SIPC, ZA))
-  if (nrow(sps[sps$logical,]) < 2) {
+  if (nrow(sps[sps$logical, ]) < 2) {
     stop('At least two stability parameters should be selected for computation')
   }
 
@@ -328,16 +328,16 @@ ammistability <- function(model, n, alpha = 0.05,
   }
 
   # Correlations
-  #-------------------------------------------------------------------------------
+  #-----------------------------------------------------------------------------
 
   # SP corr
   del <- names(SP) %in% c("genotype", "means")
   spcorr <- cor(SP[, !del])
   sppmat <- ggcorrplot::cor_pmat(SP[, !del])
 
-  spcorrdf <- formatC(round(spcorr, 2), digits=2, format="f")
+  spcorrdf <- formatC(round(spcorr, 2), digits = 2, format = "f")
   spcorrdf[] <- paste0(spcorrdf,
-                       ifelse(sppmat< .01, "**", ifelse(sppmat < .05, "*", "")),
+                       ifelse(sppmat < .01, "**", ifelse(sppmat < .05, "*", "")),
                        sep = "")
   spcorrdf[upper.tri(spcorrdf)] <- NA
   spcorrdf <- data.frame(spcorrdf, stringsAsFactors = FALSE)
@@ -353,9 +353,9 @@ ammistability <- function(model, n, alpha = 0.05,
   ssicorr <- cor(SSI[, !del])
   ssipmat <- ggcorrplot::cor_pmat(SSI[, !del])
 
-  ssicorrdf <- formatC(round(ssicorr, 2),digits=2, format="f")
+  ssicorrdf <- formatC(round(ssicorr, 2), digits = 2, format = "f")
   ssicorrdf[] <- paste0(ssicorrdf,
-                        ifelse(ssipmat< .01, "**",
+                        ifelse(ssipmat < .01, "**",
                                ifelse(ssipmat < .05, "*", "")),
                         sep = "")
   ssicorrdf[upper.tri(ssicorrdf)] <- NA
@@ -378,9 +378,9 @@ ammistability <- function(model, n, alpha = 0.05,
   spssicorr <- cor(spssi[, !del])
   spssipmat <- ggcorrplot::cor_pmat(spssi[, !del])
 
-  spssicorrdf <- formatC(round(spssicorr, 2),digits=2, format="f")
+  spssicorrdf <- formatC(round(spssicorr, 2), digits = 2, format = "f")
   spssicorrdf[] <- paste0(spssicorrdf,
-                          ifelse(spssipmat< .01, "**",
+                          ifelse(spssipmat < .01, "**",
                                  ifelse(spssipmat < .05, "*", "")),
                           sep = "")
   spssicorrdf[upper.tri(spssicorrdf)] <- NA
@@ -396,10 +396,11 @@ ammistability <- function(model, n, alpha = 0.05,
 
 
   # Bump plots/ slopegraph
-  #-------------------------------------------------------------------------------
+  #-----------------------------------------------------------------------------
 
   SPrank <- rankdf(df = SP, decreasing = "means",
-                   increasing = names(SP)[!(names(SP) %in% c("genotype", "means"))])
+                   increasing = names(SP)[!(names(SP) %in% c("genotype",
+                                                             "means"))])
 
   SPslopeg <- rankslopegraph(df = SPrank, names = "genotype",
                              force.grouping = TRUE, point.size = point.size,
@@ -409,7 +410,8 @@ ammistability <- function(model, n, alpha = 0.05,
     ggtitle("Slopegraph of ranks of mean yields and AMMI stability parameters")
 
   SSIrank <- rankdf(df = SSI, decreasing = "means",
-                    increasing = names(SSI)[!(names(SSI) %in% c("genotype", "means"))])
+                    increasing = names(SSI)[!(names(SSI) %in% c("genotype",
+                                                                "means"))])
 
   SSIslopeg <- rankslopegraph(df = SSIrank, names = "genotype",
                               force.grouping = TRUE, point.size = point.size,

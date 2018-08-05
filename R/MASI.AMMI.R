@@ -105,7 +105,7 @@ MASI.AMMI <- function(model, n, alpha = 0.05,
 
   # Find number of significant IPCs according to F test
   if (missing(n) || is.null(n)) {
-    n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
+    n <- sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
   }
 
   # Check for n
@@ -121,10 +121,10 @@ MASI.AMMI <- function(model, n, alpha = 0.05,
   ssi.method <- match.arg(ssi.method)
 
   A <- model$biplot
-  A <- A[A[,1] == "GEN",-c(1,2)]
-  A <- A[,1:n] # Fetch only n IPCs
+  A <- A[A[, 1] == "GEN", -c(1, 2)]
+  A <- A[, 1:n] # Fetch only n IPCs
 
-  thn <-  model$analysis[1:n,]$percent/100
+  thn <-  model$analysis[1:n, ]$percent / 100
 
   MASI <- sqrt(rowSums(as.matrix(A^2) %*% (diag(thn^2))))
 

@@ -9,7 +9,7 @@ SSI(y, sp, gen, method = c("farshadfar", "rao"), a = 1)
 \arguments{
 \item{y}{A numeric vector of the mean yield/performance of genotypes.}
 
-\item{sp}{A numeric vector of the stability paramter/index of the genotypes.}
+\item{sp}{A numeric vector of the stability parameter/index of the genotypes.}
 
 \item{gen}{A character vector of the names of the genotypes.}
 

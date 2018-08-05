@@ -97,7 +97,7 @@ DA.AMMI <- function(model, n, alpha = 0.05,
 
   # Find number of significant IPCs according to F test
   if (missing(n) || is.null(n)) {
-    n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
+    n <- sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
   }
 
   # Check for n
@@ -127,7 +127,7 @@ DA.AMMI <- function(model, n, alpha = 0.05,
   # SVD
   svdge <- svd(ge)
   lambda.n <- svdge$d[1:n]
-  gamma.n <- svdge$u[,1:n]
+  gamma.n <- svdge$u[, 1:n]
 
   DA <- sqrt(rowSums((gamma.n %*% diag(lambda.n))^2))
 

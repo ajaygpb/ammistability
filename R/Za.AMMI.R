@@ -91,7 +91,7 @@ ZA.AMMI <- function(model, n, alpha = 0.05,
 
   # Find number of significant IPCs according to F test
   if (missing(n) || is.null(n)) {
-    n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
+    n <- sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
   }
 
   # Check for n
@@ -121,9 +121,9 @@ ZA.AMMI <- function(model, n, alpha = 0.05,
   ge <- array(model$genXenv, dim(model$genXenv), dimnames(model$genXenv))
   # SVD
   svdge <- svd(ge)
-  gamma.n <- svdge$u[,1:n]
+  gamma.n <- svdge$u[, 1:n]
 
-  theta.n <- model$analysis[1:n,]$percent/100
+  theta.n <- model$analysis[1:n, ]$percent / 100
 
   Za <- rowSums(abs(gamma.n %*% diag(theta.n)))
 

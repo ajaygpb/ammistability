@@ -31,7 +31,7 @@
 #' 1st, 2nd, ..., and \ifelse{html}{\out{<i>n</i>}}{\eqn{n}}th IPC.
 #'
 #' @note In Zali et al., (2012), the formula for both AMMI stability value (ASV)
-#'   was found to be erroneus, when compared with the original publications
+#'   was found to be erroneous, when compared with the original publications
 #'   (Purchase 1997; Purchase et al., 1999; Purchase et al., 2000).
 #'
 #'   \strong{ASV (Zali et al., 2012)} \ifelse{html}{\out{<p style="text-align:
@@ -148,7 +148,7 @@ MASV.AMMI <- function(model, n, alpha = 0.05,
 
   # Find number of significant IPCs according to F test
   if (missing(n) || is.null(n)) {
-    n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
+    n <- sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
   }
 
   # Check for n
@@ -164,18 +164,18 @@ MASV.AMMI <- function(model, n, alpha = 0.05,
   ssi.method <- match.arg(ssi.method)
 
   A <- model$biplot
-  A <- A[A[,1] == "GEN",-c(1,2)]
-  A <- A[,1:n] # Fetch only n IPCs
+  A <- A[A[, 1] == "GEN", -c(1, 2)]
+  A <- A[, 1:n] # Fetch only n IPCs
 
   MASV <- rep(0, nrow(A))
 
   for (i in seq_along(A)) {
-    pc <- model$analysis[i,4]/model$analysis[(i + 1),4]
-    MASV <- MASV + (A[,i] * pc)^2
+    pc <- model$analysis[i, 4] / model$analysis[(i + 1), 4]
+    MASV <- MASV + (A[, i] * pc)^2
     if ((i + 1) == max(seq_along(A))) break()
   }
 
-  MASV <- MASV + (A[,max(seq_along(A))]^2)
+  MASV <- MASV + (A[, max(seq_along(A))]^2)
   MASV <- sqrt(MASV)
 
   B <- model$means

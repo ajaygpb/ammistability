@@ -109,7 +109,7 @@ SIPC.AMMI <- function(model, n, alpha = 0.05,
 
   # Find number of significant IPCs according to F test
   if (missing(n) || is.null(n)) {
-    n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
+    n <- sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
   }
 
   # Check for n
@@ -143,8 +143,8 @@ SIPC.AMMI <- function(model, n, alpha = 0.05,
   # A <- gamma.n %*% diag(sqrt(lambda.n))
 
   A <- model$biplot
-  A <- A[A[,1] == "GEN",-c(1,2)]
-  A <- A[,1:n] # Fetch only n IPCs
+  A <- A[A[, 1] == "GEN", -c(1, 2)]
+  A <- A[, 1:n] # Fetch only n IPCs
 
   SIPC <- unname(rowSums(apply(A, 2, FUN = abs)))
 

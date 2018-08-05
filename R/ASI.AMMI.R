@@ -100,10 +100,10 @@ ASI.AMMI <- function(model, ssi.method = c("farshadfar", "rao"), a = 1) {
   A <- model$biplot[, 1:4]
   A <- A[A[, 1] == "GEN", -c(1, 2)]
 
-  th1 <- model$analysis["PC1",]$percent/100
-  th2 <- model$analysis["PC2",]$percent/100
+  th1 <- model$analysis["PC1", ]$percent / 100
+  th2 <- model$analysis["PC2", ]$percent / 100
 
-  ASI <- sqrt(((A[,"PC1"]^2) * (th1^2)) + ((A[,"PC2"]^2) * (th2^2)))
+  ASI <- sqrt(((A[, "PC1"]^2) * (th1^2)) + ((A[, "PC2"]^2) * (th2^2)))
 
   B <- model$means
   W <- aggregate(B$Yield, by = list(model$means$GEN), FUN = mean, na.rm = TRUE)

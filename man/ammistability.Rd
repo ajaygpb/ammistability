@@ -34,10 +34,10 @@ computation of SSI when \code{method = "rao"} (See
 \code{TRUE}.}
 
 \item{ASI}{If \code{TRUE}, computes ASI (see \strong{Details}). \code{n = 2}
-will beused in this case. Default is \code{TRUE}.}
+will be used in this case. Default is \code{TRUE}.}
 
 \item{ASV}{If \code{TRUE}, computes ASV (see \strong{Details}). \code{n = 2}
-will beused in this case. Default is \code{TRUE}.}
+will be used in this case. Default is \code{TRUE}.}
 
 \item{ASTAB}{If \code{TRUE}, computes ASTAB (see \strong{Details}). Default
 is \code{TRUE}.}

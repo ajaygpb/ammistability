@@ -99,7 +99,7 @@ AVAMGE.AMMI <- function(model, n, alpha = 0.05,
 
   # Find number of significant IPCs according to F test
   if (missing(n) || is.null(n)) {
-    n = sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
+    n <- sum(model$analysis$Pr.F <= alpha, na.rm = TRUE)
   }
 
   # Check for n
@@ -119,8 +119,8 @@ AVAMGE.AMMI <- function(model, n, alpha = 0.05,
   # SVD
   svdge <- svd(ge)
   lambda.n <- svdge$d[1:n]
-  gamma.n <- svdge$u[,1:n]
-  delta.n <- svdge$v[,1:n]
+  gamma.n <- svdge$u[, 1:n]
+  delta.n <- svdge$v[, 1:n]
 
   ge.n <- gamma.n %*% diag(lambda.n) %*% t(delta.n)
 
