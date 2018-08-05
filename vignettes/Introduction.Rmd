@@ -83,11 +83,12 @@ devtools::install_github("ajaygpb/ammistability")
 
 ```
 
+\clearpage
+
 Then the package can be loaded using the function
 ```{r, eval=TRUE}
 library(ammistability)
 ```
-
 
 ## AMMI model
 The difference in response of genotypes to different environmental conditions is known as Genotype-Environment Interaction (GEI). Understanding the nature and structure of this interaction is critical for plant breeders to select for genotypes with wide or specific adaptability. One of the most popular techniques to achieve this is by fitting the Additive Main Effects and Multiplicative Interaction (AMMI) model to the results of multi environment trials [@gauch_model_1988; @gauch_statistical_1992]. 
@@ -135,7 +136,7 @@ rownames(stabparams) <- NULL
 
 ```{r, echo = FALSE, eval = TRUE}
 pander::pander(stabparams, style='multiline',
-               split.cell = c(15, 18, 50, 10, 10, 10),
+               split.cell = c(15, 15, 50, 10),
                justify = c('left'), split.table = Inf, keep.line.breaks = TRUE,
                use.hyphening = FALSE, missing = "")
 ```

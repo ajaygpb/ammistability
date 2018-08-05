@@ -32,11 +32,13 @@
 
 <meta property="og:title" content="Modified AMMI Stability Index — MASI.AMMI" />
 
-<meta property="og:description" content="MASI.AMMI computes the Modified AMMI Stability Index (MASI)
-considering all significant interaction principal components (IPCs) in the
-AMMI model. Using MASI, the Simultaneous Selection Index for Yield and
-Stability (SSI) is also calculated according to the argument
-ssi.method." />
+<meta property="og:description" content="MASI.AMMI computes the Modified AMMI Stability Index (MASI) from a
+modified formula of AMMI Stability Index (ASI) (Jambhulkar et al., 2014;
+Jambhulkar et al., 2015; Jambhulkar et al., 2017).  Unlike ASI, MASI
+calculates stability value considering all significant interaction principal
+components (IPCs) in the AMMI model. Using MASI, the Simultaneous Selection
+Index for Yield and Stability (SSI) is also calculated according to the
+argument ssi.method." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -138,11 +140,13 @@ ssi.method." />
 
     <div class="ref-description">
     
-    <p><code>MASI.AMMI</code> computes the Modified AMMI Stability Index (MASI)
-considering all significant interaction principal components (IPCs) in the
-AMMI model. Using MASI, the Simultaneous Selection Index for Yield and
-Stability (SSI) is also calculated according to the argument
-<code>ssi.method</code>.</p>
+    <p><code>MASI.AMMI</code> computes the Modified AMMI Stability Index (MASI) from a
+modified formula of AMMI Stability Index (ASI) (Jambhulkar et al., 2014;
+Jambhulkar et al., 2015; Jambhulkar et al., 2017).  Unlike ASI, MASI
+calculates stability value considering all significant interaction principal
+components (IPCs) in the AMMI model. Using MASI, the Simultaneous Selection
+Index for Yield and Stability (SSI) is also calculated according to the
+argument <code>ssi.method</code>.</p>
     
     </div>
 
@@ -210,10 +214,27 @@ percentage sum of squares explained by the
 <i>n</i>th principal component interaction
 effect.</p>
     
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Jambhulkar NN, Bose LK, Singh ON (2014).
+&#8220;AMMI stability index for stability analysis.&#8221;
+In Mohapatra T (ed.), <em>CRRI Newsletter, January-March 2014</em>, volume 35 number 1, 15.
+Central Rice Research Institute, Cuttack, Orissa.
+<a href='http://www.crri.nic.in/CRRI_newsletter/crnl_jan_mar_14_web.pdf'>http://www.crri.nic.in/CRRI_newsletter/crnl_jan_mar_14_web.pdf</a>.</p>
+<p>Jambhulkar NN, Bose LK, Pande K, Singh ON (2015).
+&#8220;Genotype by environment interaction and stability analysis in rice genotypes.&#8221;
+<em>Ecology, Environment and Conservation</em>, <b>21</b>(3), 1427--1430.
+<a href='http://www.envirobiotechjournals.com/article_abstract.php?aid=6346&amp;iid=200&amp;jid=3'>http://www.envirobiotechjournals.com/article_abstract.php?aid=6346&amp;iid=200&amp;jid=3</a>.</p>
+<p>Jambhulkar NN, Rath NC, Bose LK, Subudhi H, Biswajit M, Lipi D, Meher J (2017).
+&#8220;Stability analysis for grain yield in rice in demonstrations conducted during rabi season in India.&#8221;
+<em>Oryza</em>, <b>54</b>(2), 236--240.
+doi: <a href='http://doi.org/10.5958/2249-5266.2017.00030.3'>10.5958/2249-5266.2017.00030.3</a>
+.</p>
+    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='http://www.rdocumentation.org/packages/agricolae/topics/AMMI'>AMMI</a></code>, <code><a href='ASI.AMMI.html'>ASI.AMMI</a></code>,
-  <code><a href='SSI.html'>SSI</a></code></p></div>
+    <div class='dont-index'><p><code><a href='http://www.rdocumentation.org/packages/agricolae/topics/AMMI'>AMMI</a></code>,
+  <code><a href='ASI.AMMI.html'>ASI.AMMI</a></code>, <code><a href='SSI.html'>SSI</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -511,6 +532,8 @@ effect.</p>
 
       <li><a href="#details">Details</a></li>
 
+      <li><a href="#references">References</a></li>
+
       <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
@@ -521,7 +544,7 @@ effect.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Ajay Basapura Chandrashekar, J. Aravind, R. Abdul Fiyaz.</p>
+  <p>Developed by Ajay B. C., J. Aravind, R. Abdul Fiyaz.</p>
 </div>
 
 <div class="pkgdown">

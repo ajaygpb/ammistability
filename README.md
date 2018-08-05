@@ -3,7 +3,7 @@
 
 ###### Version : [0.0.0.9000](https://ajaygpb.github.io/ammistability/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
 
-##### *Ajay, B. C.<sup>1</sup>, Aravind, J.<sup>2</sup> and Abdul Fiyaz, R.<sup>3</sup>*
+##### *Ajay, B. C.<sup>1</sup>, Aravind, J.<sup>2</sup> and R. Abdul Fiyaz<sup>3</sup>*
 
 1.  RRS, ICAR-Directorate of Groundnut Research, Anantapur
 2.  ICAR-National Bureau of Plant Genetic Resources, New Delhi
@@ -23,7 +23,7 @@ v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org
 [![Project Status:
 WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2018--07--30-yellowgreen.svg)](/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2018--08--06-yellowgreen.svg)](/commits/master)
 <!-- [![Rdoc](http://www.rdocumentation.org/badges/version/ammistability)](http://www.rdocumentation.org/packages/ammistability) -->
 <!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963) -->
 [![Analytics](https://pro-pulsar-193905.appspot.com/UA-123032895-2/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
@@ -77,7 +77,7 @@ news(package='ammistability')
 
 [Github page](https://github.com/ajaygpb/ammistability)
 
-<!-- [Github website](https://ajaygpb.github.io/ammistability/) -->
+[Github website](https://ajaygpb.github.io/ammistability/)
 
 <!-- [Zenodo DOI](https://doi.org/10.5281/zenodo.1310011) -->
 
@@ -93,7 +93,7 @@ citation("ammistability")
 
 To cite the R package 'ammistability' in publications use:
 
-  Ajay B. C., J. Aravind, and R. Abdul Fiyaz (2018).
+  Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (NA).
   ammistability: Additive Main Effects and Multiplicative
   Interaction Model Stability Parameters. R package version
   0.0.0.9000, https://ajaygpb.github.io/ammistability/.
@@ -102,8 +102,7 @@ A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters},
-    author = {{Ajay Basapura Chandrashekar} and {J. Aravind} and {R. Abdul Fiyaz}},
-    year = {2018},
+    author = {B. C. Ajay and J. Aravind and R. {Abdul Fiyaz}},
     note = {R package version 0.0.0.9000},
     note = {https://ajaygpb.github.io/ammistability/},
   }
