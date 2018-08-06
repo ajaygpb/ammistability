@@ -1,6 +1,6 @@
 ---
 title: "The **ammistability** package: A brief introduction"
-author: Ajay B. C.^1^, J. Aravind^2^, and R. Abdul Fiyaz^3^
+author: Ajay, B. C.^1^, Aravind, J. ^2^, and Abdul Fiyaz, R.^3^
 date: '`r Sys.Date()`'
 header-includes:
 - \usepackage{fancyhdr}

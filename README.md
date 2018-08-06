@@ -3,7 +3,7 @@
 
 ###### Version : [0.1.0](https://ajaygpb.github.io/ammistability/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
 
-##### *Ajay, B. C.<sup>1</sup>, Aravind, J.<sup>2</sup> and R. Abdul Fiyaz<sup>3</sup>*
+##### *Ajay, B. C.<sup>1</sup>, Aravind, J.<sup>2</sup> and Abdul Fiyaz, R<sup>3</sup>*
 
 1.  RRS, ICAR-Directorate of Groundnut Research, Anantapur
 2.  ICAR-National Bureau of Plant Genetic Resources, New Delhi
@@ -18,12 +18,12 @@ v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version-last-release/ammistability)](https://cran.r-project.org/package=ammistability)
 <!-- [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/ammistability?color=green)](https://CRAN.R-project.org/package=ammistability) -->
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/ajaygpb/ammistability) -->
-[![develVersion](https://img.shields.io/badge/devel%20version-0.0.0.9000-orange.svg)](https://github.com/ajaygpb/ammistability)
+[![develVersion](https://img.shields.io/badge/devel%20version-0.1.0-orange.svg)](https://github.com/ajaygpb/ammistability)
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/ajaygpb/ammistability/total.svg)] -->
 [![Project Status:
 WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2018--08--06-yellowgreen.svg)](/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2018--08--07-yellowgreen.svg)](/commits/master)
 <!-- [![Rdoc](http://www.rdocumentation.org/badges/version/ammistability)](http://www.rdocumentation.org/packages/ammistability) -->
 <!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963) -->
 [![Analytics](https://pro-pulsar-193905.appspot.com/UA-123032895-2/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
@@ -93,7 +93,7 @@ citation("ammistability")
 
 To cite the R package 'ammistability' in publications use:
 
-  Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2018).
+  Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (NA).
   ammistability: Additive Main Effects and Multiplicative
   Interaction Model Stability Parameters. R package version 0.1.0,
   https://ajaygpb.github.io/ammistability/.
@@ -103,7 +103,6 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters},
     author = {B. C. Ajay and J. Aravind and R. {Abdul Fiyaz}},
-    year = {2018},
     note = {R package version 0.1.0},
     note = {https://ajaygpb.github.io/ammistability/},
   }
