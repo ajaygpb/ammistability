@@ -1,7 +1,7 @@
 Package: ammistability
 Type: Package
 Title: Additive Main Effects and Multiplicative Interaction Model Stability Parameters
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: c(
     person(c("Ajay", "B. C."),
     email = "ajaygpb@yahoo.co.in",

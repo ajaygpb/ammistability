@@ -1,10 +1,15 @@
 template:
   params:
-    bootswatch: paper
+    bootswatch: yeti
     ganalytics: UA-123032895-1
+    docsearch:
+      api_key: 3254bc205198a098361afb3d5b2c2f8b
+      index_name: ammistability
 
 development:
-    mode: unreleased
+  mode: release
+  version_label: primary
+  version_tooltip: "ammistability"
 
 url: https://ajaygpb.github.io/ammistability/
 
