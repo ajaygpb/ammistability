@@ -41,6 +41,7 @@
 #' @importFrom methods is
 #' @importFrom stats aggregate
 #' @importFrom agricolae AMMI
+#' @importFrom Rdpack reprompt
 #' @export
 #'
 #' @references
