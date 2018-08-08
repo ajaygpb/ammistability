@@ -17,7 +17,7 @@ Authors@R: c(
     person("ICAR",
            role = c("cph"),
            comment = c(url = "https://www.icar.org.in")))
-Description:  Computes various stability parameters from Additive Main Effects
+Description: Computes various stability parameters from Additive Main Effects
     and Multiplicative Interaction (AMMI) analysis results such as  Modified
     AMMI Stability Value (MASV), Sums of the Absolute Value of the Interaction
     Principal Component Scores (SIPC), Sum Across Environments of
@@ -36,7 +36,7 @@ License: GPL-2 | GPL-3
 Encoding: UTF-8
 Depends: R (>= 3.0.1)
 VignetteBuilder: knitr
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
 Imports:
     agricolae,
     ggcorrplot,
