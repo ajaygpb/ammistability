@@ -15,3 +15,4 @@
 ^pkgdown$
 ^test\.docx$
 ^docs$
+^cran-comments\.md$
