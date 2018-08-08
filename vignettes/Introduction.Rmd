@@ -172,10 +172,13 @@ library(ammistability)
 require(ammistability)
 ```
 
+```{r, eval=TRUE, echo = FALSE}
+library(ammistability)
+```
+
 #### AMMI model from `agricolae::AMMI`
 ```{r, runCode, code = getCode("AMGE.AMMI", "ammistability")[(1:19)]}
 ```
-
 
 #### `AMGE.AMMI()`
 ```{r, runCode, code = getCode("AMGE.AMMI", "ammistability")[-(1:19)]}

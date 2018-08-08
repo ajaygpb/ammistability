@@ -51,4 +51,5 @@ Suggests:
 	  pander
 RdMacros: Rdpack
 URL: http://github.com/ajaygpb/ammistability
+    https://ajaygpb.github.io/ammistability
 BugReports: http://github.com/ajaygpb/ammistability/issues

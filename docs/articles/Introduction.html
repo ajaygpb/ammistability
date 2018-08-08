@@ -102,9 +102,9 @@
                         <h4 class="author">Ajay, B. C.<sup>1</sup>, Aravind, J. <sup>2</sup>, and Abdul Fiyaz, R.<sup>3</sup>
 </h4>
             
-            <h4 class="date">2018-08-07</h4>
+            <h4 class="date">2018-08-09</h4>
       
-      <small class="dont-index">Source: <a href="http://github.com/ajaygpb/ammistability/blob/master/vignettes/Introduction.Rmd"><code>vignettes/Introduction.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/ajaygpb/ammistability/blob/master/vignettes/Introduction.Rmd"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
 
     </div>
@@ -2218,6 +2218,12 @@ $`SP Slopegraph`</code></pre>
 <pre><code>
 $`SSI Slopegraph`</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-5.png" width="700"></p>
+<pre><code>
+$`SP Heatmap`</code></pre>
+<p><img src="Introduction_files/figure-html/runCode-6.png" width="700"></p>
+<pre><code>
+$`SSI Heatmap`</code></pre>
+<p><img src="Introduction_files/figure-html/runCode-7.png" width="700"></p>
 </div>
 </div>
 <div id="citing-ammistability" class="section level2">
@@ -2249,7 +2255,7 @@ project by citing the package.</code></pre>
 <div id="session-info" class="section level2">
 <h2 class="hasAnchor">
 <a href="#session-info" class="anchor"></a>Session Info</h2>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="kw">sessionInfo</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" data-line-number="1"><span class="kw">sessionInfo</span>()</a></code></pre></div>
 <pre><code>R version 3.5.1 (2018-07-02)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 Running under: Windows 10 x64 (build 17134)
@@ -2268,32 +2274,33 @@ other attached packages:
 [1] agricolae_1.2-8     ammistability_0.1.0
 
 loaded via a namespace (and not attached):
- [1] Rcpp_0.12.18          lattice_0.20-35       deldir_0.1-15        
- [4] gtools_3.8.1          assertthat_0.2.0      rprojroot_1.3-2      
- [7] digest_0.6.15         mime_0.5              AlgDesign_1.1-7.3    
-[10] R6_2.2.2              plyr_1.8.4            backports_1.1.2      
-[13] ggcorrplot_0.1.1      evaluate_0.11         coda_0.19-1          
-[16] ggplot2_3.0.0         highr_0.7             pillar_1.3.0         
-[19] rlang_0.2.1           lazyeval_0.2.1        spdep_0.7-7          
-[22] rstudioapi_0.7.0-9000 gdata_2.18.0          miniUI_0.1.1.1       
-[25] gmodels_2.18.1        Matrix_1.2-14         combinat_0.0-8       
-[28] rmarkdown_1.10        pkgdown_1.1.0.9000    labeling_0.3         
-[31] desc_1.2.0            splines_3.5.1         pander_0.6.2         
-[34] stringr_1.3.1         questionr_0.6.3       munsell_0.5.0        
-[37] shiny_1.1.0           compiler_3.5.1        httpuv_1.4.5         
-[40] pkgconfig_2.0.1       htmltools_0.3.6       tidyselect_0.2.4     
-[43] tibble_1.4.2          expm_0.999-2          roxygen2_6.0.1       
-[46] crayon_1.3.4          dplyr_0.7.6           later_0.7.3          
-[49] MASS_7.3-50           commonmark_1.5        grid_3.5.1           
-[52] nlme_3.1-137          spData_0.2.9.0        xtable_1.8-2         
-[55] gtable_0.2.0          magrittr_1.5          scales_0.5.0         
-[58] stringi_1.2.4         reshape2_1.4.3        LearnBayes_2.15.1    
-[61] fs_1.2.4              promises_1.0.1        bindrcpp_0.2.2       
-[64] sp_1.3-1              xml2_1.2.0            boot_1.3-20          
-[67] klaR_0.6-14           tools_3.5.1           glue_1.3.0           
-[70] purrr_0.2.5           yaml_2.2.0            colorspace_1.3-2     
-[73] cluster_2.0.7-1       memoise_1.1.0         knitr_1.20           
-[76] bindr_0.1.1          </code></pre>
+ [1] splines_3.5.1         gtools_3.8.1          shiny_1.1.0          
+ [4] Rdpack_0.8-0          assertthat_0.2.0      expm_0.999-2         
+ [7] sp_1.3-1              highr_0.7             pander_0.6.2         
+[10] yaml_2.2.0            LearnBayes_2.15.1     pillar_1.3.0         
+[13] backports_1.1.2       lattice_0.20-35       glue_1.3.0           
+[16] digest_0.6.15         promises_1.0.1        colorspace_1.3-2     
+[19] htmltools_0.3.6       httpuv_1.4.5          Matrix_1.2-14        
+[22] plyr_1.8.4            klaR_0.6-14           pkgconfig_2.0.1      
+[25] bibtex_0.4.2          ggcorrplot_0.1.1      questionr_0.6.3      
+[28] gmodels_2.18.1        purrr_0.2.5           xtable_1.8-2         
+[31] scales_0.5.0          gdata_2.18.0          later_0.7.3          
+[34] tibble_1.4.2          combinat_0.0-8        ggplot2_3.0.0        
+[37] lazyeval_0.2.1        magrittr_1.5          crayon_1.3.4         
+[40] mime_0.5              deldir_0.1-15         memoise_1.1.0        
+[43] evaluate_0.11         fs_1.2.5              nlme_3.1-137         
+[46] MASS_7.3-50           xml2_1.2.0            tools_3.5.1          
+[49] gbRd_0.4-11           stringr_1.3.1         munsell_0.5.0        
+[52] cluster_2.0.7-1       bindrcpp_0.2.2        compiler_3.5.1       
+[55] pkgdown_1.1.0.9000    rlang_0.2.1           grid_3.5.1           
+[58] rstudioapi_0.7.0-9001 miniUI_0.1.1.1        labeling_0.3         
+[61] rmarkdown_1.10        boot_1.3-20           gtable_0.2.0         
+[64] roxygen2_6.1.0        reshape2_1.4.3        R6_2.2.2             
+[67] AlgDesign_1.1-7.3     knitr_1.20            dplyr_0.7.6          
+[70] bindr_0.1.1           commonmark_1.5        rprojroot_1.3-2      
+[73] spdep_0.7-7           desc_1.2.0            stringi_1.2.4        
+[76] Rcpp_0.12.18          spData_0.2.9.0        tidyselect_0.2.4     
+[79] coda_0.19-1          </code></pre>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="hasAnchor">
