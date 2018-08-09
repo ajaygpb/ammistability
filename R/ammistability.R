@@ -96,6 +96,7 @@
 #'
 #' @importFrom methods is
 #' @importFrom stats cor
+#' @importFrom stats reorder
 #' @import ggcorrplot
 #' @importFrom reshape2 melt
 #' @export
