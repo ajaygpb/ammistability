@@ -1,13 +1,13 @@
 
-## `ammistability`: Additive Main Effects and Multiplicative Interaction Model Stability Parameters <img src="https://raw.githubusercontent.com/ajaygpb/ammistability/master/inst/extdata/ammistability.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;">
+## `ammistability`: Additive Main Effects and Multiplicative Interaction Model Stability Parameters <img src="https://raw.githubusercontent.com/ajaygpb/ammistability/master/inst/extdata/ammistability.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
 
-###### Version : [0.1.0](https://ajaygpb.github.io/ammistability/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [0.1.0.9000](https://ajaygpb.github.io/ammistability/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Ajay, B. C.<sup>1</sup>, Aravind, J.<sup>2</sup> and Abdul Fiyaz, R<sup>3</sup>*
 
-1.  RRS, ICAR-Directorate of Groundnut Research, Anantapur
-2.  ICAR-National Bureau of Plant Genetic Resources, New Delhi
-3.  ICAR-Indian Institute of Rice Research, Hyderabad
+1.  RRS, ICAR-Directorate of Groundnut Research, Anantapur.
+2.  ICAR-National Bureau of Plant Genetic Resources, New Delhi.
+3.  ICAR-Indian Institute of Rice Research, Hyderabad.
 
 -----
 
@@ -16,16 +16,18 @@ version](https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg)](https://cran.r-
 [![License: GPL
 v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version-last-release/ammistability)](https://cran.r-project.org/package=ammistability)
-<!-- [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/ammistability?color=green)](https://CRAN.R-project.org/package=ammistability) -->
+[![rstudio mirror
+downloads](https://cranlogs.r-pkg.org/badges/grand-total/ammistability?color=green)](https://CRAN.R-project.org/package=ammistability)
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/ajaygpb/ammistability) -->
 [![develVersion](https://img.shields.io/badge/devel%20version-0.1.0-orange.svg)](https://github.com/ajaygpb/ammistability)
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/ajaygpb/ammistability/total.svg)] -->
 [![Project Status:
-WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
-[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2018--08--09-yellowgreen.svg)](/commits/master)
-<!-- [![Rdoc](http://www.rdocumentation.org/badges/version/ammistability)](http://www.rdocumentation.org/packages/ammistability) -->
-<!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963) -->
+Inactive](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive)
+[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2018--08--15-yellowgreen.svg)](/commits/master)
+[![Rdoc](http://www.rdocumentation.org/badges/version/ammistability)](http://www.rdocumentation.org/packages/ammistability)
+[![Zenodo
+DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1344756.svg)](https://doi.org/10.5281/zenodo.1344756)
 [![Analytics](https://pro-pulsar-193905.appspot.com/UA-123032895-2/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
 
 -----
@@ -49,19 +51,30 @@ vignette for complete list of citations for the methods implemented.
 
 ## Installation
 
-### Install development version from Github
+The package can be installed from CRAN as follows:
 
 ``` r
+# Install from CRAN
+install.packages('ammistability', dependencies=TRUE)
+```
+
+The development version can be installed from github as follows:
+
+``` r
+# Install development version from Github
 devtools::install_github("ajaygpb/ammistability")
 ```
 
 ## Detailed tutorial
 
-For a detailed tutorial on how to used this package type:
+For a detailed tutorial (vignette) on how to used this package type:
 
 ``` r
 browseVignettes(package = 'ammistability')
 ```
+
+The vignette for the latest version is also available
+[online](https://ajaygpb.github.io/ammistability/articles/Introduction.html).
 
 ## What’s new
 
@@ -73,13 +86,13 @@ news(package='ammistability')
 
 ## Links
 
-<!-- [CRAN page](https://cran.r-project.org/package=ammistability) -->
+[CRAN page](https://cran.r-project.org/package=ammistability)
 
 [Github page](https://github.com/ajaygpb/ammistability)
 
-[Github website](https://ajaygpb.github.io/ammistability/)
+[Documentation website](https://ajaygpb.github.io/ammistability/)
 
-<!-- [Zenodo DOI](https://doi.org/10.5281/zenodo.1310011) -->
+[Zenodo DOI](https://doi.org/10.5281/zenodo.1344756)
 
 ## Citing `ammistability`
 
@@ -95,16 +108,18 @@ To cite the R package 'ammistability' in publications use:
 
   Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (NA).
   ammistability: Additive Main Effects and Multiplicative
-  Interaction Model Stability Parameters. R package version 0.1.0,
-  https://ajaygpb.github.io/ammistability/.
+  Interaction Model Stability Parameters. R package version
+  0.1.0.9000,
+  https://ajaygpb.github.io/ammistability/https://CRAN.R-project.org/package=ammistability.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters},
     author = {B. C. Ajay and J. Aravind and R. {Abdul Fiyaz}},
-    note = {R package version 0.1.0},
+    note = {R package version 0.1.0.9000},
     note = {https://ajaygpb.github.io/ammistability/},
+    note = {https://CRAN.R-project.org/package=ammistability},
   }
 
 This free and open-source software implements academic research by

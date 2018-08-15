@@ -24,9 +24,9 @@ citEntry(entry  = "Manual",
          textVersion = paste(
            "Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (",
            year, ").  ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters. ",
-           vers, ", ", "https://ajaygpb.github.io/ammistability/",
+           vers, ", ", "https://ajaygpb.github.io/ammistability/", "https://CRAN.R-project.org/package=ammistability",
            ".", sep=""),
-         note = {c(paste(vers), "https://ajaygpb.github.io/ammistability/")})
+         note = {c(paste(vers), "https://ajaygpb.github.io/ammistability/", "https://CRAN.R-project.org/package=ammistability")})
 
 citFooter("This free and open-source software implements academic
 research by the authors and co-workers. If you use it, please support

@@ -1,13 +1,13 @@
 ---
-title: "The **ammistability** package: A brief introduction"
-author: Ajay, B. C.^1^, Aravind, J. ^2^, and Abdul Fiyaz, R.^3^
+title: "The `ammistability` Package: A Brief Introduction"
+author: Ajay, B. C.^1^, Aravind, J.^2^, and Abdul Fiyaz, R.^3^
 date: '`r Sys.Date()`'
 header-includes:
 - \usepackage{fancyhdr}
 - \usepackage{wrapfig}
 - \pagestyle{fancy}
 - \fancyhead[LE,RO]{\slshape \rightmark}
-- \fancyhead[LO,RE]{The ammistability package{:} A brief introduction}
+- \fancyhead[LO,RE]{The \texttt{ammistability} Package{:} A Brief Introduction}
 - \fancyfoot[C]{\thepage}
 - \usepackage{hyperref}
 - \hypersetup{colorlinks=true}
@@ -34,14 +34,27 @@ vignette: |
   %\VignetteEngine{knitr::rmarkdown_notangle}
 ---
 
-\begin{center}
+```{r, echo=FALSE}
+out_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+```
+
+```{r, results='asis', echo=FALSE}
+switch(out_type,
+    html = {cat("<p>1. RRS, ICAR-Directorate of Groundnut Research, Anantapur.</p>
+
+<p>2. ICAR-National Bureau of Plant Genetic Resources, New Delhi.</p>
+
+<p>3. ICAR-Indian Institute of Rice Research, Hyderabad.</p>")},
+    latex = cat("\\begin{center}
 1. RRS, ICAR-Directorate of Groundnut Research, Anantapur.
 
 2. ICAR-National Bureau of Plant Genetic Resources, New Delhi.
 
 3. ICAR-Indian Institute of Rice Research, Hyderabad.
 
-\end{center}
+\\end{center}" )
+)
+```
 
 \begin{center}
 \vspace{6pt}
@@ -65,22 +78,25 @@ knitr::opts_chunk$set(
     \vspace{-20pt}
 \end{wrapfigure}
 
-## Overview <img src="https://raw.githubusercontent.com/ajaygpb/ammistability/master/inst/extdata/ammistability.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;">
+## Overview <img src="https://raw.githubusercontent.com/ajaygpb/ammistability/master/inst/extdata/ammistability.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
 
 The package `ammistability` is a collection of functions for the computation of various stability parameters from the results of Additive Main Effects and Multiplicative Interaction (AMMI) analysis computed by the  [`AMMI`](https://www.rdocumentation.org/packages/agricolae/versions/1.2-8/topics/AMMI) function of [`agricolae`](https://CRAN.R-project.org/package=agricolae) package.
 
-The goal of this vignette is to introduce the users to these functions and get started in describing sequentially recorded germination count data. This document assumes a basic knowledge of `R` programming language.
+The goal of this vignette is to introduce the users to these functions and give a primer in computation of various stability parameters/indices from a fitted AMMI model. This document assumes a basic knowledge of `R` programming language.
 
 ## Installation
-The package can be installed using the following functions:
+The package can be installed from CRAN as follows:
 
 ```{r, eval=FALSE}
 # Install from CRAN
 install.packages('ammistability', dependencies=TRUE)
+```
 
+The development version can be installed from github as follows:
+
+```{r, eval=FALSE}
 # Install development version from Github
 devtools::install_github("ajaygpb/ammistability")
-
 ```
 
 \clearpage

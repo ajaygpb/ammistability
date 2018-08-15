@@ -1,7 +1,7 @@
 Package: ammistability
 Type: Package
 Title: Additive Main Effects and Multiplicative Interaction Model Stability Parameters
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: c(
     person(given  = c("B.", "C."), family = "Ajay",
            email = "ajaygpb@yahoo.co.in",
@@ -48,8 +48,10 @@ Imports:
 Suggests:
     knitr,
     rmarkdown,
-	  pander
+	pander
 RdMacros: Rdpack
 URL: http://github.com/ajaygpb/ammistability
+    https://CRAN.R-project.org/package=ammistability
     https://ajaygpb.github.io/ammistability
+    https://doi.org/10.5281/zenodo.1344756
 BugReports: http://github.com/ajaygpb/ammistability/issues
