@@ -69,7 +69,7 @@ that \ifelse{html}{\out{<i>w<sub>1</sub> + w<sub>2</sub> = 1</i>}}{\eqn{w_{1}
 \tab \strong{\ifelse{html}{\out{<i>w<sub>1</sub></i>}}{\eqn{w_{1}}}} \tab
 \strong{\ifelse{html}{\out{<i>w<sub>2</sub></i>}}{\eqn{w_{2}}}}\cr 1.00 \tab
 0.5 \tab 0.5\cr 0.67 \tab 0.6 \tab 0.4\cr 0.43 \tab 0.7 \tab 0.3\cr 0.25 \tab
-0.8 \tab 0.2\cr }
+0.8 \tab 0.2 }
 
 The SSI proposed by Farshadfar (2008) is called the Genotype stability index
 (\ifelse{html}{\out{GSI}}{\eqn{GSI}}) or Yield stability index

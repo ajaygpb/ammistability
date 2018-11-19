@@ -97,6 +97,9 @@ ASI.AMMI <- function(model, ssi.method = c("farshadfar", "rao"), a = 1) {
 
   ssi.method <- match.arg(ssi.method)
 
+  # Fetch response (Yield)
+  yresp <- setdiff(colnames(model$means), c("ENV", "GEN", "RESIDUAL"))
+
   A <- model$biplot[, 1:4]
   A <- A[A[, 1] == "GEN", -c(1, 2)]
 
@@ -106,7 +109,7 @@ ASI.AMMI <- function(model, ssi.method = c("farshadfar", "rao"), a = 1) {
   ASI <- sqrt(((A[, "PC1"]^2) * (th1^2)) + ((A[, "PC2"]^2) * (th2^2)))
 
   B <- model$means
-  W <- aggregate(B$Yield, by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
+  W <- aggregate(B[, yresp], by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
   SSI_ASI <- SSI(y = W$x, sp = ASI, gen = W$Group.1,
                  method = ssi.method, a = a)
   ranking <- SSI_ASI

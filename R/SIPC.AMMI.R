@@ -124,6 +124,9 @@ SIPC.AMMI <- function(model, n, alpha = 0.05,
 
   ssi.method <- match.arg(ssi.method)
 
+  # Fetch response (Yield)
+  yresp <- setdiff(colnames(model$means), c("ENV", "GEN", "RESIDUAL"))
+
 # cova <- cov(model$genXenv)
 # values <- eigen(cova)
 # SIPC1 <- (sqrt(values$values[1])*model$biplot[,3])
@@ -149,7 +152,7 @@ SIPC.AMMI <- function(model, n, alpha = 0.05,
   SIPC <- unname(rowSums(apply(A, 2, FUN = abs)))
 
   B <- model$means
-  W <- aggregate(B$Yield, by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
+  W <- aggregate(B[, yresp], by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
   SSI_SIPC <- SSI(y = W$x, sp = SIPC, gen = W$Group.1,
                   method = ssi.method, a = a)
   ranking <- SSI_SIPC

@@ -147,7 +147,8 @@ FA.AMMI <- function(model, n, alpha = 0.05,
 
   ssi.method <- match.arg(ssi.method)
 
-
+  # Fetch response (Yield)
+  yresp <- setdiff(colnames(model$means), c("ENV", "GEN", "RESIDUAL"))
 
 # cova<-cov(model$genXenv)
 # values<-eigen(cova)
@@ -170,7 +171,7 @@ FA.AMMI <- function(model, n, alpha = 0.05,
   FA <- rowSums((gamma.n^2) %*% diag(lambda.n^2))
 
   B <- model$means
-  W <- aggregate(B$Yield, by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
+  W <- aggregate(B[, yresp], by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
   SSI_FA <- SSI(y = W$x, sp = FA, gen = W$Group.1,
                 method = ssi.method, a = a)
   ranking <- SSI_FA

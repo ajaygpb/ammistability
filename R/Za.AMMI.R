@@ -106,6 +106,9 @@ ZA.AMMI <- function(model, n, alpha = 0.05,
 
   ssi.method <- match.arg(ssi.method)
 
+  # Fetch response (Yield)
+  yresp <- setdiff(colnames(model$means), c("ENV", "GEN", "RESIDUAL"))
+
   # Za1 = model$biplot[,3]*model$analysis[1,1]
   # Za1<-Za1[-c(53:56)]
   # Za2 = model$biplot[,4]*model$analysis[2,1]
@@ -128,7 +131,7 @@ ZA.AMMI <- function(model, n, alpha = 0.05,
   Za <- rowSums(abs(gamma.n %*% diag(theta.n)))
 
   B <- model$means
-  W <- aggregate(B$Yield, by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
+  W <- aggregate(B[, yresp], by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
   SSI_Za <- SSI(y = W$x, sp = Za, gen = W$Group.1,
                 method = ssi.method, a = a)
   ranking <- SSI_Za

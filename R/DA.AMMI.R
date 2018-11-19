@@ -112,6 +112,9 @@ DA.AMMI <- function(model, n, alpha = 0.05,
 
   ssi.method <- match.arg(ssi.method)
 
+  # Fetch response (Yield)
+  yresp <- setdiff(colnames(model$means), c("ENV", "GEN", "RESIDUAL"))
+
   # cova<-cov(model$genXenv)
   # values<-eigen(cova)
   # D1<-sqrt((values$values[1]*model$biplot[,3])^2)
@@ -132,7 +135,7 @@ DA.AMMI <- function(model, n, alpha = 0.05,
   DA <- sqrt(rowSums((gamma.n %*% diag(lambda.n))^2))
 
   B <- model$means
-  W <- aggregate(B$Yield, by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
+  W <- aggregate(B[, yresp], by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
   SSI_DA <- SSI(y = W$x, sp = DA, gen = W$Group.1,
                 method = ssi.method, a = a)
   ranking <- SSI_DA

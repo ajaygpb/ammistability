@@ -163,6 +163,9 @@ MASV.AMMI <- function(model, n, alpha = 0.05,
 
   ssi.method <- match.arg(ssi.method)
 
+  # Fetch response (Yield)
+  yresp <- setdiff(colnames(model$means), c("ENV", "GEN", "RESIDUAL"))
+
   A <- model$biplot
   A <- A[A[, 1] == "GEN", -c(1, 2)]
   A <- A[, 1:n] # Fetch only n IPCs
@@ -179,7 +182,7 @@ MASV.AMMI <- function(model, n, alpha = 0.05,
   MASV <- sqrt(MASV)
 
   B <- model$means
-  W <- aggregate(B$Yield, by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
+  W <- aggregate(B[, yresp], by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
   SSI_MASV <- SSI(y = W$x, sp = MASV, gen = W$Group.1,
                   method = ssi.method, a = a)
   ranking <- SSI_MASV

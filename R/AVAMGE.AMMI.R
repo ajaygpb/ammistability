@@ -114,6 +114,9 @@ AVAMGE.AMMI <- function(model, n, alpha = 0.05,
 
   ssi.method <- match.arg(ssi.method)
 
+  # Fetch response (Yield)
+  yresp <- setdiff(colnames(model$means), c("ENV", "GEN", "RESIDUAL"))
+
   # GxE matrix
   ge <- array(model$genXenv, dim(model$genXenv), dimnames(model$genXenv))
   # SVD
@@ -127,7 +130,7 @@ AVAMGE.AMMI <- function(model, n, alpha = 0.05,
   AVAMGE <- rowSums(apply(ge.n, 2, FUN = abs))
 
   B <- model$means
-  W <- aggregate(B$Yield, by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
+  W <- aggregate(B[, yresp], by = list(model$means$GEN), FUN = mean, na.rm = TRUE)
   SSI_AVAMGE <- SSI(y = W$x, sp = AVAMGE, gen = W$Group.1,
                     method = ssi.method, a = a)
   ranking <- SSI_AVAMGE
