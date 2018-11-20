@@ -2,12 +2,12 @@
 title: "The `ammistability` Package: A Brief Introduction"
 author: Ajay, B. C.^1^, Aravind, J.^2^, and Abdul Fiyaz, R.^3^
 date: '`r Sys.Date()`'
+classoption: table
 header-includes:
 - \usepackage{fancyhdr}
 - \usepackage{wrapfig}
 - \pagestyle{fancy}
 - \fancyhead[LE,RO]{\slshape \rightmark}
-- \fancyhead[LO,RE]{The \texttt{ammistability} Package{:} A Brief Introduction}
 - \fancyfoot[C]{\thepage}
 - \usepackage{hyperref}
 - \hypersetup{colorlinks=true}
@@ -15,9 +15,10 @@ header-includes:
 - \hypersetup{linkcolor=blue}
 - \usepackage{pdflscape}
 - \usepackage{booktabs}
-- \usepackage[table]{xcolor}
+- \usepackage{xcolor}
 - \newcommand{\blandscape}{\begin{landscape}}
 - \newcommand{\elandscape}{\end{landscape}}
+- \fancyhead[LO,RE]{The -\texttt{ammistability} Package{:} A Brief Introduction}
 output:
   pdf_document:
     dev: cairo_pdf
@@ -151,7 +152,7 @@ rownames(stabparams) <- NULL
 ```
 
 ```{r, echo = FALSE, eval = TRUE}
-pander::pander(stabparams, style='multiline',
+pander::pander(stabparams, style = 'multiline',
                split.cell = c(15, 15, 50, 10),
                justify = c('left'), split.table = Inf, keep.line.breaks = TRUE,
                use.hyphening = FALSE, missing = "")
