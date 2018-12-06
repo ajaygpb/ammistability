@@ -1,7 +1,13 @@
 ---
-title: "The `ammistability` Package: A Brief Introduction"
-author: Ajay, B. C.^1^, Aravind, J.^2^, and Abdul Fiyaz, R.^3^
-date: '`r Sys.Date()`'
+title: 'The `ammistability` Package: A Brief Introduction'
+author: "Ajay, B. C.^1^, Aravind, J.^2^, and Abdul Fiyaz, R.^3^"
+date: "`r Sys.Date()`"
+output:
+  pdf_document:
+    dev: cairo_pdf
+    fig_caption: no
+  html_document:
+    df_print: paged
 classoption: table
 header-includes:
 - \usepackage{fancyhdr}
@@ -19,15 +25,9 @@ header-includes:
 - \newcommand{\blandscape}{\begin{landscape}}
 - \newcommand{\elandscape}{\end{landscape}}
 - \fancyhead[LO,RE]{The -\texttt{ammistability} Package{:} A Brief Introduction}
-output:
-  pdf_document:
-    dev: cairo_pdf
-    fig_caption: no
-  html_document:
-    df_print: paged
+link-citations: yes
 csl: frontiers.csl
 bibliography: REFERENCES.bib
-link-citations: yes
 toc: no
 vignette: |
   %\VignetteIndexEntry{Introduction}
@@ -37,6 +37,12 @@ vignette: |
 
 ```{r, echo=FALSE}
 out_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
+r = getOption("repos")
+r["CRAN"] = "https://cran.rstudio.com/"
+#r["CRAN"] = "https://cloud.r-project.org/"
+#r["CRAN"] = "https://ftp.iitm.ac.in/cran/"
+options(repos = r)
 ```
 
 ```{r, results='asis', echo=FALSE}
@@ -106,6 +112,40 @@ Then the package can be loaded using the function
 ```{r, eval=TRUE}
 library(ammistability)
 ```
+
+## Version History
+The current version of the package is `r as.vector(available.packages()["ammistability",]["Version"])`. The previous versions are as follows.
+
+**Table 1.** Version history of `ammistability` `R` package.
+
+```{r, echo=FALSE, message=FALSE, eval = FALSE}
+if (requireNamespace("RCurl", quietly = TRUE) & requireNamespace("httr", quietly = TRUE) & requireNamespace("XML", quietly = TRUE)) {
+pkg <- "ammistability"
+link <- paste0("https://cran.r-project.org/src/contrib/Archive/", pkg, "/")
+cafile <- system.file("CurlSSL", "cacert.pem", package = "RCurl")
+page <- httr::GET(link, httr::config(cainfo = cafile))
+page <- httr::content(page, as = 'text')
+# page <- RCurl::getURL(link)
+
+VerHistory <- XML::readHTMLTable(page)[[1]][,2:3]
+colnames(VerHistory) <- c("Version", "Date")
+VerHistory <- VerHistory[VerHistory$Version != "Parent Directory",]
+VerHistory <- VerHistory[!is.na(VerHistory$Version), ]
+VerHistory$Date <- as.Date(VerHistory$Date)
+VerHistory$Version <- gsub("ammistability_", "", VerHistory$Version)
+VerHistory$Version <- gsub(".tar.gz", "", VerHistory$Version)
+
+VerHistory <- VerHistory[order(VerHistory$Date), c("Version", "Date")]
+rownames(VerHistory) <- NULL
+} else {
+print("Packages 'RCurl', 'httr' and 'XML' are required to generate this table")
+}
+
+knitr::kable(VerHistory)
+
+```
+
+To know detailed history of changes use `news(package='ammistability')`.
 
 ## AMMI model
 The difference in response of genotypes to different environmental conditions is known as Genotype-Environment Interaction (GEI). Understanding the nature and structure of this interaction is critical for plant breeders to select for genotypes with wide or specific adaptability. One of the most popular techniques to achieve this is by fitting the Additive Main Effects and Multiplicative Interaction (AMMI) model to the results of multi environment trials [@gauch_model_1988; @gauch_statistical_1992]. 

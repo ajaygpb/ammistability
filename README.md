@@ -1,7 +1,7 @@
 
 ## `ammistability`: Additive Main Effects and Multiplicative Interaction Model Stability Parameters <img src="https://raw.githubusercontent.com/ajaygpb/ammistability/master/inst/extdata/ammistability.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
 
-###### Version : [0.1.0.9000](https://ajaygpb.github.io/ammistability/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [0.1.1](https://ajaygpb.github.io/ammistability/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Ajay, B. C.<sup>1</sup>, Aravind, J.<sup>2</sup> and Abdul Fiyaz, R<sup>3</sup>*
 
@@ -19,12 +19,12 @@ v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org
 [![rstudio mirror
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/ammistability?color=green)](https://CRAN.R-project.org/package=ammistability)
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/ajaygpb/ammistability) -->
-[![develVersion](https://img.shields.io/badge/devel%20version-0.1.0-orange.svg)](https://github.com/ajaygpb/ammistability)
+[![develVersion](https://img.shields.io/badge/devel%20version-0.1.1-orange.svg)](https://github.com/ajaygpb/ammistability)
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/ajaygpb/ammistability/total.svg)] -->
 [![Project Status:
 Inactive](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2018--08--15-yellowgreen.svg)](/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2018--12--06-yellowgreen.svg)](/commits/master)
 [![Rdoc](http://www.rdocumentation.org/badges/version/ammistability)](http://www.rdocumentation.org/packages/ammistability)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1344756.svg)](https://doi.org/10.5281/zenodo.1344756)
@@ -108,8 +108,7 @@ To cite the R package 'ammistability' in publications use:
 
   Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (NA).
   ammistability: Additive Main Effects and Multiplicative
-  Interaction Model Stability Parameters. R package version
-  0.1.0.9000,
+  Interaction Model Stability Parameters. R package version 0.1.1,
   https://ajaygpb.github.io/ammistability/https://CRAN.R-project.org/package=ammistability.
 
 A BibTeX entry for LaTeX users is
@@ -117,7 +116,7 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters},
     author = {B. C. Ajay and J. Aravind and R. {Abdul Fiyaz}},
-    note = {R package version 0.1.0.9000},
+    note = {R package version 0.1.1},
     note = {https://ajaygpb.github.io/ammistability/},
     note = {https://CRAN.R-project.org/package=ammistability},
   }
