@@ -1,7 +1,7 @@
 Package: ammistability
 Type: Package
 Title: Additive Main Effects and Multiplicative Interaction Model Stability Parameters
-Version: 0.1.1
+Version: 0.1.1.9000
 Authors@R: c(
     person(given  = c("B.", "C."), family = "Ajay",
            email = "ajaygpb@yahoo.co.in",
@@ -34,7 +34,7 @@ Description: Computes various stability parameters from Additive Main Effects
 Copyright: 2017-2018, ICAR-DGR
 License: GPL-2 | GPL-3
 Encoding: UTF-8
-Depends: R (>= 3.0.1)
+Depends: R (>= 3.5.0)
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1
 Imports:
