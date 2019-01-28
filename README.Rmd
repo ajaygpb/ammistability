@@ -31,7 +31,13 @@ devtools::load_all(".")
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version-last-release/ammistability)](https://cran.r-project.org/package=ammistability)
 [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/ammistability?color=green)](https://CRAN.R-project.org/package=ammistability)
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/ajaygpb/ammistability) -->
-[![develVersion](https://img.shields.io/badge/devel%20version-`r gsub("Version:\\s*", "", readLines(paste0("https://raw.githubusercontent.com/", "ajaygpb/ammistability", "/master/DESCRIPTION"))[grep("Version:", readLines(paste0("https://raw.githubusercontent.com/", "ajaygpb/ammistability", "/master/DESCRIPTION")))])`-orange.svg)](https://github.com/ajaygpb/ammistability)
+```{r, results='asis', echo=FALSE}
+dver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("ammistability")) != "",
+               yes = getNamespaceVersion("ammistability"),
+               no = gsub("Version:\\s*", "", readLines(paste0("https://raw.githubusercontent.com/", "aravind-j/ammistability", "/master/DESCRIPTION"))[grep("Version:", readLines(paste0("https://raw.githubusercontent.com/", "aravind-j/ammistability", "/master/DESCRIPTION")))]))
+
+cat(paste("[![develVersion](https://img.shields.io/badge/devel%20version-", dver, "-orange.svg)](https://github.com/aravind-j/ammistability)", sep = ""))
+```
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/ajaygpb/ammistability/total.svg)] -->
 [![Project Status: Inactive](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)

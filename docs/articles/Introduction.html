@@ -38,14 +38,14 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ammistability</a>
-        <span class="version label label-primary" data-toggle="tooltip" data-placement="bottom" title="ammistability">0.1.1</span>
+        <span class="version label label-primary" data-toggle="tooltip" data-placement="bottom" title="ammistability">0.1.1.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
     Home
@@ -82,7 +82,7 @@
   </a>
 </li>
       </ul>
-<form class="navbar-form navbar-right" role="search">
+<form class="navbar-form navbar-right hidden-xs hidden-sm" role="search">
         <div class="form-group">
           <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
 </div>
@@ -103,7 +103,7 @@
                         <h4 class="author">Ajay, B. C.<sup>1</sup>, Aravind, J.<sup>2</sup>, and Abdul Fiyaz, R.<sup>3</sup>
 </h4>
             
-            <h4 class="date">2018-12-06</h4>
+            <h4 class="date">2019-01-28</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ajaygpb/ammistability/blob/master/vignettes/Introduction.Rmd"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
@@ -156,7 +156,7 @@
   print.quosures rlang</code></pre>
 <pre><code>
 --------------------------------------------------------------------------------
-Welcome to ammistability version 0.1.1
+Welcome to ammistability version 0.1.1.9000
 
 
 # To know how to use this package type:
@@ -177,7 +177,7 @@ Welcome to ammistability version 0.1.1
 <div id="version-history" class="section level2">
 <h2 class="hasAnchor">
 <a href="#version-history" class="anchor"></a>Version History</h2>
-<p>The current version of the package is 0.1.0. The previous versions are as follows.</p>
+<p>The current version of the package is 0.1.1. The previous versions are as follows.</p>
 <p><strong>Table 1.</strong> Version history of <code>ammistability</code> <code>R</code> package.</p>
 <p>To know detailed history of changes use <code><a href="https://www.rdocumentation.org/packages/utils/topics/news">news(package='ammistability')</a></code>.</p>
 </div>
@@ -344,8 +344,7 @@ Equivalent to Wricke’s ecovalence.</td>
 <td align="left"><span class="citation">Sneller et al. (<a href="#ref-sneller_repeatability_1997">1997</a>)</span></td>
 </tr>
 <tr class="even">
-<td align="left">Absolute value of the relative contribution of IPCs to the interaction <span class="math inline">\(Za\)</span>
-</td>
+<td align="left">Absolute value of the relative contribution of IPCs to the interaction (<span class="math inline">\(Za\)</span>)</td>
 <td align="left"><code>ZA.AMMI</code></td>
 <td align="left"><span class="math display">\[Za = \sum_{i=1}^{N'}\left |
 \theta_{n}\gamma_{in} \right |\]</span></td>
@@ -2260,9 +2259,10 @@ $`SSI Heatmap`</code></pre>
 <pre><code>
 To cite the R package 'ammistability' in publications use:
 
-  Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2018).
+  Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2019).
   ammistability: Additive Main Effects and Multiplicative
-  Interaction Model Stability Parameters. R package version 0.1.1,
+  Interaction Model Stability Parameters. R package version
+  0.1.1.9000,
   https://ajaygpb.github.io/ammistability/https://CRAN.R-project.org/package=ammistability.
 
 A BibTeX entry for LaTeX users is
@@ -2270,8 +2270,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters},
     author = {B. C. Ajay and J. Aravind and R. {Abdul Fiyaz}},
-    year = {2018},
-    note = {R package version 0.1.1},
+    year = {2019},
+    note = {R package version 0.1.1.9000},
     note = {https://ajaygpb.github.io/ammistability/},
     note = {https://CRAN.R-project.org/package=ammistability},
   }
@@ -2299,36 +2299,36 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] agricolae_1.2-8     ammistability_0.1.1
+[1] agricolae_1.3-0          ammistability_0.1.1.9000
 
 loaded via a namespace (and not attached):
  [1] splines_3.6.0      gtools_3.8.1       shiny_1.2.0       
  [4] Rdpack_0.10-3      assertthat_0.2.0   expm_0.999-3      
  [7] sp_1.3-1           highr_0.7          pander_0.6.3      
-[10] yaml_2.2.0         LearnBayes_2.15.1  pillar_1.3.0      
-[13] backports_1.1.2    lattice_0.20-38    glue_1.3.0        
-[16] digest_0.6.18      promises_1.0.1     colorspace_1.3-2  
-[19] htmltools_0.3.6    httpuv_1.4.5       Matrix_1.2-15     
+[10] yaml_2.2.0         LearnBayes_2.15.1  pillar_1.3.1      
+[13] backports_1.1.3    lattice_0.20-38    glue_1.3.0        
+[16] digest_0.6.18      promises_1.0.1     colorspace_1.4-0  
+[19] htmltools_0.3.6    httpuv_1.4.5.1     Matrix_1.2-15     
 [22] plyr_1.8.4         klaR_0.6-14        pkgconfig_2.0.2   
 [25] bibtex_0.4.2       ggcorrplot_0.1.2   questionr_0.7.0   
 [28] gmodels_2.18.1     purrr_0.2.5        xtable_1.8-3      
 [31] scales_1.0.0       gdata_2.18.0       later_0.7.5       
-[34] tibble_1.4.2       combinat_0.0-8     ggplot2_3.1.0     
+[34] tibble_2.0.1       combinat_0.0-8     ggplot2_3.1.0     
 [37] lazyeval_0.2.1     magrittr_1.5       crayon_1.3.4      
-[40] mime_0.6           deldir_0.1-15      memoise_1.1.0     
+[40] mime_0.6           deldir_0.1-16      memoise_1.1.0     
 [43] evaluate_0.12      fs_1.2.6           nlme_3.1-137      
 [46] MASS_7.3-51.1      xml2_1.2.0         tools_3.6.0       
 [49] gbRd_0.4-11        stringr_1.3.1      munsell_0.5.0     
 [52] cluster_2.0.7-1    bindrcpp_0.2.2     compiler_3.6.0    
-[55] pkgdown_1.2.0.9000 rlang_0.3.0.1      grid_3.6.0        
-[58] rstudioapi_0.8     miniUI_0.1.1.1     labeling_0.3      
-[61] rmarkdown_1.10     boot_1.3-20        gtable_0.2.0      
+[55] pkgdown_1.3.0.9000 rlang_0.3.1        grid_3.6.0        
+[58] rstudioapi_0.9.0   miniUI_0.1.1.1     labeling_0.3      
+[61] rmarkdown_1.11     boot_1.3-20        gtable_0.2.0      
 [64] roxygen2_6.1.1     reshape2_1.4.3     R6_2.3.0          
-[67] AlgDesign_1.1-7.3  knitr_1.20         dplyr_0.7.8       
+[67] AlgDesign_1.1-7.3  knitr_1.21         dplyr_0.7.8       
 [70] bindr_0.1.1        commonmark_1.7     rprojroot_1.3-2   
 [73] spdep_0.8-1        desc_1.2.0         stringi_1.2.4     
-[76] Rcpp_1.0.0         spData_0.2.9.6     tidyselect_0.2.5  
-[79] coda_0.19-2       </code></pre>
+[76] Rcpp_1.0.0         spData_0.3.0       tidyselect_0.2.5  
+[79] xfun_0.4           coda_0.19-2       </code></pre>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="hasAnchor">
@@ -2406,7 +2406,7 @@ loaded via a namespace (and not attached):
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
 </div>
       </footer>
 </div>
