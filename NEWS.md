@@ -1,7 +1,9 @@
-# augmentedRCBD  0.1.2
+# ammistability  0.1.2
 
+## OTHER NOTES:
+* Updated citation.
 
-# augmentedRCBD  0.1.1
+# ammistability  0.1.1
 
 ## VIGNETTE:
 * Fixed LATEX xcolor options clash issue in vignette.
