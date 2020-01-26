@@ -5,9 +5,10 @@ date: "`r Sys.Date()`"
 output:
   pdf_document:
     dev: cairo_pdf
-    fig_caption: no
+    fig_caption: false
+    toc: false
   html_document:
-    df_print: paged
+    toc: true
 classoption: table
 header-includes:
 - \usepackage{fancyhdr}
@@ -28,7 +29,6 @@ header-includes:
 link-citations: yes
 csl: frontiers.csl
 bibliography: REFERENCES.bib
-toc: no
 vignette: |
   %\VignetteIndexEntry{Introduction}
   %\usepackage[utf8]{inputenc}
@@ -43,6 +43,7 @@ r["CRAN"] = "https://cran.rstudio.com/"
 #r["CRAN"] = "https://cloud.r-project.org/"
 #r["CRAN"] = "https://ftp.iitm.ac.in/cran/"
 options(repos = r)
+options(citation.bibtex.max=999)
 ```
 
 ```{r, results='asis', echo=FALSE}
@@ -85,11 +86,15 @@ knitr::opts_chunk$set(
     \vspace{-20pt}
 \end{wrapfigure}
 
-## Overview <img src="https://raw.githubusercontent.com/ajaygpb/ammistability/master/inst/extdata/ammistability.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
+<img src="https://raw.githubusercontent.com/ajaygpb/ammistability/master/inst/extdata/ammistability.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
 
-The package `ammistability` is a collection of functions for the computation of various stability parameters from the results of Additive Main Effects and Multiplicative Interaction (AMMI) analysis computed by the  [`AMMI`](https://www.rdocumentation.org/packages/agricolae/versions/1.2-8/topics/AMMI) function of [`agricolae`](https://CRAN.R-project.org/package=agricolae) package.
+## Overview
+
+The package `ammistability` [@ajay2019ammistability] is a collection of functions for the computation of various stability parameters from the results of Additive Main Effects and Multiplicative Interaction (AMMI) analysis computed by the  [`AMMI`](https://www.rdocumentation.org/packages/agricolae/versions/1.2-8/topics/AMMI) function of [`agricolae`](https://CRAN.R-project.org/package=agricolae) package.
 
 The goal of this vignette is to introduce the users to these functions and give a primer in computation of various stability parameters/indices from a fitted AMMI model. This document assumes a basic knowledge of `R` programming language.
+
+\clearpage
 
 ## Installation
 The package can be installed from CRAN as follows:
@@ -106,8 +111,6 @@ The development version can be installed from github as follows:
 devtools::install_github("ajaygpb/ammistability")
 ```
 
-\clearpage
-
 Then the package can be loaded using the function
 ```{r, eval=TRUE}
 library(ammistability)
@@ -118,7 +121,7 @@ The current version of the package is `r as.vector(available.packages()["ammista
 
 **Table 1.** Version history of `ammistability` `R` package.
 
-```{r, echo=FALSE, message=FALSE, eval = FALSE}
+```{r, echo=FALSE, message=FALSE, eval = TRUE}
 if (requireNamespace("RCurl", quietly = TRUE) & requireNamespace("httr", quietly = TRUE) & requireNamespace("XML", quietly = TRUE)) {
 pkg <- "ammistability"
 link <- paste0("https://cran.r-project.org/src/contrib/Archive/", pkg, "/")
