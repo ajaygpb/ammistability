@@ -13,8 +13,8 @@ Authors@R: c(
            comment = c(ORCID = "0000-0002-4791-442X")),
     person(given = "R.", family = c("Abdul Fiyaz"),
            email = "fiyaz.ra@icar.gov.in",
-           role = "aut"),
-           comment = c(ORCID = "0000-0001-6261-7071"))
+           role = c("aut"),
+           comment = c(ORCID = "0000-0001-6261-7071")),
     person("ICAR",
            role = c("cph"),
            comment = c(url = "https://www.icar.org.in")))
@@ -32,12 +32,12 @@ Description: Computes various stability parameters from Additive Main Effects
     Simultaneous Selection Index for Yield and Stability from the computed
     stability parameters. See the vignette for complete list of citations for
     the methods implemented.
-Copyright: 2017-2018, ICAR-DGR
+Copyright: 2017-2020, ICAR-DGR
 License: GPL-2 | GPL-3
 Encoding: UTF-8
 Depends: R (>= 3.5.0)
 VignetteBuilder: knitr
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 Imports:
     agricolae,
     ggcorrplot,
