@@ -8,21 +8,25 @@
 
 <title>Simultaneous Selection Indices for Yield and Stability — SSI • ammistability</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -36,11 +40,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
 
-<meta property="og:title" content="Simultaneous Selection Indices for Yield and Stability — SSI" />
 
+<meta property="og:title" content="Simultaneous Selection Indices for Yield and Stability — SSI" />
 <meta property="og:description" content="SSI computes the Simultaneous Selection Index for Yield and Stability
 (SSI) according to the methods specified in the argument method." />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -63,6 +68,7 @@
 
   gtag('config', 'UA-123032895-1');
 </script>
+
 
   </head>
 
@@ -115,7 +121,6 @@
   </a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/ajaygpb/ammistability">
@@ -137,6 +142,7 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -148,14 +154,12 @@
     </div>
 
     <div class="ref-description">
-    
     <p><code>SSI</code> computes the Simultaneous Selection Index for Yield and Stability
 (SSI) according to the methods specified in the argument <code>method</code>.</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>SSI</span>(<span class='no'>y</span>, <span class='no'>sp</span>, <span class='no'>gen</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"farshadfar"</span>, <span class='st'>"rao"</span>), <span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>1</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>SSI</span>(<span class='no'>y</span>, <span class='no'>sp</span>, <span class='no'>gen</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"farshadfar"</span>, <span class='st'>"rao"</span>), <span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>1</span>)</pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -182,7 +186,7 @@ Either <code>"farshadfar"</code> or <code>"rao"</code> (See <strong>Details</str
 computation of SSI when <code>method = "rao"</code> (See <strong>Details</strong>).</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A data frame with the following columns:</p>
@@ -195,7 +199,6 @@ computation of SSI when <code>method = "rao"</code> (See <strong>Details</strong
   The names of the genotypes are indicated as the row names of the data
   frame.
 
-    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The SSI according to Rao and Prabhakaran (2005)
@@ -224,16 +227,15 @@ weights given to the stability components
 (<i>w<sub>1</sub></i>) with a restriction
 that <i>w<sub>1</sub> + w<sub>2</sub> = 1</i>. The weights can be specified as required.</p>
 <table class='table'>
-<tr><td></td><td><strong><i>&alpha;</i></strong></td><td></td></tr>
-<tr><td></td><td><strong><i>w<sub>1</sub></i></strong></td><td></td></tr>
-<tr><td></td><td><strong><i>w<sub>2</sub></i></strong></td><td></td></tr>
-<tr><td>1.00</td><td></td><td>0.5</td></tr>
-<tr><td>0.5</td><td>0.67</td><td>0.6</td></tr>
-<tr><td>0.4</td><td>0.43</td><td>0.7</td></tr>
-<tr><td>0.3</td><td>0.25</td><td></td></tr>
-<tr><td>0.8</td><td>0.2</td><td></td></tr>
+<tr><td><strong><i>&alpha;</i></strong></td><td><strong><i>w<sub>1</sub></i></strong></td><td><strong><i>w<sub>2</sub></i></strong></td></tr>
+<tr><td>1.00</td><td>0.5</td><td>0.5</td></tr>
+<tr><td>0.67</td><td>0.6</td><td>0.4</td></tr>
+<tr><td>0.43</td><td>0.7</td><td>0.3</td></tr>
+<tr><td>0.25</td><td>0.8</td><td>0.2</td></tr>
 </table>
-    <p>The SSI proposed by Farshadfar (2008) is called the Genotype stability index
+
+
+<p>The SSI proposed by Farshadfar (2008) is called the Genotype stability index
 (GSI) or Yield stability index
 (YSI) (Farshadfar et al., 2011) and is
 computed by summation of the ranks of the stability index/parameter and the
@@ -244,7 +246,6 @@ R<sub>SP</sub> + R<sub>Y</sub></em></p></p>
 stability parameter/index rank of the genotype and
 <i>R<sub>Y</sub></i> is the mean yield rank
 of the genotype.</p>
-    
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Rao AR, Prabhakaran VT (2005).
@@ -256,7 +257,6 @@ of the genotype.</p>
 <p>Farshadfar E, Mahmodi N, Yaghotipoor A (2011).
 &#8220;AMMI stability value and simultaneous estimation of yield and yield stability in bread wheat (<em>Triticum aestivum</em> L.).&#8221;
 <em>Australian Journal of Crop Science</em>, <b>5</b>(13), 1837--1844.</p>
-    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='AMGE.AMMI.html'>AMGE.AMMI</a></code>,
@@ -268,17 +268,16 @@ of the genotype.</p>
   <code><a href='MASV.AMMI.html'>MASV.AMMI</a></code>,
   <code><a href='SIPC.AMMI.html'>SIPC.AMMI</a></code>,
   <code><a href='ZA.AMMI.html'>ZA.AMMI</a></code></p></div>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>agricolae</span>)
-<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>plrv</span>)
-<span class='no'>model</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/with'>with</a></span>(<span class='no'>plrv</span>, <span class='fu'><a href='https://www.rdocumentation.org/packages/agricolae/topics/AMMI'>AMMI</a></span>(<span class='no'>Locality</span>, <span class='no'>Genotype</span>, <span class='no'>Rep</span>, <span class='no'>Yield</span>, <span class='kw'>console</span><span class='kw'>=</span><span class='fl'>FALSE</span>))
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>plrv</span>)
+<span class='no'>model</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>plrv</span>, <span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/AMMI.html'>AMMI</a></span>(<span class='no'>Locality</span>, <span class='no'>Genotype</span>, <span class='no'>Rep</span>, <span class='no'>Yield</span>, <span class='kw'>console</span><span class='kw'>=</span><span class='fl'>FALSE</span>))
 
-<span class='no'>yield</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/stats/topics/aggregate'>aggregate</a></span>(<span class='no'>model</span>$<span class='no'>means</span>$<span class='no'>Yield</span>, <span class='kw'>by</span><span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(<span class='no'>model</span>$<span class='no'>means</span>$<span class='no'>GEN</span>),
+<span class='no'>yield</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/aggregate.html'>aggregate</a></span>(<span class='no'>model</span>$<span class='no'>means</span>$<span class='no'>Yield</span>, <span class='kw'>by</span><span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='no'>model</span>$<span class='no'>means</span>$<span class='no'>GEN</span>),
                <span class='kw'>FUN</span><span class='kw'>=</span><span class='no'>mean</span>, <span class='kw'>na.rm</span><span class='kw'>=</span><span class='fl'>TRUE</span>)[,<span class='fl'>2</span>]
 <span class='no'>stab</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='DZ.AMMI.html'>DZ.AMMI</a></span>(<span class='no'>model</span>)$<span class='no'>DZ</span>
-<span class='no'>genotypes</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/colnames'>rownames</a></span>(<span class='fu'><a href='DZ.AMMI.html'>DZ.AMMI</a></span>(<span class='no'>model</span>))
+<span class='no'>genotypes</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='fu'><a href='DZ.AMMI.html'>DZ.AMMI</a></span>(<span class='no'>model</span>))
 
 <span class='co'># With default ssi.method (farshadfar)</span>
 <span class='fu'>SSI</span>(<span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>yield</span>, <span class='kw'>sp</span> <span class='kw'>=</span> <span class='no'>stab</span>, <span class='kw'>gen</span> <span class='kw'>=</span> <span class='no'>genotypes</span>)</div><div class='output co'>#&gt;                 SP SSI rSP rY    means
@@ -376,20 +375,16 @@ of the genotype.</p>
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-
       <li><a href="#details">Details</a></li>
-
       <li><a href="#references">References</a></li>
-
       <li><a href="#see-also">See also</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -397,8 +392,9 @@ of the genotype.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
    </div>
 
@@ -421,6 +417,8 @@ of the genotype.</p>
 </script>
 
 
+
   </body>
 </html>
+
 
