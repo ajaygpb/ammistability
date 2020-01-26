@@ -11,6 +11,7 @@
 ^vignettes/Introduction\.tex$
 ^vignettes/Introduction\.aux$
 ^vignettes/Introduction\.out$
+^vignettes/Introduction\.log$
 ^ammistability\.pdf$
 ^_pkgdown\.yml$
 ^pkgdown$
