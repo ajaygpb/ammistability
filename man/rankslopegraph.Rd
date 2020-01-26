@@ -4,10 +4,20 @@
 \alias{rankslopegraph}
 \title{Rank Slopegraph}
 \usage{
-rankslopegraph(df, names, group, force.grouping = TRUE, line.size = 1,
-  line.alpha = 0.5, line.col = NULL, point.size = 1,
-  point.alpha = 0.5, point.col = NULL, text.size = 2,
-  legend.position = "bottom")
+rankslopegraph(
+  df,
+  names,
+  group,
+  force.grouping = TRUE,
+  line.size = 1,
+  line.alpha = 0.5,
+  line.col = NULL,
+  point.size = 1,
+  point.alpha = 0.5,
+  point.col = NULL,
+  text.size = 2,
+  legend.position = "bottom"
+)
 }
 \arguments{
 \item{df}{A data frame of records.}
