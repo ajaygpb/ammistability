@@ -1,6 +1,6 @@
 #' Modified AMMI Stability Index
 #'
-#' \code{MASI.AMMI} computes the Modified AMMI Stability Index (MASI) from a
+#' \code{MASI.AMMI} computes the Modified AMMI Stability Index (MASI) (Ajay et al., 2018) from a
 #' modified formula of AMMI Stability Index (ASI) (Jambhulkar et al., 2014;
 #' Jambhulkar et al., 2015; Jambhulkar et al., 2017).  Unlike ASI, MASI
 #' calculates stability value considering all significant interaction principal
@@ -9,7 +9,7 @@
 #' argument \code{ssi.method}.
 #'
 #' The Modified AMMI Stability Index
-#' (\ifelse{html}{\out{<i>MASI</i>}}{\eqn{MASI}}) is computed as follows:
+#' (\ifelse{html}{\out{<i>MASI</i>}}{\eqn{MASI}}) is computed as follows (Ajay et al., 2018):
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><i>MASI = <big>&radic;[
 #' &sum;</big><sup>N';</sup><sub style="line-height: 1.8; margin-left:
@@ -48,6 +48,8 @@
 #' \insertRef{jambhulkar_genotype_2015}{ammistability}
 #'
 #' \insertRef{jambhulkar_stability_2017}{ammistability}
+#'
+#' \insertRef{ajay_modified_2018}{ammistability}
 #'
 #' @seealso \code{\link[agricolae]{AMMI}},
 #'   \code{\link[ammistability]{ASI.AMMI}}, \code{\link[ammistability]{SSI}}

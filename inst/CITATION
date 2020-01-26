@@ -7,6 +7,27 @@ if (!length(year)) {
 }
 vers <- paste("R package version", meta$Version)
 
+citEntry(entry  = "article",
+         title  = "ammistability: {R} package for ranking genotypes based on stability parameters derived from {AMMI} model}",
+         author = personList(person(given  = c("B.", "C."), family = "Ajay",
+                                    email = "ajaygpb@yahoo.co.in",
+                                    role = c("aut", "cre"),
+                                    comment = c(ORCID = "0000-0001-7222-8483")),
+                             person(given = "J.", family = "Aravind",
+                                    email = "j.aravind@icar.gov.in",
+                                    role = c("aut"),
+                                    comment = c(ORCID = "0000-0002-4791-442X")),
+                             person(given = "R.", family = c("Abdul Fiyaz"),
+                                    email = "fiyaz.ra@icar.gov.in",
+                                    role = "aut")),
+         journal = "Indian Journal of Genetics and Plant Breeding (The)",
+         year = "2019",
+         volume = "79",
+         number = "2",
+         pages = "460--466",
+         doi = "10.31742/IJGPB.79.2.10",
+         textVersion =  "Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2019). ammistability: R package for ranking genotypes based on stability parameters derived from AMMI model. Indian Journal of Genetics and Plant Breeding (The), 79(2), 460-466. doi:10.31742/IJGPB.79.2.10")
+
 citEntry(entry  = "Manual",
          title  = "ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters",
          author = personList(person(given  = c("B.", "C."), family = "Ajay",
@@ -24,7 +45,7 @@ citEntry(entry  = "Manual",
          textVersion = paste(
            "Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (",
            year, ").  ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters. ",
-           vers, ", ", "https://ajaygpb.github.io/ammistability/", "https://CRAN.R-project.org/package=ammistability",
+           vers, ", ", "https://ajaygpb.github.io/ammistability/, ", "https://CRAN.R-project.org/package=ammistability",
            ".", sep=""),
          note = {c(paste(vers), "https://ajaygpb.github.io/ammistability/", "https://CRAN.R-project.org/package=ammistability")})
 

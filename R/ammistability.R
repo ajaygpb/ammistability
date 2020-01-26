@@ -29,7 +29,7 @@
 #' Model (FA)}}{Raju, 2002} \item{\link[ammistability:MASI.AMMI]{Modified AMMI
 #' Stability Index (MASI)}}{Ajay et al., 2018}
 #' \item{\link[ammistability:MASV.AMMI]{Modified AMMI Stability Value
-#' (MASV)}}{Zali et al., 2012} \item{\link[ammistability:SIPC.AMMI]{Sums of the
+#' (MASV)}}{Zali et al., 2012; Ajay et al., 2019} \item{\link[ammistability:SIPC.AMMI]{Sums of the
 #' Absolute Value of the IPC Scores (SIPC)}}{Sneller et al., 1997}
 #' \item{\link[ammistability:ZA.AMMI]{Absolute Value of the Relative
 #' Contribution of IPCs to the Interaction (Za)}}{Zali et al., 2012} }
@@ -139,6 +139,12 @@
 #' \insertRef{jambhulkar_genotype_2015}{ammistability}
 #'
 #' \insertRef{jambhulkar_stability_2017}{ammistability}
+#'
+#' \insertRef{jambhulkar_stability_2017}{ammistability}
+#'
+#' \insertRef{ajay_modified_2018}{ammistability}
+#'
+#' \insertRef{ajay2019ammistability}{ammistability}
 #'
 #' @examples
 #' library(agricolae)
