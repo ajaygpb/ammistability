@@ -4,7 +4,6 @@ author: "Ajay, B. C.^1^, Aravind, J.^2^, and Abdul Fiyaz, R.^3^"
 date: "`r Sys.Date()`"
 output:
   pdf_document:
-    dev: cairo_pdf
     fig_caption: false
     toc: false
   html_document:
@@ -117,7 +116,14 @@ library(ammistability)
 ```
 
 ## Version History
-The current version of the package is `r as.vector(available.packages()["ammistability",]["Version"])`. The previous versions are as follows.
+```{r, results='asis', echo=FALSE}
+# Fetch release version
+# rver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("ammistability")) == "",
+#                yes = getNamespaceVersion("ammistability"),
+#                no = as.vector(available.packages()["ammistability",]["Version"]))
+rver <- "0.1.2"
+```
+The current version of the package is `r rver`. The previous versions are as follows.
 
 **Table 1.** Version history of `ammistability` `R` package.
 
