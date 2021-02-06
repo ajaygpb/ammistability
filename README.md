@@ -1,7 +1,7 @@
 
 ## `ammistability`: Additive Main Effects and Multiplicative Interaction Model Stability Parameters <img src="https://raw.githubusercontent.com/ajaygpb/ammistability/master/inst/extdata/ammistability.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
 
-###### Version : [0.1.1.9000](https://ajaygpb.github.io/ammistability/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [0.1.1.9000](https://ajaygpb.github.io/ammistability/); License: [GPL-2\|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Ajay, B. C.<sup>1</sup>, Aravind, J.<sup>2</sup> and Abdul Fiyaz, R<sup>3</sup>*
 
@@ -9,7 +9,7 @@
 2.  ICAR-National Bureau of Plant Genetic Resources, New Delhi.
 3.  ICAR-Indian Institute of Rice Research, Hyderabad.
 
------
+------------------------------------------------------------------------
 
 [![minimal R
 version](https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg)](https://cran.r-project.org/)
@@ -19,18 +19,18 @@ v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org
 [![rstudio mirror
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/ammistability?color=green)](https://CRAN.R-project.org/package=ammistability)
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/ajaygpb/ammistability) -->
-[![develVersion](https://img.shields.io/badge/devel%20version-0.1.1.9000-orange.svg)](https://github.com/aravind-j/ammistability)
+[![develVersion](https://img.shields.io/badge/devel%20version-0.1.1.9000-orange.svg)](https://github.com/ajaygpb/ammistability)
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/ajaygpb/ammistability/total.svg)] -->
 [![Project Status:
-Inactive](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive)
-[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2020--01--26-yellowgreen.svg)](/commits/master)
-[![Rdoc](http://www.rdocumentation.org/badges/version/ammistability)](http://www.rdocumentation.org/packages/ammistability)
+Inactive](http://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/)
+[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2021--02--05-yellowgreen.svg)](/commits/master)
+[![Rdoc](https://www.rdocumentation.org/badges/version/ammistability)](https://www.rdocumentation.org/packages/ammistability)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1344756.svg)](https://doi.org/10.5281/zenodo.1344756)
 [![Analytics](https://pro-pulsar-193905.appspot.com/UA-123032895-2/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
 
------
+------------------------------------------------------------------------
 
 ## Description
 
@@ -102,24 +102,41 @@ To cite the methods in the package use:
 citation("ammistability")
 ```
 
-``` 
 
-To cite the R package 'ammistability' in publications use:
+    To cite the R package 'ammistability' in publications use:
 
-  Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2019). ammistability: R
-  package for ranking genotypes based on stability parameters derived from
-  AMMI model. Indian Journal of Genetics and Plant Breeding (The), 79(2),
-  460-466. doi:10.31742/IJGPB.79.2.10
+      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2019). ammistability: R package for ranking genotypes
+      based on stability parameters derived from AMMI model. Indian Journal of Genetics and Plant Breeding
+      (The), 79(2), 460-466.
+      http://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model
 
-  Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (NA).  ammistability:
-  Additive Main Effects and Multiplicative Interaction Model Stability
-  Parameters. R package version 0.1.1.9000,
-  https://ajaygpb.github.io/ammistability/,
-  https://CRAN.R-project.org/package=ammistability.
+    A BibTeX entry for LaTeX users is
 
-This free and open-source software implements academic research by the
-authors and co-workers. If you use it, please support the project by citing
-the package.
-To see these entries in BibTeX format, use 'print(<citation>, bibtex=TRUE)',
-'toBibtex(.)', or set 'options(citation.bibtex.max=999)'.
-```
+      @Article{,
+        title = {ammistability: {R} package for ranking genotypes based on stability parameters derived from {AMMI} model}},
+        author = {B. C. Ajay and J. Aravind and R. {Abdul Fiyaz}},
+        journal = {Indian Journal of Genetics and Plant Breeding (The)},
+        year = {2019},
+        volume = {79},
+        number = {2},
+        pages = {460--466},
+        url = {http://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model},
+      }
+
+      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2021).  ammistability: Additive Main Effects and
+      Multiplicative Interaction Model Stability Parameters. R package version 0.1.1.9000,
+      https://ajaygpb.github.io/ammistability/, https://CRAN.R-project.org/package=ammistability.
+
+    A BibTeX entry for LaTeX users is
+
+      @Manual{,
+        title = {ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters},
+        author = {B. C. Ajay and J. Aravind and R. {Abdul Fiyaz}},
+        year = {2021},
+        note = {R package version 0.1.1.9000},
+        note = {https://ajaygpb.github.io/ammistability/},
+        note = {https://CRAN.R-project.org/package=ammistability},
+      }
+
+    This free and open-source software implements academic research by the authors and co-workers. If you use
+    it, please support the project by citing the package.

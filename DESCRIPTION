@@ -37,7 +37,7 @@ License: GPL-2 | GPL-3
 Encoding: UTF-8
 Depends: R (>= 3.5.0)
 VignetteBuilder: knitr
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
 Imports:
     agricolae,
     ggcorrplot,
@@ -51,8 +51,8 @@ Suggests:
     rmarkdown,
 	pander
 RdMacros: Rdpack
-URL: http://github.com/ajaygpb/ammistability
+URL: https://github.com/ajaygpb/ammistability/
     https://CRAN.R-project.org/package=ammistability
-    https://ajaygpb.github.io/ammistability
+    https://ajaygpb.github.io/ammistability/
     https://doi.org/10.5281/zenodo.1344756
-BugReports: http://github.com/ajaygpb/ammistability/issues
+BugReports: https://github.com/ajaygpb/ammistability/issues

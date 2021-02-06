@@ -36,13 +36,13 @@ dver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("ammist
                yes = getNamespaceVersion("ammistability"),
                no = gsub("Version:\\s*", "", readLines(paste0("https://raw.githubusercontent.com/", "aravind-j/ammistability", "/master/DESCRIPTION"))[grep("Version:", readLines(paste0("https://raw.githubusercontent.com/", "aravind-j/ammistability", "/master/DESCRIPTION")))]))
 
-cat(paste("[![develVersion](https://img.shields.io/badge/devel%20version-", dver, "-orange.svg)](https://github.com/aravind-j/ammistability)", sep = ""))
+cat(paste("[![develVersion](https://img.shields.io/badge/devel%20version-", dver, "-orange.svg)](https://github.com/ajaygpb/ammistability)", sep = ""))
 ```
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/ajaygpb/ammistability/total.svg)] -->
-[![Project Status: Inactive](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive)
-[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+[![Project Status: Inactive](http://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/)
+[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-yellowgreen.svg)](/commits/master)
-[![Rdoc](http://www.rdocumentation.org/badges/version/ammistability)](http://www.rdocumentation.org/packages/ammistability)
+[![Rdoc](https://www.rdocumentation.org/badges/version/ammistability)](https://www.rdocumentation.org/packages/ammistability)
 [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1344756.svg)](https://doi.org/10.5281/zenodo.1344756)
 [![Analytics](https://pro-pulsar-193905.appspot.com/UA-123032895-2/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
 
