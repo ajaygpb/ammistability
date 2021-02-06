@@ -34,7 +34,7 @@ devtools::load_all(".")
 ```{r, results='asis', echo=FALSE}
 dver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("ammistability")) != "",
                yes = getNamespaceVersion("ammistability"),
-               no = gsub("Version:\\s*", "", readLines(paste0("https://raw.githubusercontent.com/", "aravind-j/ammistability", "/master/DESCRIPTION"))[grep("Version:", readLines(paste0("https://raw.githubusercontent.com/", "aravind-j/ammistability", "/master/DESCRIPTION")))]))
+               no = gsub("Version:\\s*", "", readLines(paste0("https://raw.githubusercontent.com/", "ajaygpb/ammistability", "/master/DESCRIPTION"))[grep("Version:", readLines(paste0("https://raw.githubusercontent.com/", "ajaygpb/ammistability", "/master/DESCRIPTION")))]))
 
 cat(paste("[![develVersion](https://img.shields.io/badge/devel%20version-", dver, "-orange.svg)](https://github.com/ajaygpb/ammistability)", sep = ""))
 ```

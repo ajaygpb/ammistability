@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -35,7 +39,7 @@
 
 <!-- docsearch -->
 <script src="../docsearch.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.3/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
 <link href="../docsearch.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
@@ -50,7 +54,8 @@ from the origin of significant IPC axes in the AMMI model. Using
 Da, the
 Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
 according to the argument ssi.method." />
-<meta name="twitter:card" content="summary" />
+
+
 
 
 
@@ -78,7 +83,7 @@ according to the argument ssi.method." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -92,7 +97,7 @@ according to the argument ssi.method." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ammistability</a>
-        <span class="version label label-primary" data-toggle="tooltip" data-placement="bottom" title="ammistability">0.1.1.9000</span>
+        <span class="version label label-primary" data-toggle="tooltip" data-placement="bottom" title="ammistability">0.1.2</span>
       </span>
     </div>
 
@@ -100,28 +105,28 @@ according to the argument ssi.method." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
-    <span class="fa fa-code"></span>
+    <span class="fas fa-code"></span>
      
     Reference
   </a>
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fa fa-file-o"></span>
+    <span class="fas fa-file-o"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fa fa-newspaper-o"></span>
+    <span class="fas fa-newspaper-o"></span>
      
     News
   </a>
@@ -130,7 +135,7 @@ according to the argument ssi.method." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/ajaygpb/ammistability">
-    <span class="fa fa-github-alt"></span>
+    <span class="fas fa-github-alt"></span>
      
     Github
   </a>
@@ -170,7 +175,7 @@ Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
 according to the argument <code>ssi.method</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>DA.AMMI</span>(<span class='no'>model</span>, <span class='no'>n</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.05</span>, <span class='kw'>ssi.method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"farshadfar"</span>, <span class='st'>"rao"</span>), <span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>1</span>)</pre>
+    <pre class="usage"><span class='fu'>DA.AMMI</span><span class='op'>(</span><span class='va'>model</span>, <span class='va'>n</span>, alpha <span class='op'>=</span> <span class='fl'>0.05</span>, ssi.method <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"farshadfar"</span>, <span class='st'>"rao"</span><span class='op'>)</span>, a <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -246,14 +251,15 @@ doi: <a href='https://doi.org/10.1023/A:1002954824178'>10.1023/A:1002954824178</
     <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/AMMI.html'>AMMI</a></code>, <code><a href='SSI.html'>SSI</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>plrv</span>)
+    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://tarwi.lamolina.edu.pe/~fmendiburu'>agricolae</a></span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>plrv</span><span class='op'>)</span>
 
 <span class='co'># AMMI model</span>
-<span class='no'>model</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>plrv</span>, <span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/AMMI.html'>AMMI</a></span>(<span class='no'>Locality</span>, <span class='no'>Genotype</span>, <span class='no'>Rep</span>, <span class='no'>Yield</span>, <span class='kw'>console</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>))
+<span class='va'>model</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span><span class='op'>(</span><span class='va'>plrv</span>, <span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/AMMI.html'>AMMI</a></span><span class='op'>(</span><span class='va'>Locality</span>, <span class='va'>Genotype</span>, <span class='va'>Rep</span>, <span class='va'>Yield</span>, console <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='co'># ANOVA</span>
-<span class='no'>model</span>$<span class='no'>ANOVA</span></div><div class='output co'>#&gt; Analysis of Variance Table
+<span class='va'>model</span><span class='op'>$</span><span class='va'>ANOVA</span>
+</div><div class='output co'>#&gt; Analysis of Variance Table
 #&gt; 
 #&gt; Response: Y
 #&gt;            Df Sum Sq Mean Sq  F value    Pr(&gt;F)    
@@ -265,14 +271,16 @@ doi: <a href='https://doi.org/10.1023/A:1002954824178'>10.1023/A:1002954824178</
 #&gt; ---
 #&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</div><div class='input'>
 <span class='co'># IPC F test</span>
-<span class='no'>model</span>$<span class='no'>analysis</span></div><div class='output co'>#&gt;     percent  acum Df     Sum.Sq   Mean.Sq F.value   Pr.F
+<span class='va'>model</span><span class='op'>$</span><span class='va'>analysis</span>
+</div><div class='output co'>#&gt;     percent  acum Df     Sum.Sq   Mean.Sq F.value   Pr.F
 #&gt; PC1    56.3  56.3 31 13368.5954 431.24501   11.65 0.0000
 #&gt; PC2    27.1  83.3 29  6427.5799 221.64069    5.99 0.0000
 #&gt; PC3     9.4  92.7 27  2241.9398  83.03481    2.24 0.0005
 #&gt; PC4     4.3  97.1 25  1027.5785  41.10314    1.11 0.3286
 #&gt; PC5     2.9 100.0 23   696.1012  30.26527    0.82 0.7059</div><div class='input'>
 <span class='co'># Mean yield and IPC scores</span>
-<span class='no'>model</span>$<span class='no'>biplot</span></div><div class='output co'>#&gt;         type    Yield         PC1          PC2         PC3         PC4
+<span class='va'>model</span><span class='op'>$</span><span class='va'>biplot</span>
+</div><div class='output co'>#&gt;         type    Yield         PC1          PC2         PC3         PC4
 #&gt; 102.18   GEN 26.31947 -1.50828851  1.258765244 -0.19220309  0.48738861
 #&gt; 104.22   GEN 31.28887  0.32517729 -1.297024517 -0.63695749 -0.44159957
 #&gt; 121.31   GEN 30.10174  0.95604605  1.143461054 -1.28777348  2.22246913
@@ -343,7 +351,8 @@ doi: <a href='https://doi.org/10.1023/A:1002954824178'>10.1023/A:1002954824178</
 #&gt; SR-02    1.37283488
 #&gt; SR-03   -3.18065538</div><div class='input'>
 <span class='co'># G*E matrix (deviations from mean)</span>
-<span class='fu'><a href='https://rdrr.io/r/base/array.html'>array</a></span>(<span class='no'>model</span>$<span class='no'>genXenv</span>, <span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>model</span>$<span class='no'>genXenv</span>), <span class='fu'><a href='https://rdrr.io/r/base/dimnames.html'>dimnames</a></span>(<span class='no'>model</span>$<span class='no'>genXenv</span>))</div><div class='output co'>#&gt;          ENV
+<span class='fu'><a href='https://rdrr.io/r/base/array.html'>array</a></span><span class='op'>(</span><span class='va'>model</span><span class='op'>$</span><span class='va'>genXenv</span>, <span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>model</span><span class='op'>$</span><span class='va'>genXenv</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/dimnames.html'>dimnames</a></span><span class='op'>(</span><span class='va'>model</span><span class='op'>$</span><span class='va'>genXenv</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;          ENV
 #&gt; GEN              Ayac      Hyo-02       LM-02       LM-03        SR-02
 #&gt;   102.18    5.5726162 -12.4918224   1.7425251  -2.7070438   2.91734869
 #&gt;   104.22   -2.8712076   7.1684102   3.9336218  -4.0358373   0.47881580
@@ -404,7 +413,8 @@ doi: <a href='https://doi.org/10.1023/A:1002954824178'>10.1023/A:1002954824178</
 #&gt;   Desiree  14.7808522
 #&gt;   Unica    -2.1089651</div><div class='input'>
 <span class='co'># With default n (N') and default ssi.method (farshadfar)</span>
-<span class='fu'>DA.AMMI</span>(<span class='no'>model</span>)</div><div class='output co'>#&gt;                DA SSI rDA rY    means
+<span class='fu'>DA.AMMI</span><span class='op'>(</span><span class='va'>model</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;                DA SSI rDA rY    means
 #&gt; 102.18  15.040431  39  16 23 26.31947
 #&gt; 104.22   9.798867  22   9 13 31.28887
 #&gt; 121.31  12.917859  26  11 15 30.10174
@@ -434,7 +444,8 @@ doi: <a href='https://doi.org/10.1023/A:1002954824178'>10.1023/A:1002954824178</
 #&gt; Desiree 32.114860  56  28 28 16.15569
 #&gt; Unica   22.343936  28  26  2 39.10400</div><div class='input'>
 <span class='co'># With n = 4 and default ssi.method (farshadfar)</span>
-<span class='fu'>DA.AMMI</span>(<span class='no'>model</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>4</span>)</div><div class='output co'>#&gt;                DA SSI rDA rY    means
+<span class='fu'>DA.AMMI</span><span class='op'>(</span><span class='va'>model</span>, n <span class='op'>=</span> <span class='fl'>4</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;                DA SSI rDA rY    means
 #&gt; 102.18  15.185880  39  16 23 26.31947
 #&gt; 104.22   9.981329  22   9 13 31.28887
 #&gt; 121.31  16.071287  33  18 15 30.10174
@@ -464,7 +475,8 @@ doi: <a href='https://doi.org/10.1023/A:1002954824178'>10.1023/A:1002954824178</
 #&gt; Desiree 32.115482  56  28 28 16.15569
 #&gt; Unica   22.514867  27  25  2 39.10400</div><div class='input'>
 <span class='co'># With default n (N') and ssi.method = "rao"</span>
-<span class='fu'>DA.AMMI</span>(<span class='no'>model</span>, <span class='kw'>ssi.method</span> <span class='kw'>=</span> <span class='st'>"rao"</span>)</div><div class='output co'>#&gt;                DA       SSI rDA rY    means
+<span class='fu'>DA.AMMI</span><span class='op'>(</span><span class='va'>model</span>, ssi.method <span class='op'>=</span> <span class='st'>"rao"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;                DA       SSI rDA rY    means
 #&gt; 102.18  15.040431 1.4730947  16 23 26.31947
 #&gt; 104.22   9.798867 1.9640618   9 13 31.28887
 #&gt; 121.31  12.917859 1.6974593  11 15 30.10174
@@ -494,7 +506,8 @@ doi: <a href='https://doi.org/10.1023/A:1002954824178'>10.1023/A:1002954824178</
 #&gt; Desiree 32.114860 0.8147588  28 28 16.15569
 #&gt; Unica   22.343936 1.6889406  26  2 39.10400</div><div class='input'>
 <span class='co'># Changing the ratio of weights for Rao's SSI</span>
-<span class='fu'>DA.AMMI</span>(<span class='no'>model</span>, <span class='kw'>ssi.method</span> <span class='kw'>=</span> <span class='st'>"rao"</span>, <span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>0.43</span>)</div><div class='output co'>#&gt;                DA       SSI rDA rY    means
+<span class='fu'>DA.AMMI</span><span class='op'>(</span><span class='va'>model</span>, ssi.method <span class='op'>=</span> <span class='st'>"rao"</span>, a <span class='op'>=</span> <span class='fl'>0.43</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;                DA       SSI rDA rY    means
 #&gt; 102.18  15.040431 1.1225831  16 23 26.31947
 #&gt; 104.22   9.798867 1.4260562   9 13 31.28887
 #&gt; 121.31  12.917859 1.2893541  11 15 30.10174
@@ -525,17 +538,10 @@ doi: <a href='https://doi.org/10.1023/A:1002954824178'>10.1023/A:1002954824178</
 #&gt; Unica   22.343936 1.4529998  26  2 39.10400</div><div class='input'>
 </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#references">References</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -546,7 +552,7 @@ doi: <a href='https://doi.org/10.1023/A:1002954824178'>10.1023/A:1002954824178</
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>
