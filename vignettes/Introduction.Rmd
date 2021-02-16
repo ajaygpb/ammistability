@@ -2,12 +2,6 @@
 title: 'The `ammistability` Package: A Brief Introduction'
 author: "Ajay, B. C.^1^, Aravind, J.^2^, and Abdul Fiyaz, R.^3^"
 date: "`r Sys.Date()`"
-output:
-  pdf_document:
-    fig_caption: false
-    toc: false
-  html_document:
-    toc: true
 classoption: table
 header-includes:
 - \usepackage{fancyhdr}
@@ -15,19 +9,26 @@ header-includes:
 - \pagestyle{fancy}
 - \fancyhead[LE,RO]{\slshape \rightmark}
 - \fancyfoot[C]{\thepage}
+- \usepackage{xcolor}
 - \usepackage{hyperref}
 - \hypersetup{colorlinks=true}
 - \hypersetup{linktoc=all}
 - \hypersetup{linkcolor=blue}
 - \usepackage{pdflscape}
 - \usepackage{booktabs}
-- \usepackage{xcolor}
 - \newcommand{\blandscape}{\begin{landscape}}
 - \newcommand{\elandscape}{\end{landscape}}
 - \fancyhead[LO,RE]{The -\texttt{ammistability} Package{:} A Brief Introduction}
-link-citations: yes
+output:
+  pdf_document:
+    fig_caption: no
+    toc: no
+  html_document:
+    df_print: paged
+    toc: yes
 csl: frontiers.csl
 bibliography: REFERENCES.bib
+link-citations: yes
 vignette: |
   %\VignetteIndexEntry{Introduction}
   %\usepackage[utf8]{inputenc}
@@ -42,7 +43,14 @@ r["CRAN"] = "https://cran.rstudio.com/"
 #r["CRAN"] = "https://cloud.r-project.org/"
 #r["CRAN"] = "https://ftp.iitm.ac.in/cran/"
 options(repos = r)
-options(citation.bibtex.max=999)
+# options(citation.bibtex.max=999)
+
+# Workaround for missing pandoc in CRAN OSX build machines
+out_type <- ifelse(out_type == "", "latex", out_type)
+
+# Workaround for missing pandoc in Solaris build machines
+out_type <- ifelse(identical (out_type, vector(mode = "logical", length = 0)),
+                   "latex", out_type)
 ```
 
 ```{r, results='asis', echo=FALSE}
@@ -127,12 +135,13 @@ The current version of the package is `r rver`. The previous versions are as fol
 
 **Table 1.** Version history of `ammistability` `R` package.
 
-```{r, echo=FALSE, message=FALSE, eval = TRUE}
+```{r, echo=FALSE, message=FALSE}
 if (requireNamespace("RCurl", quietly = TRUE) & requireNamespace("httr", quietly = TRUE) & requireNamespace("XML", quietly = TRUE)) {
 pkg <- "ammistability"
 link <- paste0("https://cran.r-project.org/src/contrib/Archive/", pkg, "/")
-cafile <- system.file("CurlSSL", "cacert.pem", package = "RCurl")
-page <- httr::GET(link, httr::config(cainfo = cafile))
+# cafile <- system.file("CurlSSL", "cacert.pem", package = "RCurl")
+# page <- httr::GET(link, httr::config(cainfo = cafile))
+page <- httr::GET(link)
 page <- httr::content(page, as = 'text')
 # page <- RCurl::getURL(link)
 
