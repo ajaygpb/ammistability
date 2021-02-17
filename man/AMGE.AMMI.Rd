@@ -36,14 +36,16 @@ A data frame with the following columns:  \item{AMGE}{The AMGE
 }
 \description{
 \code{AMGE.AMMI} computes the Sum Across Environments of Genotype-Environment
-Interaction (GEI) Modelled by AMMI (AMGE) (Sneller et al., 1997) considering
-all significant interaction principal components (IPCs) in the AMMI model.
-Using AMGE, the Simultaneous Selection Index for Yield and Stability (SSI) is
-also calculated according to the argument \code{ssi.method}. \loadmathjax
+Interaction (GEI) Modelled by AMMI (AMGE)
+\insertCite{sneller_repeatability_1997}{ammistability} considering all
+significant interaction principal components (IPCs) in the AMMI model. Using
+AMGE, the Simultaneous Selection Index for Yield and Stability (SSI) is also
+calculated according to the argument \code{ssi.method}. \loadmathjax
 }
 \details{
-The Sum Across Environments of GEI Modelled by AMMI (\mjseqn{AMGE}) is
-computed as follows:
+The Sum Across Environments of GEI Modelled by AMMI (\mjseqn{AMGE})
+\insertCite{sneller_repeatability_1997}{ammistability} is computed as
+follows:
 
 \mjsdeqn{AMGE = \sum_{j=1}^{E} \sum_{n=1}^{N'} \lambda_{n} \gamma_{in}
 \delta_{jn}}
@@ -88,7 +90,7 @@ AMGE.AMMI(model, ssi.method = "rao", a = 0.43)
 
 }
 \references{
-\insertRef{sneller_repeatability_1997}{ammistability}
+\insertAllCited{}
 }
 \seealso{
 \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{SSI}}

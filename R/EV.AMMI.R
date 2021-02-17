@@ -1,13 +1,13 @@
 #' Averages of the Squared Eigenvector Values
 #'
 #' \code{EV.AMMI} computes the Sums of the Averages of the Squared Eigenvector
-#' Values (EV) (Zobel, 1994) considering all significant interaction principal
-#' components (IPCs) in the AMMI model. Using EV, the Simultaneous Selection
-#' Index for Yield and Stability (SSI) is also calculated according to the
-#' argument \code{ssi.method}. \loadmathjax
+#' Values (EV) \insertCite{zobel_stress_1994}{ammistability} considering all
+#' significant interaction principal components (IPCs) in the AMMI model. Using
+#' EV, the Simultaneous Selection Index for Yield and Stability (SSI) is also
+#' calculated according to the argument \code{ssi.method}. \loadmathjax
 #'
-#' The Averages of the Squared Eigenvector Values (\mjseqn{EV}) is computed as
-#' follows:
+#' The Averages of the Squared Eigenvector Values (\mjseqn{EV})
+#' \insertCite{zobel_stress_1994}{ammistability} is computed as follows:
 #'
 #' \mjsdeqn{EV = \sum_{n=1}^{N'}\frac{\gamma_{in}^2}{N'}}
 #'

@@ -1,15 +1,16 @@
 #' Annicchiarico's D Parameter
 #'
 #' \code{DA.AMMI} computes the Annicchiarico's D Parameter values
-#' (\mjseqn{\textrm{D}_{\textrm{a}}}) (Annicchiarico, 1997) considering all
+#' (\mjseqn{\textrm{D}_{\textrm{a}}})
+#' \insertCite{annicchiarico_joint_1997}{ammistability} considering all
 #' significant interaction principal components (IPCs) in the AMMI model. It is
 #' the unsquared Euclidean distance from the origin of significant IPC axes in
 #' the AMMI model. Using \mjseqn{\textrm{D}_{\textrm{a}}}, the Simultaneous
 #' Selection Index for Yield and Stability (SSI) is also calculated according to
 #' the argument \code{ssi.method}. \loadmathjax
 #'
-#' The Annicchiarico's D Parameter value (\mjseqn{D_{a}}) is computed as
-#' follows:
+#' The Annicchiarico's D Parameter value (\mjseqn{D_{a}})
+#' \insertCite{annicchiarico_joint_1997}{ammistability} is computed as follows:
 #'
 #' \mjsdeqn{D_{a} = \sqrt{\sum_{n=1}^{N'}(\lambda_{n}\gamma_{in})^2}}
 #'
@@ -37,7 +38,7 @@
 #'
 #' @references
 #'
-#' \insertRef{annicchiarico_joint_1997}{ammistability}
+#' \insertAllCited{}
 #'
 #' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{SSI}}
 #'

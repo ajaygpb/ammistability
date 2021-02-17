@@ -4,8 +4,8 @@
 #' (SSI) according to the methods specified in the argument \code{method}.
 #' \loadmathjax
 #'
-#' The SSI according to Rao and Prabhakaran (2005) (\mjseqn{I_{i}}) is computed
-#' as follows:
+#' The SSI according to \insertCite{rao_use_2005;textual}{ammistability}
+#' (\mjseqn{I_{i}}) is computed as follows:
 #'
 #' \mjsdeqn{I_{i} = \frac{\overline{Y}_{i}}{\overline{Y}_{..}} + \alpha
 #' \frac{\frac{1}{SP_{i}}}{\frac{1}{T}\sum_{i=1}^{T}\frac{1}{SP_{i}}}}
@@ -22,10 +22,12 @@
 #' \strong{\mjseqn{w_{2}}}\cr 1.00 \tab 0.5 \tab 0.5\cr 0.67 \tab 0.6 \tab
 #' 0.4\cr 0.43 \tab 0.7 \tab 0.3\cr 0.25 \tab 0.8 \tab 0.2 }
 #'
-#' The SSI proposed by Farshadfar (2008) is called the Genotype stability index
-#' (\mjseqn{GSI}) or Yield stability index (\mjseqn{YSI}) (Farshadfar et al.,
-#' 2011) and is computed by summation of the ranks of the stability
-#' index/parameter and the ranks of the mean yields.
+#' The SSI proposed by
+#' \insertCite{farshadfar_incorporation_2008;textual}{ammistability} is called
+#' the Genotype stability index (\mjseqn{GSI}) or Yield stability index
+#' (\mjseqn{YSI}) \insertCite{farshadfar_ammi_2011}{ammistability} and is
+#' computed by summation of the ranks of the stability index/parameter and the
+#' ranks of the mean yields.
 #'
 #' \mjsdeqn{GSI = YSI = R_{SP} + R_{Y}}
 #'
@@ -53,11 +55,7 @@
 #'
 #' @references
 #'
-#' \insertRef{rao_use_2005}{ammistability}
-#'
-#' \insertRef{farshadfar_incorporation_2008}{ammistability}
-#'
-#' \insertRef{farshadfar_ammi_2011}{ammistability}
+#' \insertAllCited{}
 #'
 #' @seealso \code{\link[ammistability]{AMGE.AMMI}},
 #'   \code{\link[ammistability]{ASI.AMMI}},

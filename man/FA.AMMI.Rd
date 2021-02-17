@@ -36,14 +36,14 @@ A data frame with the following columns:  \item{FA}{The FA values.}
 }
 \description{
 \code{FA.AMMI} computes the Stability Measure Based on Fitted AMMI Model (FA)
-(Raju, 2002) considering all significant interaction principal components
-(IPCs) in the AMMI model. Using FA, the Simultaneous Selection Index for
-Yield and Stability (SSI) is also calculated according to the argument
-\code{ssi.method}. \loadmathjax
+\insertCite{raju_study_2002}{ammistability} considering all significant
+interaction principal components (IPCs) in the AMMI model. Using FA, the
+Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
+according to the argument \code{ssi.method}. \loadmathjax
 }
 \details{
-The Stability Measure Based on Fitted AMMI Model (\mjseqn{FA}) is computed as
-follows:
+The Stability Measure Based on Fitted AMMI Model (\mjseqn{FA})
+\insertCite{raju_study_2002}{ammistability} is computed as follows:
 
 \mjsdeqn{FA = \sum_{n=1}^{N'}\lambda_{n}^{2}\gamma_{in}^{2}}
 
@@ -54,20 +54,21 @@ its eigen value; and \mjseqn{\gamma_{in}} is the eigenvector value for
 \mjseqn{i}th genotype.
 
 When \mjseqn{N'} is replaced by 1 (only first IPC axis is considered for
-computation), then the parameter \mjseqn{FP} can be estimated (Zali et al.,
-2012).
+computation), then the parameter \mjseqn{FP} can be estimated
+\insertCite{zali_evaluation_2012}{ammistability}.
 
 \mjsdeqn{FP = \lambda_{1}^{2}\gamma_{i1}^{2}}
 
 When \mjseqn{N'} is replaced by 2 (only first two IPC axes are considered for
-computation), then the parameter \mjseqn{B} can be estimated  (Zali et al.,
-2012).
+computation), then the parameter \mjseqn{B} can be estimated
+\insertCite{zali_evaluation_2012}{ammistability}.
 
 \mjsdeqn{B = \sum_{n=1}^{2}\lambda_{n}^{2}\gamma_{in}^{2}}
 
 When \mjseqn{N'} is replaced by \mjseqn{N} (All the IPC axes are considered
 for computation), then the parameter estimated is equivalent to Wricke's
-ecovalence (\mjseqn{W_{(AMMI)}}) (Wricke, 1962; Zali et al., 2012).
+ecovalence (\mjseqn{W_{(AMMI)}})
+\insertCite{wricke_method_1962,zali_evaluation_2012}{ammistability}.
 
 \mjsdeqn{W_{(AMMI)} = \sum_{n=1}^{N}\lambda_{n}^{2}\gamma_{in}^{2}}
 }
@@ -104,11 +105,7 @@ FA.AMMI(model, ssi.method = "rao", a = 0.43)
 
 }
 \references{
-\insertRef{wricke_method_1962}{ammistability}
-
-\insertRef{raju_study_2002}{ammistability}
-
-\insertRef{zali_evaluation_2012}{ammistability}
+\insertAllCited{}
 }
 \seealso{
 \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{SSI}}

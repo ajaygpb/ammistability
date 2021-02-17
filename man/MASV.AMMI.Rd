@@ -35,55 +35,52 @@ A data frame with the following columns:  \item{MASV}{The MASV
   frame.
 }
 \description{
-\code{MASV.AMMI} computes the Modified AMMI Stability Value (MASV) (Zali et
-al., 2012; Ajay et al., 2019; Please see \strong{Note}) from a modified formula of AMMI
-Stability Value (ASV) (Purchase et al. 1997). This formula calculates AMMI
-stability value considering all significant interaction principal components
-(IPCs) in the AMMI model. Using MASV, the Simultaneous Selection Index for
-Yield and Stability (SSI) is also calculated according to the argument
-\code{ssi.method}. \loadmathjax
+\code{MASV.AMMI} computes the Modified AMMI Stability Value (MASV)
+\insertCite{zali_evaluation_2012,ajay_rectification_2019}{ammistability}
+(Please see \strong{Note}) from a modified formula of AMMI Stability Value
+(ASV) \insertCite{purchase_parametric_1997}{ammistability}. This formula
+calculates AMMI stability value considering all significant interaction
+principal components (IPCs) in the AMMI model. Using MASV, the Simultaneous
+Selection Index for Yield and Stability (SSI) is also calculated according to
+the argument \code{ssi.method}. \loadmathjax
 }
 \details{
-The Modified AMMI Stability Value
-(\mjseqn{MASV}) is computed as follows (Ajay
-et al., 2019):
+The Modified AMMI Stability Value (\mjseqn{MASV})
+\insertCite{ajay_rectification_2019}{ammistability} is computed as follows:
 
-\mjsdeqn{MASV =
-\sqrt{\sum_{n=1}^{N'-1}\left (\frac{SSIPC_{n}}{SSIPC_{n+1}} \times PC_{n}
-\right )^2   + \left (PC_{N'}  \right )^2}}
+\mjsdeqn{MASV = \sqrt{\sum_{n=1}^{N'-1}\left (\frac{SSIPC_{n}}{SSIPC_{n+1}}
+\times PC_{n} \right )^2   + \left (PC_{N'}  \right )^2}}
 
-Where, \mjseqn{SSIPC_{1}},
-\mjseqn{SSIPC_{2}},
-\mjseqn{\cdots},
-\mjseqn{SSIPC_{n}} are the sum of
-squares of the 1st, 2nd, ..., and \mjseqn{n}th
-IPC; and \mjseqn{PC_{1}},
-\mjseqn{PC_{2}},
-\mjseqn{\cdots},
-\mjseqn{PC_{n}} are the scores of
-1st, 2nd, ..., and \mjseqn{n}th IPC.
+Where, \mjseqn{SSIPC_{1}}, \mjseqn{SSIPC_{2}}, \mjseqn{\cdots},
+\mjseqn{SSIPC_{n}} are the sum of squares of the 1st, 2nd, ..., and
+\mjseqn{n}th IPC; and \mjseqn{PC_{1}}, \mjseqn{PC_{2}}, \mjseqn{\cdots},
+\mjseqn{PC_{n}} are the scores of 1st, 2nd, ..., and \mjseqn{n}th IPC.
 }
 \note{
-In Zali et al., (2012), the formula for both AMMI stability value (ASV)
-  was found to be erroneous, when compared with the original publications
-  (Purchase 1997; Purchase et al., 1999; Purchase et al., 2000).
+In \insertCite{zali_evaluation_2012;textual}{ammistability}, the
+  formula for both AMMI stability value (ASV) was found to be erroneous, when
+  compared with the original publications
+  \insertCite{purchase_parametric_1997,purchase_use_1999,purchase_genotype_2000}{ammistability}.
 
-  \strong{ASV (Zali et al., 2012)} \mjsdeqn{ASV =
-  \sqrt{\left ( \frac{SSIPC_{1}}{SSIPC_{2}} \right ) \times (PC_{1})^2   +
+
+  \strong{ASV \insertCite{zali_evaluation_2012}{ammistability}} \mjsdeqn{ASV
+  = \sqrt{\left ( \frac{SSIPC_{1}}{SSIPC_{2}} \right ) \times (PC_{1})^2   +
   \left (PC_{2} \right )^2}}
 
-  \strong{ASV (Purchase 1997; Purchase et al., 1999; Purchase et al., 2000)}
-  \mjsdeqn{ASV = \sqrt{\left
-  (\frac{SSIPC_{1}}{SSIPC_{2}} \times PC_{1}  \right )^2   + \left (PC_{2}
-  \right )^2}}
+  \strong{ASV
+  \insertCite{purchase_parametric_1997,purchase_use_1999,purchase_genotype_2000}{ammistability}}
+   \mjsdeqn{ASV = \sqrt{\left (\frac{SSIPC_{1}}{SSIPC_{2}} \times PC_{1}
+  \right )^2   + \left (PC_{2} \right )^2}}
 
   The authors believe that the proposed Modified AMMI stability value (MASV)
-  in Zali et al., (2012) is also erroneous and have implemented the corrected
-  one in \code{MASV.AMMI} (Ajay et al., 2019).
+  in \insertCite{zali_evaluation_2012;textual}{ammistability} is also
+  erroneous and have implemented the corrected one in \code{MASV.AMMI}
+  \insertCite{ajay_rectification_2019}{ammistability}.
 
-  \strong{MASV (Zali et al., 2012)} \mjsdeqn{MASV =
-  \sqrt{\sum_{n=1}^{N'-1}\left ( \frac{SSIPC_{n}}{SSIPC_{n+1}} \right )
-  \times (PC_{n})^2   + \left (PC_{N'}  \right )^2}}
+  \strong{MASV \insertCite{zali_evaluation_2012}{ammistability}}
+  \mjsdeqn{MASV = \sqrt{\sum_{n=1}^{N'-1}\left (
+  \frac{SSIPC_{n}}{SSIPC_{n+1}} \right ) \times (PC_{n})^2   + \left (PC_{N'}
+  \right )^2}}
 }
 \examples{
 library(agricolae)
@@ -118,15 +115,7 @@ MASV.AMMI(model, ssi.method = "rao", a = 0.43)
 
 }
 \references{
-\insertRef{purchase_parametric_1997}{ammistability}
-
-\insertRef{purchase_use_1999}{ammistability}
-
-\insertRef{purchase_genotype_2000}{ammistability}
-
-\insertRef{zali_evaluation_2012}{ammistability}
-
-\insertRef{ajay_rectification_2019}{ammistability}
+\insertAllCited{}
 }
 \seealso{
 \code{\link[agricolae]{AMMI}}, \code{\link[agricolae]{index.AMMI}},

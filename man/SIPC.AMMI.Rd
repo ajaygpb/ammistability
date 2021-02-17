@@ -36,14 +36,15 @@ A data frame with the following columns:  \item{SIPC}{The SIPC
 }
 \description{
 \code{SIPC.AMMI} computes the Sums of the Absolute Value of the IPC Scores
-(ASI) (Sneller et al., 1997) considering all significant interaction
-principal components (IPCs) in the AMMI model. Using SIPC, the Simultaneous
-Selection Index for Yield and Stability (SSI) is also calculated according to
-the argument \code{ssi.method}. \loadmathjax
+(ASI) \insertCite{sneller_repeatability_1997}{ammistability} considering all
+significant interaction principal components (IPCs) in the AMMI model. Using
+SIPC, the Simultaneous Selection Index for Yield and Stability (SSI) is also
+calculated according to the argument \code{ssi.method}. \loadmathjax
 }
 \details{
-The Sums of the Absolute Value of the IPC Scores (\mjseqn{SIPC}) is computed
-as follows:
+The Sums of the Absolute Value of the IPC Scores (\mjseqn{SIPC})
+\insertCite{sneller_repeatability_1997}{ammistability} is computed as
+follows:
 
 \mjsdeqn{SIPC = \sum_{n=1}^{N'} \left | \lambda_{n}^{0.5}\gamma_{in} \right
 |}
@@ -95,7 +96,7 @@ SIPC.AMMI(model, ssi.method = "rao", a = 0.43)
 
 }
 \references{
-\insertRef{sneller_repeatability_1997}{ammistability}
+\insertAllCited{}
 }
 \seealso{
 \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{SSI}}

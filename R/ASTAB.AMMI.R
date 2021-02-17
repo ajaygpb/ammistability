@@ -1,13 +1,13 @@
 #' AMMI Based Stability Parameter
 #'
-#' \code{ASTAB.AMMI} computes the AMMI Based Stability Parameter (ASTAB) (Rao
-#' and Prabhakaran, 2005) considering all significant interaction principal
-#' components (IPCs) in the AMMI model. Using ASTAB, the Simultaneous Selection
-#' Index for Yield and Stability (SSI) is also calculated according to the
-#' argument \code{ssi.method}. \loadmathjax
+#' \code{ASTAB.AMMI} computes the AMMI Based Stability Parameter (ASTAB)
+#' \insertCite{rao_use_2005}{ammistability} considering all significant
+#' interaction principal components (IPCs) in the AMMI model. Using ASTAB, the
+#' Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
+#' according to the argument \code{ssi.method}. \loadmathjax
 #'
-#' The AMMI Based Stability Parameter value (\mjseqn{ASTAB}) is computed as
-#' follows:
+#' The AMMI Based Stability Parameter value (\mjseqn{ASTAB})
+#' \insertCite{rao_use_2005}{ammistability} is computed as follows:
 #'
 #' \mjsdeqn{ASTAB = \sum_{n=1}^{N'}\lambda_{n}\gamma_{in}^{2}}
 #'
@@ -35,7 +35,7 @@
 #'
 #' @references
 #'
-#' \insertRef{rao_use_2005}{ammistability}
+#' \insertAllCited{}
 #'
 #' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{SSI}}
 #'

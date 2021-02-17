@@ -1,13 +1,15 @@
 #' Sum Across Environments of Absolute Value of GEI Modelled by AMMI
 #'
 #' \code{AVAMGE.AMMI} computes the Sum Across Environments of Absolute Value of
-#' GEI Modelled by AMMI (AVAMGE) (Zali et al., 2012) considering all significant
+#' GEI Modelled by AMMI (AVAMGE)
+#' \insertCite{zali_evaluation_2012}{ammistability} considering all significant
 #' interaction principal components (IPCs) in the AMMI model. Using AVAMGE, the
 #' Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
 #' according to the argument \code{ssi.method}. \loadmathjax
 #'
 #' The Sum Across Environments of Absolute Value of GEI Modelled by AMMI
-#' (\mjseqn{AV_{(AMGE)}}) is computed as follows:
+#' (\mjseqn{AV_{(AMGE)}}) \insertCite{zali_evaluation_2012}{ammistability} is
+#' computed as follows:
 #'
 #' \mjsdeqn{AV_{(AMGE)} = \sum_{j=1}^{E} \sum_{n=1}^{N'} \left |\lambda_{n}
 #' \gamma_{in} \delta_{jn} \right |}
@@ -37,7 +39,7 @@
 #'
 #' @references
 #'
-#' \insertRef{zali_evaluation_2012}{ammistability}
+#' \insertAllCited{}
 #'
 #' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{SSI}}
 #'

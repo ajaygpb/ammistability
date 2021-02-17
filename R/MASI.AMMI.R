@@ -1,25 +1,22 @@
 #' Modified AMMI Stability Index
 #'
-#' \code{MASI.AMMI} computes the Modified AMMI Stability Index (MASI) (Ajay et al., 2018) from a
-#' modified formula of AMMI Stability Index (ASI) (Jambhulkar et al., 2014;
-#' Jambhulkar et al., 2015; Jambhulkar et al., 2017).  Unlike ASI, MASI
-#' calculates stability value considering all significant interaction principal
-#' components (IPCs) in the AMMI model. Using MASI, the Simultaneous Selection
-#' Index for Yield and Stability (SSI) is also calculated according to the
-#' argument \code{ssi.method}. \loadmathjax
+#' \code{MASI.AMMI} computes the Modified AMMI Stability Index (MASI)
+#' \insertCite{ajay_modified_2018}{ammistability} from a modified formula of
+#' AMMI Stability Index (ASI)
+#' \insertCite{jambhulkar_ammi_2014,jambhulkar_genotype_2015,jambhulkar_stability_2017}{ammistability}.
+#' Unlike ASI, MASI calculates stability value considering all significant
+#' interaction principal components (IPCs) in the AMMI model. Using MASI, the
+#' Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
+#' according to the argument \code{ssi.method}. \loadmathjax
 #'
-#' The Modified AMMI Stability Index
-#' (\mjseqn{MASI}) is computed as follows (Ajay et al., 2018):
+#' The Modified AMMI Stability Index (\mjseqn{MASI})
+#' \insertCite{ajay_modified_2018}{ammistability} is computed as follows:
 #'
-#' \mjsdeqn{MASI = \sqrt{
-#' \sum_{n=1}^{N'} PC_{n}^{2} \times \theta_{n}^{2}}}
+#' \mjsdeqn{MASI = \sqrt{ \sum_{n=1}^{N'} PC_{n}^{2} \times \theta_{n}^{2}}}
 #'
-#' Where, \mjseqn{PC_{n}} are the
-#' scores of \mjseqn{n}th IPC; and
-#' \mjseqn{\theta_{n}} is the
-#' percentage sum of squares explained by the
-#' \mjseqn{n}th principal component interaction
-#' effect.
+#' Where, \mjseqn{PC_{n}} are the scores of \mjseqn{n}th IPC; and
+#' \mjseqn{\theta_{n}} is the percentage sum of squares explained by the
+#' \mjseqn{n}th principal component interaction effect.
 #'
 #' @inheritParams MASV.AMMI
 #'
@@ -39,13 +36,7 @@
 #'
 #' @references
 #'
-#' \insertRef{jambhulkar_ammi_2014}{ammistability}
-#'
-#' \insertRef{jambhulkar_genotype_2015}{ammistability}
-#'
-#' \insertRef{jambhulkar_stability_2017}{ammistability}
-#'
-#' \insertRef{ajay_modified_2018}{ammistability}
+#' \insertAllCited{}
 #'
 #' @seealso \code{\link[agricolae]{AMMI}},
 #'   \code{\link[ammistability]{ASI.AMMI}}, \code{\link[ammistability]{SSI}}

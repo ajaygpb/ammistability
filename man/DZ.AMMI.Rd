@@ -37,7 +37,8 @@ A data frame with the following columns:  \item{DZ}{The DZ values.}
 \description{
 \code{DZ.AMMI} computes the Zhang's D Parameter values or AMMI statistic
 coefficient or AMMI distance or AMMI stability index
-(\mjseqn{\textrm{D}_{\textrm{z}}}) (Zhang, 1998) considering all significant
+(\mjseqn{\textrm{D}_{\textrm{z}}})
+\insertCite{zhang_analysis_1998}{ammistability} considering all significant
 interaction principal components (IPCs) in the AMMI model. It is the distance
 of IPC  point  from  origin  in space. Using
 \mjseqn{\textrm{D}_{\textrm{z}}}, the Simultaneous Selection Index for Yield
@@ -45,7 +46,8 @@ and Stability (SSI) is also calculated according to the argument
 \code{ssi.method}. \loadmathjax
 }
 \details{
-The Zhang's D Parameter value (\mjseqn{D_{z}}) is computed as follows:
+The Zhang's D Parameter value (\mjseqn{D_{z}})
+\insertCite{zhang_analysis_1998}{ammistability} is computed as follows:
 
 \mjsdeqn{D_{z} = \sqrt{\sum_{n=1}^{N'}\gamma_{in}^{2}}}
 
@@ -86,7 +88,7 @@ DZ.AMMI(model, ssi.method = "rao", a = 0.43)
 
 }
 \references{
-\insertRef{zhang_analysis_1998}{ammistability}
+\insertAllCited{}
 }
 \seealso{
 \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{SSI}}

@@ -36,15 +36,17 @@ A data frame with the following columns:  \item{Za}{The Za values.}
 }
 \description{
 \code{ZA.AMMI} computes the Absolute Value of the Relative Contribution of
-IPCs to the Interaction (\mjseqn{\textrm{Z}_{\textrm{a}}}) (Zali, 2012)
-considering all significant interaction principal components (IPCs) in the
-AMMI model. Using \mjseqn{\textrm{Z}_{\textrm{a}}}, the Simultaneous
-Selection Index for Yield and Stability (SSI) is also calculated according to
-the argument \code{ssi.method}. \loadmathjax
+IPCs to the Interaction (\mjseqn{\textrm{Z}_{\textrm{a}}})
+\insertCite{zali_evaluation_2012}{ammistability} considering all significant
+interaction principal components (IPCs) in the AMMI model. Using
+\mjseqn{\textrm{Z}_{\textrm{a}}}, the Simultaneous Selection Index for Yield
+and Stability (SSI) is also calculated according to the argument
+\code{ssi.method}. \loadmathjax
 }
 \details{
 The Absolute Value of the Relative Contribution of IPCs to the Interaction
-(\mjseqn{Za}) is computed as follows:
+(\mjseqn{Za}) \insertCite{zali_evaluation_2012}{ammistability} is computed as
+follows:
 
 \mjsdeqn{Za = \sum_{i=1}^{N'}\left | \theta_{n}\gamma_{in} \right |}
 
@@ -87,7 +89,7 @@ ZA.AMMI(model, ssi.method = "rao", a = 0.43)
 
 }
 \references{
-\insertRef{zali_evaluation_2012}{ammistability}
+\insertAllCited{}
 }
 \seealso{
 \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{SSI}}

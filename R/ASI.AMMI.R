@@ -1,12 +1,15 @@
 #' AMMI Stability Index
 #'
-#' \code{ASI.AMMI} computes the AMMI Stability Index (ASI) (Jambhulkar et al.,
-#' 2014; Jambhulkar et al., 2015; Jambhulkar et al., 2017) considering the first
-#' two interaction principal components (IPCs) in the AMMI model. Using ASI, the
-#' Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
-#' according to the argument \code{ssi.method}. \loadmathjax
+#' \code{ASI.AMMI} computes the AMMI Stability Index (ASI)
+#' \insertCite{jambhulkar_ammi_2014,jambhulkar_genotype_2015,jambhulkar_stability_2017}{ammistability}
+#' considering the first two interaction principal components (IPCs) in the AMMI
+#' model. Using ASI, the Simultaneous Selection Index for Yield and Stability
+#' (SSI) is also calculated according to the argument \code{ssi.method}.
+#' \loadmathjax
 #'
-#' The AMMI Stability Index (\mjseqn{ASI}) is computed as follows:
+#' The AMMI Stability Index (\mjseqn{ASI})
+#' \insertCite{jambhulkar_ammi_2014,jambhulkar_genotype_2015,jambhulkar_stability_2017}{ammistability}
+#' is computed as follows:
 #'
 #' \mjsdeqn{ASI = \sqrt{\left [ PC_{1}^{2} \times \theta_{1}^{2} \right ]+\left
 #' [ PC_{2}^{2} \times \theta_{2}^{2} \right ]}}
@@ -41,11 +44,7 @@
 #'
 #' @references
 #'
-#' \insertRef{jambhulkar_ammi_2014}{ammistability}
-#'
-#' \insertRef{jambhulkar_genotype_2015}{ammistability}
-#'
-#' \insertRef{jambhulkar_stability_2017}{ammistability}
+#' \insertAllCited{}
 #'
 #' @seealso \code{\link[agricolae]{AMMI}}, \code{\link[ammistability]{SSI}}
 #'
