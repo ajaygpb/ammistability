@@ -24,11 +24,11 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/ammistability?color=gre
 [![Project Status:
 Inactive](http://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2021--02--13-yellowgreen.svg)](https://github.com/ajaygpb/ammistability/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2021--02--17-yellowgreen.svg)](https://github.com/ajaygpb/ammistability/commits/master)
 [![Rdoc](https://www.rdocumentation.org/badges/version/ammistability)](https://www.rdocumentation.org/packages/ammistability)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1344756.svg)](https://doi.org/10.5281/zenodo.1344756)
-[![Analytics](https://pro-pulsar-193905.appspot.com/UA-123032895-2/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
+[![.](https://pro-pulsar-193905.appspot.com/UA-123032895-2/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
 
 -----
 
@@ -111,7 +111,7 @@ To cite the R package 'ammistability' in publications use:
   (The), 79(2), 460-466.
   http://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model
 
-  Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2021).  ammistability: Additive Main Effects and
+  Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (NA).  ammistability: Additive Main Effects and
   Multiplicative Interaction Model Stability Parameters. R package version 0.1.2,
   https://ajaygpb.github.io/ammistability/, https://CRAN.R-project.org/package=ammistability.
 
