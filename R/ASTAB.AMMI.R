@@ -4,26 +4,18 @@
 #' and Prabhakaran, 2005) considering all significant interaction principal
 #' components (IPCs) in the AMMI model. Using ASTAB, the Simultaneous Selection
 #' Index for Yield and Stability (SSI) is also calculated according to the
-#' argument \code{ssi.method}.
+#' argument \code{ssi.method}. \loadmathjax
 #'
-#' The AMMI Based Stability Parameter value
-#' (\ifelse{html}{\out{<i>ASTAB</i>}}{\eqn{ASTAB}}) is computed as follows:
+#' The AMMI Based Stability Parameter value (\mjseqn{ASTAB}) is computed as
+#' follows:
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><i>ASTAB =
-#' &sum;<sup>N'</sup><sub style="line-height: 1.8; margin-left: -3ex;">n=1</sub>
-#' &lambda;<sub>n</sub> &gamma;<sup>2</sup><sub style="line-height: 1.8;
-#' margin-left: -1ex;">in</sub></i></p>}}{\deqn{ASTAB =
-#' \sum_{n=1}^{N'}\lambda_{n}\gamma_{in}^{2}}}
+#' \mjsdeqn{ASTAB = \sum_{n=1}^{N'}\lambda_{n}\gamma_{in}^{2}}
 #'
-#' Where, \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is the number of significant
-#' IPCs (number of IPC that were retained in the AMMI model via F tests);
-#' \ifelse{html}{\out{<i>&lambda;<sub>n</sub></i>}}{\eqn{\lambda_{n}}} is the
-#' singular value for \ifelse{html}{\out{<i>n</i>}}{\eqn{n}}th IPC and
-#' correspondingly \ifelse{html}{\out{<i>&lambda;<sup>2</sup><sub
-#' style="line-height: 1.8; margin-left:
-#' -1ex;">n</sub></i>}}{\eqn{\lambda_{n}^{2}}} is its eigen value; and
-#' \ifelse{html}{\out{<i>&gamma;<sub>in<sub></i>}}{\eqn{\gamma_{in}}} is the
-#' eigenvector value for \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th genotype.
+#' Where, \mjseqn{N'} is the number of significant IPCs (number of IPC that were
+#' retained in the AMMI model via F tests); \mjseqn{\lambda_{n}} is the singular
+#' value for \mjseqn{n}th IPC and correspondingly \mjseqn{\lambda_{n}^{2}} is
+#' its eigen value; and \mjseqn{\gamma_{in}} is the eigenvector value for
+#' \mjseqn{i}th genotype.
 #'
 #' @inheritParams MASV.AMMI
 #'

@@ -36,34 +36,24 @@ A data frame with the following columns:  \item{DA}{The DA values.}
 }
 \description{
 \code{DA.AMMI} computes the Annicchiarico's D Parameter values
-(\ifelse{html}{\out{D<sub>a</sub>}}{\eqn{\textrm{D}_{\textrm{a}}}})
-(Annicchiarico, 1997) considering all significant interaction principal
-components (IPCs) in the AMMI model. It is the unsquared Euclidean distance
-from the origin of significant IPC axes in the AMMI model. Using
-\ifelse{html}{\out{D<sub>a</sub>}}{\eqn{\textrm{D}_{\textrm{a}}}}, the
-Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
-according to the argument \code{ssi.method}.
+(\mjseqn{\textrm{D}_{\textrm{a}}}) (Annicchiarico, 1997) considering all
+significant interaction principal components (IPCs) in the AMMI model. It is
+the unsquared Euclidean distance from the origin of significant IPC axes in
+the AMMI model. Using \mjseqn{\textrm{D}_{\textrm{a}}}, the Simultaneous
+Selection Index for Yield and Stability (SSI) is also calculated according to
+the argument \code{ssi.method}. \loadmathjax
 }
 \details{
-The Annicchiarico's D Parameter value
-(\ifelse{html}{\out{<i>D<sub>a</sub></i>}}{\eqn{D_{a}}}) is computed as
+The Annicchiarico's D Parameter value (\mjseqn{D_{a}}) is computed as
 follows:
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>D<sub>a</sub>
-=&radic;<big>[&sum;</big><sup>N'</sup><sub style="line-height: 1.8;
-margin-left: -3ex;">n=1</sub>
-(&lambda;<sub>n</sub>&gamma;<sub>in</sub>)<sup>2</sup>]</em></p>}}{\deqn{D_{a}
-= \sqrt{\sum_{n=1}^{N'}(\lambda_{n}\gamma_{in})^2}}}
+\mjsdeqn{D_{a} = \sqrt{\sum_{n=1}^{N'}(\lambda_{n}\gamma_{in})^2}}
 
-Where, \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is the number of significant
-IPCs (number of IPC that were retained in the AMMI model via F tests);
-\ifelse{html}{\out{<i>&lambda;<sub>n</sub></i>}}{\eqn{\lambda_{n}}} is the
-singular value for \ifelse{html}{\out{<i>n</i>}}{\eqn{n}}th IPC and
-correspondingly \ifelse{html}{\out{<i>&lambda;<sup>2</sup><sub
-style="line-height: 1.8; margin-left:
--1ex;">n</sub></i>}}{\eqn{\lambda_{n}^{2}}} is its eigen value; and
-\ifelse{html}{\out{<i>&gamma;<sub>in<sub></i>}}{\eqn{\gamma_{in}}} is the
-eigenvector value for \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th genotype.
+Where, \mjseqn{N'} is the number of significant IPCs (number of IPC that were
+retained in the AMMI model via F tests); \mjseqn{\lambda_{n}} is the singular
+value for \mjseqn{n}th IPC and correspondingly \mjseqn{\lambda_{n}^{2}} is
+its eigen value; and \mjseqn{\gamma_{in}} is the eigenvector value for
+\mjseqn{i}th genotype.
 }
 \examples{
 library(agricolae)

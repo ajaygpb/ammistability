@@ -39,33 +39,21 @@ A data frame with the following columns:  \item{AVAMGE}{The AVAMGE
 GEI Modelled by AMMI (AVAMGE) (Zali et al., 2012) considering all significant
 interaction principal components (IPCs) in the AMMI model. Using AVAMGE, the
 Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
-according to the argument \code{ssi.method}.
+according to the argument \code{ssi.method}. \loadmathjax
 }
 \details{
 The Sum Across Environments of Absolute Value of GEI Modelled by AMMI
-(\ifelse{html}{\out{<i>AV<sub>(AMGE)</sub></i>}}{\eqn{AV_{(AMGE)}}}) is
-computed as follows:
+(\mjseqn{AV_{(AMGE)}}) is computed as follows:
 
-\ifelse{html}{\out{<p style="text-align: center;"><i>AV<sub>(AMGE)</sub> =
-<big>&sum;</big><sup>E</sup><sub style="line-height: 1.8; margin-left:
--1ex;">j=1</sub><big>&sum;</big><sup>N'</sup><sub style="line-height:
-1.8; margin-left: -3ex;">n=1</sub>
-|&lambda;<sub>n</sub>&gamma;<sub>in</sub>&delta;<sub>jn</sub>|</i></p>}}{\deqn{AV_{(AMGE)}
-= \sum_{j=1}^{E} \sum_{n=1}^{N'} \left |\lambda_{n} \gamma_{in} \delta_{jn}
-\right |}}
+\mjsdeqn{AV_{(AMGE)} = \sum_{j=1}^{E} \sum_{n=1}^{N'} \left |\lambda_{n}
+\gamma_{in} \delta_{jn} \right |}
 
-Where, \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is the number of significant
-IPCs (number of IPC that were retained in the AMMI model via F tests);
-\ifelse{html}{\out{<i>&lambda;<sub>n</sub></i>}}{\eqn{\lambda_{n}}} is the
-singular value for \ifelse{html}{\out{<i>n</i>}}{\eqn{n}}th IPC and
-correspondingly \ifelse{html}{\out{<i>&lambda;<sup>2</sup><sub
-style="line-height: 1.8; margin-left:
--1ex;">n</sub></i>}}{\eqn{\lambda_{n}^{2}}} is its eigen value;
-\ifelse{html}{\out{<i>&gamma;<sub>in<sub></i>}}{\eqn{\gamma_{in}}} is the
-eigenvector value for \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th genotype; and
-\ifelse{html}{\out{<i>&delta;<sub>jn<sub></i>}}{\eqn{\delta{jn}}} is the
-eigenvector value for the \ifelse{html}{\out{<i>j</i>}}{\eqn{j}}th
-environment.
+Where, \mjseqn{N'} is the number of significant IPCs (number of IPC that were
+retained in the AMMI model via F tests); \mjseqn{\lambda_{n}} is the singular
+value for \mjseqn{n}th IPC and correspondingly \mjseqn{\lambda_{n}^{2}} is
+its eigen value; \mjseqn{\gamma_{in}} is the eigenvector value for
+\mjseqn{i}th genotype; and \mjseqn{\delta{jn}} is the eigenvector value for
+the \mjseqn{j}th environment.
 }
 \examples{
 library(agricolae)

@@ -39,62 +39,37 @@ A data frame with the following columns:  \item{FA}{The FA values.}
 (Raju, 2002) considering all significant interaction principal components
 (IPCs) in the AMMI model. Using FA, the Simultaneous Selection Index for
 Yield and Stability (SSI) is also calculated according to the argument
-\code{ssi.method}.
+\code{ssi.method}. \loadmathjax
 }
 \details{
-The Stability Measure Based on Fitted AMMI Model
-(\ifelse{html}{\out{<i>FA</i>}}{\eqn{FA}}) is computed as follows:
+The Stability Measure Based on Fitted AMMI Model (\mjseqn{FA}) is computed as
+follows:
 
-\ifelse{html}{\out{<p style="text-align: center;"><i>FA =
-<big>&sum;</big><sup>N'</sup><sub style="line-height: 1.8; margin-left:
--3ex;">n=1</sub> &lambda;<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">n</sub>&gamma;<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">in</sub></i></p>}}{\deqn{FA =
-\sum_{n=1}^{N'}\lambda_{n}^{2}\gamma_{in}^{2}}}
+\mjsdeqn{FA = \sum_{n=1}^{N'}\lambda_{n}^{2}\gamma_{in}^{2}}
 
-Where, \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is the number of significant
-IPCs (number of IPC that were retained in the AMMI model via F tests);
-\ifelse{html}{\out{<i>&lambda;<sub>n</sub></i>}}{\eqn{\lambda_{n}}} is the
-singular value for \ifelse{html}{\out{<i>n</i>}}{\eqn{n}}th IPC and
-correspondingly \ifelse{html}{\out{<i>&lambda;<sup>2</sup><sub
-style="line-height: 1.8; margin-left:
--1ex;">n</sub></i>}}{\eqn{\lambda_{n}^{2}}} is its eigen value; and
-\ifelse{html}{\out{<i>&gamma;<sub>in<sub></i>}}{\eqn{\gamma_{in}}} is the
-eigenvector value for \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th genotype.
+Where, \mjseqn{N'} is the number of significant IPCs (number of IPC that were
+retained in the AMMI model via F tests); \mjseqn{\lambda_{n}} is the singular
+value for \mjseqn{n}th IPC and correspondingly \mjseqn{\lambda_{n}^{2}} is
+its eigen value; and \mjseqn{\gamma_{in}} is the eigenvector value for
+\mjseqn{i}th genotype.
 
-When \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is replaced by 1 (only first
-IPC axis is considered for computation), then the parameter
-\ifelse{html}{\out{<i>FP</i>}}{\eqn{FP}} can be estimated (Zali et al.,
+When \mjseqn{N'} is replaced by 1 (only first IPC axis is considered for
+computation), then the parameter \mjseqn{FP} can be estimated (Zali et al.,
 2012).
 
-\ifelse{html}{\out{<p style="text-align: center;"><i>FP
-=&lambda;<sup>2</sup><sub style="line-height: 1.8; margin-left:
--1ex;">1</sub>&gamma;<sup>2</sup><sub style="line-height: 1.8; margin-left:
--1ex;">i1</sub></i></p>}}{\deqn{FP = \lambda_{1}^{2}\gamma_{i1}^{2}}}
+\mjsdeqn{FP = \lambda_{1}^{2}\gamma_{i1}^{2}}
 
-When \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is replaced by 2 (only first
-two IPC axes are considered for computation), then the parameter
-\ifelse{html}{\out{<i>B</i>}}{\eqn{B}} can be estimated  (Zali et al., 2012).
+When \mjseqn{N'} is replaced by 2 (only first two IPC axes are considered for
+computation), then the parameter \mjseqn{B} can be estimated  (Zali et al.,
+2012).
 
-\ifelse{html}{\out{<p style="text-align: center;"><i>B =
-<big>&sum;</big><sup>2</sup><sub style="line-height: 1.8; margin-left:
--1ex;">n=1</sub> &lambda;<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">n</sub>&gamma;<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">in</sub></i></p>}}{\deqn{B =
-\sum_{n=1}^{2}\lambda_{n}^{2}\gamma_{in}^{2}}}
+\mjsdeqn{B = \sum_{n=1}^{2}\lambda_{n}^{2}\gamma_{in}^{2}}
 
-When \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is replaced by
-\ifelse{html}{\out{<i>N</i>}}{\eqn{N}} (All the IPC axes are considered for
-computation), then the parameter estimated is equivalent to Wricke's
-ecovalence (\ifelse{html}{\out{<i>W<sub>(AMMI)</sub></i>}}{\eqn{W_{(AMMI)}}})
-(Wricke, 1962; Zali et al., 2012).
+When \mjseqn{N'} is replaced by \mjseqn{N} (All the IPC axes are considered
+for computation), then the parameter estimated is equivalent to Wricke's
+ecovalence (\mjseqn{W_{(AMMI)}}) (Wricke, 1962; Zali et al., 2012).
 
-\ifelse{html}{\out{<p style="text-align: center;"><i>W<sub>(AMMI)</sub> =
-<big>&sum;</big><sup>N</sup><sub style="line-height: 1.8; margin-left:
--1ex;">n=1</sub> &lambda;<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">n</sub>&gamma;<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">in</sub></i></p>}}{\deqn{W_{(AMMI)} =
-\sum_{n=1}^{N}\lambda_{n}^{2}\gamma_{in}^{2}}}
+\mjsdeqn{W_{(AMMI)} = \sum_{n=1}^{N}\lambda_{n}^{2}\gamma_{in}^{2}}
 }
 \examples{
 library(agricolae)

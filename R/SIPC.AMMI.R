@@ -4,39 +4,24 @@
 #' (ASI) (Sneller et al., 1997) considering all significant interaction
 #' principal components (IPCs) in the AMMI model. Using SIPC, the Simultaneous
 #' Selection Index for Yield and Stability (SSI) is also calculated according to
-#' the argument \code{ssi.method}.
+#' the argument \code{ssi.method}. \loadmathjax
 #'
-#' The Sums of the Absolute Value of the IPC Scores (\eqn{SIPC}) is computed as
-#' follows:
+#' The Sums of the Absolute Value of the IPC Scores (\mjseqn{SIPC}) is computed
+#' as follows:
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>SIPC =
-#' &sum;<sup>N'</sup><sub style="line-height: 1.8; margin-left:
-#' -3ex;">n=1</sub>|&lambda;<sup>0.5</sup><sub style="line-height: 1.8;
-#' margin-left: -2ex;">n</sub>
-#' &gamma;<sub>in</sub>|</em></p></body>}}{\deqn{SIPC = \sum_{n=1}^{N'} \left |
-#' \lambda_{n}^{0.5}\gamma_{in} \right |}}
+#' \mjsdeqn{SIPC = \sum_{n=1}^{N'} \left | \lambda_{n}^{0.5}\gamma_{in} \right
+#' |}
 #'
 #' OR
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>SIPC =
-#' &sum;<sup>N'</sup><sub style="line-height: 1.8; margin-left:
-#' -2ex;">n=1</sub>|PC<sub>n</sub>|</em></p>}}{\deqn{SIPC = \sum_{n=1}^{N'}\left
-#' | PC_{n} \right |}}
+#' \mjsdeqn{SIPC = \sum_{n=1}^{N'}\left | PC_{n} \right |}
 #'
-#' Where, \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is the number of significant
-#' IPCs (number of IPC that were retained in the AMMI model via F tests);
-#' \ifelse{html}{\out{<i>&lambda;<sub>n</sub></i>}}{\eqn{\lambda_{n}}} is the
-#' singular value for \ifelse{html}{\out{<i>n</i>}}{\eqn{n}}th IPC and
-#' correspondingly \ifelse{html}{\out{<i>&lambda;<sup>2</sup><sub
-#' style="line-height: 1.8; margin-left:
-#' -1ex;">n</sub></i>}}{\eqn{\lambda_{n}^{2}}} is its eigen value;
-#' \ifelse{html}{\out{<i>&gamma;<sub>in<sub></i>}}{\eqn{\gamma_{in}}} is the
-#' eigenvector value for \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th genotype; and
-#' \ifelse{html}{\out{<i>PC<sub>1</sub></i>}}{\eqn{PC_{1}}},
-#' \ifelse{html}{\out{<i>PC<sub>2</sub></i>}}{\eqn{PC_{2}}},
-#' \ifelse{html}{\out{&hellip;}}{\eqn{\cdots}},
-#' \ifelse{html}{\out{<i>PC<sub>n</sub></i>}}{\eqn{PC_{n}}} are the scores of
-#' 1st, 2nd, ..., and \ifelse{html}{\out{<i>n</i>}}{\eqn{n}}th IPC.
+#' Where, \mjseqn{N'} is the number of significant IPCs (number of IPC that were
+#' retained in the AMMI model via F tests); \mjseqn{\lambda_{n}} is the singular
+#' value for \mjseqn{n}th IPC and correspondingly \mjseqn{\lambda_{n}^{2}} is
+#' its eigen value; \mjseqn{\gamma_{in}} is the eigenvector value for
+#' \mjseqn{i}th genotype; and \mjseqn{PC_{1}}, \mjseqn{PC_{2}}, \mjseqn{\cdots},
+#' \mjseqn{PC_{n}} are the scores of 1st, 2nd, ..., and \mjseqn{n}th IPC.
 #'
 #' The closer the SIPC scores are to zero, the more stable the genotypes are
 #' across test environments.

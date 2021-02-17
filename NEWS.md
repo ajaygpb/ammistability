@@ -1,7 +1,12 @@
 # ammistability  0.1.2
 
+## VIGNETTE:
+* Removed cairo dependency.
+
 ## OTHER NOTES:
 * Updated citation.
+* Converted all equations in Rd files to `MathJax`using `mathjaxr`.
+
 
 # ammistability  0.1.1
 

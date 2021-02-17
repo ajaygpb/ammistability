@@ -41,24 +41,20 @@ Jambhulkar et al., 2015; Jambhulkar et al., 2017).  Unlike ASI, MASI
 calculates stability value considering all significant interaction principal
 components (IPCs) in the AMMI model. Using MASI, the Simultaneous Selection
 Index for Yield and Stability (SSI) is also calculated according to the
-argument \code{ssi.method}.
+argument \code{ssi.method}. \loadmathjax
 }
 \details{
 The Modified AMMI Stability Index
-(\ifelse{html}{\out{<i>MASI</i>}}{\eqn{MASI}}) is computed as follows (Ajay et al., 2018):
+(\mjseqn{MASI}) is computed as follows (Ajay et al., 2018):
 
-\ifelse{html}{\out{<p style="text-align: center;"><i>MASI = <big>&radic;[
-&sum;</big><sup>N';</sup><sub style="line-height: 1.8; margin-left:
--4ex;">n=1</sub> PC<sup>2</sup><sub style="line-height: 1.8; margin-left:
--1ex;">n</sub> &times; &theta;<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">n</sub><big>]</big></i></p>}}{\deqn{MASI = \sqrt{
-\sum_{n=1}^{N'} PC_{n}^{2} \times \theta_{n}^{2}}}}
+\mjsdeqn{MASI = \sqrt{
+\sum_{n=1}^{N'} PC_{n}^{2} \times \theta_{n}^{2}}}
 
-Where, \ifelse{html}{\out{<i>PC<sub>n</sub></i>}}{\eqn{PC_{n}}} are the
-scores of \ifelse{html}{\out{<i>n</i>}}{\eqn{n}}th IPC; and
-\ifelse{html}{\out{<i>&theta;<sub>n</sub></i>}}{\eqn{\theta_{n}}} is the
+Where, \mjseqn{PC_{n}} are the
+scores of \mjseqn{n}th IPC; and
+\mjseqn{\theta_{n}} is the
 percentage sum of squares explained by the
-\ifelse{html}{\out{<i>n</i>}}{\eqn{n}}th principal component interaction
+\mjseqn{n}th principal component interaction
 effect.
 }
 \examples{

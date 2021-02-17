@@ -36,28 +36,23 @@ A data frame with the following columns:  \item{Za}{The Za values.}
 }
 \description{
 \code{ZA.AMMI} computes the Absolute Value of the Relative Contribution of
-IPCs to the Interaction (Za) (Zali, 2012) considering all significant
-interaction principal components (IPCs) in the AMMI model. Using Za, the
-Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
-according to the argument \code{ssi.method}.
+IPCs to the Interaction (\mjseqn{\textrm{Z}_{\textrm{a}}}) (Zali, 2012)
+considering all significant interaction principal components (IPCs) in the
+AMMI model. Using \mjseqn{\textrm{Z}_{\textrm{a}}}, the Simultaneous
+Selection Index for Yield and Stability (SSI) is also calculated according to
+the argument \code{ssi.method}. \loadmathjax
 }
 \details{
 The Absolute Value of the Relative Contribution of IPCs to the Interaction
-(\ifelse{html}{\out{<i>Za</i>}}{\eqn{Za}}) is computed as follows:
+(\mjseqn{Za}) is computed as follows:
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>Za =
-&sum;<sup>N'</sup><sub style="line-height: 1.8; margin-left:
--3ex;">n=1</sub>|&theta;<sub>n</sub>&gamma;<sub>in</sub>|</em></p>}}{\deqn{Za
-= \sum_{i=1}^{N'}\left | \theta_{n}\gamma_{in} \right |}}
+\mjsdeqn{Za = \sum_{i=1}^{N'}\left | \theta_{n}\gamma_{in} \right |}
 
-Where, \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is the number of significant
-IPCAs (number of IPC that were retained in the AMMI model via F tests);
-\ifelse{html}{\out{<i>&gamma;<sub>in<sub></i>}}{\eqn{\gamma_{in}}} is the
-eigenvector value for \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th genotype; and
-\ifelse{html}{\out{<i>&theta;<sub>n</sub></i>}}{\eqn{\theta_{n}}} is the
-percentage sum of squares explained by the
-\ifelse{html}{\out{<i>n</i>}}{\eqn{n}}th principal component interaction
-effect..
+Where, \mjseqn{N'} is the number of significant IPCAs (number of IPC that
+were retained in the AMMI model via F tests); \mjseqn{\gamma_{in}} is the
+eigenvector value for \mjseqn{i}th genotype; and \mjseqn{\theta_{n}} is the
+percentage sum of squares explained by the \mjseqn{n}th principal component
+interaction effect..
 }
 \examples{
 library(agricolae)

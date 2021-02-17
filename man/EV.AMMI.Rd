@@ -39,22 +39,17 @@ A data frame with the following columns:  \item{EV}{The EV values.}
 Values (EV) (Zobel, 1994) considering all significant interaction principal
 components (IPCs) in the AMMI model. Using EV, the Simultaneous Selection
 Index for Yield and Stability (SSI) is also calculated according to the
-argument \code{ssi.method}.
+argument \code{ssi.method}. \loadmathjax
 }
 \details{
-The Averages of the Squared Eigenvector Values
-(\ifelse{html}{\out{<i>EV</i>}}{\eqn{EV}}) is computed as follows:
+The Averages of the Squared Eigenvector Values (\mjseqn{EV}) is computed as
+follows:
 
-\ifelse{html}{\out{<p style="text-align: center;"><i>EV =
-<big>&sum;</big><sup>N'</sup><sub style="line-height: 1.8; margin-left:
--3ex;">n=1</sub> <sup>&gamma;<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">in</sub></sup> &frasl; <sub>N'</sub></i></p>}}{\deqn{EV =
-\sum_{n=1}^{N'}\frac{\gamma_{in}^2}{N'}}}
+\mjsdeqn{EV = \sum_{n=1}^{N'}\frac{\gamma_{in}^2}{N'}}
 
-Where, \ifelse{html}{\out{<i>N'</i>}}{\eqn{N'}} is the number of significant
-IPCs (number of IPC that were retained in the AMMI model via F tests); and
-\ifelse{html}{\out{<i>&gamma;<sub>in<sub></i>}}{\eqn{\gamma_{in}}} is the
-eigenvector value for \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th genotype.
+Where, \mjseqn{N'} is the number of significant IPCs (number of IPC that were
+retained in the AMMI model via F tests); and \mjseqn{\gamma_{in}} is the
+eigenvector value for \mjseqn{i}th genotype.
 }
 \examples{
 library(agricolae)

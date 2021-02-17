@@ -2,22 +2,25 @@ Package: ammistability
 Type: Package
 Title: Additive Main Effects and Multiplicative Interaction Model Stability Parameters
 Version: 0.1.2
-Authors@R: c(
-    person(given  = c("B.", "C."), family = "Ajay",
-           email = "ajaygpb@yahoo.co.in",
-           role = c("aut", "cre"),
-           comment = c(ORCID = "0000-0001-7222-8483")),
-    person(given = "J.", family = "Aravind",
-           email = "j.aravind@icar.gov.in",
-           role = c("aut"),
-           comment = c(ORCID = "0000-0002-4791-442X")),
-    person(given = "R.", family = c("Abdul Fiyaz"),
-           email = "fiyaz.ra@icar.gov.in",
-           role = c("aut"),
-           comment = c(ORCID = "0000-0001-6261-7071")),
-    person("ICAR",
-           role = c("cph"),
-           comment = c(url = "https://www.icar.org.in")))
+Authors@R: 
+    c(person(given = c("B.", "C."),
+             family = "Ajay",
+             role = c("aut", "cre"),
+             email = "j.aravind@icar.gov.in",
+             comment = c(ORCID = "0000-0001-7222-8483")),
+      person(given = "J.",
+             family = "Aravind",
+             role = "aut",
+             email = "j.aravind@icar.gov.in",
+             comment = c(ORCID = "0000-0002-4791-442X")),
+      person(given = "R.",
+             family = "Abdul Fiyaz",
+             role = "aut",
+             email = "fiyaz.ra@icar.gov.in",
+             comment = c(ORCID = "0000-0001-6261-7071")),
+      person(given = "ICAR",
+             role = "cph",
+             comment = c(url = "https://www.icar.org.in")))
 Description: Computes various stability parameters from Additive Main Effects
     and Multiplicative Interaction (AMMI) analysis results such as  Modified
     AMMI Stability Value (MASV), Sums of the Absolute Value of the Interaction
@@ -45,15 +48,17 @@ Imports:
     methods,
     reshape2,
     stats,
-    Rdpack
+    Rdpack,
+    mathjaxr
 Suggests:
     knitr,
     rmarkdown,
-	pander,
-	XML,
+	  pander,
+	  XML,
     httr,
     RCurl
-RdMacros: Rdpack
+RdMacros: Rdpack,
+    mathjaxr
 URL: https://github.com/ajaygpb/ammistability/
     https://CRAN.R-project.org/package=ammistability
     https://ajaygpb.github.io/ammistability/
