@@ -47,12 +47,13 @@
 
 <meta property="og:title" content="Absolute Value of the Relative Contribution of IPCs to the Interaction — ZA.AMMI" />
 <meta property="og:description" content="ZA.AMMI computes the Absolute Value of the Relative Contribution of
-IPCs to the Interaction (Za) (Zali, 2012) considering all significant
-interaction principal components (IPCs) in the AMMI model. Using Za, the
-Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
-according to the argument ssi.method." />
-
-
+IPCs to the Interaction (\(\textrm{Z}_{\textrm{a}}\))
+(Zali et al. 2012)
+ considering all significant
+interaction principal components (IPCs) in the AMMI model. Using
+\(\textrm{Z}_{\textrm{a}}\), the Simultaneous Selection Index for Yield
+and Stability (SSI) is also calculated according to the argument
+ssi.method. " />
 
 
 
@@ -116,14 +117,14 @@ according to the argument ssi.method." />
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fas fa-file-o"></span>
+    <span class="far fa-file"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fas fa-newspaper-o"></span>
+    <span class="far fa-newspaper"></span>
      
     News
   </a>
@@ -132,7 +133,7 @@ according to the argument ssi.method." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/ajaygpb/ammistability">
-    <span class="fas fa-github-alt"></span>
+    <span class="fab fa-github-alt"></span>
      
     Github
   </a>
@@ -163,10 +164,13 @@ according to the argument ssi.method." />
 
     <div class="ref-description">
     <p><code>ZA.AMMI</code> computes the Absolute Value of the Relative Contribution of
-IPCs to the Interaction (Za) (Zali, 2012) considering all significant
-interaction principal components (IPCs) in the AMMI model. Using Za, the
-Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
-according to the argument <code>ssi.method</code>.</p>
+IPCs to the Interaction (\(\textrm{Z}_{\textrm{a}}\))
+(Zali et al. 2012)
+ considering all significant
+interaction principal components (IPCs) in the AMMI model. Using
+\(\textrm{Z}_{\textrm{a}}\), the Simultaneous Selection Index for Yield
+and Stability (SSI) is also calculated according to the argument
+<code>ssi.method</code>. <script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>ZA.AMMI</span><span class='op'>(</span><span class='va'>model</span>, <span class='va'>n</span>, alpha <span class='op'>=</span> <span class='fl'>0.05</span>, ssi.method <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"farshadfar"</span>, <span class='st'>"rao"</span><span class='op'>)</span>, a <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></pre>
@@ -218,24 +222,20 @@ computation of SSI when <code>method = "rao"</code> (See
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The Absolute Value of the Relative Contribution of IPCs to the Interaction
-(<i>Za</i>) is computed as follows:</p>
-<p><p style="text-align: center;"><em>Za =
-&sum;<sup>N'</sup><sub style="line-height: 1.8; margin-left:
--3ex;">n=1</sub>|&theta;<sub>n</sub>&gamma;<sub>in</sub>|</em></p></p>
-<p>Where, <i>N'</i> is the number of significant
-IPCAs (number of IPC that were retained in the AMMI model via F tests);
-<i>&gamma;<sub>in<sub></i> is the
-eigenvector value for <i>i</i>th genotype; and
-<i>&theta;<sub>n</sub></i> is the
-percentage sum of squares explained by the
-<i>n</i>th principal component interaction
-effect..</p>
+(\(Za\)) (Zali et al. 2012)
+ is computed as
+follows:</p>
+<p>\[Za = \sum_{i=1}^{N'}\left | \theta_{n}\gamma_{in} \right |\]</p>
+<p>Where, \(N'\) is the number of significant IPCAs (number of IPC that
+were retained in the AMMI model via F tests); \(\gamma_{in}\) is the
+eigenvector value for \(i\)th genotype; and \(\theta_{n}\) is the
+percentage sum of squares explained by the \(n\)th principal component
+interaction effect..</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Zali H, Farshadfar E, Sabaghpour SH, Karimizadeh R (2012).
 &#8220;Evaluation of genotype &times; environment interaction in chickpea using measures of stability from AMMI model.&#8221;
-<em>Annals of Biological Research</em>, <b>3</b>(7), 3126--3136.
-<a href='http://eprints.icrisat.ac.in/id/eprint/7173'>http://eprints.icrisat.ac.in/id/eprint/7173</a>.</p>
+<em>Annals of Biological Research</em>, <b>3</b>(7), 3126--3136.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/AMMI.html'>AMMI</a></code>, <code><a href='SSI.html'>SSI</a></code></p></div>
@@ -542,7 +542,7 @@ effect..</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -47,12 +47,12 @@
 
 <meta property="og:title" content="Sum Across Environments of Absolute Value of GEI Modelled by AMMI — AVAMGE.AMMI" />
 <meta property="og:description" content="AVAMGE.AMMI computes the Sum Across Environments of Absolute Value of
-GEI Modelled by AMMI (AVAMGE) (Zali et al., 2012) considering all significant
+GEI Modelled by AMMI (AVAMGE)
+(Zali et al. 2012)
+ considering all significant
 interaction principal components (IPCs) in the AMMI model. Using AVAMGE, the
 Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
-according to the argument ssi.method." />
-
-
+according to the argument ssi.method. " />
 
 
 
@@ -116,14 +116,14 @@ according to the argument ssi.method." />
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fas fa-file-o"></span>
+    <span class="far fa-file"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fas fa-newspaper-o"></span>
+    <span class="far fa-newspaper"></span>
      
     News
   </a>
@@ -132,7 +132,7 @@ according to the argument ssi.method." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/ajaygpb/ammistability">
-    <span class="fas fa-github-alt"></span>
+    <span class="fab fa-github-alt"></span>
      
     Github
   </a>
@@ -163,10 +163,12 @@ according to the argument ssi.method." />
 
     <div class="ref-description">
     <p><code>AVAMGE.AMMI</code> computes the Sum Across Environments of Absolute Value of
-GEI Modelled by AMMI (AVAMGE) (Zali et al., 2012) considering all significant
+GEI Modelled by AMMI (AVAMGE)
+(Zali et al. 2012)
+ considering all significant
 interaction principal components (IPCs) in the AMMI model. Using AVAMGE, the
 Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
-according to the argument <code>ssi.method</code>.</p>
+according to the argument <code>ssi.method</code>. <script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>AVAMGE.AMMI</span><span class='op'>(</span><span class='va'>model</span>, <span class='va'>n</span>, alpha <span class='op'>=</span> <span class='fl'>0.05</span>, ssi.method <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"farshadfar"</span>, <span class='st'>"rao"</span><span class='op'>)</span>, a <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></pre>
@@ -218,31 +220,22 @@ computation of SSI when <code>method = "rao"</code> (See
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The Sum Across Environments of Absolute Value of GEI Modelled by AMMI
-(<i>AV<sub>(AMGE)</sub></i>) is
+(\(AV_{(AMGE)}\)) (Zali et al. 2012)
+ is
 computed as follows:</p>
-<p><p style="text-align: center;"><i>AV<sub>(AMGE)</sub> =
-<big>&sum;</big><sup>E</sup><sub style="line-height: 1.8; margin-left:
--1ex;">j=1</sub><big>&sum;</big><sup>N'</sup><sub style="line-height:
-1.8; margin-left: -3ex;">n=1</sub>
-|&lambda;<sub>n</sub>&gamma;<sub>in</sub>&delta;<sub>jn</sub>|</i></p></p>
-<p>Where, <i>N'</i> is the number of significant
-IPCs (number of IPC that were retained in the AMMI model via F tests);
-<i>&lambda;<sub>n</sub></i> is the
-singular value for <i>n</i>th IPC and
-correspondingly <i>&lambda;<sup>2</sup><sub
-style="line-height: 1.8; margin-left:
--1ex;">n</sub></i> is its eigen value;
-<i>&gamma;<sub>in<sub></i> is the
-eigenvector value for <i>i</i>th genotype; and
-<i>&delta;<sub>jn<sub></i> is the
-eigenvector value for the <i>j</i>th
-environment.</p>
+<p>\[AV_{(AMGE)} = \sum_{j=1}^{E} \sum_{n=1}^{N'} \left |\lambda_{n}
+\gamma_{in} \delta_{jn} \right |\]</p>
+<p>Where, \(N'\) is the number of significant IPCs (number of IPC that were
+retained in the AMMI model via F tests); \(\lambda_{n}\) is the singular
+value for \(n\)th IPC and correspondingly \(\lambda_{n}^{2}\) is
+its eigen value; \(\gamma_{in}\) is the eigenvector value for
+\(i\)th genotype; and \(\delta{jn}\) is the eigenvector value for
+the \(j\)th environment.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Zali H, Farshadfar E, Sabaghpour SH, Karimizadeh R (2012).
 &#8220;Evaluation of genotype &times; environment interaction in chickpea using measures of stability from AMMI model.&#8221;
-<em>Annals of Biological Research</em>, <b>3</b>(7), 3126--3136.
-<a href='http://eprints.icrisat.ac.in/id/eprint/7173'>http://eprints.icrisat.ac.in/id/eprint/7173</a>.</p>
+<em>Annals of Biological Research</em>, <b>3</b>(7), 3126--3136.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/AMMI.html'>AMMI</a></code>, <code><a href='SSI.html'>SSI</a></code></p></div>
@@ -549,7 +542,7 @@ environment.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

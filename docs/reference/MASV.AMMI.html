@@ -46,15 +46,16 @@
 
 
 <meta property="og:title" content="Modified AMMI Stability Value — MASV.AMMI" />
-<meta property="og:description" content="MASV.AMMI computes the Modified AMMI Stability Value (MASV) (Zali et
-al., 2012; Ajay et al., 2019; Please see Note) from a modified formula of AMMI
-Stability Value (ASV) (Purchase et al. 1997). This formula calculates AMMI
-stability value considering all significant interaction principal components
-(IPCs) in the AMMI model. Using MASV, the Simultaneous Selection Index for
-Yield and Stability (SSI) is also calculated according to the argument
-ssi.method." />
+<meta property="og:description" content="MASV.AMMI computes the Modified AMMI Stability Value (MASV)
+(Zali et al. 2012; Ajay et al. 2019)
 
-
+(Please see Note) from a modified formula of AMMI Stability Value
+(ASV) (Purchase 1997)
+. This formula
+calculates AMMI stability value considering all significant interaction
+principal components (IPCs) in the AMMI model. Using MASV, the Simultaneous
+Selection Index for Yield and Stability (SSI) is also calculated according to
+the argument ssi.method. " />
 
 
 
@@ -118,14 +119,14 @@ ssi.method." />
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fas fa-file-o"></span>
+    <span class="far fa-file"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fas fa-newspaper-o"></span>
+    <span class="far fa-newspaper"></span>
      
     News
   </a>
@@ -134,7 +135,7 @@ ssi.method." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/ajaygpb/ammistability">
-    <span class="fas fa-github-alt"></span>
+    <span class="fab fa-github-alt"></span>
      
     Github
   </a>
@@ -164,13 +165,16 @@ ssi.method." />
     </div>
 
     <div class="ref-description">
-    <p><code>MASV.AMMI</code> computes the Modified AMMI Stability Value (MASV) (Zali et
-al., 2012; Ajay et al., 2019; Please see <strong>Note</strong>) from a modified formula of AMMI
-Stability Value (ASV) (Purchase et al. 1997). This formula calculates AMMI
-stability value considering all significant interaction principal components
-(IPCs) in the AMMI model. Using MASV, the Simultaneous Selection Index for
-Yield and Stability (SSI) is also calculated according to the argument
-<code>ssi.method</code>.</p>
+    <p><code>MASV.AMMI</code> computes the Modified AMMI Stability Value (MASV)
+(Zali et al. 2012; Ajay et al. 2019)
+
+(Please see <strong>Note</strong>) from a modified formula of AMMI Stability Value
+(ASV) (Purchase 1997)
+. This formula
+calculates AMMI stability value considering all significant interaction
+principal components (IPCs) in the AMMI model. Using MASV, the Simultaneous
+Selection Index for Yield and Stability (SSI) is also calculated according to
+the argument <code>ssi.method</code>. <script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>MASV.AMMI</span><span class='op'>(</span><span class='va'>model</span>, <span class='va'>n</span>, alpha <span class='op'>=</span> <span class='fl'>0.05</span>, ssi.method <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"farshadfar"</span>, <span class='st'>"rao"</span><span class='op'>)</span>, a <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></pre>
@@ -221,70 +225,62 @@ computation of SSI when <code>method = "rao"</code> (See
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The Modified AMMI Stability Value
-(<i>MASV</i>) is computed as follows (Ajay
-et al., 2019):</p>
-<p><p style="text-align: center;"><i>MASV =
-<big>&radic;[&sum;</big><sup>N'-1</sup><sub style="line-height: 1.8;
-margin-left: -5ex;">n=1</sub>((<sup>SSIPC<sub>n</sub></sup> &frasl;
-<sub>SSIPC<sub>n+1</sub></sub>) &times; PC<sub>1</sub>)<sup>2</sup> +
-(PC<sub>N'</sub>)<sup>2</sup><big>]</big></i></p></p>
-<p>Where, <i>SSIPC<sub>1</sub></i>,
-<i>SSIPC<sub>2</sub></i>,
-&hellip;,
-<i>SSIPC<sub>n</sub></i> are the sum of
-squares of the 1st, 2nd, ..., and <i>n</i>th
-IPC; and <i>PC<sub>1</sub></i>,
-<i>PC<sub>2</sub></i>,
-&hellip;,
-<i>PC<sub>n</sub></i> are the scores of
-1st, 2nd, ..., and <i>n</i>th IPC.</p>
+    <p>The Modified AMMI Stability Value (\(MASV\))
+(Ajay et al. 2019)
+ is computed as follows:</p>
+<p>\[MASV = \sqrt{\sum_{n=1}^{N'-1}\left (\frac{SSIPC_{n}}{SSIPC_{n+1}}
+\times PC_{n} \right )^2   + \left (PC_{N'}  \right )^2}\]</p>
+<p>Where, \(SSIPC_{1}\), \(SSIPC_{2}\), \(\cdots\),
+\(SSIPC_{n}\) are the sum of squares of the 1st, 2nd, ..., and
+\(n\)th IPC; and \(PC_{1}\), \(PC_{2}\), \(\cdots\),
+\(PC_{n}\) are the scores of 1st, 2nd, ..., and \(n\)th IPC.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>In Zali et al., (2012), the formula for both AMMI stability value (ASV)
-  was found to be erroneous, when compared with the original publications
-  (Purchase 1997; Purchase et al., 1999; Purchase et al., 2000).</p>
-<p><strong>ASV (Zali et al., 2012)</strong> <p style="text-align:
-  center;"><i>ASV = <big>&radic;[</big>(<sup>SSIPC<sub>1</sub></sup>
-  <sub>&frasl; SSIPC<sub>2</sub></sub>) &times; (PC<sub>1</sub>)<sup>2</sup>
-  + (PC<sub>2</sub>)<sup>2</sup><big>]</big></i></p></p>
-<p><strong>ASV (Purchase 1997; Purchase et al., 1999; Purchase et al., 2000)</strong>
-  <p style="text-align: center;"><i>ASV =
-  <big>&radic;[</big>((<sup>SSIPC<sub>1</sub></sup> &frasl;
-  <sub>SSIPC<sub>2</sub></sub>) &times; PC<sub>1</sub>)<sup>2</sup> +
-  (PC<sub>2</sub>)<sup>2</sup><big>]</big></i></p></p>
+    <p>In Zali et al. (2012)
+, the
+  formula for both AMMI stability value (ASV) was found to be erroneous, when
+  compared with the original publications
+  (Purchase 1997; Purchase et al. 1999; Purchase et al. 2000)
+.</p>
+
+<p><strong>ASV (Zali et al. 2012)
+</strong> \[ASV
+  = \sqrt{\left ( \frac{SSIPC_{1}}{SSIPC_{2}} \right ) \times (PC_{1})^2   +
+  \left (PC_{2} \right )^2}\]</p>
+<p><strong>ASV
+  (Purchase 1997; Purchase et al. 1999; Purchase et al. 2000)
+</strong>
+   \[ASV = \sqrt{\left (\frac{SSIPC_{1}}{SSIPC_{2}} \times PC_{1}
+  \right )^2   + \left (PC_{2} \right )^2}\]</p>
 <p>The authors believe that the proposed Modified AMMI stability value (MASV)
-  in Zali et al., (2012) is also erroneous and have implemented the corrected
-  one in <code>MASV.AMMI</code> (Ajay et al., 2019).</p>
-<p><strong>MASV (Zali et al., 2012)</strong> <p style="text-align:
-  center;"><i>MASV = <big>&radic;[&sum;</big><sup>N'-1</sup><sub
-  style="line-height: 1.8; margin-left:
-  -5ex;">n=1</sub>(<sup>SSIPC<sub>n</sub></sup> &frasl;
-  <sub>SSIPC<sub>n+1</sub></sub>) &times; (PC<sub>1</sub>)<sup>2</sup> +
-  (PC<sub>N'</sub>)<sup>2</sup><big>]</big></i></p></p>
+  in Zali et al. (2012)
+ is also
+  erroneous and have implemented the corrected one in <code>MASV.AMMI</code>
+  (Ajay et al. 2019)
+.</p>
+<p><strong>MASV (Zali et al. 2012)
+</strong>
+  \[MASV = \sqrt{\sum_{n=1}^{N'-1}\left (
+  \frac{SSIPC_{n}}{SSIPC_{n+1}} \right ) \times (PC_{n})^2   + \left (PC_{N'}
+  \right )^2}\]</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Purchase JL (1997).
+    <p>Ajay BC, Aravind J, Fiyaz RA, Kumar N, Lal C, Gangadhar K, Kona P, Dagla MC, Bera SK (2019).
+&#8220;Rectification of modified AMMI stability value (MASV).&#8221;
+<em>Indian Journal of Genetics and Plant Breeding (The)</em>, <b>79</b>, 726--731.
+<a href='https://www.isgpb.org/article/rectification-of-modified-ammi-stability-value-masv'>https://www.isgpb.org/article/rectification-of-modified-ammi-stability-value-masv</a>.<br /><br /> Purchase JL (1997).
 <em>Parametric analysis to describe genotype &times; environment interaction and yield stability in winter wheat</em>.
 Ph.D. thesis, University of the Orange Free State.
-<a href='http://scholar.ufs.ac.za:8080/xmlui/handle/11660/1966'>http://scholar.ufs.ac.za:8080/xmlui/handle/11660/1966</a>.</p>
-<p>Purchase JL, Hatting H, van Deventer CS (1999).
+<a href='http://scholar.ufs.ac.za:8080/xmlui/handle/11660/1966'>http://scholar.ufs.ac.za:8080/xmlui/handle/11660/1966</a>.<br /><br /> Purchase JL, Hatting H, van Deventer CS (1999).
 &#8220;The use of the AMMI model and AMMI stability value to describe genotype x environment interaction and yield stability in winter wheat (<em>Triticum aestivum</em> L.).&#8221;
 In <em>Proceedings of the Tenth Regional Wheat Workshop for Eastern, Central and Southern Africa,  14-18 September 1998</em>.
-University of Stellenbosch, South Africa.</p>
-<p>Purchase JL, Hatting H, van Deventer CS (2000).
+University of Stellenbosch, South Africa.<br /><br /> Purchase JL, Hatting H, van Deventer CS (2000).
 &#8220;Genotype &times; environment interaction of winter wheat (<em>Triticum aestivum</em> L.) in South Africa: II. Stability analysis of yield performance.&#8221;
 <em>South African Journal of Plant and Soil</em>, <b>17</b>(3), 101--107.
 doi: <a href='https://doi.org/10.1080/02571862.2000.10634878'>10.1080/02571862.2000.10634878</a>
-, <a href='https://doi.org/10.1080/02571862.2000.10634878'>https://doi.org/10.1080/02571862.2000.10634878</a>.</p>
-<p>Zali H, Farshadfar E, Sabaghpour SH, Karimizadeh R (2012).
+, <a href='https://doi.org/10.1080/02571862.2000.10634878'>https://doi.org/10.1080/02571862.2000.10634878</a>.<br /><br /> Zali H, Farshadfar E, Sabaghpour SH, Karimizadeh R (2012).
 &#8220;Evaluation of genotype &times; environment interaction in chickpea using measures of stability from AMMI model.&#8221;
-<em>Annals of Biological Research</em>, <b>3</b>(7), 3126--3136.
-<a href='http://eprints.icrisat.ac.in/id/eprint/7173'>http://eprints.icrisat.ac.in/id/eprint/7173</a>.</p>
-<p>Ajay BC, Aravind J, Fiyaz RA, Kumar N, Lal C, Gangadhar K, Kona P, Dagla MC, Bera SK (2019).
-&#8220;Rectification of modified AMMI stability value (MASV).&#8221;
-<em>Indian Journal of Genetics and Plant Breeding (The)</em>, <b>79</b>, 726--731.
-<a href='http://www.isgpb.org/article/rectification-of-modified-ammi-stability-value-masv'>http://www.isgpb.org/article/rectification-of-modified-ammi-stability-value-masv</a>.</p>
+<em>Annals of Biological Research</em>, <b>3</b>(7), 3126--3136.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/AMMI.html'>AMMI</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/indexAMMI.html'>index.AMMI</a></code>,
@@ -592,7 +588,7 @@ doi: <a href='https://doi.org/10.1080/02571862.2000.10634878'>10.1080/02571862.2
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

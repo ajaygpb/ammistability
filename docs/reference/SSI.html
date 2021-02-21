@@ -47,9 +47,8 @@
 
 <meta property="og:title" content="Simultaneous Selection Indices for Yield and Stability — SSI" />
 <meta property="og:description" content="SSI computes the Simultaneous Selection Index for Yield and Stability
-(SSI) according to the methods specified in the argument method." />
-
-
+(SSI) according to the methods specified in the argument method.
+" />
 
 
 
@@ -113,14 +112,14 @@
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fas fa-file-o"></span>
+    <span class="far fa-file"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fas fa-newspaper-o"></span>
+    <span class="far fa-newspaper"></span>
      
     News
   </a>
@@ -129,7 +128,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/ajaygpb/ammistability">
-    <span class="fas fa-github-alt"></span>
+    <span class="fab fa-github-alt"></span>
      
     Github
   </a>
@@ -160,7 +159,8 @@
 
     <div class="ref-description">
     <p><code>SSI</code> computes the Simultaneous Selection Index for Yield and Stability
-(SSI) according to the methods specified in the argument <code>method</code>.</p>
+(SSI) according to the methods specified in the argument <code>method</code>.
+<script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>SSI</span><span class='op'>(</span><span class='va'>y</span>, <span class='va'>sp</span>, <span class='va'>gen</span>, method <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"farshadfar"</span>, <span class='st'>"rao"</span><span class='op'>)</span>, a <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></pre>
@@ -207,32 +207,19 @@ computation of SSI when <code>method = "rao"</code> (See <strong>Details</strong
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The SSI according to Rao and Prabhakaran (2005)
-(<i>I<sub>i</sub></i>) is computed as
-follows:</p>
-<p><p style="text-align: center;"><em>I<sub>i</sub> =
-<big>[</big><sup><span style="text-decoration:overline">Y</span><sub>i</sub>
-</sup>&frasl;<sup> </sup><sub><span
-style="text-decoration:overline">Y</span></sub><sub>..</sub><big>]</big> +
-&alpha; <big>[</big><sup>(1/SP<sub>i</sub>)</sup> <big>&frasl;</big>
-<sub>((1/T) <big>&sum;</big><sup>T</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">i=1</sub>
-(1/SPi))</sub><big>]</big></em></p></p>
-<p>Where <i>SP<sub>i</sub></i> is the
-stability measure of the <i>i</sub></i>th
-genotype under AMMI procedure; <i><span
-style="text-decoration:overline">Y</span><sub>i</sub></i>
-is mean performance of <i>i</sub></i>th
-genotype; <i><span
-style="text-decoration:overline">Y</span><sub>..</sub></i>
-is the overall mean; <i>T</sub></i> is the
-number of genotypes under test and
-<i>&alpha;</sub></i> is the ratio of the
-weights given to the stability components
-(<i>w<sub>2</sub></i>) and yield
-(<i>w<sub>1</sub></i>) with a restriction
-that <i>w<sub>1</sub> + w<sub>2</sub> = 1</i>. The weights can be specified as required.</p>
+
+(\(I_{i}\)) is computed as follows:</p>
+<p>\[I_{i} = \frac{\overline{Y}_{i}}{\overline{Y}_{..}} + \alpha
+\frac{\frac{1}{SP_{i}}}{\frac{1}{T}\sum_{i=1}^{T}\frac{1}{SP_{i}}}\]</p>
+<p>Where \(SP_{i}\) is the stability measure of the \(i\)th genotype
+under AMMI procedure; \(\overline{Y}_{i}\) is mean performance of
+\(i\)th genotype; \(\overline{Y}_{..}\) is the overall mean;
+\(T\) is the number of genotypes under test and \(\alpha\) is the
+ratio of the weights given to the stability components (\(w_{2}\)) and
+yield (\(w_{1}\)) with a restriction that \(w_{1} + w_{2} = 1\).
+The weights can be specified as required.</p>
 <table class='table'>
-<tr><td><strong><i>&alpha;</i></strong></td><td><strong><i>w<sub>1</sub></i></strong></td><td><strong><i>w<sub>2</sub></i></strong></td></tr>
+<tr><td><strong>\(\alpha\)</strong></td><td><strong>\(w_{1}\)</strong></td><td><strong>\(w_{2}\)</strong></td></tr>
 <tr><td>1.00</td><td>0.5</td><td>0.5</td></tr>
 <tr><td>0.67</td><td>0.6</td><td>0.4</td></tr>
 <tr><td>0.43</td><td>0.7</td><td>0.3</td></tr>
@@ -240,28 +227,26 @@ that <i>w<sub>1</sub> + w<sub>2</sub> = 1</i>. The weights can be specified as r
 </table>
 
 
-<p>The SSI proposed by Farshadfar (2008) is called the Genotype stability index
-(GSI) or Yield stability index
-(YSI) (Farshadfar et al., 2011) and is
+<p>The SSI proposed by
+Farshadfar (2008)
+ is called
+the Genotype stability index (\(GSI\)) or Yield stability index
+(\(YSI\)) (Farshadfar et al. 2011)
+ and is
 computed by summation of the ranks of the stability index/parameter and the
 ranks of the mean yields.</p>
-<p><p style="text-align: center;"><em>GSI = YSI =
-R<sub>SP</sub> + R<sub>Y</sub></em></p></p>
-<p>Where, <i>R<sub>SP</sub></i> is the
-stability parameter/index rank of the genotype and
-<i>R<sub>Y</sub></i> is the mean yield rank
-of the genotype.</p>
+<p>\[GSI = YSI = R_{SP} + R_{Y}\]</p>
+<p>Where, \(R_{SP}\) is the stability parameter/index rank of the genotype
+and \(R_{Y}\) is the mean yield rank of the genotype.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Rao AR, Prabhakaran VT (2005).
+    <p>Farshadfar E (2008).
+&#8220;Incorporation of AMMI stability value and grain yield in a single non-parametric index (GSI) in bread wheat.&#8221;
+<em>Pakistan Journal of biological sciences</em>, <b>11</b>(14), 1791.<br /><br /> Farshadfar E, Mahmodi N, Yaghotipoor A (2011).
+&#8220;AMMI stability value and simultaneous estimation of yield and yield stability in bread wheat (<em>Triticum aestivum</em> L.).&#8221;
+<em>Australian Journal of Crop Science</em>, <b>5</b>(13), 1837--1844.<br /><br /> Rao AR, Prabhakaran VT (2005).
 &#8220;Use of AMMI in simultaneous selection of genotypes for yield and stability.&#8221;
 <em>Journal of the Indian Society of Agricultural Statistics</em>, <b>59</b>, 76--82.</p>
-<p>Farshadfar E (2008).
-&#8220;Incorporation of AMMI stability value and grain yield in a single non-parametric index (GSI) in bread wheat.&#8221;
-<em>Pakistan Journal of biological sciences</em>, <b>11</b>(14), 1791.</p>
-<p>Farshadfar E, Mahmodi N, Yaghotipoor A (2011).
-&#8220;AMMI stability value and simultaneous estimation of yield and yield stability in bread wheat (<em>Triticum aestivum</em> L.).&#8221;
-<em>Australian Journal of Crop Science</em>, <b>5</b>(13), 1837--1844.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='AMGE.AMMI.html'>AMGE.AMMI</a></code>,
@@ -393,7 +378,7 @@ of the genotype.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

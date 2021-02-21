@@ -46,13 +46,13 @@
 
 
 <meta property="og:title" content="AMMI Stability Index — ASI.AMMI" />
-<meta property="og:description" content="ASI.AMMI computes the AMMI Stability Index (ASI) (Jambhulkar et al.,
-2014; Jambhulkar et al., 2015; Jambhulkar et al., 2017) considering the first
-two interaction principal components (IPCs) in the AMMI model. Using ASI, the
-Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
-according to the argument ssi.method." />
+<meta property="og:description" content="ASI.AMMI computes the AMMI Stability Index (ASI)
+(Jambhulkar et al. 2014; Jambhulkar et al. 2015; Jambhulkar et al. 2017)
 
-
+considering the first two interaction principal components (IPCs) in the AMMI
+model. Using ASI, the Simultaneous Selection Index for Yield and Stability
+(SSI) is also calculated according to the argument ssi.method.
+" />
 
 
 
@@ -116,14 +116,14 @@ according to the argument ssi.method." />
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fas fa-file-o"></span>
+    <span class="far fa-file"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fas fa-newspaper-o"></span>
+    <span class="far fa-newspaper"></span>
      
     News
   </a>
@@ -132,7 +132,7 @@ according to the argument ssi.method." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/ajaygpb/ammistability">
-    <span class="fas fa-github-alt"></span>
+    <span class="fab fa-github-alt"></span>
      
     Github
   </a>
@@ -162,11 +162,13 @@ according to the argument ssi.method." />
     </div>
 
     <div class="ref-description">
-    <p><code>ASI.AMMI</code> computes the AMMI Stability Index (ASI) (Jambhulkar et al.,
-2014; Jambhulkar et al., 2015; Jambhulkar et al., 2017) considering the first
-two interaction principal components (IPCs) in the AMMI model. Using ASI, the
-Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
-according to the argument <code>ssi.method</code>.</p>
+    <p><code>ASI.AMMI</code> computes the AMMI Stability Index (ASI)
+(Jambhulkar et al. 2014; Jambhulkar et al. 2015; Jambhulkar et al. 2017)
+
+considering the first two interaction principal components (IPCs) in the AMMI
+model. Using ASI, the Simultaneous Selection Index for Yield and Stability
+(SSI) is also calculated according to the argument <code>ssi.method</code>.
+<script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>ASI.AMMI</span><span class='op'>(</span><span class='va'>model</span>, ssi.method <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"farshadfar"</span>, <span class='st'>"rao"</span><span class='op'>)</span>, a <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></pre>
@@ -207,34 +209,26 @@ computation of SSI when <code>method = "rao"</code> (See
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The AMMI Stability Index (<i>ASI</i>) is
-computed as follows:</p>
-<p><p style="text-align: center;"><i>ASI =
-<big>&radic;[</big>[PC<sup>2</sup><sub style="line-height: 1.8; margin-left:
--1ex;">1</sub> &times; &theta;<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">1</sub>] + [PC<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">2</sub> &times; &theta;<sup>2</sup><sub
-style="line-height: 1.8; margin-left:
--1ex;">2</sub>]<big>]</big></i></p></p>
-<p>Where, <i>PC<sub>1</sub></i> and
-<i>PC<sub>2</sub></i> are the scores of
-1st and 2nd IPCs respectively; and
-<i>&theta;<sub>1</sub></i> and
-<i>&theta;<sub>2</sub></i> are
-percentage sum of squares explained by the 1st and 2nd principal component
-interaction effect respectively.</p>
+    <p>The AMMI Stability Index (\(ASI\))
+(Jambhulkar et al. 2014; Jambhulkar et al. 2015; Jambhulkar et al. 2017)
+
+is computed as follows:</p>
+<p>\[ASI = \sqrt{\left [ PC_{1}^{2} \times \theta_{1}^{2} \right ]+\left
+[ PC_{2}^{2} \times \theta_{2}^{2} \right ]}\]</p>
+<p>Where, \(PC_{1}\) and \(PC_{2}\) are the scores of 1st and 2nd IPCs
+respectively; and \(\theta_{1}\) and \(\theta_{2}\) are percentage
+sum of squares explained by the 1st and 2nd principal component interaction
+effect respectively.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Jambhulkar NN, Bose LK, Singh ON (2014).
+    <p>Jambhulkar NN, Bose LK, Pande K, Singh ON (2015).
+&#8220;Genotype by environment interaction and stability analysis in rice genotypes.&#8221;
+<em>Ecology, Environment and Conservation</em>, <b>21</b>(3), 1427--1430.
+<a href='http://www.envirobiotechjournals.com/article_abstract.php?aid=6346&amp;iid=200&amp;jid=3'>http://www.envirobiotechjournals.com/article_abstract.php?aid=6346&amp;iid=200&amp;jid=3</a>.<br /><br /> Jambhulkar NN, Bose LK, Singh ON (2014).
 &#8220;AMMI stability index for stability analysis.&#8221;
 In Mohapatra T (ed.), <em>CRRI Newsletter, January-March 2014</em>, volume 35(1), 15.
 Central Rice Research Institute, Cuttack, Orissa.
-<a href='http://www.crri.nic.in/CRRI_newsletter/crnl_jan_mar_14_web.pdf'>http://www.crri.nic.in/CRRI_newsletter/crnl_jan_mar_14_web.pdf</a>.</p>
-<p>Jambhulkar NN, Bose LK, Pande K, Singh ON (2015).
-&#8220;Genotype by environment interaction and stability analysis in rice genotypes.&#8221;
-<em>Ecology, Environment and Conservation</em>, <b>21</b>(3), 1427--1430.
-<a href='http://www.envirobiotechjournals.com/article_abstract.php?aid=6346&amp;iid=200&amp;jid=3'>http://www.envirobiotechjournals.com/article_abstract.php?aid=6346&amp;iid=200&amp;jid=3</a>.</p>
-<p>Jambhulkar NN, Rath NC, Bose LK, Subudhi HN, Biswajit M, Lipi D, Meher J (2017).
+<a href='http://www.crri.nic.in/CRRI_newsletter/crnl_jan_mar_14_web.pdf'>http://www.crri.nic.in/CRRI_newsletter/crnl_jan_mar_14_web.pdf</a>.<br /><br /> Jambhulkar NN, Rath NC, Bose LK, Subudhi HN, Biswajit M, Lipi D, Meher J (2017).
 &#8220;Stability analysis for grain yield in rice in demonstrations conducted during rabi season in India.&#8221;
 <em>Oryza</em>, <b>54</b>(2), 236--240.
 doi: <a href='https://doi.org/10.5958/2249-5266.2017.00030.3'>10.5958/2249-5266.2017.00030.3</a>
@@ -514,7 +508,7 @@ doi: <a href='https://doi.org/10.5958/2249-5266.2017.00030.3'>10.5958/2249-5266.
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

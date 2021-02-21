@@ -24,7 +24,7 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/ammistability?color=gre
 [![Project Status:
 Inactive](http://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2021--02--17-yellowgreen.svg)](https://github.com/ajaygpb/ammistability/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2021--02--21-yellowgreen.svg)](https://github.com/ajaygpb/ammistability/commits/master)
 [![Rdoc](https://www.rdocumentation.org/badges/version/ammistability)](https://www.rdocumentation.org/packages/ammistability)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1344756.svg)](https://doi.org/10.5281/zenodo.1344756)

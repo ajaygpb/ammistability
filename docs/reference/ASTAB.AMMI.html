@@ -46,13 +46,12 @@
 
 
 <meta property="og:title" content="AMMI Based Stability Parameter — ASTAB.AMMI" />
-<meta property="og:description" content="ASTAB.AMMI computes the AMMI Based Stability Parameter (ASTAB) (Rao
-and Prabhakaran, 2005) considering all significant interaction principal
-components (IPCs) in the AMMI model. Using ASTAB, the Simultaneous Selection
-Index for Yield and Stability (SSI) is also calculated according to the
-argument ssi.method." />
-
-
+<meta property="og:description" content="ASTAB.AMMI computes the AMMI Based Stability Parameter (ASTAB)
+(Rao and Prabhakaran 2005)
+ considering all significant
+interaction principal components (IPCs) in the AMMI model. Using ASTAB, the
+Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
+according to the argument ssi.method. " />
 
 
 
@@ -116,14 +115,14 @@ argument ssi.method." />
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fas fa-file-o"></span>
+    <span class="far fa-file"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fas fa-newspaper-o"></span>
+    <span class="far fa-newspaper"></span>
      
     News
   </a>
@@ -132,7 +131,7 @@ argument ssi.method." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/ajaygpb/ammistability">
-    <span class="fas fa-github-alt"></span>
+    <span class="fab fa-github-alt"></span>
      
     Github
   </a>
@@ -162,11 +161,12 @@ argument ssi.method." />
     </div>
 
     <div class="ref-description">
-    <p><code>ASTAB.AMMI</code> computes the AMMI Based Stability Parameter (ASTAB) (Rao
-and Prabhakaran, 2005) considering all significant interaction principal
-components (IPCs) in the AMMI model. Using ASTAB, the Simultaneous Selection
-Index for Yield and Stability (SSI) is also calculated according to the
-argument <code>ssi.method</code>.</p>
+    <p><code>ASTAB.AMMI</code> computes the AMMI Based Stability Parameter (ASTAB)
+(Rao and Prabhakaran 2005)
+ considering all significant
+interaction principal components (IPCs) in the AMMI model. Using ASTAB, the
+Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
+according to the argument <code>ssi.method</code>. <script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>ASTAB.AMMI</span><span class='op'>(</span><span class='va'>model</span>, <span class='va'>n</span>, alpha <span class='op'>=</span> <span class='fl'>0.05</span>, ssi.method <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"farshadfar"</span>, <span class='st'>"rao"</span><span class='op'>)</span>, a <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></pre>
@@ -217,21 +217,15 @@ computation of SSI when <code>method = "rao"</code> (See
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The AMMI Based Stability Parameter value
-(<i>ASTAB</i>) is computed as follows:</p>
-<p><p style="text-align: center;"><i>ASTAB =
-&sum;<sup>N'</sup><sub style="line-height: 1.8; margin-left: -3ex;">n=1</sub>
-&lambda;<sub>n</sub> &gamma;<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">in</sub></i></p></p>
-<p>Where, <i>N'</i> is the number of significant
-IPCs (number of IPC that were retained in the AMMI model via F tests);
-<i>&lambda;<sub>n</sub></i> is the
-singular value for <i>n</i>th IPC and
-correspondingly <i>&lambda;<sup>2</sup><sub
-style="line-height: 1.8; margin-left:
--1ex;">n</sub></i> is its eigen value; and
-<i>&gamma;<sub>in<sub></i> is the
-eigenvector value for <i>i</i>th genotype.</p>
+    <p>The AMMI Based Stability Parameter value (\(ASTAB\))
+(Rao and Prabhakaran 2005)
+ is computed as follows:</p>
+<p>\[ASTAB = \sum_{n=1}^{N'}\lambda_{n}\gamma_{in}^{2}\]</p>
+<p>Where, \(N'\) is the number of significant IPCs (number of IPC that were
+retained in the AMMI model via F tests); \(\lambda_{n}\) is the singular
+value for \(n\)th IPC and correspondingly \(\lambda_{n}^{2}\) is
+its eigen value; and \(\gamma_{in}\) is the eigenvector value for
+\(i\)th genotype.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Rao AR, Prabhakaran VT (2005).
@@ -543,7 +537,7 @@ eigenvector value for <i>i</i>th genotype.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
