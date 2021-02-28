@@ -32,6 +32,7 @@
 #'   The names of the genotypes are indicated as the row names of the data
 #'   frame.
 #'
+#' @import mathjaxr
 #' @importFrom methods is
 #' @importFrom stats aggregate
 #' @importFrom agricolae AMMI
