@@ -1,7 +1,7 @@
 Package: ammistability
 Type: Package
 Title: Additive Main Effects and Multiplicative Interaction Model Stability Parameters
-Version: 0.1.2
+Version: 0.1.2.9000
 Authors@R: 
     c(person(given = c("B.", "C."),
              family = "Ajay",
