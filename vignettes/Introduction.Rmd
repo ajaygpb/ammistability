@@ -126,10 +126,9 @@ library(ammistability)
 ## Version History
 ```{r, results='asis', echo=FALSE}
 # Fetch release version
-# rver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("ammistability")) == "",
-#                yes = getNamespaceVersion("ammistability"),
-#                no = as.vector(available.packages()["ammistability",]["Version"]))
-rver <- "0.1.2"
+rver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("ammistability")) == "",
+               yes = getNamespaceVersion("ammistability"),
+               no = as.vector(available.packages()["ammistability",]["Version"]))
 ```
 The current version of the package is `r rver`. The previous versions are as follows.
 

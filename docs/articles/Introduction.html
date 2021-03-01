@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ammistability</a>
-        <span class="version label label-primary" data-toggle="tooltip" data-placement="bottom" title="ammistability">0.1.2</span>
+        <span class="version label label-primary" data-toggle="tooltip" data-placement="bottom" title="ammistability">0.1.2.9000</span>
       </span>
     </div>
 
@@ -98,14 +98,14 @@
 
       
 
-      </header><div class="row">
+      </header><script src="Introduction_files/header-attrs-2.7/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>The <code>ammistability</code> Package: A Brief Introduction</h1>
                         <h4 class="author">Ajay, B. C.<sup>1</sup>, Aravind, J.<sup>2</sup>, and Abdul Fiyaz, R.<sup>3</sup>
 </h4>
             
-            <h4 class="date">2021-02-21</h4>
+            <h4 class="date">2021-03-01</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ajaygpb/ammistability/blob/master/vignettes/Introduction.Rmd"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
@@ -136,9 +136,8 @@
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h2>
-<p>The package <code>ammistability</code> <span class="citation">(Ajay et al., <a href="#ref-ajay2019ammistability">2019</a><a href="#ref-ajay2019ammistability">a</a>)</span> is a collection of functions for the computation of various stability parameters from the results of Additive Main Effects and Multiplicative Interaction (AMMI) analysis computed by the <a href="https://www.rdocumentation.org/packages/agricolae/versions/1.2-8/topics/AMMI"><code>AMMI</code></a> function of <a href="https://CRAN.R-project.org/package=agricolae"><code>agricolae</code></a> package.</p>
+<p>The package <code>ammistability</code> <span class="citation">(<a href="#ref-ajay2019ammistability" role="doc-biblioref">Ajay et al., 2019a</a>)</span> is a collection of functions for the computation of various stability parameters from the results of Additive Main Effects and Multiplicative Interaction (AMMI) analysis computed by the <a href="https://www.rdocumentation.org/packages/agricolae/versions/1.2-8/topics/AMMI"><code>AMMI</code></a> function of <a href="https://CRAN.R-project.org/package=agricolae"><code>agricolae</code></a> package.</p>
 <p>The goal of this vignette is to introduce the users to these functions and give a primer in computation of various stability parameters/indices from a fitted AMMI model. This document assumes a basic knowledge of <code>R</code> programming language.</p>
-
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -156,7 +155,7 @@
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ajaygpb/ammistability/">ammistability</a></span><span class="op">)</span></code></pre></div>
 <pre><code>
 --------------------------------------------------------------------------------
-Welcome to ammistability version 0.1.2
+Welcome to ammistability version 0.1.2.9000
 
 
 # To know how to use this package type:
@@ -200,7 +199,7 @@ Welcome to ammistability version 0.1.2
 <div id="ammi-model" class="section level2">
 <h2 class="hasAnchor">
 <a href="#ammi-model" class="anchor"></a>AMMI model</h2>
-<p>The difference in response of genotypes to different environmental conditions is known as Genotype-Environment Interaction (GEI). Understanding the nature and structure of this interaction is critical for plant breeders to select for genotypes with wide or specific adaptability. One of the most popular techniques to achieve this is by fitting the Additive Main Effects and Multiplicative Interaction (AMMI) model to the results of multi environment trials <span class="citation">(Gauch, <a href="#ref-gauch_model_1988">1988</a>, <a href="#ref-gauch_statistical_1992">1992</a>)</span>.</p>
+<p>The difference in response of genotypes to different environmental conditions is known as Genotype-Environment Interaction (GEI). Understanding the nature and structure of this interaction is critical for plant breeders to select for genotypes with wide or specific adaptability. One of the most popular techniques to achieve this is by fitting the Additive Main Effects and Multiplicative Interaction (AMMI) model to the results of multi environment trials <span class="citation">(<a href="#ref-gauch_model_1988" role="doc-biblioref">Gauch, 1988</a>, <a href="#ref-gauch_statistical_1992" role="doc-biblioref">1992</a>)</span>.</p>
 <p>The AMMI equation is described as follows.</p>
 <p><span class="math display">\[Y_{ij} = \mu + \alpha_{i} + \beta_{j} + \sum_{n=1}^{N}\lambda_{n}\gamma_{in}\delta_{jn} + \rho_{ij}\]</span></p>
 <p>Where, <span class="math inline">\(Y_{ij}\)</span> is the yield of the <span class="math inline">\(i\)</span>th genotype in the <span class="math inline">\(j\)</span>th environment, <span class="math inline">\(\mu\)</span> is the grand mean, <span class="math inline">\(\alpha_{i}\)</span> is the genotype deviation from the grand mean, <span class="math inline">\(\beta_{j}\)</span> is the environment deviation, <span class="math inline">\(N\)</span> is the total number of interaction principal components (IPCs), <span class="math inline">\(\lambda_{n}\)</span> is the is the singular value for <span class="math inline">\(n\)</span>th IPC and correspondingly <span class="math inline">\(\lambda_{n}^{2}\)</span> is its eigen value, <span class="math inline">\(\gamma_{in}\)</span> is the eigenvector value for <span class="math inline">\(i\)</span>th genotype, <span class="math inline">\(\delta_{jn}\)</span> is the eigenvector value for the <span class="math inline">\(j\)</span>th environment and <span class="math inline">\(\rho_{ij}\)</span> is the residual.</p>
@@ -210,8 +209,6 @@ Welcome to ammistability version 0.1.2
 <a href="#ammi-stability-parameters" class="anchor"></a>AMMI stability parameters</h2>
 <p>Although the AMMI model can aid in determining genotypes with wide or specific adaptability, it fails to rank genotypes according to their stability. Several measures have been developed over the years to indicate the stability of genotypes from the results of AMMI analysis (Table 1.).</p>
 <p>The details about AMMI stability parameters/indices implemented in <code>ammistability</code> are described in Table 1.</p>
-<div style="page-break-after: always;"></div>
-
 <p><strong>Table 1 :</strong> AMMI stability parameters/indices implemented in <code>ammistability</code>. </p>
 <table class="table">
 <colgroup>
@@ -232,7 +229,7 @@ Welcome to ammistability version 0.1.2
 <td align="left"><code>AMGE.AMMI</code></td>
 <td align="left"><span class="math display">\[AMGE = \sum_{j=1}^{E} \sum_{n=1}^{N'}
 \lambda_{n} \gamma_{in} \delta_{jn}\]</span></td>
-<td align="left"><span class="citation">Sneller et al. (<a href="#ref-sneller_repeatability_1997">1997</a>)</span></td>
+<td align="left"><span class="citation"><a href="#ref-sneller_repeatability_1997" role="doc-biblioref">Sneller et al.</a> (<a href="#ref-sneller_repeatability_1997" role="doc-biblioref">1997</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">AMMI Stability Index (<span class="math inline">\(ASI\)</span>)</td>
@@ -243,7 +240,7 @@ Welcome to ammistability version 0.1.2
 \theta_{1}^{2} \right ]+\left [ PC_{2}^{2} \times
 \theta_{2}^{2} \right ]}\]</span></td>
 <td align="left">
-<span class="citation">Jambhulkar et al. (<a href="#ref-jambhulkar_ammi_2014">2014</a>)</span>; <span class="citation">Jambhulkar et al. (<a href="#ref-jambhulkar_genotype_2015">2015</a>)</span>; <span class="citation">Jambhulkar et al. (<a href="#ref-jambhulkar_stability_2017">2017</a>)</span>
+<span class="citation"><a href="#ref-jambhulkar_ammi_2014" role="doc-biblioref">Jambhulkar et al.</a> (<a href="#ref-jambhulkar_ammi_2014" role="doc-biblioref">2014</a>)</span>; <span class="citation"><a href="#ref-jambhulkar_genotype_2015" role="doc-biblioref">Jambhulkar et al.</a> (<a href="#ref-jambhulkar_genotype_2015" role="doc-biblioref">2015</a>)</span>; <span class="citation"><a href="#ref-jambhulkar_stability_2017" role="doc-biblioref">Jambhulkar et al.</a> (<a href="#ref-jambhulkar_stability_2017" role="doc-biblioref">2017</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -251,7 +248,7 @@ Welcome to ammistability version 0.1.2
 <td align="left"><code>ASTAB.AMMI</code></td>
 <td align="left"><span class="math display">\[ASTAB =
 \sum_{n=1}^{N'}\lambda_{n}\gamma_{in}^{2}\]</span></td>
-<td align="left"><span class="citation">Rao and Prabhakaran (<a href="#ref-rao_use_2005">2005</a>)</span></td>
+<td align="left"><span class="citation"><a href="#ref-rao_use_2005" role="doc-biblioref">Rao and Prabhakaran</a> (<a href="#ref-rao_use_2005" role="doc-biblioref">2005</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">AMMI stability value (<span class="math inline">\(ASV\)</span>) *</td>
@@ -263,7 +260,7 @@ Welcome to ammistability version 0.1.2
 )^2   + \left (PC_{2}  \right )^2} \]</span>
 </td>
 <td align="left">
-<span class="citation">Purchase (<a href="#ref-purchase_parametric_1997">1997</a>)</span>; <span class="citation">Purchase et al. (<a href="#ref-purchase_use_1999">1999</a>)</span>; <span class="citation">Purchase et al. (<a href="#ref-purchase_genotype_2000">2000</a>)</span>
+<span class="citation"><a href="#ref-purchase_parametric_1997" role="doc-biblioref">Purchase</a> (<a href="#ref-purchase_parametric_1997" role="doc-biblioref">1997</a>)</span>; <span class="citation"><a href="#ref-purchase_use_1999" role="doc-biblioref">Purchase et al.</a> (<a href="#ref-purchase_use_1999" role="doc-biblioref">1999</a>)</span>; <span class="citation"><a href="#ref-purchase_genotype_2000" role="doc-biblioref">Purchase et al.</a> (<a href="#ref-purchase_genotype_2000" role="doc-biblioref">2000</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -272,7 +269,7 @@ Welcome to ammistability version 0.1.2
 <td align="left"><span class="math display">\[AV_{(AMGE)} = \sum_{j=1}^{E} \sum_{n=1}^{N'}
 \left |\lambda_{n} \gamma_{in} \delta_{jn}  \right
 |\]</span></td>
-<td align="left"><span class="citation">Zali et al. (<a href="#ref-zali_evaluation_2012">2012</a>)</span></td>
+<td align="left"><span class="citation"><a href="#ref-zali_evaluation_2012" role="doc-biblioref">Zali et al.</a> (<a href="#ref-zali_evaluation_2012" role="doc-biblioref">2012</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">Annicchiarico’s D parameter (<span class="math inline">\(D_{a}\)</span>)</td>
@@ -280,21 +277,21 @@ Welcome to ammistability version 0.1.2
 <td align="left">The unsquared Euclidean distance from the origin of significant IPC axes in the AMMI model.<br><br><span class="math display">\[D_{a} =
 \sqrt{\sum_{n=1}^{N'}(\lambda_{n}\gamma_{in})^2}\]</span>
 </td>
-<td align="left"><span class="citation">Annicchiarico (<a href="#ref-annicchiarico_joint_1997">1997</a>)</span></td>
+<td align="left"><span class="citation"><a href="#ref-annicchiarico_joint_1997" role="doc-biblioref">Annicchiarico</a> (<a href="#ref-annicchiarico_joint_1997" role="doc-biblioref">1997</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">Zhang’s D parameter or AMMI statistic coefficient or AMMI distance or AMMI stability index (<span class="math inline">\(D_{z}\)</span>)</td>
 <td align="left"><code>DZ.AMMI</code></td>
 <td align="left">The distance of IPC point from origin in space.<br><br><span class="math display">\[D_{z} = \sqrt{\sum_{n=1}^{N'}\gamma_{in}^{2}}\]</span>
 </td>
-<td align="left"><span class="citation">Zhang et al. (<a href="#ref-zhang_analysis_1998">1998</a>)</span></td>
+<td align="left"><span class="citation"><a href="#ref-zhang_analysis_1998" role="doc-biblioref">Zhang et al.</a> (<a href="#ref-zhang_analysis_1998" role="doc-biblioref">1998</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">Averages of the squared eigenvector values <span class="math inline">\(EV\)</span>
 </td>
 <td align="left"><code>EV.AMMI</code></td>
 <td align="left"><span class="math display">\[EV = \sum_{n=1}^{N'}\frac{\gamma_{in}^2}{N'}\]</span></td>
-<td align="left"><span class="citation">Zobel (<a href="#ref-zobel_stress_1994">1994</a>)</span></td>
+<td align="left"><span class="citation"><a href="#ref-zobel_stress_1994" role="doc-biblioref">Zobel</a> (<a href="#ref-zobel_stress_1994" role="doc-biblioref">1994</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">Stability measure based on fitted AMMI model <span class="math inline">\(FA\)</span>
@@ -303,7 +300,7 @@ Welcome to ammistability version 0.1.2
 <td align="left"><span class="math display">\[FA =
 \sum_{n=1}^{N'}\lambda_{n}^{2}\gamma_{in}^{2}\]</span></td>
 <td align="left">
-<span class="citation">Raju (<a href="#ref-raju_study_2002">2002</a>)</span>; <span class="citation">Zali et al. (<a href="#ref-zali_evaluation_2012">2012</a>)</span>
+<span class="citation"><a href="#ref-raju_study_2002" role="doc-biblioref">Raju</a> (<a href="#ref-raju_study_2002" role="doc-biblioref">2002</a>)</span>; <span class="citation"><a href="#ref-zali_evaluation_2012" role="doc-biblioref">Zali et al.</a> (<a href="#ref-zali_evaluation_2012" role="doc-biblioref">2012</a>)</span>
 </td>
 </tr>
 <tr class="even">
@@ -312,7 +309,7 @@ Welcome to ammistability version 0.1.2
 <td align="left">Equivalent to <span class="math inline">\(FA\)</span>, when only the first IPC axis is considered for computation.<br><br><span class="math display">\[FP = \lambda_{1}^{2}\gamma_{i1}^{2}\]</span><br><br>
 As <span class="math inline">\(\lambda_{1}^{2}\)</span> will be same for all the genotypes, the absolute value of <span class="math inline">\(\gamma_{i1}\)</span> alone is sufficient for comparison. So this is also equivalent to the comparison based on biplot with first IPC axis.</td>
 <td align="left">
-<span class="citation">Raju (<a href="#ref-raju_study_2002">2002</a>)</span>; <span class="citation">Zali et al. (<a href="#ref-zali_evaluation_2012">2012</a>)</span>
+<span class="citation"><a href="#ref-raju_study_2002" role="doc-biblioref">Raju</a> (<a href="#ref-raju_study_2002" role="doc-biblioref">2002</a>)</span>; <span class="citation"><a href="#ref-zali_evaluation_2012" role="doc-biblioref">Zali et al.</a> (<a href="#ref-zali_evaluation_2012" role="doc-biblioref">2012</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -322,7 +319,7 @@ As <span class="math inline">\(\lambda_{1}^{2}\)</span> will be same for all the
 \sum_{n=1}^{2}\lambda_{n}^{2}\gamma_{in}^{2}\]</span><br><br>
 Stability comparisons based on this measure will be equivalent to the comparisons based on biplot with first two IPC axes.</td>
 <td align="left">
-<span class="citation">Raju (<a href="#ref-raju_study_2002">2002</a>)</span>; <span class="citation">Zali et al. (<a href="#ref-zali_evaluation_2012">2012</a>)</span>
+<span class="citation"><a href="#ref-raju_study_2002" role="doc-biblioref">Raju</a> (<a href="#ref-raju_study_2002" role="doc-biblioref">2002</a>)</span>; <span class="citation"><a href="#ref-zali_evaluation_2012" role="doc-biblioref">Zali et al.</a> (<a href="#ref-zali_evaluation_2012" role="doc-biblioref">2012</a>)</span>
 </td>
 </tr>
 <tr class="even">
@@ -332,7 +329,7 @@ Stability comparisons based on this measure will be equivalent to the comparison
 \sum_{n=1}^{N}\lambda_{n}^{2}\gamma_{in}^{2}\]</span><br><br>
 Equivalent to Wricke’s ecovalence.</td>
 <td align="left">
-<span class="citation">Wricke (<a href="#ref-wricke_method_1962">1962</a>)</span>; <span class="citation">Raju (<a href="#ref-raju_study_2002">2002</a>)</span>; <span class="citation">Zali et al. (<a href="#ref-zali_evaluation_2012">2012</a>)</span>
+<span class="citation"><a href="#ref-wricke_method_1962" role="doc-biblioref">Wricke</a> (<a href="#ref-wricke_method_1962" role="doc-biblioref">1962</a>)</span>; <span class="citation"><a href="#ref-raju_study_2002" role="doc-biblioref">Raju</a> (<a href="#ref-raju_study_2002" role="doc-biblioref">2002</a>)</span>; <span class="citation"><a href="#ref-zali_evaluation_2012" role="doc-biblioref">Zali et al.</a> (<a href="#ref-zali_evaluation_2012" role="doc-biblioref">2012</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -340,7 +337,7 @@ Equivalent to Wricke’s ecovalence.</td>
 <td align="left"><code>MASI.AMMI</code></td>
 <td align="left"><span class="math display">\[MASI = \sqrt{ \sum_{n=1}^{N'} PC_{n}^{2} \times
 \theta_{n}^{2}}\]</span></td>
-<td align="left"><span class="citation">Ajay et al. (<a href="#ref-ajay_modified_2018">2018</a>)</span></td>
+<td align="left"><span class="citation"><a href="#ref-ajay_modified_2018" role="doc-biblioref">Ajay et al.</a> (<a href="#ref-ajay_modified_2018" role="doc-biblioref">2018</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">Modified AMMI stability value (<span class="math inline">\(MASV\)</span>)</td>
@@ -349,7 +346,7 @@ Equivalent to Wricke’s ecovalence.</td>
 (\frac{SSIPC_{n}}{SSIPC_{n+1}} \times PC_{n}
 \right )^2   + \left (PC_{N'}  \right )^2} \]</span></td>
 <td align="left">
-<span class="citation">Ajay et al. (<a href="#ref-ajay_rectification_2019">2019</a><a href="#ref-ajay_rectification_2019">b</a>)</span>; <span class="citation">Zali et al. (<a href="#ref-zali_evaluation_2012">2012</a>)</span>
+<span class="citation"><a href="#ref-ajay_rectification_2019" role="doc-biblioref">Ajay et al.</a> (<a href="#ref-ajay_rectification_2019" role="doc-biblioref">2019b</a>)</span>; <span class="citation"><a href="#ref-zali_evaluation_2012" role="doc-biblioref">Zali et al.</a> (<a href="#ref-zali_evaluation_2012" role="doc-biblioref">2012</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -359,14 +356,14 @@ Equivalent to Wricke’s ecovalence.</td>
 <span class="math display">\[SIPC = \sum_{n=1}^{N'} \left |
 \lambda_{n}^{0.5}\gamma_{in} \right |\]</span><br><span class="math display">\[SIPC = \sum_{n=1}^{N'}\left | PC_{n} \right |\]</span>
 </td>
-<td align="left"><span class="citation">Sneller et al. (<a href="#ref-sneller_repeatability_1997">1997</a>)</span></td>
+<td align="left"><span class="citation"><a href="#ref-sneller_repeatability_1997" role="doc-biblioref">Sneller et al.</a> (<a href="#ref-sneller_repeatability_1997" role="doc-biblioref">1997</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">Absolute value of the relative contribution of IPCs to the interaction (<span class="math inline">\(Za\)</span>)</td>
 <td align="left"><code>ZA.AMMI</code></td>
 <td align="left"><span class="math display">\[Za = \sum_{i=1}^{N'}\left |
 \theta_{n}\gamma_{in} \right |\]</span></td>
-<td align="left"><span class="citation">Zali et al. (<a href="#ref-zali_evaluation_2012">2012</a>)</span></td>
+<td align="left"><span class="citation"><a href="#ref-zali_evaluation_2012" role="doc-biblioref">Zali et al.</a> (<a href="#ref-zali_evaluation_2012" role="doc-biblioref">2012</a>)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1982,7 +1979,7 @@ Unica   0.21646330 1.4542544  26  2 39.10400</code></pre>
 <h2 class="hasAnchor">
 <a href="#simultaneous-selection-indices-for-yield-and-stability" class="anchor"></a>Simultaneous selection indices for yield and stability</h2>
 <p>The most stable genotype need not necessarily be the highest yielding genotype. Hence, simultaneous selection indices (SSIs) have been proposed for the selection of stable as well as high yielding genotypes.</p>
-<p>A family of simultaneous selection indices (<span class="math inline">\(I_{i}\)</span>) were proposed by <span class="citation">Rao and Prabhakaran (<a href="#ref-rao_use_2005">2005</a>)</span> similar to those proposed by <span class="citation">Bajpai and Prabhakaran (<a href="#ref-bajpai_new_2000">2000</a>)</span> by incorporating the AMMI Based Stability Parameter (<span class="math inline">\(ASTAB\)</span>) and Yield as components. These indices consist of yield component, measured as the ratio of the average performance of the <span class="math inline">\(i\)</span>th genotype to the overall mean performance of the genotypes under test and a stability component, measured as the ratio of stability information (<span class="math inline">\(\frac{1}{ASTAB}\)</span>) of the <span class="math inline">\(i\)</span>th genotype to the mean stability information of the genotypes under test.</p>
+<p>A family of simultaneous selection indices (<span class="math inline">\(I_{i}\)</span>) were proposed by <span class="citation"><a href="#ref-rao_use_2005" role="doc-biblioref">Rao and Prabhakaran</a> (<a href="#ref-rao_use_2005" role="doc-biblioref">2005</a>)</span> similar to those proposed by <span class="citation"><a href="#ref-bajpai_new_2000" role="doc-biblioref">Bajpai and Prabhakaran</a> (<a href="#ref-bajpai_new_2000" role="doc-biblioref">2000</a>)</span> by incorporating the AMMI Based Stability Parameter (<span class="math inline">\(ASTAB\)</span>) and Yield as components. These indices consist of yield component, measured as the ratio of the average performance of the <span class="math inline">\(i\)</span>th genotype to the overall mean performance of the genotypes under test and a stability component, measured as the ratio of stability information (<span class="math inline">\(\frac{1}{ASTAB}\)</span>) of the <span class="math inline">\(i\)</span>th genotype to the mean stability information of the genotypes under test.</p>
 <p><span class="math display">\[I_{i} = \frac{\overline{Y}_{i}}{\overline{Y}_{..}} + \alpha \frac{\frac{1}{ASTAB_{i}}}{\frac{1}{T}\sum_{i=1}^{T}\frac{1}{ASTAB_{i}}}\]</span></p>
 <p>Where <span class="math inline">\(ASTAB_{i}\)</span> is the stability measure of the <span class="math inline">\(i\)</span>th genotype under AMMI procedure; <span class="math inline">\(Y_{i}\)</span> is mean performance of <span class="math inline">\(i\)</span>th genotype; <span class="math inline">\(Y_{..}\)</span> is the overall mean; <span class="math inline">\(T\)</span> is the number of genotypes under test and <span class="math inline">\(\alpha\)</span> is the ratio of the weights given to the stability components (<span class="math inline">\(w_{2}\)</span>) and yield (<span class="math inline">\(w_{1}\)</span>) with a restriction that <span class="math inline">\(w_{1} + w_{2} = 1\)</span>. The weights can be specified as required (Table 2).</p>
 <p><strong>Table 2 :</strong> <span class="math inline">\(\alpha\)</span> and corresponding weights (<span class="math inline">\(w_{1}\)</span> and <span class="math inline">\(w_{2}\)</span>)</p>
@@ -2017,7 +2014,7 @@ Unica   0.21646330 1.4542544  26  2 39.10400</code></pre>
 </table>
 <p>In <code>ammistability</code>, the above expression has been implemented for all the stability parameters (<span class="math inline">\(SP\)</span>) including ASTAB.</p>
 <p><span class="math display">\[I_{i} = \frac{\overline{Y}_{i}}{\overline{Y}_{..}} + \alpha \frac{\frac{1}{SP_{i}}}{\frac{1}{T}\sum_{i=1}^{T}\frac{1}{SP_{i}}}\]</span></p>
-<p>Genotype stability index (<span class="math inline">\(GSI\)</span>) <span class="citation">(Farshadfar, <a href="#ref-farshadfar_incorporation_2008">2008</a>)</span> or Yield stability index (<span class="math inline">\(YSI\)</span>) <span class="citation">(Farshadfar et al., <a href="#ref-farshadfar_ammi_2011">2011</a>; Jambhulkar et al., <a href="#ref-jambhulkar_stability_2017">2017</a>)</span> is a simultaneous selection index for yield and yield stability which is computed by summation of the ranks of the stability index/parameter and the ranks of the mean yields. <span class="math inline">\(YSI\)</span> is computed for all the stability parameters/indices implemented in this package.</p>
+<p>Genotype stability index (<span class="math inline">\(GSI\)</span>) <span class="citation">(<a href="#ref-farshadfar_incorporation_2008" role="doc-biblioref">Farshadfar, 2008</a>)</span> or Yield stability index (<span class="math inline">\(YSI\)</span>) <span class="citation">(<a href="#ref-farshadfar_ammi_2011" role="doc-biblioref">Farshadfar et al., 2011</a>; <a href="#ref-jambhulkar_stability_2017" role="doc-biblioref">Jambhulkar et al., 2017</a>)</span> is a simultaneous selection index for yield and yield stability which is computed by summation of the ranks of the stability index/parameter and the ranks of the mean yields. <span class="math inline">\(YSI\)</span> is computed for all the stability parameters/indices implemented in this package.</p>
 <p><span class="math display">\[GSI = YSI = R_{SP} + R_{Y}\]</span></p>
 <p>Where, <span class="math inline">\(R_{SP}\)</span> is the stability parameter/index rank of the genotype and <span class="math inline">\(R_{Y}\)</span> is the mean yield rank of the genotype.</p>
 <p>The function <code>SSI</code> implements both these indices in <code>ammistability</code>. Further, for each of the stability parameter functions, the simultaneous selection index is also computed by either of these functions as specified by the argument <code>ssi.method</code>.</p>
@@ -2306,7 +2303,7 @@ To cite the R package 'ammistability' in publications use:
 
   Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2021).  ammistability:
   Additive Main Effects and Multiplicative Interaction Model Stability
-  Parameters. R package version 0.1.2,
+  Parameters. R package version 0.1.2.9000,
   https://ajaygpb.github.io/ammistability/,
   https://CRAN.R-project.org/package=ammistability.
 
@@ -2322,7 +2319,7 @@ bibtex=TRUE)', 'toBibtex(.)', or set
 <a href="#session-info" class="anchor"></a>Session Info</h2>
 <div class="sourceCode" id="cb114"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code>R Under development (unstable) (2021-02-02 r79929)
+<pre><code>R Under development (unstable) (2021-02-03 r79933)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 Running under: Windows 10 x64 (build 19041)
 
@@ -2337,99 +2334,101 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] agricolae_1.3-3     ammistability_0.1.2
+[1] agricolae_1.3-3          ammistability_0.1.2.9000
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.6        lattice_0.20-41   assertthat_0.2.1  rprojroot_2.0.2  
- [5] digest_0.6.27     mime_0.9          plyr_1.8.6        R6_2.5.0         
- [9] AlgDesign_1.2.0   ggcorrplot_0.1.3  labelled_2.7.0    evaluate_0.14    
-[13] httr_1.4.2        ggplot2_3.3.3     highr_0.8         pillar_1.4.7     
-[17] Rdpack_2.1        rlang_0.4.10      curl_4.3          rstudioapi_0.13  
-[21] miniUI_0.1.1.1    combinat_0.0-8    rmarkdown_2.6     pkgdown_1.6.1    
-[25] labeling_0.4.2    textshaping_0.2.1 desc_1.2.0        pander_0.6.3     
-[29] stringr_1.4.0     questionr_0.7.4   RCurl_1.98-1.2    munsell_0.5.0    
-[33] shiny_1.6.0       compiler_4.1.0    httpuv_1.5.5      xfun_0.21        
-[37] pkgconfig_2.0.3   systemfonts_1.0.0 htmltools_0.5.1.1 tidyselect_1.1.0 
-[41] tibble_3.0.6      XML_3.99-0.5      crayon_1.4.1      dplyr_1.0.4      
-[45] later_1.1.0.1     bitops_1.0-6      MASS_7.3-53       rbibutils_2.0    
-[49] grid_4.1.0        nlme_3.1-152      xtable_1.8-4      gtable_0.3.0     
-[53] lifecycle_0.2.0   DBI_1.1.1         magrittr_2.0.1    scales_1.1.1     
-[57] stringi_1.5.3     cachem_1.0.3      farver_2.0.3      reshape2_1.4.4   
-[61] fs_1.5.0          promises_1.1.1    ellipsis_0.3.1    ragg_0.4.1       
-[65] generics_0.1.0    vctrs_0.3.6       klaR_0.6-15       tools_4.1.0      
-[69] forcats_0.5.1     glue_1.4.2        purrr_0.3.4       hms_1.0.0        
-[73] fastmap_1.1.0     yaml_2.2.1        colorspace_2.0-0  cluster_2.1.0    
-[77] gbRd_0.4-11       memoise_2.0.0     knitr_1.31        haven_2.3.1      </code></pre>
+ [1] httr_1.4.2         sass_0.3.1         jsonlite_1.7.2     bslib_0.2.4       
+ [5] shiny_1.6.0        Rdpack_2.1         assertthat_0.2.1   highr_0.8         
+ [9] pander_0.6.3       yaml_2.2.1         pillar_1.4.7       lattice_0.20-41   
+[13] glue_1.4.2         digest_0.6.27      promises_1.2.0.1   rbibutils_2.0     
+[17] colorspace_2.0-0   htmltools_0.5.1.1  httpuv_1.5.5       plyr_1.8.6        
+[21] klaR_0.6-15        XML_3.99-0.5       pkgconfig_2.0.3    ggcorrplot_0.1.3  
+[25] labelled_2.7.0     haven_2.3.1        questionr_0.7.4    purrr_0.3.4       
+[29] xtable_1.8-4       scales_1.1.1       later_1.1.0.1      tibble_3.0.6      
+[33] combinat_0.0-8     generics_0.1.0     farver_2.0.3       ggplot2_3.3.3     
+[37] ellipsis_0.3.1     cachem_1.0.4       magrittr_2.0.1     crayon_1.4.1      
+[41] mime_0.10          memoise_2.0.0      evaluate_0.14      fs_1.5.0          
+[45] nlme_3.1-151       MASS_7.3-53        forcats_0.5.1      textshaping_0.3.0 
+[49] tools_4.1.0        hms_1.0.0          gbRd_0.4-11        lifecycle_1.0.0   
+[53] stringr_1.4.0      munsell_0.5.0      cluster_2.1.0      compiler_4.1.0    
+[57] pkgdown_1.6.1.9000 jquerylib_0.1.3    systemfonts_1.0.1  rlang_0.4.10      
+[61] grid_4.1.0         RCurl_1.98-1.2     rstudioapi_0.13    miniUI_0.1.1.1    
+[65] labeling_0.4.2     bitops_1.0-6       rmarkdown_2.7      gtable_0.3.0      
+[69] DBI_1.1.1          curl_4.3           reshape2_1.4.4     R6_2.5.0          
+[73] AlgDesign_1.2.0    knitr_1.31         dplyr_1.0.4        fastmap_1.1.0     
+[77] mathjaxr_1.2-0     rprojroot_2.0.2    ragg_1.1.0         desc_1.2.0        
+[81] stringi_1.5.3      Rcpp_1.0.6         vctrs_0.3.6        tidyselect_1.1.0  
+[85] xfun_0.21         </code></pre>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h2>
-<div id="refs" class="references">
-<div id="ref-ajay_modified_2018">
-<p>Ajay, B. C., Aravind, J., Abdul Fiyaz, R., Bera, S. K., Kumar, N., Gangadhar, K., et al. (2018). Modified AMMI Stability Index (MASI) for stability analysis. <em>ICAR-DGR Newsletter</em> 18, 4–5.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-ajay_modified_2018" class="csl-entry">
+Ajay, B. C., Aravind, J., Abdul Fiyaz, R., Bera, S. K., Kumar, N., Gangadhar, K., et al. (2018). Modified <span>AMMI</span> <span>Stability</span> <span>Index</span> (<span>MASI</span>) for stability analysis. <em>ICAR-DGR Newsletter</em> 18, 4–5.
 </div>
-<div id="ref-ajay2019ammistability">
-<p>Ajay, B. C., Aravind, J., and Fiyaz, R. A. (2019a). Ammistability: R package for ranking genotypes based on stability parameters derived from AMMI model. <em>Indian Journal of Genetics and Plant Breeding (The)</em> 79, 460–466. Available at: <a href="https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model" class="uri">https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model</a>.</p>
+<div id="ref-ajay2019ammistability" class="csl-entry">
+Ajay, B. C., Aravind, J., and Fiyaz, R. A. (2019a). Ammistability: <span>R</span> package for ranking genotypes based on stability parameters derived from <span>AMMI</span> model. <em>Indian Journal of Genetics and Plant Breeding (The)</em> 79, 460–466. Available at: <a href="https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model">https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model</a>.
 </div>
-<div id="ref-ajay_rectification_2019">
-<p>Ajay, B. C., Aravind, J., Fiyaz, R. A., Kumar, N., Lal, C., Gangadhar, K., et al. (2019b). Rectification of modified AMMI stability value (MASV). <em>Indian Journal of Genetics and Plant Breeding (The)</em> 79, 726–731. Available at: <a href="https://www.isgpb.org/article/rectification-of-modified-ammi-stability-value-masv" class="uri">https://www.isgpb.org/article/rectification-of-modified-ammi-stability-value-masv</a>.</p>
+<div id="ref-ajay_rectification_2019" class="csl-entry">
+Ajay, B. C., Aravind, J., Fiyaz, R. A., Kumar, N., Lal, C., Gangadhar, K., et al. (2019b). Rectification of modified <span>AMMI</span> stability value (<span>MASV</span>). <em>Indian Journal of Genetics and Plant Breeding (The)</em> 79, 726–731. Available at: <a href="https://www.isgpb.org/article/rectification-of-modified-ammi-stability-value-masv">https://www.isgpb.org/article/rectification-of-modified-ammi-stability-value-masv</a>.
 </div>
-<div id="ref-annicchiarico_joint_1997">
-<p>Annicchiarico, P. (1997). Joint regression vs AMMI analysis of genotype-environment interactions for cereals in Italy. <em>Euphytica</em> 94, 53–62. doi:<a href="https://doi.org/10.1023/A:1002954824178">10.1023/A:1002954824178</a>.</p>
+<div id="ref-annicchiarico_joint_1997" class="csl-entry">
+Annicchiarico, P. (1997). Joint regression vs <span>AMMI</span> analysis of genotype-environment interactions for cereals in <span>Italy</span>. <em>Euphytica</em> 94, 53–62. doi:<a href="https://doi.org/10.1023/A:1002954824178">10.1023/A:1002954824178</a>.
 </div>
-<div id="ref-bajpai_new_2000">
-<p>Bajpai, P. K., and Prabhakaran, V. T. (2000). A new procedure of simultaneous selection for high yielding and stable crop genotypes. <em>Indian Journal of Genetics &amp; Plant Breeding</em> 60, 141–146.</p>
+<div id="ref-bajpai_new_2000" class="csl-entry">
+Bajpai, P. K., and Prabhakaran, V. T. (2000). A new procedure of simultaneous selection for high yielding and stable crop genotypes. <em>Indian Journal of Genetics &amp; Plant Breeding</em> 60, 141–146.
 </div>
-<div id="ref-farshadfar_incorporation_2008">
-<p>Farshadfar, E. (2008). Incorporation of AMMI stability value and grain yield in a single non-parametric index (GSI) in bread wheat. <em>Pakistan Journal of biological sciences</em> 11, 1791.</p>
+<div id="ref-farshadfar_incorporation_2008" class="csl-entry">
+Farshadfar, E. (2008). Incorporation of <span>AMMI</span> stability value and grain yield in a single non-parametric index (<span>GSI</span>) in bread wheat. <em>Pakistan Journal of biological sciences</em> 11, 1791.
 </div>
-<div id="ref-farshadfar_ammi_2011">
-<p>Farshadfar, E., Mahmodi, N., and Yaghotipoor, A. (2011). AMMI stability value and simultaneous estimation of yield and yield stability in bread wheat (<em>Triticum aestivum</em> L.). <em>Australian Journal of Crop Science</em> 5, 1837–1844.</p>
+<div id="ref-farshadfar_ammi_2011" class="csl-entry">
+Farshadfar, E., Mahmodi, N., and Yaghotipoor, A. (2011). <span>AMMI</span> stability value and simultaneous estimation of yield and yield stability in bread wheat (<em><span>Triticum</span> aestivum</em> <span>L</span>.). <em>Australian Journal of Crop Science</em> 5, 1837–1844.
 </div>
-<div id="ref-gauch_model_1988">
-<p>Gauch, H. G. (1988). Model selection and validation for yield trials with interaction. <em>Biometrics</em> 44, 705–715. doi:<a href="https://doi.org/10.2307/2531585">10.2307/2531585</a>.</p>
+<div id="ref-gauch_model_1988" class="csl-entry">
+Gauch, H. G. (1988). Model selection and validation for yield trials with interaction. <em>Biometrics</em> 44, 705–715. doi:<a href="https://doi.org/10.2307/2531585">10.2307/2531585</a>.
 </div>
-<div id="ref-gauch_statistical_1992">
-<p>Gauch, H. G. (1992). <em>Statistical Analysis of Regional Yield Trials: AMMI Analysis of Factorial Designs</em>. Amsterdam ; New York: Elsevier.</p>
+<div id="ref-gauch_statistical_1992" class="csl-entry">
+Gauch, H. G. (1992). <em>Statistical <span>Analysis</span> of <span>Regional</span> <span>Yield</span> <span>Trials</span>: <span>AMMI</span> <span>Analysis</span> of <span>Factorial</span> <span>Designs</span></em>. Amsterdam ; New York: Elsevier.
 </div>
-<div id="ref-jambhulkar_genotype_2015">
-<p>Jambhulkar, N. N., Bose, L. K., Pande, K., and Singh, O. N. (2015). Genotype by environment interaction and stability analysis in rice genotypes. <em>Ecology, Environment and Conservation</em> 21, 1427–1430. Available at: <a href="http://www.envirobiotechjournals.com/article_abstract.php?aid=6346&amp;iid=200&amp;jid=3" class="uri">http://www.envirobiotechjournals.com/article_abstract.php?aid=6346&amp;iid=200&amp;jid=3</a>.</p>
+<div id="ref-jambhulkar_genotype_2015" class="csl-entry">
+Jambhulkar, N. N., Bose, L. K., Pande, K., and Singh, O. N. (2015). Genotype by environment interaction and stability analysis in rice genotypes. <em>Ecology, Environment and Conservation</em> 21, 1427–1430. Available at: <a href="http://www.envirobiotechjournals.com/article_abstract.php?aid=6346&amp;iid=200&amp;jid=3">http://www.envirobiotechjournals.com/article_abstract.php?aid=6346&amp;iid=200&amp;jid=3</a>.
 </div>
-<div id="ref-jambhulkar_ammi_2014">
-<p>Jambhulkar, N. N., Bose, L. K., and Singh, O. N. (2014). “AMMI stability index for stability analysis,” in <em>CRRI Newsletter, January-March 2014</em>, ed. T. Mohapatra (Cuttack, Orissa: Central Rice Research Institute), 15. Available at: <a href="http://www.crri.nic.in/CRRI_newsletter/crnl_jan_mar_14_web.pdf" class="uri">http://www.crri.nic.in/CRRI_newsletter/crnl_jan_mar_14_web.pdf</a>.</p>
+<div id="ref-jambhulkar_ammi_2014" class="csl-entry">
+Jambhulkar, N. N., Bose, L. K., and Singh, O. N. (2014). <span>“<span>AMMI</span> stability index for stability analysis,”</span> in <em><span>CRRI</span> <span>Newsletter</span>, <span>January</span>-<span>March</span> 2014</em>, ed. T. Mohapatra (Cuttack, Orissa: Central Rice Research Institute), 15. Available at: <a href="http://www.crri.nic.in/CRRI_newsletter/crnl_jan_mar_14_web.pdf">http://www.crri.nic.in/CRRI_newsletter/crnl_jan_mar_14_web.pdf</a>.
 </div>
-<div id="ref-jambhulkar_stability_2017">
-<p>Jambhulkar, N. N., Rath, N. C., Bose, L. K., Subudhi, H., Biswajit, M., Lipi, D., et al. (2017). Stability analysis for grain yield in rice in demonstrations conducted during rabi season in India. <em>Oryza</em> 54, 236–240. doi:<a href="https://doi.org/10.5958/2249-5266.2017.00030.3">10.5958/2249-5266.2017.00030.3</a>.</p>
+<div id="ref-jambhulkar_stability_2017" class="csl-entry">
+Jambhulkar, N. N., Rath, N. C., Bose, L. K., Subudhi, H., Biswajit, M., Lipi, D., et al. (2017). Stability analysis for grain yield in rice in demonstrations conducted during rabi season in <span>India</span>. <em>Oryza</em> 54, 236–240. doi:<a href="https://doi.org/10.5958/2249-5266.2017.00030.3">10.5958/2249-5266.2017.00030.3</a>.
 </div>
-<div id="ref-purchase_parametric_1997">
-<p>Purchase, J. L. (1997). Parametric analysis to describe genotype × environment interaction and yield stability in winter wheat. Available at: <a href="http://scholar.ufs.ac.za:8080/xmlui/handle/11660/1966" class="uri">http://scholar.ufs.ac.za:8080/xmlui/handle/11660/1966</a>.</p>
+<div id="ref-purchase_parametric_1997" class="csl-entry">
+Purchase, J. L. (1997). Parametric analysis to describe genotype × environment interaction and yield stability in winter wheat. Available at: <a href="http://scholar.ufs.ac.za:8080/xmlui/handle/11660/1966">http://scholar.ufs.ac.za:8080/xmlui/handle/11660/1966</a>.
 </div>
-<div id="ref-purchase_use_1999">
-<p>Purchase, J. L., Hatting, H., and Deventer, C. S. van (1999). “The use of the AMMI model and AMMI stability value to describe genotype x environment interaction and yield stability in winter wheat (<em>Triticum aestivum</em> L.),” in <em>Proceedings of the Tenth Regional Wheat Workshop for Eastern, Central and Southern Africa, 14-18 September 1998</em> (South Africa: University of Stellenbosch).</p>
+<div id="ref-purchase_use_1999" class="csl-entry">
+Purchase, J. L., Hatting, H., and Deventer, C. S. van (1999). <span>“The use of the <span>AMMI</span> model and <span>AMMI</span> stability value to describe genotype x environment interaction and yield stability in winter wheat (<em><span>Triticum</span> aestivum</em> <span>L</span>.),”</span> in <em>Proceedings of the <span>Tenth</span> <span>Regional</span> <span>Wheat</span> <span>Workshop</span> for <span>Eastern</span>, <span>Central</span> and <span>Southern</span> <span>Africa</span>, 14-18 <span>September</span> 1998</em> (South Africa: University of Stellenbosch).
 </div>
-<div id="ref-purchase_genotype_2000">
-<p>Purchase, J. L., Hatting, H., and Deventer, C. S. van (2000). Genotype × environment interaction of winter wheat (<em>Triticum aestivum</em> L.) In South Africa: II. Stability analysis of yield performance. <em>South African Journal of Plant and Soil</em> 17, 101–107. doi:<a href="https://doi.org/10.1080/02571862.2000.10634878">10.1080/02571862.2000.10634878</a>.</p>
+<div id="ref-purchase_genotype_2000" class="csl-entry">
+Purchase, J. L., Hatting, H., and Deventer, C. S. van (2000). Genotype × environment interaction of winter wheat (<em><span>Triticum</span> aestivum</em> <span>L</span>.) In <span>South</span> <span>Africa</span>: <span>II</span>. <span>Stability</span> analysis of yield performance. <em>South African Journal of Plant and Soil</em> 17, 101–107. doi:<a href="https://doi.org/10.1080/02571862.2000.10634878">10.1080/02571862.2000.10634878</a>.
 </div>
-<div id="ref-raju_study_2002">
-<p>Raju, B. M. K. (2002). A study on AMMI model and its biplots. <em>Journal of the Indian Society of Agricultural Statistics</em> 55, 297–322.</p>
+<div id="ref-raju_study_2002" class="csl-entry">
+Raju, B. M. K. (2002). A study on <span>AMMI</span> model and its biplots. <em>Journal of the Indian Society of Agricultural Statistics</em> 55, 297–322.
 </div>
-<div id="ref-rao_use_2005">
-<p>Rao, A. R., and Prabhakaran, V. T. (2005). Use of AMMI in simultaneous selection of genotypes for yield and stability. <em>Journal of the Indian Society of Agricultural Statistics</em> 59, 76–82.</p>
+<div id="ref-rao_use_2005" class="csl-entry">
+Rao, A. R., and Prabhakaran, V. T. (2005). Use of <span>AMMI</span> in simultaneous selection of genotypes for yield and stability. <em>Journal of the Indian Society of Agricultural Statistics</em> 59, 76–82.
 </div>
-<div id="ref-sneller_repeatability_1997">
-<p>Sneller, C. H., Kilgore-Norquest, L., and Dombek, D. (1997). Repeatability of yield stability statistics in soybean. <em>Crop Science</em> 37, 383–390. doi:<a href="https://doi.org/10.2135/cropsci1997.0011183X003700020013x">10.2135/cropsci1997.0011183X003700020013x</a>.</p>
+<div id="ref-sneller_repeatability_1997" class="csl-entry">
+Sneller, C. H., Kilgore-Norquest, L., and Dombek, D. (1997). Repeatability of yield stability statistics in soybean. <em>Crop Science</em> 37, 383–390. doi:<a href="https://doi.org/10.2135/cropsci1997.0011183X003700020013x">10.2135/cropsci1997.0011183X003700020013x</a>.
 </div>
-<div id="ref-wricke_method_1962">
-<p>Wricke, G. (1962). On a method of understanding the biological diversity in field research. <em>Zeitschrift für Pflanzenzüchtung</em> 47, 92–146.</p>
+<div id="ref-wricke_method_1962" class="csl-entry">
+Wricke, G. (1962). On a method of understanding the biological diversity in field research. <em>Zeitschrift für Pflanzenzüchtung</em> 47, 92–146.
 </div>
-<div id="ref-zali_evaluation_2012">
-<p>Zali, H., Farshadfar, E., Sabaghpour, S. H., and Karimizadeh, R. (2012). Evaluation of genotype × environment interaction in chickpea using measures of stability from AMMI model. <em>Annals of Biological Research</em> 3, 3126–3136.</p>
+<div id="ref-zali_evaluation_2012" class="csl-entry">
+Zali, H., Farshadfar, E., Sabaghpour, S. H., and Karimizadeh, R. (2012). Evaluation of genotype × environment interaction in chickpea using measures of stability from <span>AMMI</span> model. <em>Annals of Biological Research</em> 3, 3126–3136.
 </div>
-<div id="ref-zhang_analysis_1998">
-<p>Zhang, Z., Lu, C., and Xiang, Z. (1998). Analysis of variety stability based on AMMI model. <em>Acta Agronomica Sinica</em> 24, 304–309. Available at: <a href="http://zwxb.chinacrops.org/EN/Y1998/V24/I03/304" class="uri">http://zwxb.chinacrops.org/EN/Y1998/V24/I03/304</a>.</p>
+<div id="ref-zhang_analysis_1998" class="csl-entry">
+Zhang, Z., Lu, C., and Xiang, Z. (1998). Analysis of variety stability based on <span>AMMI</span> model. <em>Acta Agronomica Sinica</em> 24, 304–309. Available at: <a href="http://zwxb.chinacrops.org/EN/Y1998/V24/I03/304">http://zwxb.chinacrops.org/EN/Y1998/V24/I03/304</a>.
 </div>
-<div id="ref-zobel_stress_1994">
-<p>Zobel, R. W. (1994). “Stress resistance and root systems,” in <em>Proceedings of the Workshop on Adaptation of Plants to Soil Stress. 1-4 August, 1993. INTSORMIL Publication 94-2</em> (Institute of Agriculture; Natural Resources, University of Nebraska-Lincoln), 80–99.</p>
+<div id="ref-zobel_stress_1994" class="csl-entry">
+Zobel, R. W. (1994). <span>“Stress resistance and root systems,”</span> in <em>Proceedings of the <span>Workshop</span> on <span>Adaptation</span> of <span>Plants</span> to <span>Soil</span> <span>Stress</span>. 1-4 <span>August</span>, 1993. <span>INTSORMIL</span> <span>Publication</span> 94-2</em> (Institute of Agriculture; Natural Resources, University of Nebraska-Lincoln), 80–99.
 </div>
 </div>
 </div>
@@ -2450,7 +2449,7 @@ loaded via a namespace (and not attached):
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

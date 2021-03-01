@@ -1,3 +1,8 @@
+# ammistability  0.1.3
+
+## OTHER NOTES:
+* Added `mathjaxr` missing from Namespace imports.
+
 # ammistability  0.1.2
 
 ## VIGNETTE:
@@ -6,7 +11,6 @@
 ## OTHER NOTES:
 * Updated citation.
 * Converted all equations in Rd files to `MathJax`using `mathjaxr`.
-
 
 # ammistability  0.1.1
 
