@@ -18,3 +18,4 @@
 ^test\.docx$
 ^docs$
 ^cran-comments\.md$
+^\.github$
