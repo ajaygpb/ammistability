@@ -1,6 +1,4 @@
-# Modified from
-# - https://github.com/r-lib/actions/tree/master/examples#render-rmarkdown
-# - https://github.com/gavinsimpson/gratia/blob/master/.github/workflows/readme-renderer.yaml
+# Render Readme.md with rmarkdown and then deploy render and deploy pkgdown website to gh-pages
 
 on:
   push:
@@ -8,11 +6,11 @@ on:
       - main
       - master
 
-name: Render Readme
+name: Render Readme and pkgdown
 
 jobs:
   render:
-    name: Render Readme
+    name: Render Readme and pkgdown
     runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -26,6 +24,7 @@ jobs:
         run: |
           install.packages('remotes')
           saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
+          writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
         shell: Rscript {0}
 
       - name: Cache R packages
@@ -37,11 +36,15 @@ jobs:
 
       - name: Install rmarkdown, remotes, and the local package
         run: |
+          # For readme
           install.packages("remotes")
           remotes::install_local(".")
           remotes::install_cran("rmarkdown")
           remotes::install_cran("devtools")
           remotes::install_cran("kableExtra")
+          # For pkgdown
+          remotes::install_deps(dependencies = TRUE)
+          install.packages("pkgdown", type = "binary")
         shell: Rscript {0}
 
       - name: Render README.md using rmarkdown
@@ -54,3 +57,10 @@ jobs:
           git add README.md README.html
           git commit -m "Re-build README.md" || echo "No changes to commit"
           git push origin master || echo "No changes to commit"
+
+      - name: Deploy pkgdown package
+        if: success()
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          Rscript -e 'pkgdown::deploy_to_branch(new_process = FALSE)'
