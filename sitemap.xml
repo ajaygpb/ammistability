@@ -1,57 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ajaygpb.github.io/ammistability//index.html</loc>
+    <loc>https://ajaygpb.github.io/ammistability/404.html</loc>
   </url>
   <url>
-    <loc>https://ajaygpb.github.io/ammistability//reference/AMGE.AMMI.html</loc>
+    <loc>https://ajaygpb.github.io/ammistability/articles/Introduction.html</loc>
   </url>
   <url>
-    <loc>https://ajaygpb.github.io/ammistability//reference/ASI.AMMI.html</loc>
+    <loc>https://ajaygpb.github.io/ammistability/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://ajaygpb.github.io/ammistability//reference/ASTAB.AMMI.html</loc>
+    <loc>https://ajaygpb.github.io/ammistability/authors.html</loc>
   </url>
   <url>
-    <loc>https://ajaygpb.github.io/ammistability//reference/AVAMGE.AMMI.html</loc>
+    <loc>https://ajaygpb.github.io/ammistability/index.html</loc>
   </url>
   <url>
-    <loc>https://ajaygpb.github.io/ammistability//reference/DA.AMMI.html</loc>
+    <loc>https://ajaygpb.github.io/ammistability/news/index.html</loc>
   </url>
   <url>
-    <loc>https://ajaygpb.github.io/ammistability//reference/DZ.AMMI.html</loc>
+    <loc>https://ajaygpb.github.io/ammistability/reference/AMGE.AMMI.html</loc>
   </url>
   <url>
-    <loc>https://ajaygpb.github.io/ammistability//reference/EV.AMMI.html</loc>
+    <loc>https://ajaygpb.github.io/ammistability/reference/ASI.AMMI.html</loc>
   </url>
   <url>
-    <loc>https://ajaygpb.github.io/ammistability//reference/FA.AMMI.html</loc>
+    <loc>https://ajaygpb.github.io/ammistability/reference/ASTAB.AMMI.html</loc>
   </url>
   <url>
-    <loc>https://ajaygpb.github.io/ammistability//reference/MASI.AMMI.html</loc>
+    <loc>https://ajaygpb.github.io/ammistability/reference/AVAMGE.AMMI.html</loc>
   </url>
   <url>
-    <loc>https://ajaygpb.github.io/ammistability//reference/MASV.AMMI.html</loc>
+    <loc>https://ajaygpb.github.io/ammistability/reference/DA.AMMI.html</loc>
   </url>
   <url>
-    <loc>https://ajaygpb.github.io/ammistability//reference/SIPC.AMMI.html</loc>
+    <loc>https://ajaygpb.github.io/ammistability/reference/DZ.AMMI.html</loc>
   </url>
   <url>
-    <loc>https://ajaygpb.github.io/ammistability//reference/SSI.html</loc>
+    <loc>https://ajaygpb.github.io/ammistability/reference/EV.AMMI.html</loc>
   </url>
   <url>
-    <loc>https://ajaygpb.github.io/ammistability//reference/ZA.AMMI.html</loc>
+    <loc>https://ajaygpb.github.io/ammistability/reference/FA.AMMI.html</loc>
   </url>
   <url>
-    <loc>https://ajaygpb.github.io/ammistability//reference/ammistability.html</loc>
+    <loc>https://ajaygpb.github.io/ammistability/reference/MASI.AMMI.html</loc>
   </url>
   <url>
-    <loc>https://ajaygpb.github.io/ammistability//reference/rankdf.html</loc>
+    <loc>https://ajaygpb.github.io/ammistability/reference/MASV.AMMI.html</loc>
   </url>
   <url>
-    <loc>https://ajaygpb.github.io/ammistability//reference/rankslopegraph.html</loc>
+    <loc>https://ajaygpb.github.io/ammistability/reference/SIPC.AMMI.html</loc>
   </url>
   <url>
-    <loc>https://ajaygpb.github.io/ammistability//articles/Introduction.html</loc>
+    <loc>https://ajaygpb.github.io/ammistability/reference/SSI.html</loc>
+  </url>
+  <url>
+    <loc>https://ajaygpb.github.io/ammistability/reference/ZA.AMMI.html</loc>
+  </url>
+  <url>
+    <loc>https://ajaygpb.github.io/ammistability/reference/ammistability.html</loc>
+  </url>
+  <url>
+    <loc>https://ajaygpb.github.io/ammistability/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://ajaygpb.github.io/ammistability/reference/rankdf.html</loc>
+  </url>
+  <url>
+    <loc>https://ajaygpb.github.io/ammistability/reference/rankslopegraph.html</loc>
   </url>
 </urlset>

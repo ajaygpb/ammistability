@@ -2,21 +2,21 @@
   "index_name": "ammistability",
   "start_urls": [
     {
-      "url": "https://ajaygpb.github.io/ammistability//index.html",
+      "url": "https://ajaygpb.github.io/ammistability/index.html",
       "selectors_key": "homepage",
       "tags": [
         "homepage"
       ]
     },
     {
-      "url": "https://ajaygpb.github.io/ammistability//reference",
+      "url": "https://ajaygpb.github.io/ammistability/reference",
       "selectors_key": "reference",
       "tags": [
         "reference"
       ]
     },
     {
-      "url": "https://ajaygpb.github.io/ammistability//articles",
+      "url": "https://ajaygpb.github.io/ammistability/articles",
       "selectors_key": "articles",
       "tags": [
         "articles"
@@ -30,7 +30,7 @@
     "/articles/index.html"
   ],
   "sitemap_urls": [
-    "https://ajaygpb.github.io/ammistability//sitemap.xml"
+    "https://ajaygpb.github.io/ammistability/sitemap.xml"
   ],
   "selectors": {
     "homepage": {

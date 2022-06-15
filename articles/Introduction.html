@@ -6,6 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The `ammistability` Package: A Brief Introduction • ammistability</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
@@ -27,6 +33,8 @@
 </script>
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -39,7 +47,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ammistability</a>
-        <span class="version label label-primary" data-toggle="tooltip" data-placement="bottom" title="ammistability">0.1.2.9000</span>
+        <span class="version label label-primary" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2.9000</span>
       </span>
     </div>
 
@@ -47,14 +55,14 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
+    <span class="fa fa-home fa-lg"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
-    <span class="fas fa-code"></span>
+    <span class="fa fa-code"></span>
      
     Reference
   </a>
@@ -76,7 +84,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/ajaygpb/ammistability">
+  <a href="https://github.com/ajaygpb/ammistability" class="external-link">
     <span class="fab fa-github-alt"></span>
      
     Github
@@ -102,12 +110,12 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>The <code>ammistability</code> Package: A Brief Introduction</h1>
-                        <h4 class="author">Ajay, B. C.<sup>1</sup>, Aravind, J.<sup>2</sup>, and Abdul Fiyaz, R.<sup>3</sup>
+                        <h4 data-toc-skip class="author">Ajay, B. C.<sup>1</sup>, Aravind, J.<sup>2</sup>, and Abdul Fiyaz, R.<sup>3</sup>
 </h4>
             
-            <h4 class="date">2021-03-06</h4>
+            <h4 data-toc-skip class="date">2022-06-15</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/ajaygpb/ammistability/blob/master/vignettes/Introduction.Rmd"><code>vignettes/Introduction.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/ajaygpb/ammistability/blob/HEAD/vignettes/Introduction.Rmd" class="external-link"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
 
     </div>
@@ -133,27 +141,27 @@
 </li>
 </ol>
 <p><img src="https://raw.githubusercontent.com/ajaygpb/ammistability/master/inst/extdata/ammistability.png" align="right" alt="logo" width="173" height="200" style="padding: 10px; border: none; float: right;"></p>
-<div id="overview" class="section level2">
-<h2 class="hasAnchor">
-<a href="#overview" class="anchor"></a>Overview</h2>
-<p>The package <code>ammistability</code> <span class="citation">(Ajay et al., <a href="#ref-ajay2019ammistability" role="doc-biblioref">2019</a><a href="#ref-ajay2019ammistability" role="doc-biblioref">a</a>)</span> is a collection of functions for the computation of various stability parameters from the results of Additive Main Effects and Multiplicative Interaction (AMMI) analysis computed by the <a href="https://www.rdocumentation.org/packages/agricolae/versions/1.2-8/topics/AMMI"><code>AMMI</code></a> function of <a href="https://CRAN.R-project.org/package=agricolae"><code>agricolae</code></a> package.</p>
+<div class="section level2">
+<h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+</h2>
+<p>The package <code>ammistability</code> <span class="citation">(Ajay et al., <a href="#ref-ajay2019ammistability" role="doc-biblioref">2019</a><a href="#ref-ajay2019ammistability" role="doc-biblioref">a</a>)</span> is a collection of functions for the computation of various stability parameters from the results of Additive Main Effects and Multiplicative Interaction (AMMI) analysis computed by the <a href="https://www.rdocumentation.org/packages/agricolae/versions/1.2-8/topics/AMMI" class="external-link"><code>AMMI</code></a> function of <a href="https://CRAN.R-project.org/package=agricolae" class="external-link"><code>agricolae</code></a> package.</p>
 <p>The goal of this vignette is to introduce the users to these functions and give a primer in computation of various stability parameters/indices from a fitted AMMI model. This document assumes a basic knowledge of <code>R</code> programming language.</p>
 
 </div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>The package can be installed from CRAN as follows:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Install from CRAN</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'ammistability'</span>, dependencies<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'ammistability'</span>, dependencies<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p>The development version can be installed from github as follows:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Install development version from Github</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"ajaygpb/ammistability"</span><span class="op">)</span></code></pre></div>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"ajaygpb/ammistability"</span><span class="op">)</span></code></pre></div>
 <p>Then the package can be loaded using the function</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ajaygpb/ammistability/">ammistability</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ajaygpb/ammistability/" class="external-link">ammistability</a></span><span class="op">)</span></code></pre></div>
 <pre><code>
 --------------------------------------------------------------------------------
 Welcome to ammistability version 0.1.2.9000
@@ -174,10 +182,10 @@ Welcome to ammistability version 0.1.2.9000
   suppressPackageStartupMessages(library(ammistability))
 --------------------------------------------------------------------------------</code></pre>
 </div>
-<div id="version-history" class="section level2">
-<h2 class="hasAnchor">
-<a href="#version-history" class="anchor"></a>Version History</h2>
-<p>The current version of the package is 0.1.2. The previous versions are as follows.</p>
+<div class="section level2">
+<h2 id="version-history">Version History<a class="anchor" aria-label="anchor" href="#version-history"></a>
+</h2>
+<p>The current version of the package is 0.1.2.9000. The previous versions are as follows.</p>
 <p><strong>Table 1.</strong> Version history of <code>ammistability</code> <code>R</code> package.</p>
 <table class="table">
 <thead><tr class="header">
@@ -193,21 +201,25 @@ Welcome to ammistability version 0.1.2.9000
 <td align="left">0.1.1</td>
 <td align="left">2018-12-07</td>
 </tr>
+<tr class="odd">
+<td align="left">0.1.2</td>
+<td align="left">2021-02-23</td>
+</tr>
 </tbody>
 </table>
-<p>To know detailed history of changes use <code><a href="https://rdrr.io/r/utils/news.html">news(package='ammistability')</a></code>.</p>
+<p>To know detailed history of changes use <code>news(package='ammistability')</code>.</p>
 </div>
-<div id="ammi-model" class="section level2">
-<h2 class="hasAnchor">
-<a href="#ammi-model" class="anchor"></a>AMMI model</h2>
+<div class="section level2">
+<h2 id="ammi-model">AMMI model<a class="anchor" aria-label="anchor" href="#ammi-model"></a>
+</h2>
 <p>The difference in response of genotypes to different environmental conditions is known as Genotype-Environment Interaction (GEI). Understanding the nature and structure of this interaction is critical for plant breeders to select for genotypes with wide or specific adaptability. One of the most popular techniques to achieve this is by fitting the Additive Main Effects and Multiplicative Interaction (AMMI) model to the results of multi environment trials <span class="citation">(Gauch, <a href="#ref-gauch_model_1988" role="doc-biblioref">1988</a>, <a href="#ref-gauch_statistical_1992" role="doc-biblioref">1992</a>)</span>.</p>
 <p>The AMMI equation is described as follows.</p>
 <p><span class="math display">\[Y_{ij} = \mu + \alpha_{i} + \beta_{j} + \sum_{n=1}^{N}\lambda_{n}\gamma_{in}\delta_{jn} + \rho_{ij}\]</span></p>
 <p>Where, <span class="math inline">\(Y_{ij}\)</span> is the yield of the <span class="math inline">\(i\)</span>th genotype in the <span class="math inline">\(j\)</span>th environment, <span class="math inline">\(\mu\)</span> is the grand mean, <span class="math inline">\(\alpha_{i}\)</span> is the genotype deviation from the grand mean, <span class="math inline">\(\beta_{j}\)</span> is the environment deviation, <span class="math inline">\(N\)</span> is the total number of interaction principal components (IPCs), <span class="math inline">\(\lambda_{n}\)</span> is the is the singular value for <span class="math inline">\(n\)</span>th IPC and correspondingly <span class="math inline">\(\lambda_{n}^{2}\)</span> is its eigen value, <span class="math inline">\(\gamma_{in}\)</span> is the eigenvector value for <span class="math inline">\(i\)</span>th genotype, <span class="math inline">\(\delta_{jn}\)</span> is the eigenvector value for the <span class="math inline">\(j\)</span>th environment and <span class="math inline">\(\rho_{ij}\)</span> is the residual.</p>
 </div>
-<div id="ammi-stability-parameters" class="section level2">
-<h2 class="hasAnchor">
-<a href="#ammi-stability-parameters" class="anchor"></a>AMMI stability parameters</h2>
+<div class="section level2">
+<h2 id="ammi-stability-parameters">AMMI stability parameters<a class="anchor" aria-label="anchor" href="#ammi-stability-parameters"></a>
+</h2>
 <p>Although the AMMI model can aid in determining genotypes with wide or specific adaptability, it fails to rank genotypes according to their stability. Several measures have been developed over the years to indicate the stability of genotypes from the results of AMMI analysis (Table 1.).</p>
 <p>The details about AMMI stability parameters/indices implemented in <code>ammistability</code> are described in Table 1.</p>
 
@@ -256,7 +268,7 @@ Welcome to ammistability version 0.1.2.9000
 <tr class="even">
 <td align="left">AMMI stability value (<span class="math inline">\(ASV\)</span>) *</td>
 <td align="left">
-<code><a href="https://rdrr.io/pkg/agricolae/man/indexAMMI.html">agricolae::index.AMMI</a></code> and <code>MASV.AMMI</code>
+<code><a href="https://rdrr.io/pkg/agricolae/man/indexAMMI.html" class="external-link">agricolae::index.AMMI</a></code> and <code>MASV.AMMI</code>
 </td>
 <td align="left">Distance from the coordinate point to the origin in a two dimensional scattergram generated by plotting of IPC1 score against IPC2 score.<br><br><span class="math display">\[ASV = \sqrt{\left
 (\frac{SSIPC_{1}}{SSIPC_{2}}\times PC_{1}  \right
@@ -373,20 +385,19 @@ Equivalent to Wricke’s ecovalence.</td>
 <p>Where, <span class="math inline">\(N\)</span> is the total number of interaction principal components (IPCs); <span class="math inline">\(N'\)</span> is the number of significant IPCAs (number of IPC that were retained in the AMMI model via F tests); <span class="math inline">\(\lambda_{n}\)</span> is the is the singular value for <span class="math inline">\(n\)</span>th IPC and correspondingly <span class="math inline">\(\lambda_{n}^{2}\)</span> is its eigen value; <span class="math inline">\(\gamma_{in}\)</span> is the eigenvector value for <span class="math inline">\(i\)</span>th genotype; <span class="math inline">\(\delta_{jn}\)</span> is the eigenvector value for the <span class="math inline">\(j\)</span>th environment; <span class="math inline">\(SSIPC_{1}\)</span>, <span class="math inline">\(SSIPC_{2}\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(SSIPC_{n}\)</span> are the sum of squares of the 1st, 2th, …, and <span class="math inline">\(n\)</span>th IPC; <span class="math inline">\(PC_{1}\)</span>, <span class="math inline">\(PC_{2}\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(PC_{n}\)</span> are the scores of 1st, 2th, …, and <span class="math inline">\(n\)</span>th IPC; <span class="math inline">\(\theta_{n}\)</span> is the percentage sum of squares explained by <span class="math inline">\(n\)</span>th principal component interaction effect; and <span class="math inline">\(E\)</span> is the number of environments.</p>
 
 <div style="page-break-after: always;"></div>
-<div id="examples" class="section level4">
-<h4 class="hasAnchor">
-<a href="#examples" class="anchor"></a>Examples</h4>
+<div class="section level4">
+<h4 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
+</h4>
 </div>
-<div id="ammi-model-from-agricolaeammi" class="section level4">
-<h4 class="hasAnchor">
-<a href="#ammi-model-from-agricolaeammi" class="anchor"></a>AMMI model from <code>agricolae::AMMI</code>
+<div class="section level4">
+<h4 id="ammi-model-from-agricolaeammi">AMMI model from <code>agricolae::AMMI</code><a class="anchor" aria-label="anchor" href="#ammi-model-from-agricolaeammi"></a>
 </h4>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://tarwi.lamolina.edu.pe/~fmendiburu">agricolae</a></span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">plrv</span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">agricolae</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">plrv</span><span class="op">)</span>
 
 <span class="co"># AMMI model</span>
-<span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">plrv</span>, <span class="fu"><a href="https://rdrr.io/pkg/agricolae/man/AMMI.html">AMMI</a></span><span class="op">(</span><span class="va">Locality</span>, <span class="va">Genotype</span>, <span class="va">Rep</span>, <span class="va">Yield</span>, console <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span>
+<span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">plrv</span>, <span class="fu"><a href="https://rdrr.io/pkg/agricolae/man/AMMI.html" class="external-link">AMMI</a></span><span class="op">(</span><span class="va">Locality</span>, <span class="va">Genotype</span>, <span class="va">Rep</span>, <span class="va">Yield</span>, console <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span>
 
 <span class="co"># ANOVA</span>
 <span class="va">model</span><span class="op">$</span><span class="va">ANOVA</span></code></pre></div>
@@ -485,7 +496,7 @@ SR-02    1.37283488
 SR-03   -3.18065538</code></pre>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># G*E matrix (deviations from mean)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/array.html">array</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">genXenv</span>, <span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">genXenv</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/dimnames.html">dimnames</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">genXenv</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/base/array.html" class="external-link">array</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">genXenv</span>, <span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">genXenv</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/dimnames.html" class="external-link">dimnames</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">genXenv</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>         ENV
 GEN              Ayac      Hyo-02       LM-02       LM-03        SR-02
   102.18    5.5726162 -12.4918224   1.7425251  -2.7070438   2.91734869
@@ -547,9 +558,9 @@ GEN             SR-03
   Desiree  14.7808522
   Unica    -2.1089651</code></pre>
 </div>
-<div id="amge-ammi" class="section level4">
-<h4 class="hasAnchor">
-<a href="#amge-ammi" class="anchor"></a><code>AMGE.AMMI()</code>
+<div class="section level4">
+<h4 id="amge-ammi">
+<code>AMGE.AMMI()</code><a class="anchor" aria-label="anchor" href="#amge-ammi"></a>
 </h4>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># With default n (N') and default ssi.method (farshadfar)</span>
@@ -680,9 +691,9 @@ Canchan  9.325873e-15  0.9965214  25.0 20 27.00126
 Desiree -1.132427e-14  0.4311301   2.0 28 16.15569
 Unica    5.329071e-15  1.4782355  21.0  2 39.10400</code></pre>
 </div>
-<div id="asi-ammi" class="section level4">
-<h4 class="hasAnchor">
-<a href="#asi-ammi" class="anchor"></a><code>ASI.AMMI()</code>
+<div class="section level4">
+<h4 id="asi-ammi">
+<code>ASI.AMMI()</code><a class="anchor" aria-label="anchor" href="#asi-ammi"></a>
 </h4>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># With default ssi.method (farshadfar)</span>
@@ -781,9 +792,9 @@ Canchan 0.83849670 1.1268084   15 20 27.00126
 Desiree 2.10698168 0.6248300   28 28 16.15569
 Unica   1.03956820 1.4737642   22  2 39.10400</code></pre>
 </div>
-<div id="astab-ammi" class="section level4">
-<h4 class="hasAnchor">
-<a href="#astab-ammi" class="anchor"></a><code>ASTAB.AMMI()</code>
+<div class="section level4">
+<h4 id="astab-ammi">
+<code>ASTAB.AMMI()</code><a class="anchor" aria-label="anchor" href="#astab-ammi"></a>
 </h4>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># With default n (N') and default ssi.method (farshadfar)</span>
@@ -914,9 +925,9 @@ Canchan  5.13246683  0.9239540     20 20 27.00126
 Desiree 16.47021287  0.5403407     28 28 16.15569
 Unica   10.49672952  1.2963093     25  2 39.10400</code></pre>
 </div>
-<div id="avamge-ammi" class="section level4">
-<h4 class="hasAnchor">
-<a href="#avamge-ammi" class="anchor"></a><code>AVAMGE.AMMI()</code>
+<div class="section level4">
+<h4 id="avamge-ammi">
+<code>AVAMGE.AMMI()</code><a class="anchor" aria-label="anchor" href="#avamge-ammi"></a>
 </h4>
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># With default n (N') and default ssi.method (farshadfar)</span>
@@ -1047,9 +1058,9 @@ Canchan 30.515224 1.1358773      18 20 27.00126
 Desiree 69.096357 0.6395966      28 28 16.15569
 Unica   47.204593 1.4401668      26  2 39.10400</code></pre>
 </div>
-<div id="da-ammi" class="section level4">
-<h4 class="hasAnchor">
-<a href="#da-ammi" class="anchor"></a><code>DA.AMMI()</code>
+<div class="section level4">
+<h4 id="da-ammi">
+<code>DA.AMMI()</code><a class="anchor" aria-label="anchor" href="#da-ammi"></a>
 </h4>
 <div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># With default n (N') and default ssi.method (farshadfar)</span>
@@ -1180,9 +1191,9 @@ Canchan 15.138085 1.1431075  17 20 27.00126
 Desiree 32.114860 0.6506029  28 28 16.15569
 Unica   22.343936 1.4529998  26  2 39.10400</code></pre>
 </div>
-<div id="dz-ammi" class="section level4">
-<h4 class="hasAnchor">
-<a href="#dz-ammi" class="anchor"></a><code>DZ.AMMI()</code>
+<div class="section level4">
+<h4 id="dz-ammi">
+<code>DZ.AMMI()</code><a class="anchor" aria-label="anchor" href="#dz-ammi"></a>
 </h4>
 <div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># With default n (N') and default ssi.method (farshadfar)</span>
@@ -1313,9 +1324,9 @@ Canchan 0.37201039 1.0925852  21 20 27.00126
 Desiree 0.52005815 0.6785528  27 28 16.15569
 Unica   0.48083049 1.4391795  25  2 39.10400</code></pre>
 </div>
-<div id="ev-ammi" class="section level4">
-<h4 class="hasAnchor">
-<a href="#ev-ammi" class="anchor"></a><code>EV.AMMI()</code>
+<div class="section level4">
+<h4 id="ev-ammi">
+<code>EV.AMMI()</code><a class="anchor" aria-label="anchor" href="#ev-ammi"></a>
 </h4>
 <div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># With default n (N') and default ssi.method (farshadfar)</span>
@@ -1446,9 +1457,9 @@ Canchan 0.0461305761  0.9093641  21 20 27.00126
 Desiree 0.0901534938  0.5415905  27 28 16.15569
 Unica   0.0770659860  1.2923516  25  2 39.10400</code></pre>
 </div>
-<div id="fa-ammi" class="section level4">
-<h4 class="hasAnchor">
-<a href="#fa-ammi" class="anchor"></a><code>FA.AMMI()</code>
+<div class="section level4">
+<h4 id="fa-ammi">
+<code>FA.AMMI()</code><a class="anchor" aria-label="anchor" href="#fa-ammi"></a>
 </h4>
 <div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># With default n (N') and default ssi.method (farshadfar)</span>
@@ -1579,9 +1590,9 @@ Canchan  229.161607 0.9364771  17 20 27.00126
 Desiree 1031.364210 0.5392276  28 28 16.15569
 Unica    499.251489 1.3007530  26  2 39.10400</code></pre>
 </div>
-<div id="masv-ammi" class="section level4">
-<h4 class="hasAnchor">
-<a href="#masv-ammi" class="anchor"></a><code>MASV.AMMI()</code>
+<div class="section level4">
+<h4 id="masv-ammi">
+<code>MASV.AMMI()</code><a class="anchor" aria-label="anchor" href="#masv-ammi"></a>
 </h4>
 <div class="sourceCode" id="cb75"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># With default n (N') and default ssi.method (farshadfar)</span>
@@ -1712,9 +1723,9 @@ Canchan 3.6665608 1.2011435    11 20 27.00126
 Desiree 9.0626072 0.6565359    28 28 16.15569
 Unica   8.5447632 1.4126439    26  2 39.10400</code></pre>
 </div>
-<div id="sipc-ammi" class="section level4">
-<h4 class="hasAnchor">
-<a href="#sipc-ammi" class="anchor"></a><code>SIPC.AMMI()</code>
+<div class="section level4">
+<h4 id="sipc-ammi">
+<code>SIPC.AMMI()</code><a class="anchor" aria-label="anchor" href="#sipc-ammi"></a>
 </h4>
 <div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># With default n (N') and default ssi.method (farshadfar)</span>
@@ -1845,9 +1856,9 @@ Canchan 3.5328212 1.1160645    19 20 27.00126
 Desiree 5.8073242 0.6701345    27 28 16.15569
 Unica   5.0654615 1.4393751    25  2 39.10400</code></pre>
 </div>
-<div id="za-ammi" class="section level4">
-<h4 class="hasAnchor">
-<a href="#za-ammi" class="anchor"></a><code>ZA.AMMI()</code>
+<div class="section level4">
+<h4 id="za-ammi">
+<code>ZA.AMMI()</code><a class="anchor" aria-label="anchor" href="#za-ammi"></a>
 </h4>
 <div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># With default n (N') and default ssi.method (farshadfar)</span>
@@ -1979,9 +1990,9 @@ Desiree 0.32787182 0.6451047  28 28 16.15569
 Unica   0.21646330 1.4542544  26  2 39.10400</code></pre>
 </div>
 </div>
-<div id="simultaneous-selection-indices-for-yield-and-stability" class="section level2">
-<h2 class="hasAnchor">
-<a href="#simultaneous-selection-indices-for-yield-and-stability" class="anchor"></a>Simultaneous selection indices for yield and stability</h2>
+<div class="section level2">
+<h2 id="simultaneous-selection-indices-for-yield-and-stability">Simultaneous selection indices for yield and stability<a class="anchor" aria-label="anchor" href="#simultaneous-selection-indices-for-yield-and-stability"></a>
+</h2>
 <p>The most stable genotype need not necessarily be the highest yielding genotype. Hence, simultaneous selection indices (SSIs) have been proposed for the selection of stable as well as high yielding genotypes.</p>
 <p>A family of simultaneous selection indices (<span class="math inline">\(I_{i}\)</span>) were proposed by <span class="citation">Rao and Prabhakaran (<a href="#ref-rao_use_2005" role="doc-biblioref">2005</a>)</span> similar to those proposed by <span class="citation">Bajpai and Prabhakaran (<a href="#ref-bajpai_new_2000" role="doc-biblioref">2000</a>)</span> by incorporating the AMMI Based Stability Parameter (<span class="math inline">\(ASTAB\)</span>) and Yield as components. These indices consist of yield component, measured as the ratio of the average performance of the <span class="math inline">\(i\)</span>th genotype to the overall mean performance of the genotypes under test and a stability component, measured as the ratio of stability information (<span class="math inline">\(\frac{1}{ASTAB}\)</span>) of the <span class="math inline">\(i\)</span>th genotype to the mean stability information of the genotypes under test.</p>
 <p><span class="math display">\[I_{i} = \frac{\overline{Y}_{i}}{\overline{Y}_{..}} + \alpha \frac{\frac{1}{ASTAB_{i}}}{\frac{1}{T}\sum_{i=1}^{T}\frac{1}{ASTAB_{i}}}\]</span></p>
@@ -2022,23 +2033,23 @@ Unica   0.21646330 1.4542544  26  2 39.10400</code></pre>
 <p><span class="math display">\[GSI = YSI = R_{SP} + R_{Y}\]</span></p>
 <p>Where, <span class="math inline">\(R_{SP}\)</span> is the stability parameter/index rank of the genotype and <span class="math inline">\(R_{Y}\)</span> is the mean yield rank of the genotype.</p>
 <p>The function <code>SSI</code> implements both these indices in <code>ammistability</code>. Further, for each of the stability parameter functions, the simultaneous selection index is also computed by either of these functions as specified by the argument <code>ssi.method</code>.</p>
-<div id="examples-1" class="section level4">
-<h4 class="hasAnchor">
-<a href="#examples-1" class="anchor"></a>Examples</h4>
+<div class="section level4">
+<h4 id="examples-1">Examples<a class="anchor" aria-label="anchor" href="#examples-1"></a>
+</h4>
 </div>
-<div id="ssi" class="section level4">
-<h4 class="hasAnchor">
-<a href="#ssi" class="anchor"></a><code>SSI()</code>
+<div class="section level4">
+<h4 id="ssi">
+<code>SSI()</code><a class="anchor" aria-label="anchor" href="#ssi"></a>
 </h4>
 <div class="sourceCode" id="cb99"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://tarwi.lamolina.edu.pe/~fmendiburu">agricolae</a></span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">plrv</span><span class="op">)</span>
-<span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">plrv</span>, <span class="fu"><a href="https://rdrr.io/pkg/agricolae/man/AMMI.html">AMMI</a></span><span class="op">(</span><span class="va">Locality</span>, <span class="va">Genotype</span>, <span class="va">Rep</span>, <span class="va">Yield</span>, console<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">agricolae</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">plrv</span><span class="op">)</span>
+<span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">plrv</span>, <span class="fu"><a href="https://rdrr.io/pkg/agricolae/man/AMMI.html" class="external-link">AMMI</a></span><span class="op">(</span><span class="va">Locality</span>, <span class="va">Genotype</span>, <span class="va">Rep</span>, <span class="va">Yield</span>, console<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span>
 
-<span class="va">yield</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aggregate.html">aggregate</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">means</span><span class="op">$</span><span class="va">Yield</span>, by<span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">means</span><span class="op">$</span><span class="va">GEN</span><span class="op">)</span>,
+<span class="va">yield</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aggregate.html" class="external-link">aggregate</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">means</span><span class="op">$</span><span class="va">Yield</span>, by<span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">means</span><span class="op">$</span><span class="va">GEN</span><span class="op">)</span>,
                FUN<span class="op">=</span><span class="va">mean</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>
 <span class="va">stab</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/DZ.AMMI.html">DZ.AMMI</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span><span class="op">$</span><span class="va">DZ</span>
-<span class="va">genotypes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="fu"><a href="../reference/DZ.AMMI.html">DZ.AMMI</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span><span class="op">)</span>
+<span class="va">genotypes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="fu"><a href="../reference/DZ.AMMI.html">DZ.AMMI</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span><span class="op">)</span>
 
 <span class="co"># With default ssi.method (farshadfar)</span>
 <span class="fu"><a href="../reference/SSI.html">SSI</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">yield</span>, sp <span class="op">=</span> <span class="va">stab</span>, gen <span class="op">=</span> <span class="va">genotypes</span><span class="op">)</span></code></pre></div>
@@ -2137,24 +2148,24 @@ Desiree 0.52005815 0.6785528  27 28 16.15569
 Unica   0.48083049 1.4391795  25  2 39.10400</code></pre>
 </div>
 </div>
-<div id="wrapper-function" class="section level2">
-<h2 class="hasAnchor">
-<a href="#wrapper-function" class="anchor"></a>Wrapper function</h2>
+<div class="section level2">
+<h2 id="wrapper-function">Wrapper function<a class="anchor" aria-label="anchor" href="#wrapper-function"></a>
+</h2>
 <p>A function <code>ammistability</code> has also been implemented which is a wrapper around all the available functions in the package to compute simultaneously multiple AMMI stability parameters along with the corresponding SSIs. Correlation among the computed values as well as visualization of the differences in genotype ranks for the computed parameters is also generated.</p>
-<div id="examples-2" class="section level4">
-<h4 class="hasAnchor">
-<a href="#examples-2" class="anchor"></a>Examples</h4>
+<div class="section level4">
+<h4 id="examples-2">Examples<a class="anchor" aria-label="anchor" href="#examples-2"></a>
+</h4>
 </div>
-<div id="ammistability" class="section level4">
-<h4 class="hasAnchor">
-<a href="#ammistability" class="anchor"></a><code>ammistability()</code>
+<div class="section level4">
+<h4 id="ammistability">
+<code>ammistability()</code><a class="anchor" aria-label="anchor" href="#ammistability"></a>
 </h4>
 <div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://tarwi.lamolina.edu.pe/~fmendiburu">agricolae</a></span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">plrv</span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">agricolae</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">plrv</span><span class="op">)</span>
 
 <span class="co"># AMMI model</span>
-<span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">plrv</span>, <span class="fu"><a href="https://rdrr.io/pkg/agricolae/man/AMMI.html">AMMI</a></span><span class="op">(</span><span class="va">Locality</span>, <span class="va">Genotype</span>, <span class="va">Rep</span>, <span class="va">Yield</span>, console <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span>
+<span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">plrv</span>, <span class="fu"><a href="https://rdrr.io/pkg/agricolae/man/AMMI.html" class="external-link">AMMI</a></span><span class="op">(</span><span class="va">Locality</span>, <span class="va">Genotype</span>, <span class="va">Rep</span>, <span class="va">Yield</span>, console <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span>
 
 <span class="fu"><a href="../reference/ammistability.html">ammistability</a></span><span class="op">(</span><span class="va">model</span>, AMGE <span class="op">=</span> <span class="cn">TRUE</span>, ASI <span class="op">=</span> <span class="cn">FALSE</span>, ASV <span class="op">=</span> <span class="cn">TRUE</span>, ASTAB <span class="op">=</span> <span class="cn">FALSE</span>,
               AVAMGE <span class="op">=</span> <span class="cn">FALSE</span>, DA <span class="op">=</span> <span class="cn">FALSE</span>, DZ <span class="op">=</span> <span class="cn">FALSE</span>, EV <span class="op">=</span> <span class="cn">TRUE</span>,
@@ -2292,9 +2303,8 @@ $`SSI Heatmap`</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-7.png" width="700"></p>
 </div>
 </div>
-<div id="citing-ammistability" class="section level2">
-<h2 class="hasAnchor">
-<a href="#citing-ammistability" class="anchor"></a>Citing <code>ammistability</code>
+<div class="section level2">
+<h2 id="citing-ammistability">Citing <code>ammistability</code><a class="anchor" aria-label="anchor" href="#citing-ammistability"></a>
 </h2>
 <pre><code>
 To cite the R package 'ammistability' in publications use:
@@ -2305,7 +2315,7 @@ To cite the R package 'ammistability' in publications use:
   79(2), 460-466.
   http://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model
 
-  Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2021).  ammistability:
+  Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2022).  ammistability:
   Additive Main Effects and Multiplicative Interaction Model Stability
   Parameters. R package version 0.1.2.9000,
   https://ajaygpb.github.io/ammistability/,
@@ -2318,18 +2328,18 @@ To see these entries in BibTeX format, use 'print(&lt;citation&gt;,
 bibtex=TRUE)', 'toBibtex(.)', or set
 'options(citation.bibtex.max=999)'.</code></pre>
 </div>
-<div id="session-info" class="section level2">
-<h2 class="hasAnchor">
-<a href="#session-info" class="anchor"></a>Session Info</h2>
+<div class="section level2">
+<h2 id="session-info">Session Info<a class="anchor" aria-label="anchor" href="#session-info"></a>
+</h2>
 <div class="sourceCode" id="cb114"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code>R version 4.0.4 (2021-02-15)
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<pre><code>R version 4.2.0 (2022-04-22)
 Platform: x86_64-apple-darwin17.0 (64-bit)
-Running under: macOS Catalina 10.15.7
+Running under: macOS Big Sur/Monterey 10.16
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
-LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
@@ -2338,47 +2348,47 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] agricolae_1.3-3          ammistability_0.1.2.9000
+[1] agricolae_1.3-5          ammistability_0.1.2.9000
 
 loaded via a namespace (and not attached):
- [1] httr_1.4.2        sass_0.3.1        jsonlite_1.7.2    bslib_0.2.4      
- [5] shiny_1.6.0       Rdpack_2.1.1      assertthat_0.2.1  highr_0.8        
- [9] pander_0.6.3      yaml_2.2.1        pillar_1.5.1      lattice_0.20-41  
-[13] glue_1.4.2        digest_0.6.27     promises_1.2.0.1  rbibutils_2.0    
-[17] colorspace_2.0-0  htmltools_0.5.1.1 httpuv_1.5.5      plyr_1.8.6       
-[21] klaR_0.6-15       XML_3.99-0.5      pkgconfig_2.0.3   ggcorrplot_0.1.3 
-[25] labelled_2.7.0    haven_2.3.1       questionr_0.7.4   purrr_0.3.4      
-[29] xtable_1.8-4      scales_1.1.1      later_1.1.0.1     tibble_3.1.0     
-[33] combinat_0.0-8    generics_0.1.0    farver_2.1.0      ggplot2_3.3.3    
-[37] ellipsis_0.3.1    cachem_1.0.4      magrittr_2.0.1    crayon_1.4.1     
-[41] mime_0.10         memoise_2.0.0     evaluate_0.14     fs_1.5.0         
-[45] fansi_0.4.2       nlme_3.1-152      MASS_7.3-53       forcats_0.5.1    
-[49] textshaping_0.3.1 tools_4.0.4       hms_1.0.0         lifecycle_1.0.0  
-[53] stringr_1.4.0     munsell_0.5.0     cluster_2.1.0     compiler_4.0.4   
-[57] pkgdown_1.6.1     jquerylib_0.1.3   systemfonts_1.0.1 rlang_0.4.10     
-[61] grid_4.0.4        RCurl_1.98-1.2    rstudioapi_0.13   miniUI_0.1.1.1   
-[65] labeling_0.4.2    bitops_1.0-6      rmarkdown_2.7     gtable_0.3.0     
-[69] curl_4.3          reshape2_1.4.4    R6_2.5.0          AlgDesign_1.2.0  
-[73] knitr_1.31        dplyr_1.0.5       fastmap_1.1.0     utf8_1.1.4       
-[77] mathjaxr_1.4-0    rprojroot_2.0.2   ragg_1.1.1        desc_1.2.0       
-[81] stringi_1.5.3     Rcpp_1.0.6        vctrs_0.3.6       tidyselect_1.1.0 
-[85] xfun_0.21        </code></pre>
+ [1] httr_1.4.3        sass_0.4.1        jsonlite_1.8.0    bslib_0.3.1      
+ [5] shiny_1.7.1       Rdpack_2.3.1      highr_0.9         pander_0.6.5     
+ [9] yaml_2.3.5        pillar_1.7.0      lattice_0.20-45   glue_1.6.2       
+[13] digest_0.6.29     promises_1.2.0.1  rbibutils_2.2.8   colorspace_2.0-3 
+[17] htmltools_0.5.2   httpuv_1.6.5      plyr_1.8.7        klaR_1.7-0       
+[21] XML_3.99-0.10     pkgconfig_2.0.3   ggcorrplot_0.1.3  labelled_2.9.1   
+[25] haven_2.5.0       questionr_0.7.7   purrr_0.3.4       xtable_1.8-4     
+[29] scales_1.2.0      later_1.3.0       tibble_3.1.7      combinat_0.0-8   
+[33] generics_0.1.2    farver_2.1.0      ggplot2_3.3.6     ellipsis_0.3.2   
+[37] cachem_1.0.6      cli_3.3.0         magrittr_2.0.3    crayon_1.5.1     
+[41] mime_0.12         memoise_2.0.1     evaluate_0.15     fs_1.5.2         
+[45] fansi_1.0.3       nlme_3.1-157      MASS_7.3-56       forcats_0.5.1    
+[49] textshaping_0.3.6 tools_4.2.0       hms_1.1.1         lifecycle_1.0.1  
+[53] stringr_1.4.0     munsell_0.5.0     cluster_2.1.3     compiler_4.2.0   
+[57] pkgdown_2.0.4     jquerylib_0.1.4   systemfonts_1.0.4 rlang_1.0.2      
+[61] grid_4.2.0        RCurl_1.98-1.7    rstudioapi_0.13   miniUI_0.1.1.1   
+[65] labeling_0.4.2    bitops_1.0-7      rmarkdown_2.14    gtable_0.3.0     
+[69] curl_4.3.2        reshape2_1.4.4    R6_2.5.1          AlgDesign_1.2.1  
+[73] knitr_1.39        dplyr_1.0.9       fastmap_1.1.0     utf8_1.2.2       
+[77] mathjaxr_1.6-0    rprojroot_2.0.3   ragg_1.2.2        desc_1.4.1       
+[81] stringi_1.7.6     Rcpp_1.0.8.3      vctrs_0.4.1       tidyselect_1.1.2 
+[85] xfun_0.31        </code></pre>
 </div>
-<div id="references" class="section level2 unnumbered">
-<h2 class="hasAnchor">
-<a href="#references" class="anchor"></a>References</h2>
+<div class="section level2 unnumbered">
+<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+</h2>
 <div id="refs" class="references">
 <div id="ref-ajay_modified_2018">
 <p>Ajay, B. C., Aravind, J., Abdul Fiyaz, R., Bera, S. K., Kumar, N., Gangadhar, K., et al. (2018). Modified AMMI Stability Index (MASI) for stability analysis. <em>ICAR-DGR Newsletter</em> 18, 4–5.</p>
 </div>
 <div id="ref-ajay2019ammistability">
-<p>Ajay, B. C., Aravind, J., and Fiyaz, R. A. (2019a). Ammistability: R package for ranking genotypes based on stability parameters derived from AMMI model. <em>Indian Journal of Genetics and Plant Breeding (The)</em> 79, 460–466. Available at: <a href="https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model">https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model</a>.</p>
+<p>Ajay, B. C., Aravind, J., and Fiyaz, R. A. (2019a). Ammistability: R package for ranking genotypes based on stability parameters derived from AMMI model. <em>Indian Journal of Genetics and Plant Breeding (The)</em> 79, 460–466. Available at: <a href="https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model" class="external-link">https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model</a>.</p>
 </div>
 <div id="ref-ajay_rectification_2019">
-<p>Ajay, B. C., Aravind, J., Fiyaz, R. A., Kumar, N., Lal, C., Gangadhar, K., et al. (2019b). Rectification of modified AMMI stability value (MASV). <em>Indian Journal of Genetics and Plant Breeding (The)</em> 79, 726–731. Available at: <a href="https://www.isgpb.org/article/rectification-of-modified-ammi-stability-value-masv">https://www.isgpb.org/article/rectification-of-modified-ammi-stability-value-masv</a>.</p>
+<p>Ajay, B. C., Aravind, J., Fiyaz, R. A., Kumar, N., Lal, C., Gangadhar, K., et al. (2019b). Rectification of modified AMMI stability value (MASV). <em>Indian Journal of Genetics and Plant Breeding (The)</em> 79, 726–731. Available at: <a href="https://www.isgpb.org/article/rectification-of-modified-ammi-stability-value-masv" class="external-link">https://www.isgpb.org/article/rectification-of-modified-ammi-stability-value-masv</a>.</p>
 </div>
 <div id="ref-annicchiarico_joint_1997">
-<p>Annicchiarico, P. (1997). Joint regression vs AMMI analysis of genotype-environment interactions for cereals in Italy. <em>Euphytica</em> 94, 53–62. doi:<a href="https://doi.org/10.1023/A:1002954824178">10.1023/A:1002954824178</a>.</p>
+<p>Annicchiarico, P. (1997). Joint regression vs AMMI analysis of genotype-environment interactions for cereals in Italy. <em>Euphytica</em> 94, 53–62. doi:<a href="https://doi.org/10.1023/A:1002954824178" class="external-link">10.1023/A:1002954824178</a>.</p>
 </div>
 <div id="ref-bajpai_new_2000">
 <p>Bajpai, P. K., and Prabhakaran, V. T. (2000). A new procedure of simultaneous selection for high yielding and stable crop genotypes. <em>Indian Journal of Genetics &amp; Plant Breeding</em> 60, 141–146.</p>
@@ -2390,28 +2400,28 @@ loaded via a namespace (and not attached):
 <p>Farshadfar, E., Mahmodi, N., and Yaghotipoor, A. (2011). AMMI stability value and simultaneous estimation of yield and yield stability in bread wheat (<em>Triticum aestivum</em> L.). <em>Australian Journal of Crop Science</em> 5, 1837–1844.</p>
 </div>
 <div id="ref-gauch_model_1988">
-<p>Gauch, H. G. (1988). Model selection and validation for yield trials with interaction. <em>Biometrics</em> 44, 705–715. doi:<a href="https://doi.org/10.2307/2531585">10.2307/2531585</a>.</p>
+<p>Gauch, H. G. (1988). Model selection and validation for yield trials with interaction. <em>Biometrics</em> 44, 705–715. doi:<a href="https://doi.org/10.2307/2531585" class="external-link">10.2307/2531585</a>.</p>
 </div>
 <div id="ref-gauch_statistical_1992">
 <p>Gauch, H. G. (1992). <em>Statistical Analysis of Regional Yield Trials: AMMI Analysis of Factorial Designs</em>. Amsterdam ; New York: Elsevier.</p>
 </div>
 <div id="ref-jambhulkar_genotype_2015">
-<p>Jambhulkar, N. N., Bose, L. K., Pande, K., and Singh, O. N. (2015). Genotype by environment interaction and stability analysis in rice genotypes. <em>Ecology, Environment and Conservation</em> 21, 1427–1430. Available at: <a href="http://www.envirobiotechjournals.com/article_abstract.php?aid=6346&amp;iid=200&amp;jid=3">http://www.envirobiotechjournals.com/article_abstract.php?aid=6346&amp;iid=200&amp;jid=3</a>.</p>
+<p>Jambhulkar, N. N., Bose, L. K., Pande, K., and Singh, O. N. (2015). Genotype by environment interaction and stability analysis in rice genotypes. <em>Ecology, Environment and Conservation</em> 21, 1427–1430. Available at: <a href="http://www.envirobiotechjournals.com/article_abstract.php?aid=6346&amp;iid=200&amp;jid=3" class="external-link">http://www.envirobiotechjournals.com/article_abstract.php?aid=6346&amp;iid=200&amp;jid=3</a>.</p>
 </div>
 <div id="ref-jambhulkar_ammi_2014">
-<p>Jambhulkar, N. N., Bose, L. K., and Singh, O. N. (2014). “AMMI stability index for stability analysis,” in <em>CRRI Newsletter, January-March 2014</em>, ed. T. Mohapatra (Cuttack, Orissa: Central Rice Research Institute), 15. Available at: <a href="http://www.crri.nic.in/CRRI_newsletter/crnl_jan_mar_14_web.pdf">http://www.crri.nic.in/CRRI_newsletter/crnl_jan_mar_14_web.pdf</a>.</p>
+<p>Jambhulkar, N. N., Bose, L. K., and Singh, O. N. (2014). “AMMI stability index for stability analysis,” in <em>CRRI Newsletter, January-March 2014</em>, ed. T. Mohapatra (Cuttack, Orissa: Central Rice Research Institute), 15. Available at: <a href="http://www.crri.nic.in/CRRI_newsletter/crnl_jan_mar_14_web.pdf" class="external-link">http://www.crri.nic.in/CRRI_newsletter/crnl_jan_mar_14_web.pdf</a>.</p>
 </div>
 <div id="ref-jambhulkar_stability_2017">
-<p>Jambhulkar, N. N., Rath, N. C., Bose, L. K., Subudhi, H., Biswajit, M., Lipi, D., et al. (2017). Stability analysis for grain yield in rice in demonstrations conducted during rabi season in India. <em>Oryza</em> 54, 236–240. doi:<a href="https://doi.org/10.5958/2249-5266.2017.00030.3">10.5958/2249-5266.2017.00030.3</a>.</p>
+<p>Jambhulkar, N. N., Rath, N. C., Bose, L. K., Subudhi, H., Biswajit, M., Lipi, D., et al. (2017). Stability analysis for grain yield in rice in demonstrations conducted during rabi season in India. <em>Oryza</em> 54, 236–240. doi:<a href="https://doi.org/10.5958/2249-5266.2017.00030.3" class="external-link">10.5958/2249-5266.2017.00030.3</a>.</p>
 </div>
 <div id="ref-purchase_parametric_1997">
-<p>Purchase, J. L. (1997). Parametric analysis to describe genotype × environment interaction and yield stability in winter wheat. Available at: <a href="http://scholar.ufs.ac.za:8080/xmlui/handle/11660/1966">http://scholar.ufs.ac.za:8080/xmlui/handle/11660/1966</a>.</p>
+<p>Purchase, J. L. (1997). Parametric analysis to describe genotype × environment interaction and yield stability in winter wheat. Available at: <a href="http://scholar.ufs.ac.za:8080/xmlui/handle/11660/1966" class="external-link">http://scholar.ufs.ac.za:8080/xmlui/handle/11660/1966</a>.</p>
 </div>
 <div id="ref-purchase_use_1999">
 <p>Purchase, J. L., Hatting, H., and Deventer, C. S. van (1999). “The use of the AMMI model and AMMI stability value to describe genotype x environment interaction and yield stability in winter wheat (<em>Triticum aestivum</em> L.),” in <em>Proceedings of the Tenth Regional Wheat Workshop for Eastern, Central and Southern Africa, 14-18 September 1998</em> (South Africa: University of Stellenbosch).</p>
 </div>
 <div id="ref-purchase_genotype_2000">
-<p>Purchase, J. L., Hatting, H., and Deventer, C. S. van (2000). Genotype × environment interaction of winter wheat (<em>Triticum aestivum</em> L.) In South Africa: II. Stability analysis of yield performance. <em>South African Journal of Plant and Soil</em> 17, 101–107. doi:<a href="https://doi.org/10.1080/02571862.2000.10634878">10.1080/02571862.2000.10634878</a>.</p>
+<p>Purchase, J. L., Hatting, H., and Deventer, C. S. van (2000). Genotype × environment interaction of winter wheat (<em>Triticum aestivum</em> L.) In South Africa: II. Stability analysis of yield performance. <em>South African Journal of Plant and Soil</em> 17, 101–107. doi:<a href="https://doi.org/10.1080/02571862.2000.10634878" class="external-link">10.1080/02571862.2000.10634878</a>.</p>
 </div>
 <div id="ref-raju_study_2002">
 <p>Raju, B. M. K. (2002). A study on AMMI model and its biplots. <em>Journal of the Indian Society of Agricultural Statistics</em> 55, 297–322.</p>
@@ -2420,7 +2430,7 @@ loaded via a namespace (and not attached):
 <p>Rao, A. R., and Prabhakaran, V. T. (2005). Use of AMMI in simultaneous selection of genotypes for yield and stability. <em>Journal of the Indian Society of Agricultural Statistics</em> 59, 76–82.</p>
 </div>
 <div id="ref-sneller_repeatability_1997">
-<p>Sneller, C. H., Kilgore-Norquest, L., and Dombek, D. (1997). Repeatability of yield stability statistics in soybean. <em>Crop Science</em> 37, 383–390. doi:<a href="https://doi.org/10.2135/cropsci1997.0011183X003700020013x">10.2135/cropsci1997.0011183X003700020013x</a>.</p>
+<p>Sneller, C. H., Kilgore-Norquest, L., and Dombek, D. (1997). Repeatability of yield stability statistics in soybean. <em>Crop Science</em> 37, 383–390. doi:<a href="https://doi.org/10.2135/cropsci1997.0011183X003700020013x" class="external-link">10.2135/cropsci1997.0011183X003700020013x</a>.</p>
 </div>
 <div id="ref-wricke_method_1962">
 <p>Wricke, G. (1962). On a method of understanding the biological diversity in field research. <em>Zeitschrift für Pflanzenzüchtung</em> 47, 92–146.</p>
@@ -2429,7 +2439,7 @@ loaded via a namespace (and not attached):
 <p>Zali, H., Farshadfar, E., Sabaghpour, S. H., and Karimizadeh, R. (2012). Evaluation of genotype × environment interaction in chickpea using measures of stability from AMMI model. <em>Annals of Biological Research</em> 3, 3126–3136.</p>
 </div>
 <div id="ref-zhang_analysis_1998">
-<p>Zhang, Z., Lu, C., and Xiang, Z. (1998). Analysis of variety stability based on AMMI model. <em>Acta Agronomica Sinica</em> 24, 304–309. Available at: <a href="http://zwxb.chinacrops.org/EN/Y1998/V24/I03/304">http://zwxb.chinacrops.org/EN/Y1998/V24/I03/304</a>.</p>
+<p>Zhang, Z., Lu, C., and Xiang, Z. (1998). Analysis of variety stability based on AMMI model. <em>Acta Agronomica Sinica</em> 24, 304–309. Available at: <a href="http://zwxb.chinacrops.org/EN/Y1998/V24/I03/304" class="external-link">http://zwxb.chinacrops.org/EN/Y1998/V24/I03/304</a>.</p>
 </div>
 <div id="ref-zobel_stress_1994">
 <p>Zobel, R. W. (1994). “Stress resistance and root systems,” in <em>Proceedings of the Workshop on Adaptation of Plants to Soil Stress. 1-4 August, 1993. INTSORMIL Publication 94-2</em> (Institute of Agriculture; Natural Resources, University of Nebraska-Lincoln), 80–99.</p>
@@ -2449,11 +2459,13 @@ loaded via a namespace (and not attached):
 
 
       <footer><div class="copyright">
-  <p>Developed by B. C. Ajay, J. Aravind, R. Abdul Fiyaz.</p>
+  <p></p>
+<p>Developed by B. C. Ajay, J. Aravind, R. Abdul Fiyaz.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
 </div>
 
       </footer>
