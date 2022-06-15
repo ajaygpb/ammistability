@@ -2,7 +2,7 @@
 title: 'The `ammistability` Package: A Brief Introduction'
 author: "Ajay, B. C.^1^, Aravind, J.^2^, and Abdul Fiyaz, R.^3^"
 date: "`r Sys.Date()`"
-classoption: table
+classoption: table, twoside
 header-includes:
 - \usepackage{fancyhdr}
 - \usepackage{wrapfig}
