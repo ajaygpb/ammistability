@@ -35,7 +35,7 @@ Description: Computes various stability parameters from Additive Main Effects
     Simultaneous Selection Index for Yield and Stability from the computed
     stability parameters. See the vignette for complete list of citations for
     the methods implemented.
-Copyright: 2017-2021, ICAR-DGR
+Copyright: 2017-2022, ICAR-DGR
 License: GPL-2 | GPL-3
 Encoding: UTF-8
 Depends: R (>= 3.5.0)
@@ -53,8 +53,8 @@ Imports:
 Suggests:
     knitr,
     rmarkdown,
-	  pander,
-	  XML,
+    pander,
+    XML,
     httr,
     RCurl
 RdMacros: Rdpack,
