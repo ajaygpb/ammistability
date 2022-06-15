@@ -1,5 +1,8 @@
 # ammistability  0.1.3
 
+## VIGNETTE:
+* Fixed fetching CRAN page for version history to fail gracefully when access is down.
+
 ## OTHER NOTES:
 * Added `mathjaxr` missing from Namespace imports.
 
