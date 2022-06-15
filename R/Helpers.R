@@ -73,8 +73,11 @@ rankslopegraph <- function(df, names, group, force.grouping = TRUE,
   dfmelt$lab2 <- dfmelt$value
 
   dpcheck <- dfmelt[, c("variable", "value")]
-  dfmelt[duplicated(dpcheck), ]$lab1 <- NA
-  dfmelt[duplicated(dpcheck), ]$lab2 <- NA
+
+  if (any(duplicated(dpcheck))) {
+    dfmelt[duplicated(dpcheck), ]$lab1 <- NA
+    dfmelt[duplicated(dpcheck), ]$lab2 <- NA
+  }
 
   if (missing(group) || is.null(group)) {
     if (!force.grouping) {
