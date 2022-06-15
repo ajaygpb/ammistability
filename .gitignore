@@ -10,3 +10,5 @@ vignettes/Introduction.out
 vignettes/stability.xlsx
 test.docx
 test.R
+.DS_Store
+.httr-oauth
