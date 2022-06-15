@@ -125,10 +125,14 @@ library(ammistability)
 
 ## Version History
 ```{r, results='asis', echo=FALSE}
+
 # Fetch release version
 rver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("ammistability")) == "",
                yes = getNamespaceVersion("ammistability"),
-               no = as.vector(available.packages()["ammistability",]["Version"]))
+               no = ifelse("ammistability" %in% available.packages()[, 1],
+                           as.vector(available.packages()["ammistability",]["Version"]),
+                           getNamespaceVersion("ammistability")))
+
 ```
 The current version of the package is `r rver`. The previous versions are as follows.
 
@@ -341,7 +345,7 @@ The function `SSI` implements both these indices in `ammistability`. Further, fo
 
 #### Examples
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, eval = FALSE}
 # Function saved in functions.R file
 getCode <- function(myFunction, myPackage) {
   out <- example(myFunction, myPackage, ask = FALSE, character.only = TRUE,
@@ -365,7 +369,7 @@ A function `ammistability` has also been implemented which is a wrapper around a
 
 #### Examples
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, eval = FALSE}
 # Function saved in functions.R file
 getCode <- function(myFunction, myPackage) {
   out <- example(myFunction, myPackage, ask = FALSE, character.only = TRUE,
