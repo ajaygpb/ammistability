@@ -26,7 +26,7 @@ Size](https://img.shields.io/github/languages/code-size/ajaygpb/ammistability.sv
 [![Project Status:
 Inactive](http://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2022--06--16-yellowgreen.svg)](https://github.com/ajaygpb/ammistability/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2022--07--03-yellowgreen.svg)](https://github.com/ajaygpb/ammistability/commits/master)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1344756.svg)](https://doi.org/10.5281/zenodo.1344756)
 [![Website -
@@ -173,20 +173,6 @@ r-release-linux-x86_64
 r-release-linux-x86_64](https://cranchecks.info/badges/flavor/r-release-linux-x86_64/ammistability)](https://cran.r-project.org/web/checks/check_results_ajaygpb_at_yahoo.co.in.html)
 </td>
 </tr>
-<tr grouplength="1">
-<td colspan="2" style="border-bottom: 1px solid;">
-<strong>[![Solaris](https://shields.io/badge/Solaris--9cf?logo=Oracle&style=social)](https://cran.r-project.org/web/checks/check_results_ajaygpb_at_yahoo.co.in.html)</strong>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-patched-solaris-x86
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-patched-solaris-x86](https://cranchecks.info/badges/flavor/r-patched-solaris-x86/ammistability)](https://cran.r-project.org/web/checks/check_results_ajaygpb_at_yahoo.co.in.html)
-</td>
-</tr>
 <tr grouplength="3">
 <td colspan="2" style="border-bottom: 1px solid;">
 <strong>[![Windows](https://shields.io/badge/Windows--9cf?logo=Windows&style=social)](https://cran.r-project.org/web/checks/check_results_ajaygpb_at_yahoo.co.in.html)</strong>
@@ -194,20 +180,20 @@ r-patched-solaris-x86](https://cranchecks.info/badges/flavor/r-patched-solaris-x
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-devel-windows-ix86+x86_64
+r-devel-windows-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-devel-windows-ix86+x86_64](https://cranchecks.info/badges/flavor/r-devel-windows-ix86+x86_64/ammistability)](https://cran.r-project.org/web/checks/check_results_ajaygpb_at_yahoo.co.in.html)
+r-devel-windows-x86_64](https://cranchecks.info/badges/flavor/r-devel-windows-x86_64/ammistability)](https://cran.r-project.org/web/checks/check_results_ajaygpb_at_yahoo.co.in.html)
 </td>
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-release-windows-ix86+x86_64
+r-release-windows-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-release-windows-ix86+x86_64](https://cranchecks.info/badges/flavor/r-release-windows-ix86+x86_64/ammistability)](https://cran.r-project.org/web/checks/check_results_ajaygpb_at_yahoo.co.in.html)
+r-release-windows-x86_64](https://cranchecks.info/badges/flavor/r-release-windows-x86_64/ammistability)](https://cran.r-project.org/web/checks/check_results_ajaygpb_at_yahoo.co.in.html)
 </td>
 </tr>
 <tr>
@@ -219,7 +205,7 @@ r-oldrel-windows-ix86+x86_64
 r-oldrel-windows-ix86+x86_64](https://cranchecks.info/badges/flavor/r-oldrel-windows-ix86+x86_64/ammistability)](https://cran.r-project.org/web/checks/check_results_ajaygpb_at_yahoo.co.in.html)
 </td>
 </tr>
-<tr grouplength="2">
+<tr grouplength="4">
 <td colspan="2" style="border-bottom: 1px solid;">
 <strong>[![MacOS](https://shields.io/badge/MacOS--9cf?logo=Apple&style=social)](https://cran.r-project.org/web/checks/check_results_ajaygpb_at_yahoo.co.in.html)</strong>
 </td>
@@ -242,6 +228,24 @@ r-oldrel-macos-x86_64
 r-oldrel-macos-x86_64](https://cranchecks.info/badges/flavor/r-oldrel-macos-x86_64/ammistability)](https://cran.r-project.org/web/checks/check_results_ajaygpb_at_yahoo.co.in.html)
 </td>
 </tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+r-release-macos-arm64
+</td>
+<td style="text-align:left;">
+[![CRAN check -
+r-release-macos-arm64](https://cranchecks.info/badges/flavor/r-release-macos-arm64/ammistability)](https://cran.r-project.org/web/checks/check_results_ajaygpb_at_yahoo.co.in.html)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+r-oldrel-macos-arm64
+</td>
+<td style="text-align:left;">
+[![CRAN check -
+r-oldrel-macos-arm64](https://cranchecks.info/badges/flavor/r-oldrel-macos-arm64/ammistability)](https://cran.r-project.org/web/checks/check_results_ajaygpb_at_yahoo.co.in.html)
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -256,16 +260,15 @@ citation("ammistability")
 
     To cite the R package 'ammistability' in publications use:
 
-      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2019). ammistability: R package for ranking genotypes
-      based on stability parameters derived from AMMI model. Indian Journal of Genetics and Plant Breeding
-      (The), 79(2), 460-466.
+      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2019). ammistability: R package for ranking genotypes based on stability
+      parameters derived from AMMI model. Indian Journal of Genetics and Plant Breeding (The), 79(2), 460-466.
       http://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model
 
-      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (NA).  ammistability: Additive Main Effects and
-      Multiplicative Interaction Model Stability Parameters. R package version 0.1.2.9000,
-      https://ajaygpb.github.io/ammistability/, https://CRAN.R-project.org/package=ammistability.
+      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (NA).  ammistability: Additive Main Effects and Multiplicative Interaction
+      Model Stability Parameters. R package version 0.1.2.9000, https://ajaygpb.github.io/ammistability/,
+      https://CRAN.R-project.org/package=ammistability.
 
-    This free and open-source software implements academic research by the authors and co-workers. If you use
-    it, please support the project by citing the package.
+    This free and open-source software implements academic research by the authors and co-workers. If you use it, please support
+    the project by citing the package.
     To see these entries in BibTeX format, use 'print(<citation>, bibtex=TRUE)', 'toBibtex(.)', or set
     'options(citation.bibtex.max=999)'.
