@@ -25,8 +25,8 @@ citEntry(entry  = "article",
          volume = "79",
          number = "2",
          pages = "460--466",
-         url = "http://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model",
-         textVersion =  "Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2019). ammistability: R package for ranking genotypes based on stability parameters derived from AMMI model. Indian Journal of Genetics and Plant Breeding (The), 79(2), 460-466. http://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model")
+         url = "https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model",
+         textVersion =  "Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2019). ammistability: R package for ranking genotypes based on stability parameters derived from AMMI model. Indian Journal of Genetics and Plant Breeding (The), 79(2), 460-466. https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model")
 
 citEntry(entry  = "Manual",
          title  = "ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters",

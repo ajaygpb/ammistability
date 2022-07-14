@@ -18,7 +18,7 @@ devtools::load_all(".")
 
 ```
 
-###### Version : [`r getNamespaceVersion("ammistability")`](https://ajaygpb.github.io/ammistability/); Copyright (C) 2017-`r  format(Sys.Date(), "%Y")`: [ICAR-DGR](http://www.dgr.org.in/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [`r getNamespaceVersion("ammistability")`](https://ajaygpb.github.io/ammistability/); Copyright (C) 2017-`r  format(Sys.Date(), "%Y")`: [ICAR-DGR](https://www.dgr.org.in/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Ajay, B. C.^1^, Aravind, J.^2^ and Abdul Fiyaz, R^3^*
 
@@ -128,7 +128,7 @@ library(RCurl)
 if (url.exists(chkurl)) {
   chklink <- paste("(", chkurl,  ")", sep = "")
 } else {
-  chklink <- "(https://cran.r-project.org/web/checks/check_results_ajaygpb_at_yahoo.co.in.html)"
+  chklink <- "(https://cran.r-project.org/src/contrib/Archive/ammistability/)"
 }
 
 osdf$`CRAN check` <- paste("[![CRAN check - ", osdf$Flavour, "]",
