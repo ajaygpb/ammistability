@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ammistability</a>
-        <span class="version label label-primary" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2.9000</span>
+        <span class="version label label-primary" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
       </span>
     </div>
 
@@ -87,20 +87,20 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">rankslopegraph</span><span class="op">(</span>
-  <span class="va">df</span>,
-  <span class="va">names</span>,
-  <span class="va">group</span>,
-  force.grouping <span class="op">=</span> <span class="cn">TRUE</span>,
-  line.size <span class="op">=</span> <span class="fl">1</span>,
-  line.alpha <span class="op">=</span> <span class="fl">0.5</span>,
-  line.col <span class="op">=</span> <span class="cn">NULL</span>,
-  point.size <span class="op">=</span> <span class="fl">1</span>,
-  point.alpha <span class="op">=</span> <span class="fl">0.5</span>,
-  point.col <span class="op">=</span> <span class="cn">NULL</span>,
-  text.size <span class="op">=</span> <span class="fl">2</span>,
-  legend.position <span class="op">=</span> <span class="st">"bottom"</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">rankslopegraph</span><span class="op">(</span></span>
+<span>  <span class="va">df</span>,</span>
+<span>  <span class="va">names</span>,</span>
+<span>  <span class="va">group</span>,</span>
+<span>  force.grouping <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  line.size <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>  line.alpha <span class="op">=</span> <span class="fl">0.5</span>,</span>
+<span>  line.col <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  point.size <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>  point.alpha <span class="op">=</span> <span class="fl">0.5</span>,</span>
+<span>  point.col <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  text.size <span class="op">=</span> <span class="fl">2</span>,</span>
+<span>  legend.position <span class="op">=</span> <span class="st">"bottom"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -177,16 +177,16 @@ ISBN 0-9613921-0-X.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">agricolae</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">soil</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">dec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"pH"</span>, <span class="st">"EC"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">inc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"CaCO3"</span>, <span class="st">"MO"</span>, <span class="st">"CIC"</span>, <span class="st">"P"</span>, <span class="st">"K"</span>, <span class="st">"sand"</span>,</span>
-<span class="r-in">         <span class="st">"slime"</span>, <span class="st">"clay"</span>, <span class="st">"Ca"</span>, <span class="st">"Mg"</span>, <span class="st">"K2"</span>, <span class="st">"Na"</span>, <span class="st">"Al_H"</span>, <span class="st">"K_Mg"</span>, <span class="st">"Ca_Mg"</span>,</span>
-<span class="r-in">         <span class="st">"B"</span>, <span class="st">"Cu"</span>, <span class="st">"Fe"</span>, <span class="st">"Mn"</span>, <span class="st">"Zn"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">soilrank</span> <span class="op">&lt;-</span> <span class="fu"><a href="rankdf.html">rankdf</a></span><span class="op">(</span><span class="va">soil</span>, increasing <span class="op">=</span> <span class="va">inc</span>, decreasing <span class="op">=</span> <span class="va">dec</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">soilrank</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">agricolae</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">soil</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">dec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"pH"</span>, <span class="st">"EC"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">inc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"CaCO3"</span>, <span class="st">"MO"</span>, <span class="st">"CIC"</span>, <span class="st">"P"</span>, <span class="st">"K"</span>, <span class="st">"sand"</span>,</span></span>
+<span class="r-in"><span>         <span class="st">"slime"</span>, <span class="st">"clay"</span>, <span class="st">"Ca"</span>, <span class="st">"Mg"</span>, <span class="st">"K2"</span>, <span class="st">"Na"</span>, <span class="st">"Al_H"</span>, <span class="st">"K_Mg"</span>, <span class="st">"Ca_Mg"</span>,</span></span>
+<span class="r-in"><span>         <span class="st">"B"</span>, <span class="st">"Cu"</span>, <span class="st">"Fe"</span>, <span class="st">"Mn"</span>, <span class="st">"Zn"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">soilrank</span> <span class="op">&lt;-</span> <span class="fu"><a href="rankdf.html">rankdf</a></span><span class="op">(</span><span class="va">soil</span>, increasing <span class="op">=</span> <span class="va">inc</span>, decreasing <span class="op">=</span> <span class="va">dec</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">soilrank</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     place   pH EC CaCO3   MO CIC  P  K sand slime clay Ca Mg K2   Na Al_H K_Mg</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  Namora 13.0  7   4.5  5.0   1  3  1 13.0   2.0  1.0  1  2  2  6.5   11   11</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2    Hyo1  5.0  4  10.0 11.0  10  7  8  1.0  11.0 13.0 13  7  8  4.0    4    6</span>
@@ -215,8 +215,8 @@ ISBN 0-9613921-0-X.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11     2  8  3.0  6.0  6.0  3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 12     1  1  8.5 12.0 11.0  4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 13     3  3 12.0 13.0 12.0  8</span>
-<span class="r-in"><span class="va">soilslopeg</span> <span class="op">&lt;-</span> <span class="fu">rankslopegraph</span><span class="op">(</span><span class="va">soilrank</span>, names <span class="op">=</span> <span class="st">"place"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">soilslopeg</span></span>
+<span class="r-in"><span><span class="va">soilslopeg</span> <span class="op">&lt;-</span> <span class="fu">rankslopegraph</span><span class="op">(</span><span class="va">soilrank</span>, names <span class="op">=</span> <span class="st">"place"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">soilslopeg</span></span></span>
 <span class="r-plt img"><img src="rankslopegraph-1.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>

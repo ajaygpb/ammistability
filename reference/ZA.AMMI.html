@@ -30,7 +30,7 @@ ssi.method. "><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/lib
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ammistability</a>
-        <span class="version label label-primary" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2.9000</span>
+        <span class="version label label-primary" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
       </span>
     </div>
 
@@ -101,7 +101,7 @@ and Stability (SSI) is also calculated according to the argument
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">ZA.AMMI</span><span class="op">(</span><span class="va">model</span>, <span class="va">n</span>, alpha <span class="op">=</span> <span class="fl">0.05</span>, ssi.method <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"farshadfar"</span>, <span class="st">"rao"</span><span class="op">)</span>, a <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">ZA.AMMI</span><span class="op">(</span><span class="va">model</span>, <span class="va">n</span>, alpha <span class="op">=</span> <span class="fl">0.05</span>, ssi.method <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"farshadfar"</span>, <span class="st">"rao"</span><span class="op">)</span>, a <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -183,14 +183,14 @@ interaction effect..</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">agricolae</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">plrv</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># AMMI model</span></span>
-<span class="r-in"><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">plrv</span>, <span class="fu"><a href="https://rdrr.io/pkg/agricolae/man/AMMI.html" class="external-link">AMMI</a></span><span class="op">(</span><span class="va">Locality</span>, <span class="va">Genotype</span>, <span class="va">Rep</span>, <span class="va">Yield</span>, console <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># ANOVA</span></span>
-<span class="r-in"><span class="va">model</span><span class="op">$</span><span class="va">ANOVA</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">agricolae</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">plrv</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># AMMI model</span></span></span>
+<span class="r-in"><span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">plrv</span>, <span class="fu"><a href="https://rdrr.io/pkg/agricolae/man/AMMI.html" class="external-link">AMMI</a></span><span class="op">(</span><span class="va">Locality</span>, <span class="va">Genotype</span>, <span class="va">Rep</span>, <span class="va">Yield</span>, console <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># ANOVA</span></span></span>
+<span class="r-in"><span><span class="va">model</span><span class="op">$</span><span class="va">ANOVA</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Analysis of Variance Table</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Response: Y</span>
@@ -202,18 +202,18 @@ interaction effect..</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Residuals 324  11998    37.0                       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ---</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># IPC F test</span></span>
-<span class="r-in"><span class="va">model</span><span class="op">$</span><span class="va">analysis</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># IPC F test</span></span></span>
+<span class="r-in"><span><span class="va">model</span><span class="op">$</span><span class="va">analysis</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     percent  acum Df     Sum.Sq   Mean.Sq F.value   Pr.F</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> PC1    56.3  56.3 31 13368.5954 431.24501   11.65 0.0000</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> PC2    27.1  83.3 29  6427.5799 221.64069    5.99 0.0000</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> PC3     9.4  92.7 27  2241.9398  83.03481    2.24 0.0005</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> PC4     4.3  97.1 25  1027.5785  41.10314    1.11 0.3286</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> PC5     2.9 100.0 23   696.1012  30.26527    0.82 0.7059</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Mean yield and IPC scores</span></span>
-<span class="r-in"><span class="va">model</span><span class="op">$</span><span class="va">biplot</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Mean yield and IPC scores</span></span></span>
+<span class="r-in"><span><span class="va">model</span><span class="op">$</span><span class="va">biplot</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         type    Yield         PC1          PC2         PC3         PC4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 102.18   GEN 26.31947 -1.50828851  1.258765244 -0.19220309  0.48738861</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 104.22   GEN 31.28887  0.32517729 -1.297024517 -0.63695749 -0.44159957</span>
@@ -284,9 +284,9 @@ interaction effect..</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> LM-03   -0.40285728</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> SR-02    1.37283488</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> SR-03   -3.18065538</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># G*E matrix (deviations from mean)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/array.html" class="external-link">array</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">genXenv</span>, <span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">genXenv</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/dimnames.html" class="external-link">dimnames</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">genXenv</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># G*E matrix (deviations from mean)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/array.html" class="external-link">array</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">genXenv</span>, <span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">genXenv</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/dimnames.html" class="external-link">dimnames</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">genXenv</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>          ENV</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> GEN              Ayac      Hyo-02       LM-02       LM-03        SR-02</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   102.18    5.5726162 -12.4918224   1.7425251  -2.7070438   2.91734869</span>
@@ -347,9 +347,9 @@ interaction effect..</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Canchan  -5.0638348</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Desiree  14.7808522</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Unica    -2.1089651</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># With default n (N') and default ssi.method (farshadfar)</span></span>
-<span class="r-in"><span class="fu">ZA.AMMI</span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># With default n (N') and default ssi.method (farshadfar)</span></span></span>
+<span class="r-in"><span><span class="fu">ZA.AMMI</span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                 Za SSI rZa rY    means</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 102.18  0.15752787  41  18 23 26.31947</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 104.22  0.08552245  20   7 13 31.28887</span>
@@ -379,9 +379,9 @@ interaction effect..</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Canchan 0.14710608  35  15 20 27.00126</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Desiree 0.32787182  56  28 28 16.15569</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Unica   0.21646330  28  26  2 39.10400</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># With n = 4 and default ssi.method (farshadfar)</span></span>
-<span class="r-in"><span class="fu">ZA.AMMI</span><span class="op">(</span><span class="va">model</span>, n <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># With n = 4 and default ssi.method (farshadfar)</span></span></span>
+<span class="r-in"><span><span class="fu">ZA.AMMI</span><span class="op">(</span><span class="va">model</span>, n <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                 Za SSI rZa rY    means</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 102.18  0.16239946  41  18 23 26.31947</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 104.22  0.08993636  21   8 13 31.28887</span>
@@ -411,9 +411,9 @@ interaction effect..</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Canchan 0.14787755  32  12 20 27.00126</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Desiree 0.32833640  56  28 28 16.15569</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Unica   0.22289692  27  25  2 39.10400</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># With default n (N') and ssi.method = "rao"</span></span>
-<span class="r-in"><span class="fu">ZA.AMMI</span><span class="op">(</span><span class="va">model</span>, ssi.method <span class="op">=</span> <span class="st">"rao"</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># With default n (N') and ssi.method = "rao"</span></span></span>
+<span class="r-in"><span><span class="fu">ZA.AMMI</span><span class="op">(</span><span class="va">model</span>, ssi.method <span class="op">=</span> <span class="st">"rao"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                 Za       SSI rZa rY    means</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 102.18  0.15752787 1.4309653  18 23 26.31947</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 104.22  0.08552245 2.0752658   7 13 31.28887</span>
@@ -443,9 +443,9 @@ interaction effect..</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Canchan 0.14710608 1.4937760  15 20 27.00126</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Desiree 0.32787182 0.8019725  28 28 16.15569</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Unica   0.21646330 1.6918583  26  2 39.10400</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Changing the ratio of weights for Rao's SSI</span></span>
-<span class="r-in"><span class="fu">ZA.AMMI</span><span class="op">(</span><span class="va">model</span>, ssi.method <span class="op">=</span> <span class="st">"rao"</span>, a <span class="op">=</span> <span class="fl">0.43</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Changing the ratio of weights for Rao's SSI</span></span></span>
+<span class="r-in"><span><span class="fu">ZA.AMMI</span><span class="op">(</span><span class="va">model</span>, ssi.method <span class="op">=</span> <span class="st">"rao"</span>, a <span class="op">=</span> <span class="fl">0.43</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                 Za       SSI rZa rY    means</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 102.18  0.15752787 1.1044675  18 23 26.31947</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 104.22  0.08552245 1.4738739   7 13 31.28887</span>
@@ -475,7 +475,7 @@ interaction effect..</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Canchan 0.14710608 1.1441472  15 20 27.00126</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Desiree 0.32787182 0.6451047  28 28 16.15569</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Unica   0.21646330 1.4542544  26  2 39.10400</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
