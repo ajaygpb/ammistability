@@ -1,3 +1,13 @@
+ Version 0.1.3 - First submission
+
+* Fixed issue with re-building of vignette outputs and running of examples.
+
+### Test environments
+* local Windows 10 Pro 21H2, R-release (R 4.2.0) & R-devel (R 4.3.0 Pre-release).
+* local Ubuntu 20.04, R-release (R 4.2.0) & R-devel (R 4.3.0 Pre-release).
+* win-builder, R-release (R 4.2.0) & R-devel (R 4.3.0 Pre-release).
+* rhub:macos-highsierra-release-cran - x86_64-apple-darwin17.0 (64-bit), R-release (R 4.2.0).
+
 # Version 0.1.2 - First submission
 
 * Fixed `cairo_pdf` unconditional use.
