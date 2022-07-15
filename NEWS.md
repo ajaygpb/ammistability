@@ -1,5 +1,8 @@
 # ammistability  0.1.3
 
+## UPDATED FUNCTIONS:
+* `rankslopegraph ` - Fixed issue with duplicate ranks.
+
 ## VIGNETTE:
 * Fixed fetching CRAN page for version history to fail gracefully when access is down.
 
