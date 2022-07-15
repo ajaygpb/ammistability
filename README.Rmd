@@ -27,6 +27,8 @@ devtools::load_all(".")
 3. ICAR-Indian Institute of Rice Research, Hyderabad.
 
 ***
+
+<!-- badges: start -->
 [![minimal R version](https://img.shields.io/badge/R>%3D-3.0.2-6666ff.svg?logo=R)](https://cran.r-project.org/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version-last-release/ammistability)](https://cran.r-project.org/package=ammistability)
@@ -51,6 +53,7 @@ cat(paste("[![develVersion](https://img.shields.io/badge/devel%20version-", dver
 <!-- [![Rdoc](https://www.rdocumentation.org/badges/version/ammistability)](https://www.rdocumentation.org/packages/ammistability) -->
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/ajaygpb/ammistability) -->
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/ajaygpb/ammistability/total.svg)] -->
+<!-- badges: end -->
 
 ***
 

@@ -11,6 +11,8 @@
 
 ------------------------------------------------------------------------
 
+<!-- badges: start -->
+
 [![minimal R
 version](https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg?logo=R)](https://cran.r-project.org/)
 [![License: GPL
@@ -37,6 +39,7 @@ pkgdown](https://img.shields.io/website-up-down-green-red/https/ajaygpb.github.i
 <!-- [![Rdoc](https://www.rdocumentation.org/badges/version/ammistability)](https://www.rdocumentation.org/packages/ammistability) -->
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/ajaygpb/ammistability) -->
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/ajaygpb/ammistability/total.svg)] -->
+<!-- badges: end -->
 
 ------------------------------------------------------------------------
 
@@ -264,9 +267,9 @@ citation("ammistability")
 
       Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2019). ammistability: R package for ranking genotypes based on stability
       parameters derived from AMMI model. Indian Journal of Genetics and Plant Breeding (The), 79(2), 460-466.
-      doi:10.31742/IJGPB.79.2.10
+      https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model
 
-      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2022).  ammistability: Additive Main Effects and Multiplicative Interaction
+      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (NA).  ammistability: Additive Main Effects and Multiplicative Interaction
       Model Stability Parameters. R package version 0.1.3, https://ajaygpb.github.io/ammistability/,
       https://CRAN.R-project.org/package=ammistability.
 
