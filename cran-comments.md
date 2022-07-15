@@ -8,6 +8,9 @@
 * win-builder, R-release (R 4.2.0) & R-devel (R 4.3.0 Pre-release).
 * rhub:macos-highsierra-release-cran - x86_64-apple-darwin17.0 (64-bit), R-release (R 4.2.0).
 
+### R CMD check results
+* There were no ERRORs, NOTES or WARNINGs.
+
 # Version 0.1.2 - First submission
 
 * Fixed `cairo_pdf` unconditional use.
