@@ -1,9 +1,9 @@
 pandoc: 2.7.3
-pkgdown: 2.0.5
+pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   Introduction: Introduction.html
-last_built: 2022-07-17T21:45Z
+last_built: 2022-07-18T20:23Z
 urls:
   reference: https://ajaygpb.github.io/ammistability/reference
   article: https://ajaygpb.github.io/ammistability/articles
