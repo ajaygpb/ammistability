@@ -1,7 +1,7 @@
 
 ## `ammistability`: Additive Main Effects and Multiplicative Interaction Model Stability Parameters <img src="https://raw.githubusercontent.com/ajaygpb/ammistability/master/inst/extdata/ammistability.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
 
-###### Version : [0.1.3](https://ajaygpb.github.io/ammistability/); Copyright (C) 2017-2022: [ICAR-DGR](https://www.dgr.org.in/); License: [GPL-2\|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [0.1.3.9000](https://ajaygpb.github.io/ammistability/); Copyright (C) 2017-2022: [ICAR-DGR](https://www.dgr.org.in/); License: [GPL-2\|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Ajay, B. C.<sup>1</sup>, Aravind, J.<sup>2</sup> and Abdul Fiyaz, R<sup>3</sup>*
 
@@ -21,14 +21,14 @@ v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org
 [![Dependencies](https://tinyverse.netlify.com/badge/ammistability)](https://cran.r-project.org/package=ammistability)
 [![rstudio mirror
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/ammistability?color=green)](https://CRAN.R-project.org/package=ammistability)
-[![develVersion](https://img.shields.io/badge/devel%20version-0.1.3-orange.svg)](https://github.com/ajaygpb/ammistability)
+[![develVersion](https://img.shields.io/badge/devel%20version-0.1.3.9000-orange.svg)](https://github.com/ajaygpb/ammistability)
 [![Github Code
 Size](https://img.shields.io/github/languages/code-size/ajaygpb/ammistability.svg)](https://github.com/ajaygpb/ammistability)
 [![R-CMD-check](https://github.com/ajaygpb/ammistability/workflows/R-CMD-check/badge.svg)](https://github.com/ajaygpb/ammistability/actions)
 [![Project Status:
 Inactive](http://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2022--07--15-yellowgreen.svg)](https://github.com/ajaygpb/ammistability/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2022--07--18-yellowgreen.svg)](https://github.com/ajaygpb/ammistability/commits/master)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1344756.svg)](https://doi.org/10.5281/zenodo.1344756)
 [![Pub
@@ -121,7 +121,7 @@ CRAN check
 <tbody>
 <tr grouplength="6">
 <td colspan="2" style="border-bottom: 1px solid;">
-<strong>[![Linux](https://shields.io/badge/Linux--9cf?logo=Linux&style=social)](https://cran.r-project.org/src/contrib/Archive/ammistability/)</strong>
+<strong>[![Linux](https://shields.io/badge/Linux--9cf?logo=Linux&style=social)](https://cran.r-project.org/web/checks/check_results_ammistability.html)</strong>
 </td>
 </tr>
 <tr>
@@ -130,7 +130,7 @@ r-devel-linux-x86_64-debian-clang
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-devel-linux-x86_64-debian-clang](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-debian-clang/ammistability)](https://cran.r-project.org/src/contrib/Archive/ammistability/)
+r-devel-linux-x86_64-debian-clang](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-debian-clang/ammistability)](https://cran.r-project.org/web/checks/check_results_ammistability.html)
 </td>
 </tr>
 <tr>
@@ -139,7 +139,7 @@ r-devel-linux-x86_64-debian-gcc
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-devel-linux-x86_64-debian-gcc](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-debian-gcc/ammistability)](https://cran.r-project.org/src/contrib/Archive/ammistability/)
+r-devel-linux-x86_64-debian-gcc](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-debian-gcc/ammistability)](https://cran.r-project.org/web/checks/check_results_ammistability.html)
 </td>
 </tr>
 <tr>
@@ -148,7 +148,7 @@ r-devel-linux-x86_64-fedora-clang
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-devel-linux-x86_64-fedora-clang](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-fedora-clang/ammistability)](https://cran.r-project.org/src/contrib/Archive/ammistability/)
+r-devel-linux-x86_64-fedora-clang](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-fedora-clang/ammistability)](https://cran.r-project.org/web/checks/check_results_ammistability.html)
 </td>
 </tr>
 <tr>
@@ -157,7 +157,7 @@ r-devel-linux-x86_64-fedora-gcc
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-devel-linux-x86_64-fedora-gcc](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-fedora-gcc/ammistability)](https://cran.r-project.org/src/contrib/Archive/ammistability/)
+r-devel-linux-x86_64-fedora-gcc](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-fedora-gcc/ammistability)](https://cran.r-project.org/web/checks/check_results_ammistability.html)
 </td>
 </tr>
 <tr>
@@ -166,7 +166,7 @@ r-patched-linux-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-patched-linux-x86_64](https://cranchecks.info/badges/flavor/r-patched-linux-x86_64/ammistability)](https://cran.r-project.org/src/contrib/Archive/ammistability/)
+r-patched-linux-x86_64](https://cranchecks.info/badges/flavor/r-patched-linux-x86_64/ammistability)](https://cran.r-project.org/web/checks/check_results_ammistability.html)
 </td>
 </tr>
 <tr>
@@ -175,12 +175,12 @@ r-release-linux-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-release-linux-x86_64](https://cranchecks.info/badges/flavor/r-release-linux-x86_64/ammistability)](https://cran.r-project.org/src/contrib/Archive/ammistability/)
+r-release-linux-x86_64](https://cranchecks.info/badges/flavor/r-release-linux-x86_64/ammistability)](https://cran.r-project.org/web/checks/check_results_ammistability.html)
 </td>
 </tr>
 <tr grouplength="3">
 <td colspan="2" style="border-bottom: 1px solid;">
-<strong>[![Windows](https://shields.io/badge/Windows--9cf?logo=Windows&style=social)](https://cran.r-project.org/src/contrib/Archive/ammistability/)</strong>
+<strong>[![Windows](https://shields.io/badge/Windows--9cf?logo=Windows&style=social)](https://cran.r-project.org/web/checks/check_results_ammistability.html)</strong>
 </td>
 </tr>
 <tr>
@@ -189,7 +189,7 @@ r-devel-windows-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-devel-windows-x86_64](https://cranchecks.info/badges/flavor/r-devel-windows-x86_64/ammistability)](https://cran.r-project.org/src/contrib/Archive/ammistability/)
+r-devel-windows-x86_64](https://cranchecks.info/badges/flavor/r-devel-windows-x86_64/ammistability)](https://cran.r-project.org/web/checks/check_results_ammistability.html)
 </td>
 </tr>
 <tr>
@@ -198,7 +198,7 @@ r-release-windows-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-release-windows-x86_64](https://cranchecks.info/badges/flavor/r-release-windows-x86_64/ammistability)](https://cran.r-project.org/src/contrib/Archive/ammistability/)
+r-release-windows-x86_64](https://cranchecks.info/badges/flavor/r-release-windows-x86_64/ammistability)](https://cran.r-project.org/web/checks/check_results_ammistability.html)
 </td>
 </tr>
 <tr>
@@ -207,12 +207,12 @@ r-oldrel-windows-ix86+x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-oldrel-windows-ix86+x86_64](https://cranchecks.info/badges/flavor/r-oldrel-windows-ix86+x86_64/ammistability)](https://cran.r-project.org/src/contrib/Archive/ammistability/)
+r-oldrel-windows-ix86+x86_64](https://cranchecks.info/badges/flavor/r-oldrel-windows-ix86+x86_64/ammistability)](https://cran.r-project.org/web/checks/check_results_ammistability.html)
 </td>
 </tr>
 <tr grouplength="4">
 <td colspan="2" style="border-bottom: 1px solid;">
-<strong>[![MacOS](https://shields.io/badge/MacOS--9cf?logo=Apple&style=social)](https://cran.r-project.org/src/contrib/Archive/ammistability/)</strong>
+<strong>[![MacOS](https://shields.io/badge/MacOS--9cf?logo=Apple&style=social)](https://cran.r-project.org/web/checks/check_results_ammistability.html)</strong>
 </td>
 </tr>
 <tr>
@@ -221,7 +221,7 @@ r-release-macos-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-release-macos-x86_64](https://cranchecks.info/badges/flavor/r-release-macos-x86_64/ammistability)](https://cran.r-project.org/src/contrib/Archive/ammistability/)
+r-release-macos-x86_64](https://cranchecks.info/badges/flavor/r-release-macos-x86_64/ammistability)](https://cran.r-project.org/web/checks/check_results_ammistability.html)
 </td>
 </tr>
 <tr>
@@ -230,7 +230,7 @@ r-oldrel-macos-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-oldrel-macos-x86_64](https://cranchecks.info/badges/flavor/r-oldrel-macos-x86_64/ammistability)](https://cran.r-project.org/src/contrib/Archive/ammistability/)
+r-oldrel-macos-x86_64](https://cranchecks.info/badges/flavor/r-oldrel-macos-x86_64/ammistability)](https://cran.r-project.org/web/checks/check_results_ammistability.html)
 </td>
 </tr>
 <tr>
@@ -239,7 +239,7 @@ r-release-macos-arm64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-release-macos-arm64](https://cranchecks.info/badges/flavor/r-release-macos-arm64/ammistability)](https://cran.r-project.org/src/contrib/Archive/ammistability/)
+r-release-macos-arm64](https://cranchecks.info/badges/flavor/r-release-macos-arm64/ammistability)](https://cran.r-project.org/web/checks/check_results_ammistability.html)
 </td>
 </tr>
 <tr>
@@ -248,7 +248,7 @@ r-oldrel-macos-arm64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-oldrel-macos-arm64](https://cranchecks.info/badges/flavor/r-oldrel-macos-arm64/ammistability)](https://cran.r-project.org/src/contrib/Archive/ammistability/)
+r-oldrel-macos-arm64](https://cranchecks.info/badges/flavor/r-oldrel-macos-arm64/ammistability)](https://cran.r-project.org/web/checks/check_results_ammistability.html)
 </td>
 </tr>
 </tbody>
@@ -265,15 +265,15 @@ citation("ammistability")
 
     To cite the R package 'ammistability' in publications use:
 
-      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2019). ammistability: R package for ranking genotypes based on stability
-      parameters derived from AMMI model. Indian Journal of Genetics and Plant Breeding (The), 79(2), 460-466.
+      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2019). ammistability: R package for ranking genotypes based on stability parameters
+      derived from AMMI model. Indian Journal of Genetics and Plant Breeding (The), 79(2), 460-466.
       https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model
 
-      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (NA).  ammistability: Additive Main Effects and Multiplicative Interaction
-      Model Stability Parameters. R package version 0.1.3, https://ajaygpb.github.io/ammistability/,
+      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (NA).  ammistability: Additive Main Effects and Multiplicative Interaction Model
+      Stability Parameters. R package version 0.1.3.9000, https://ajaygpb.github.io/ammistability/,
       https://CRAN.R-project.org/package=ammistability.
 
-    This free and open-source software implements academic research by the authors and co-workers. If you use it, please support
-    the project by citing the package.
+    This free and open-source software implements academic research by the authors and co-workers. If you use it, please support the
+    project by citing the package.
     To see these entries in BibTeX format, use 'print(<citation>, bibtex=TRUE)', 'toBibtex(.)', or set
     'options(citation.bibtex.max=999)'.
