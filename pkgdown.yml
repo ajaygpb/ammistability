@@ -3,7 +3,7 @@ pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   Introduction: Introduction.html
-last_built: 2022-07-18T20:23Z
+last_built: 2022-07-18T20:29Z
 urls:
   reference: https://ajaygpb.github.io/ammistability/reference
   article: https://ajaygpb.github.io/ammistability/articles
