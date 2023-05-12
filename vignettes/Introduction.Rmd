@@ -262,51 +262,51 @@ library(ammistability)
 ```
 
 #### AMMI model from `agricolae::AMMI`
-```{r, runCode, code = getCode("AMGE.AMMI", "ammistability")[(1:19)]}
+```{r, runCode-AMMI, code = getCode("AMGE.AMMI", "ammistability")[(1:19)]}
 ```
 
 #### `AMGE.AMMI()`
-```{r, runCode, code = getCode("AMGE.AMMI", "ammistability")[-(1:19)]}
+```{r, runCode-AMGE.AMMI, code = getCode("AMGE.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `ASI.AMMI()`
-```{r, runCode, code = getCode("ASI.AMMI", "ammistability")[-(1:19)]}
+```{r, runCode-ASI.AMMI, code = getCode("ASI.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `ASTAB.AMMI()`
-```{r, runCode, code = getCode("ASTAB.AMMI", "ammistability")[-(1:19)]}
+```{r, runCode-ASTAB.AMMI, code = getCode("ASTAB.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `AVAMGE.AMMI()`
-```{r, runCode, code = getCode("AVAMGE.AMMI", "ammistability")[-(1:19)]}
+```{r, runCode-AVAMGE.AMMI, code = getCode("AVAMGE.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `DA.AMMI()`
-```{r, runCode, code = getCode("DA.AMMI", "ammistability")[-(1:19)]}
+```{r, runCode-DA.AMMI, code = getCode("DA.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `DZ.AMMI()`
-```{r, runCode, code = getCode("DZ.AMMI", "ammistability")[-(1:19)]}
+```{r, runCode-DZ.AMMI, code = getCode("DZ.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `EV.AMMI()`
-```{r, runCode, code = getCode("EV.AMMI", "ammistability")[-(1:19)]}
+```{r, runCode-EV.AMMI, code = getCode("EV.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `FA.AMMI()`
-```{r, runCode, code = getCode("FA.AMMI", "ammistability")[-(1:19)]}
+```{r, runCode-FA.AMMI, code = getCode("FA.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `MASV.AMMI()`
-```{r, runCode, code = getCode("MASV.AMMI", "ammistability")[-(1:19)]}
+```{r, runCode-MASV.AMMI, code = getCode("MASV.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `SIPC.AMMI()`
-```{r, runCode, code = getCode("SIPC.AMMI", "ammistability")[-(1:19)]}
+```{r, runCode-SIPC.AMMI, code = getCode("SIPC.AMMI", "ammistability")[-(1:19)]}
 ```
 
 #### `ZA.AMMI()`
-```{r, runCode, code = getCode("ZA.AMMI", "ammistability")[-(1:19)]}
+```{r, runCode-ZA.AMMI, code = getCode("ZA.AMMI", "ammistability")[-(1:19)]}
 ```
 
 ## Simultaneous selection indices for yield and stability
@@ -360,7 +360,7 @@ require(ammistability)
 ```
 
 #### `SSI()`
-```{r, runCode, code = getCode("SSI", "ammistability")}
+```{r, runCode-SSI, code = getCode("SSI", "ammistability")}
 ```
 
 ## Wrapper function
@@ -384,7 +384,7 @@ require(ammistability)
 ```
 
 #### `ammistability()`
-```{r, runCode, code = getCode("ammistability", "ammistability")}
+```{r, runCode-ammistability, code = getCode("ammistability", "ammistability")}
 ```
 
 ## Citing `ammistability`

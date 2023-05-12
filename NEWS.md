@@ -1,5 +1,8 @@
 # ammistability  0.1.4
 
+## VIGNETTE:
+* Resolved duplicate chunk labels.
+
 # ammistability  0.1.3
 
 ## UPDATED FUNCTIONS:
