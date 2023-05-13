@@ -106,14 +106,17 @@
 
       
 
-      </header><script src="Introduction_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>The <code>ammistability</code> Package: A Brief Introduction</h1>
-                        <h4 data-toc-skip class="author">Ajay, B. C.<sup>1</sup>, Aravind, J.<sup>2</sup>, and Abdul Fiyaz, R.<sup>3</sup>
+      <h1 data-toc-skip>The <code>ammistability</code> Package: A Brief
+Introduction</h1>
+                        <h4 data-toc-skip class="author">Ajay, B.
+C.<sup>1</sup>, Aravind, J.<sup>2</sup>, and Abdul Fiyaz,
+R.<sup>3</sup>
 </h4>
             
-            <h4 data-toc-skip class="date">2022-07-18</h4>
+            <h4 data-toc-skip class="date">2023-05-13</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ajaygpb/ammistability/blob/HEAD/vignettes/Introduction.Rmd" class="external-link"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
@@ -144,9 +147,16 @@
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
-<p>The package <code>ammistability</code> <span class="citation">(Ajay et al., <a href="#ref-ajay2019ammistability" role="doc-biblioref">2019</a><a href="#ref-ajay2019ammistability" role="doc-biblioref">a</a>)</span> is a collection of functions for the computation of various stability parameters from the results of Additive Main Effects and Multiplicative Interaction (AMMI) analysis computed by the <a href="https://www.rdocumentation.org/packages/agricolae/versions/1.2-8/topics/AMMI" class="external-link"><code>AMMI</code></a> function of <a href="https://CRAN.R-project.org/package=agricolae" class="external-link"><code>agricolae</code></a> package.</p>
-<p>The goal of this vignette is to introduce the users to these functions and give a primer in computation of various stability parameters/indices from a fitted AMMI model. This document assumes a basic knowledge of <code>R</code> programming language.</p>
-
+<p>The package <code>ammistability</code> <span class="citation">(<a href="#ref-ajay2019ammistability" role="doc-biblioref">Ajay et al.,
+2019a</a>)</span> is a collection of functions for the computation of
+various stability parameters from the results of Additive Main Effects
+and Multiplicative Interaction (AMMI) analysis computed by the <a href="https://www.rdocumentation.org/packages/agricolae/versions/1.2-8/topics/AMMI" class="external-link"><code>AMMI</code></a>
+function of <a href="https://CRAN.R-project.org/package=agricolae" class="external-link"><code>agricolae</code></a>
+package.</p>
+<p>The goal of this vignette is to introduce the users to these
+functions and give a primer in computation of various stability
+parameters/indices from a fitted AMMI model. This document assumes a
+basic knowledge of <code>R</code> programming language.</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -185,8 +195,10 @@ Welcome to ammistability version 0.1.3.9000
 <div class="section level2">
 <h2 id="version-history">Version History<a class="anchor" aria-label="anchor" href="#version-history"></a>
 </h2>
-<p>The current version of the package is 0.1.3. The previous versions are as follows.</p>
-<p><strong>Table 1.</strong> Version history of <code>ammistability</code> <code>R</code> package.</p>
+<p>The current version of the package is 0.1.3.9000. The previous
+versions are as follows.</p>
+<p><strong>Table 1.</strong> Version history of
+<code>ammistability</code> <code>R</code> package.</p>
 <table class="table">
 <thead><tr class="header">
 <th align="left">Version</th>
@@ -205,26 +217,51 @@ Welcome to ammistability version 0.1.3.9000
 <td align="left">0.1.2</td>
 <td align="left">2021-02-23</td>
 </tr>
+<tr class="even">
+<td align="left">0.1.3</td>
+<td align="left">2022-07-18</td>
+</tr>
 </tbody>
 </table>
-<p>To know detailed history of changes use <code>news(package='ammistability')</code>.</p>
+<p>To know detailed history of changes use
+<code>news(package='ammistability')</code>.</p>
 </div>
 <div class="section level2">
 <h2 id="ammi-model">AMMI model<a class="anchor" aria-label="anchor" href="#ammi-model"></a>
 </h2>
-<p>The difference in response of genotypes to different environmental conditions is known as Genotype-Environment Interaction (GEI). Understanding the nature and structure of this interaction is critical for plant breeders to select for genotypes with wide or specific adaptability. One of the most popular techniques to achieve this is by fitting the Additive Main Effects and Multiplicative Interaction (AMMI) model to the results of multi environment trials <span class="citation">(Gauch, <a href="#ref-gauch_model_1988" role="doc-biblioref">1988</a>, <a href="#ref-gauch_statistical_1992" role="doc-biblioref">1992</a>)</span>.</p>
+<p>The difference in response of genotypes to different environmental
+conditions is known as Genotype-Environment Interaction (GEI).
+Understanding the nature and structure of this interaction is critical
+for plant breeders to select for genotypes with wide or specific
+adaptability. One of the most popular techniques to achieve this is by
+fitting the Additive Main Effects and Multiplicative Interaction (AMMI)
+model to the results of multi environment trials <span class="citation">(<a href="#ref-gauch_model_1988" role="doc-biblioref">Gauch, 1988</a>, <a href="#ref-gauch_statistical_1992" role="doc-biblioref">1992</a>)</span>.</p>
 <p>The AMMI equation is described as follows.</p>
-<p><span class="math display">\[Y_{ij} = \mu + \alpha_{i} + \beta_{j} + \sum_{n=1}^{N}\lambda_{n}\gamma_{in}\delta_{jn} + \rho_{ij}\]</span></p>
-<p>Where, <span class="math inline">\(Y_{ij}\)</span> is the yield of the <span class="math inline">\(i\)</span>th genotype in the <span class="math inline">\(j\)</span>th environment, <span class="math inline">\(\mu\)</span> is the grand mean, <span class="math inline">\(\alpha_{i}\)</span> is the genotype deviation from the grand mean, <span class="math inline">\(\beta_{j}\)</span> is the environment deviation, <span class="math inline">\(N\)</span> is the total number of interaction principal components (IPCs), <span class="math inline">\(\lambda_{n}\)</span> is the is the singular value for <span class="math inline">\(n\)</span>th IPC and correspondingly <span class="math inline">\(\lambda_{n}^{2}\)</span> is its eigen value, <span class="math inline">\(\gamma_{in}\)</span> is the eigenvector value for <span class="math inline">\(i\)</span>th genotype, <span class="math inline">\(\delta_{jn}\)</span> is the eigenvector value for the <span class="math inline">\(j\)</span>th environment and <span class="math inline">\(\rho_{ij}\)</span> is the residual.</p>
+<p><span class="math display">\[Y_{ij} = \mu + \alpha_{i} + \beta_{j} +
+\sum_{n=1}^{N}\lambda_{n}\gamma_{in}\delta_{jn} + \rho_{ij}\]</span></p>
+<p>Where, <span class="math inline">\(Y_{ij}\)</span> is the yield of
+the <span class="math inline">\(i\)</span>th genotype in the <span class="math inline">\(j\)</span>th environment, <span class="math inline">\(\mu\)</span> is the grand mean, <span class="math inline">\(\alpha_{i}\)</span> is the genotype deviation from
+the grand mean, <span class="math inline">\(\beta_{j}\)</span> is the
+environment deviation, <span class="math inline">\(N\)</span> is the
+total number of interaction principal components (IPCs), <span class="math inline">\(\lambda_{n}\)</span> is the is the singular value
+for <span class="math inline">\(n\)</span>th IPC and correspondingly
+<span class="math inline">\(\lambda_{n}^{2}\)</span> is its eigen value,
+<span class="math inline">\(\gamma_{in}\)</span> is the eigenvector
+value for <span class="math inline">\(i\)</span>th genotype, <span class="math inline">\(\delta_{jn}\)</span> is the eigenvector value for
+the <span class="math inline">\(j\)</span>th environment and <span class="math inline">\(\rho_{ij}\)</span> is the residual.</p>
 </div>
 <div class="section level2">
 <h2 id="ammi-stability-parameters">AMMI stability parameters<a class="anchor" aria-label="anchor" href="#ammi-stability-parameters"></a>
 </h2>
-<p>Although the AMMI model can aid in determining genotypes with wide or specific adaptability, it fails to rank genotypes according to their stability. Several measures have been developed over the years to indicate the stability of genotypes from the results of AMMI analysis (Table 1.).</p>
-<p>The details about AMMI stability parameters/indices implemented in <code>ammistability</code> are described in Table 1.</p>
-
-
-<p><strong>Table 1 :</strong> AMMI stability parameters/indices implemented in <code>ammistability</code>. </p>
+<p>Although the AMMI model can aid in determining genotypes with wide or
+specific adaptability, it fails to rank genotypes according to their
+stability. Several measures have been developed over the years to
+indicate the stability of genotypes from the results of AMMI analysis
+(Table 1.).</p>
+<p>The details about AMMI stability parameters/indices implemented in
+<code>ammistability</code> are described in Table 1.</p>
+<p><strong>Table 1 :</strong> AMMI stability parameters/indices
+implemented in <code>ammistability</code>. </p>
 <table class="table">
 <colgroup>
 <col width="14%">
@@ -242,7 +279,8 @@ Welcome to ammistability version 0.1.3.9000
 <tr class="odd">
 <td align="left">Sum across environments of GEI modelled by AMMI (<span class="math inline">\(AMGE\)</span>)</td>
 <td align="left"><code>AMGE.AMMI</code></td>
-<td align="left"><span class="math display">\[AMGE = \sum_{j=1}^{E} \sum_{n=1}^{N'}
+<td align="left"><span class="math display">\[AMGE = \sum_{j=1}^{E}
+\sum_{n=1}^{N'}
 \lambda_{n} \gamma_{in} \delta_{jn}\]</span></td>
 <td align="left"><span class="citation">Sneller et al. (<a href="#ref-sneller_repeatability_1997" role="doc-biblioref">1997</a>)</span></td>
 </tr>
@@ -251,11 +289,14 @@ Welcome to ammistability version 0.1.3.9000
 <td align="left">
 <code>ASI.AMMI</code> and <code>MASI.AMMI</code>
 </td>
-<td align="left"><span class="math display">\[ASI = \sqrt{\left [ PC_{1}^{2} \times
+<td align="left"><span class="math display">\[ASI = \sqrt{\left [
+PC_{1}^{2} \times
 \theta_{1}^{2} \right ]+\left [ PC_{2}^{2} \times
 \theta_{2}^{2} \right ]}\]</span></td>
 <td align="left">
-<span class="citation">Jambhulkar et al. (<a href="#ref-jambhulkar_ammi_2014" role="doc-biblioref">2014</a>)</span>; <span class="citation">Jambhulkar et al. (<a href="#ref-jambhulkar_genotype_2015" role="doc-biblioref">2015</a>)</span>; <span class="citation">Jambhulkar et al. (<a href="#ref-jambhulkar_stability_2017" role="doc-biblioref">2017</a>)</span>
+<span class="citation">Jambhulkar et al. (<a href="#ref-jambhulkar_ammi_2014" role="doc-biblioref">2014</a>)</span>;
+<span class="citation">Jambhulkar et al. (<a href="#ref-jambhulkar_genotype_2015" role="doc-biblioref">2015</a>)</span>; <span class="citation">Jambhulkar
+et al. (<a href="#ref-jambhulkar_stability_2017" role="doc-biblioref">2017</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -268,20 +309,26 @@ Welcome to ammistability version 0.1.3.9000
 <tr class="even">
 <td align="left">AMMI stability value (<span class="math inline">\(ASV\)</span>) *</td>
 <td align="left">
-<code><a href="https://rdrr.io/pkg/agricolae/man/indexAMMI.html" class="external-link">agricolae::index.AMMI</a></code> and <code>MASV.AMMI</code>
+<code><a href="https://rdrr.io/pkg/agricolae/man/indexAMMI.html" class="external-link">agricolae::index.AMMI</a></code> and
+<code>MASV.AMMI</code>
 </td>
-<td align="left">Distance from the coordinate point to the origin in a two dimensional scattergram generated by plotting of IPC1 score against IPC2 score.<br><br><span class="math display">\[ASV = \sqrt{\left
+<td align="left">Distance from the coordinate point to the origin in a
+two dimensional scattergram generated by plotting of IPC1 score against
+IPC2 score.<br><br><span class="math display">\[ASV = \sqrt{\left
 (\frac{SSIPC_{1}}{SSIPC_{2}}\times PC_{1}  \right
 )^2   + \left (PC_{2}  \right )^2} \]</span>
 </td>
 <td align="left">
-<span class="citation">Purchase (<a href="#ref-purchase_parametric_1997" role="doc-biblioref">1997</a>)</span>; <span class="citation">Purchase et al. (<a href="#ref-purchase_use_1999" role="doc-biblioref">1999</a>)</span>; <span class="citation">Purchase et al. (<a href="#ref-purchase_genotype_2000" role="doc-biblioref">2000</a>)</span>
+<span class="citation">Purchase (<a href="#ref-purchase_parametric_1997" role="doc-biblioref">1997</a>)</span>; <span class="citation">Purchase
+et al. (<a href="#ref-purchase_use_1999" role="doc-biblioref">1999</a>)</span>; <span class="citation">Purchase
+et al. (<a href="#ref-purchase_genotype_2000" role="doc-biblioref">2000</a>)</span>
 </td>
 </tr>
 <tr class="odd">
 <td align="left"><span class="math inline">\(AV_{(AMGE)}\)</span></td>
 <td align="left"><code>AVAMGE.AMMI</code></td>
-<td align="left"><span class="math display">\[AV_{(AMGE)} = \sum_{j=1}^{E} \sum_{n=1}^{N'}
+<td align="left"><span class="math display">\[AV_{(AMGE)} =
+\sum_{j=1}^{E} \sum_{n=1}^{N'}
 \left |\lambda_{n} \gamma_{in} \delta_{jn}  \right
 |\]</span></td>
 <td align="left"><span class="citation">Zali et al. (<a href="#ref-zali_evaluation_2012" role="doc-biblioref">2012</a>)</span></td>
@@ -289,15 +336,18 @@ Welcome to ammistability version 0.1.3.9000
 <tr class="even">
 <td align="left">Annicchiarico’s D parameter (<span class="math inline">\(D_{a}\)</span>)</td>
 <td align="left"><code>DA.AMMI</code></td>
-<td align="left">The unsquared Euclidean distance from the origin of significant IPC axes in the AMMI model.<br><br><span class="math display">\[D_{a} =
+<td align="left">The unsquared Euclidean distance from the origin of
+significant IPC axes in the AMMI model.<br><br><span class="math display">\[D_{a} =
 \sqrt{\sum_{n=1}^{N'}(\lambda_{n}\gamma_{in})^2}\]</span>
 </td>
 <td align="left"><span class="citation">Annicchiarico (<a href="#ref-annicchiarico_joint_1997" role="doc-biblioref">1997</a>)</span></td>
 </tr>
 <tr class="odd">
-<td align="left">Zhang’s D parameter or AMMI statistic coefficient or AMMI distance or AMMI stability index (<span class="math inline">\(D_{z}\)</span>)</td>
+<td align="left">Zhang’s D parameter or AMMI statistic coefficient or
+AMMI distance or AMMI stability index (<span class="math inline">\(D_{z}\)</span>)</td>
 <td align="left"><code>DZ.AMMI</code></td>
-<td align="left">The distance of IPC point from origin in space.<br><br><span class="math display">\[D_{z} = \sqrt{\sum_{n=1}^{N'}\gamma_{in}^{2}}\]</span>
+<td align="left">The distance of IPC point from origin in space.<br><br><span class="math display">\[D_{z} =
+\sqrt{\sum_{n=1}^{N'}\gamma_{in}^{2}}\]</span>
 </td>
 <td align="left"><span class="citation">Zhang et al. (<a href="#ref-zhang_analysis_1998" role="doc-biblioref">1998</a>)</span></td>
 </tr>
@@ -305,7 +355,8 @@ Welcome to ammistability version 0.1.3.9000
 <td align="left">Averages of the squared eigenvector values <span class="math inline">\(EV\)</span>
 </td>
 <td align="left"><code>EV.AMMI</code></td>
-<td align="left"><span class="math display">\[EV = \sum_{n=1}^{N'}\frac{\gamma_{in}^2}{N'}\]</span></td>
+<td align="left"><span class="math display">\[EV =
+\sum_{n=1}^{N'}\frac{\gamma_{in}^2}{N'}\]</span></td>
 <td align="left"><span class="citation">Zobel (<a href="#ref-zobel_stress_1994" role="doc-biblioref">1994</a>)</span></td>
 </tr>
 <tr class="odd">
@@ -321,8 +372,13 @@ Welcome to ammistability version 0.1.3.9000
 <tr class="even">
 <td align="left"><span class="math inline">\(FP\)</span></td>
 <td align="left"><code>FA.AMMI</code></td>
-<td align="left">Equivalent to <span class="math inline">\(FA\)</span>, when only the first IPC axis is considered for computation.<br><br><span class="math display">\[FP = \lambda_{1}^{2}\gamma_{i1}^{2}\]</span><br><br>
-As <span class="math inline">\(\lambda_{1}^{2}\)</span> will be same for all the genotypes, the absolute value of <span class="math inline">\(\gamma_{i1}\)</span> alone is sufficient for comparison. So this is also equivalent to the comparison based on biplot with first IPC axis.</td>
+<td align="left">Equivalent to <span class="math inline">\(FA\)</span>,
+when only the first IPC axis is considered for computation.<br><br><span class="math display">\[FP =
+\lambda_{1}^{2}\gamma_{i1}^{2}\]</span><br><br>
+As <span class="math inline">\(\lambda_{1}^{2}\)</span> will be same for
+all the genotypes, the absolute value of <span class="math inline">\(\gamma_{i1}\)</span> alone is sufficient for
+comparison. So this is also equivalent to the comparison based on biplot
+with first IPC axis.</td>
 <td align="left">
 <span class="citation">Raju (<a href="#ref-raju_study_2002" role="doc-biblioref">2002</a>)</span>; <span class="citation">Zali et al. (<a href="#ref-zali_evaluation_2012" role="doc-biblioref">2012</a>)</span>
 </td>
@@ -330,9 +386,11 @@ As <span class="math inline">\(\lambda_{1}^{2}\)</span> will be same for all the
 <tr class="odd">
 <td align="left"><span class="math inline">\(B\)</span></td>
 <td align="left"><code>FA.AMMI</code></td>
-<td align="left">Equivalent to <span class="math inline">\(FA\)</span>, when only the first two IPC axes are considered for computation.<br><br><span class="math display">\[B =
+<td align="left">Equivalent to <span class="math inline">\(FA\)</span>,
+when only the first two IPC axes are considered for computation.<br><br><span class="math display">\[B =
 \sum_{n=1}^{2}\lambda_{n}^{2}\gamma_{in}^{2}\]</span><br><br>
-Stability comparisons based on this measure will be equivalent to the comparisons based on biplot with first two IPC axes.</td>
+Stability comparisons based on this measure will be equivalent to the
+comparisons based on biplot with first two IPC axes.</td>
 <td align="left">
 <span class="citation">Raju (<a href="#ref-raju_study_2002" role="doc-biblioref">2002</a>)</span>; <span class="citation">Zali et al. (<a href="#ref-zali_evaluation_2012" role="doc-biblioref">2012</a>)</span>
 </td>
@@ -340,50 +398,72 @@ Stability comparisons based on this measure will be equivalent to the comparison
 <tr class="even">
 <td align="left"><span class="math inline">\(W_{(AMMI)}\)</span></td>
 <td align="left"><code>FA.AMMI</code></td>
-<td align="left">Equivalent to <span class="math inline">\(FA\)</span>, when all the IPC axes in the AMMI model are considered for computation.<br><br><span class="math display">\[W_{(AMMI)} =
+<td align="left">Equivalent to <span class="math inline">\(FA\)</span>,
+when all the IPC axes in the AMMI model are considered for
+computation.<br><br><span class="math display">\[W_{(AMMI)} =
 \sum_{n=1}^{N}\lambda_{n}^{2}\gamma_{in}^{2}\]</span><br><br>
 Equivalent to Wricke’s ecovalence.</td>
 <td align="left">
-<span class="citation">Wricke (<a href="#ref-wricke_method_1962" role="doc-biblioref">1962</a>)</span>; <span class="citation">Raju (<a href="#ref-raju_study_2002" role="doc-biblioref">2002</a>)</span>; <span class="citation">Zali et al. (<a href="#ref-zali_evaluation_2012" role="doc-biblioref">2012</a>)</span>
+<span class="citation">Wricke (<a href="#ref-wricke_method_1962" role="doc-biblioref">1962</a>)</span>;
+<span class="citation">Raju (<a href="#ref-raju_study_2002" role="doc-biblioref">2002</a>)</span>; <span class="citation">Zali et
+al. (<a href="#ref-zali_evaluation_2012" role="doc-biblioref">2012</a>)</span>
 </td>
 </tr>
 <tr class="odd">
 <td align="left">Modified AMMI Stability Index (<span class="math inline">\(MASI\)</span>)</td>
 <td align="left"><code>MASI.AMMI</code></td>
-<td align="left"><span class="math display">\[MASI = \sqrt{ \sum_{n=1}^{N'} PC_{n}^{2} \times
+<td align="left"><span class="math display">\[MASI = \sqrt{
+\sum_{n=1}^{N'} PC_{n}^{2} \times
 \theta_{n}^{2}}\]</span></td>
 <td align="left"><span class="citation">Ajay et al. (<a href="#ref-ajay_modified_2018" role="doc-biblioref">2018</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">Modified AMMI stability value (<span class="math inline">\(MASV\)</span>)</td>
 <td align="left"><code>MASV.AMMI</code></td>
-<td align="left"><span class="math display">\[MASV = \sqrt{\sum_{n=1}^{N'-1}\left
+<td align="left"><span class="math display">\[MASV =
+\sqrt{\sum_{n=1}^{N'-1}\left
 (\frac{SSIPC_{n}}{SSIPC_{n+1}} \times PC_{n}
 \right )^2   + \left (PC_{N'}  \right )^2} \]</span></td>
 <td align="left">
-<span class="citation">Ajay et al. (<a href="#ref-ajay_rectification_2019" role="doc-biblioref">2019</a><a href="#ref-ajay_rectification_2019" role="doc-biblioref">b</a>)</span>; <span class="citation">Zali et al. (<a href="#ref-zali_evaluation_2012" role="doc-biblioref">2012</a>)</span>
+<span class="citation">Ajay et al. (<a href="#ref-ajay_rectification_2019" role="doc-biblioref">2019b</a>)</span>; <span class="citation">Zali et
+al. (<a href="#ref-zali_evaluation_2012" role="doc-biblioref">2012</a>)</span>
 </td>
 </tr>
 <tr class="odd">
 <td align="left">Sums of the absolute value of the IPC scores (<span class="math inline">\(SIPC\)</span>)</td>
 <td align="left"><code>SIPC.AMMI</code></td>
 <td align="left">
-<span class="math display">\[SIPC = \sum_{n=1}^{N'} \left |
-\lambda_{n}^{0.5}\gamma_{in} \right |\]</span><br><span class="math display">\[SIPC = \sum_{n=1}^{N'}\left | PC_{n} \right |\]</span>
+<span class="math display">\[SIPC = \sum_{n=1}^{N'}
+\left |
+\lambda_{n}^{0.5}\gamma_{in} \right |\]</span><br><span class="math display">\[SIPC = \sum_{n=1}^{N'}\left | PC_{n}
+\right |\]</span>
 </td>
 <td align="left"><span class="citation">Sneller et al. (<a href="#ref-sneller_repeatability_1997" role="doc-biblioref">1997</a>)</span></td>
 </tr>
 <tr class="even">
-<td align="left">Absolute value of the relative contribution of IPCs to the interaction (<span class="math inline">\(Za\)</span>)</td>
+<td align="left">Absolute value of the relative contribution of IPCs to
+the interaction (<span class="math inline">\(Za\)</span>)</td>
 <td align="left"><code>ZA.AMMI</code></td>
-<td align="left"><span class="math display">\[Za = \sum_{i=1}^{N'}\left |
+<td align="left"><span class="math display">\[Za =
+\sum_{i=1}^{N'}\left |
 \theta_{n}\gamma_{in} \right |\]</span></td>
 <td align="left"><span class="citation">Zali et al. (<a href="#ref-zali_evaluation_2012" role="doc-biblioref">2012</a>)</span></td>
 </tr>
 </tbody>
 </table>
-<p>Where, <span class="math inline">\(N\)</span> is the total number of interaction principal components (IPCs); <span class="math inline">\(N'\)</span> is the number of significant IPCAs (number of IPC that were retained in the AMMI model via F tests); <span class="math inline">\(\lambda_{n}\)</span> is the is the singular value for <span class="math inline">\(n\)</span>th IPC and correspondingly <span class="math inline">\(\lambda_{n}^{2}\)</span> is its eigen value; <span class="math inline">\(\gamma_{in}\)</span> is the eigenvector value for <span class="math inline">\(i\)</span>th genotype; <span class="math inline">\(\delta_{jn}\)</span> is the eigenvector value for the <span class="math inline">\(j\)</span>th environment; <span class="math inline">\(SSIPC_{1}\)</span>, <span class="math inline">\(SSIPC_{2}\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(SSIPC_{n}\)</span> are the sum of squares of the 1st, 2th, …, and <span class="math inline">\(n\)</span>th IPC; <span class="math inline">\(PC_{1}\)</span>, <span class="math inline">\(PC_{2}\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(PC_{n}\)</span> are the scores of 1st, 2th, …, and <span class="math inline">\(n\)</span>th IPC; <span class="math inline">\(\theta_{n}\)</span> is the percentage sum of squares explained by <span class="math inline">\(n\)</span>th principal component interaction effect; and <span class="math inline">\(E\)</span> is the number of environments.</p>
-
+<p>Where, <span class="math inline">\(N\)</span> is the total number of
+interaction principal components (IPCs); <span class="math inline">\(N'\)</span> is the number of significant IPCAs
+(number of IPC that were retained in the AMMI model via F tests); <span class="math inline">\(\lambda_{n}\)</span> is the is the singular value
+for <span class="math inline">\(n\)</span>th IPC and correspondingly
+<span class="math inline">\(\lambda_{n}^{2}\)</span> is its eigen value;
+<span class="math inline">\(\gamma_{in}\)</span> is the eigenvector
+value for <span class="math inline">\(i\)</span>th genotype; <span class="math inline">\(\delta_{jn}\)</span> is the eigenvector value for
+the <span class="math inline">\(j\)</span>th environment; <span class="math inline">\(SSIPC_{1}\)</span>, <span class="math inline">\(SSIPC_{2}\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(SSIPC_{n}\)</span> are the sum of squares of the
+1st, 2th, …, and <span class="math inline">\(n\)</span>th IPC; <span class="math inline">\(PC_{1}\)</span>, <span class="math inline">\(PC_{2}\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(PC_{n}\)</span> are the scores of 1st, 2th, …, and
+<span class="math inline">\(n\)</span>th IPC; <span class="math inline">\(\theta_{n}\)</span> is the percentage sum of
+squares explained by <span class="math inline">\(n\)</span>th principal
+component interaction effect; and <span class="math inline">\(E\)</span>
+is the number of environments.</p>
 <div style="page-break-after: always;"></div>
 <div class="section level4">
 <h4 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
@@ -565,131 +645,131 @@ GEN             SR-03
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># With default n (N') and default ssi.method (farshadfar)</span></span>
 <span><span class="fu"><a href="../reference/AMGE.AMMI.html">AMGE.AMMI</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span></code></pre></div>
-<pre><code>                 AMGE  SSI rAMGE rY    means
-102.18  -8.659740e-15 28.0   5.0 23 26.31947
-104.22   1.110223e-15 28.0  15.0 13 31.28887
-121.31   4.440892e-16 29.0  14.0 15 30.10174
-141.28   1.021405e-14 27.5  26.5  1 39.75624
-157.26   2.220446e-15 22.5  17.5  5 36.95181
-163.9   -1.243450e-14 28.0   1.0 27 21.41747
-221.19  -4.440892e-15 35.0   9.0 26 22.98480
-233.11   2.275957e-15 36.0  19.0 17 28.66655
-235.6    5.773160e-15 26.5  22.5  4 38.63477
-241.2   -5.329071e-15 30.0   8.0 22 26.34039
-255.7   -3.774758e-15 24.0  10.0 14 30.58975
-314.12   5.773160e-15 40.5  22.5 18 28.17335
-317.6    2.220446e-15 26.5  17.5  9 35.32583
-319.20   1.731948e-14 31.0  28.0  3 38.75767
-320.16  -6.217249e-15 27.0   6.0 21 26.34808
-342.15  -2.442491e-15 35.0  11.0 24 26.01336
-346.2   -1.110223e-14 28.0   3.0 25 23.84175
-351.26   1.021405e-14 34.5  26.5  8 36.11581
-364.21   1.415534e-15 26.0  16.0 10 34.05974
-402.7   -3.885781e-16 31.0  12.0 19 27.47748
-405.2   -1.088019e-14 20.0   4.0 16 28.98663
-406.12   3.108624e-15 32.0  20.0 12 32.68323
-427.7    1.110223e-16 20.0  13.0  7 36.19020
-450.3    6.439294e-15 30.0  24.0  6 36.19602
-506.2   -5.773160e-15 18.0   7.0 11 33.26623
-Canchan  9.325873e-15 45.0  25.0 20 27.00126
-Desiree -1.132427e-14 30.0   2.0 28 16.15569
-Unica    5.329071e-15 23.0  21.0  2 39.10400</code></pre>
+<pre><code>                 AMGE SSI rAMGE rY    means
+102.18   1.598721e-14  48    25 23 26.31947
+104.22  -8.881784e-15  20     7 13 31.28887
+121.31   1.643130e-14  41    26 15 30.10174
+141.28  -4.440892e-15  11    10  1 39.75624
+157.26   3.241851e-14  33    28  5 36.95181
+163.9    3.108624e-15  45    18 27 21.41747
+221.19   8.881784e-15  48    22 26 22.98480
+233.11  -1.476597e-14  22     5 17 28.66655
+235.6   -2.975398e-14   5     1  4 38.63477
+241.2    7.105427e-15  42    20 22 26.34039
+255.7   -1.598721e-14  18     4 14 30.58975
+314.12  -1.776357e-15  31    13 18 28.17335
+317.6    1.776357e-15  26    17  9 35.32583
+319.20   8.437695e-15  24    21  3 38.75767
+320.16   1.154632e-14  45    24 21 26.34808
+342.15  -9.325873e-15  30     6 24 26.01336
+346.2   -3.552714e-15  36    11 25 23.84175
+351.26   1.110223e-15  24    16  8 36.11581
+364.21  -4.940492e-15  19     9 10 34.05974
+402.7   -4.163336e-16  33    14 19 27.47748
+405.2    8.881784e-16  31    15 16 28.98663
+406.12  -1.731948e-14  15     3 12 32.68323
+427.7   -2.553513e-15  19    12  7 36.19020
+450.3    1.021405e-14  29    23  6 36.19602
+506.2    6.439294e-15  30    19 11 33.26623
+Canchan -7.993606e-15  28     8 20 27.00126
+Desiree  1.754152e-14  55    27 28 16.15569
+Unica   -2.042810e-14   4     2  2 39.10400</code></pre>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># With n = 4 and default ssi.method (farshadfar)</span></span>
 <span><span class="fu"><a href="../reference/AMGE.AMMI.html">AMGE.AMMI</a></span><span class="op">(</span><span class="va">model</span>, n <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code></pre></div>
-<pre><code>                 AMGE SSI rAMGE rY    means
-102.18  -9.992007e-15  28     5 23 26.31947
-104.22   2.886580e-15  31    18 13 31.28887
-121.31  -3.996803e-15  25    10 15 30.10174
-141.28   9.992007e-15  27    26  1 39.75624
-157.26   8.881784e-15  29    24  5 36.95181
-163.9   -1.065814e-14  29     2 27 21.41747
-221.19  -4.718448e-15  35     9 26 22.98480
-233.11   1.387779e-15  32    15 17 28.66655
-235.6    3.108624e-15  23    19  4 38.63477
-241.2   -6.550316e-15  29     7 22 26.34039
-255.7   -3.774758e-15  25    11 14 30.58975
-314.12   6.217249e-15  41    23 18 28.17335
-317.6    0.000000e+00  22    13  9 35.32583
-319.20   2.087219e-14  31    28  3 38.75767
-320.16  -1.021405e-14  25     4 21 26.34808
-342.15   2.053913e-15  41    17 24 26.01336
-346.2   -7.993606e-15  31     6 25 23.84175
-351.26   9.159340e-15  33    25  8 36.11581
-364.21  -8.881784e-16  22    12 10 34.05974
-402.7    2.983724e-16  33    14 19 27.47748
-405.2   -1.326717e-14  17     1 16 28.98663
-406.12   3.552714e-15  32    20 12 32.68323
-427.7    1.887379e-15  23    16  7 36.19020
-450.3    5.107026e-15  27    21  6 36.19602
-506.2   -5.592748e-15  19     8 11 33.26623
-Canchan  1.010303e-14  47    27 20 27.00126
-Desiree -1.043610e-14  31     3 28 16.15569
-Unica    5.773160e-15  24    22  2 39.10400</code></pre>
+<pre><code>                 AMGE  SSI rAMGE rY    means
+102.18   1.643130e-14 48.0  25.0 23 26.31947
+104.22  -9.325873e-15 20.0   7.0 13 31.28887
+121.31   1.731948e-14 41.0  26.0 15 30.10174
+141.28  -4.218847e-15 11.5  10.5  1 39.75624
+157.26   3.019807e-14 33.0  28.0  5 36.95181
+163.9    2.664535e-15 45.0  18.0 27 21.41747
+221.19   8.271162e-15 48.0  22.0 26 22.98480
+233.11  -1.409983e-14 22.0   5.0 17 28.66655
+235.6   -2.797762e-14  5.0   1.0  4 38.63477
+241.2    6.883383e-15 42.0  20.0 22 26.34039
+255.7   -1.709743e-14 18.0   4.0 14 30.58975
+314.12  -2.664535e-15 31.0  13.0 18 28.17335
+317.6    2.220446e-15 26.0  17.0  9 35.32583
+319.20   7.549517e-15 24.0  21.0  3 38.75767
+320.16   1.243450e-14 45.0  24.0 21 26.34808
+342.15  -1.132427e-14 30.0   6.0 24 26.01336
+346.2   -4.440892e-15 34.0   9.0 25 23.84175
+351.26   1.110223e-15 23.0  15.0  8 36.11581
+364.21  -3.774758e-15 22.0  12.0 10 34.05974
+402.7   -9.159340e-16 33.0  14.0 19 27.47748
+405.2    1.165734e-15 32.0  16.0 16 28.98663
+406.12  -1.820766e-14 15.0   3.0 12 32.68323
+427.7   -4.218847e-15 17.5  10.5  7 36.19020
+450.3    9.992007e-15 29.0  23.0  6 36.19602
+506.2    6.522560e-15 30.0  19.0 11 33.26623
+Canchan -6.994405e-15 28.0   8.0 20 27.00126
+Desiree  1.743050e-14 55.0  27.0 28 16.15569
+Unica   -2.220446e-14  4.0   2.0  2 39.10400</code></pre>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># With default n (N') and ssi.method = "rao"</span></span>
 <span><span class="fu"><a href="../reference/AMGE.AMMI.html">AMGE.AMMI</a></span><span class="op">(</span><span class="va">model</span>, ssi.method <span class="op">=</span> <span class="st">"rao"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>                 AMGE        SSI rAMGE rY    means
-102.18  -8.659740e-15  0.5673198   5.0 23 26.31947
-104.22   1.110223e-15  3.2887624  15.0 13 31.28887
-121.31   4.440892e-16  6.6529106  14.0 15 30.10174
-141.28   1.021405e-14  1.5428597  26.5  1 39.75624
-157.26   2.220446e-15  2.3391212  17.5  5 36.95181
-163.9   -1.243450e-14  0.4957785   1.0 27 21.41747
-221.19  -4.440892e-15  0.1822906   9.0 26 22.98480
-233.11   2.275957e-15  2.0413097  19.0 17 28.66655
-235.6    5.773160e-15  1.6959735  22.5  4 38.63477
-241.2   -5.329071e-15  0.3862254   8.0 22 26.34039
-255.7   -3.774758e-15  0.3301705  10.0 14 30.58975
-314.12   5.773160e-15  1.3548726  22.5 18 28.17335
-317.6    2.220446e-15  2.2861050  17.5  9 35.32583
-319.20   1.731948e-14  1.4091383  28.0  3 38.75767
-320.16  -6.217249e-15  0.4539931   6.0 21 26.34808
-342.15  -2.442491e-15 -0.1829870  11.0 24 26.01336
-346.2   -1.110223e-14  0.5505176   3.0 25 23.84175
-351.26   1.021405e-14  1.4241614  26.5  8 36.11581
-364.21   1.415534e-15  2.8898091  16.0 10 34.05974
-402.7   -3.885781e-16 -5.5857093  12.0 19 27.47748
-405.2   -1.088019e-14  0.7136396   4.0 16 28.98663
-406.12   3.108624e-15  1.8758598  20.0 12 32.68323
-427.7    1.110223e-16 23.8657048  13.0  7 36.19020
-450.3    6.439294e-15  1.5713258  24.0  6 36.19602
-506.2   -5.773160e-15  0.6484020   7.0 11 33.26623
-Canchan  9.325873e-15  1.1504601  25.0 20 27.00126
-Desiree -1.132427e-14  0.3043571   2.0 28 16.15569
-Unica    5.329071e-15  1.7476282  21.0  2 39.10400</code></pre>
+102.18   1.598721e-14  -1.209920    25 23 26.31947
+104.22  -8.881784e-15   4.742740     7 13 31.28887
+121.31   1.643130e-14  -1.030703    26 15 30.10174
+141.28  -4.440892e-15   8.741371    10  1 39.75624
+157.26   3.241851e-14   0.184960    28  5 36.95181
+163.9    3.108624e-15  -9.937521    18 27 21.41747
+221.19   8.881784e-15  -2.973115    22 26 22.98480
+233.11  -1.476597e-14   3.173817     5 17 28.66655
+235.6   -2.975398e-14   2.370918     1  4 38.63477
+241.2    7.105427e-15  -3.794340    20 22 26.34039
+255.7   -1.598721e-14   3.065479     4 14 30.58975
+314.12  -1.776357e-15  19.531348    13 18 28.17335
+317.6    1.776357e-15 -17.460918    17  9 35.32583
+319.20   8.437695e-15  -2.654754    21  3 38.75767
+320.16   1.154632e-14  -2.004403    24 21 26.34808
+342.15  -9.325873e-15   4.393465     6 24 26.01336
+346.2   -3.552714e-15  10.083744    11 25 23.84175
+351.26   1.110223e-15 -28.602804    16  8 36.11581
+364.21  -4.940492e-15   7.802759     9 10 34.05974
+402.7   -4.163336e-16  80.310270    14 19 27.47748
+405.2    8.881784e-16 -36.280350    15 16 28.98663
+406.12  -1.731948e-14   2.974655     3 12 32.68323
+427.7   -2.553513e-15  14.127995    12  7 36.19020
+450.3    1.021405e-14  -2.056805    23  6 36.19602
+506.2    6.439294e-15  -4.049883    19 11 33.26623
+Canchan -7.993606e-15   5.016556     8 20 27.00126
+Desiree  1.754152e-14  -1.358068    27 28 16.15569
+Unica   -2.042810e-14   2.893508     2  2 39.10400</code></pre>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Changing the ratio of weights for Rao's SSI</span></span>
 <span><span class="fu"><a href="../reference/AMGE.AMMI.html">AMGE.AMMI</a></span><span class="op">(</span><span class="va">model</span>, ssi.method <span class="op">=</span> <span class="st">"rao"</span>, a <span class="op">=</span> <span class="fl">0.43</span><span class="op">)</span></span></code></pre></div>
-<pre><code>                 AMGE        SSI rAMGE rY    means
-102.18  -8.659740e-15  0.7330999   5.0 23 26.31947
-104.22   1.110223e-15  1.9956774  15.0 13 31.28887
-121.31   4.440892e-16  3.4201982  14.0 15 30.10174
-141.28   1.021405e-14  1.4023070  26.5  1 39.75624
-157.26   2.220446e-15  1.6925787  17.5  5 36.95181
-163.9   -1.243450e-14  0.6112325   1.0 27 21.41747
-221.19  -4.440892e-15  0.5055618   9.0 26 22.98480
-233.11   2.275957e-15  1.4105366  19.0 17 28.66655
-235.6    5.773160e-15  1.4473033  22.5  4 38.63477
-241.2   -5.329071e-15  0.6556181   8.0 22 26.34039
-255.7   -3.774758e-15  0.7104896  10.0 14 30.58975
-314.12   5.773160e-15  1.1062024  22.5 18 28.17335
-317.6    2.220446e-15  1.6395625  17.5  9 35.32583
-319.20   1.731948e-14  1.3262482  28.0  3 38.75767
-320.16  -6.217249e-15  0.6849012   6.0 21 26.34808
-342.15  -2.442491e-15  0.4047789  11.0 24 26.01336
-346.2   -1.110223e-14  0.6798261   3.0 25 23.84175
-351.26   1.021405e-14  1.2836086  26.5  8 36.11581
-364.21   1.415534e-15  1.8756248  16.0 10 34.05974
-402.7   -3.885781e-16 -1.8911807  12.0 19 27.47748
-405.2   -1.088019e-14  0.8455870   4.0 16 28.98663
-406.12   3.108624e-15  1.4140438  20.0 12 32.68323
-427.7    1.110223e-16 10.9348548  13.0  7 36.19020
-450.3    6.439294e-15  1.3483801  24.0  6 36.19602
-506.2   -5.773160e-15  0.8970722   7.0 11 33.26623
-Canchan  9.325873e-15  0.9965214  25.0 20 27.00126
-Desiree -1.132427e-14  0.4311301   2.0 28 16.15569
-Unica    5.329071e-15  1.4782355  21.0  2 39.10400</code></pre>
+<pre><code>                 AMGE          SSI rAMGE rY    means
+102.18   1.598721e-14  -0.03111319    25 23 26.31947
+104.22  -8.881784e-15   2.62088777     7 13 31.28887
+121.31   1.643130e-14   0.11624442    26 15 30.10174
+141.28  -4.440892e-15   4.49766702    10  1 39.75624
+157.26   3.241851e-14   0.76628938    28  5 36.95181
+163.9    3.108624e-15  -3.87508635    18 27 21.41747
+221.19   8.881784e-15  -0.85126241    22 26 22.98480
+233.11  -1.476597e-14   1.89751451     5 17 28.66655
+235.6   -2.975398e-14   1.73752955     1  4 38.63477
+241.2    7.105427e-15  -1.14202521    20 22 26.34039
+255.7   -1.598721e-14   1.88667228     4 14 30.58975
+314.12  -1.776357e-15   8.92208663    13 18 28.17335
+317.6    1.776357e-15  -6.85165762    17  9 35.32583
+319.20   8.437695e-15  -0.42122552    21  3 38.75767
+320.16   1.154632e-14  -0.37220928    24 21 26.34808
+342.15  -9.325873e-15   2.37265314     6 24 26.01336
+346.2   -3.552714e-15   4.77911338    11 25 23.84175
+351.26   1.110223e-15 -11.62798636    16  8 36.11581
+364.21  -4.940492e-15   3.98819325     9 10 34.05974
+402.7   -4.163336e-16  35.04409044    14 19 27.47748
+405.2    8.881784e-16 -15.06182868    15 16 28.98663
+406.12  -1.731948e-14   1.88652568     3 12 32.68323
+427.7   -2.553513e-15   6.74763968    12  7 36.19020
+450.3    1.021405e-14  -0.21171610    23  6 36.19602
+506.2    6.439294e-15  -1.12319038    19 11 33.26623
+Canchan -7.993606e-15   2.65894277     8 20 27.00126
+Desiree  1.754152e-14  -0.28371280    27 28 16.15569
+Unica   -2.042810e-14   1.97096400     2  2 39.10400</code></pre>
 </div>
 <div class="section level4">
 <h4 id="asi-ammi">
@@ -1993,10 +2073,27 @@ Unica   0.21646330 1.4542544  26  2 39.10400</code></pre>
 <div class="section level2">
 <h2 id="simultaneous-selection-indices-for-yield-and-stability">Simultaneous selection indices for yield and stability<a class="anchor" aria-label="anchor" href="#simultaneous-selection-indices-for-yield-and-stability"></a>
 </h2>
-<p>The most stable genotype need not necessarily be the highest yielding genotype. Hence, simultaneous selection indices (SSIs) have been proposed for the selection of stable as well as high yielding genotypes.</p>
-<p>A family of simultaneous selection indices (<span class="math inline">\(I_{i}\)</span>) were proposed by <span class="citation">Rao and Prabhakaran (<a href="#ref-rao_use_2005" role="doc-biblioref">2005</a>)</span> similar to those proposed by <span class="citation">Bajpai and Prabhakaran (<a href="#ref-bajpai_new_2000" role="doc-biblioref">2000</a>)</span> by incorporating the AMMI Based Stability Parameter (<span class="math inline">\(ASTAB\)</span>) and Yield as components. These indices consist of yield component, measured as the ratio of the average performance of the <span class="math inline">\(i\)</span>th genotype to the overall mean performance of the genotypes under test and a stability component, measured as the ratio of stability information (<span class="math inline">\(\frac{1}{ASTAB}\)</span>) of the <span class="math inline">\(i\)</span>th genotype to the mean stability information of the genotypes under test.</p>
-<p><span class="math display">\[I_{i} = \frac{\overline{Y}_{i}}{\overline{Y}_{..}} + \alpha \frac{\frac{1}{ASTAB_{i}}}{\frac{1}{T}\sum_{i=1}^{T}\frac{1}{ASTAB_{i}}}\]</span></p>
-<p>Where <span class="math inline">\(ASTAB_{i}\)</span> is the stability measure of the <span class="math inline">\(i\)</span>th genotype under AMMI procedure; <span class="math inline">\(Y_{i}\)</span> is mean performance of <span class="math inline">\(i\)</span>th genotype; <span class="math inline">\(Y_{..}\)</span> is the overall mean; <span class="math inline">\(T\)</span> is the number of genotypes under test and <span class="math inline">\(\alpha\)</span> is the ratio of the weights given to the stability components (<span class="math inline">\(w_{2}\)</span>) and yield (<span class="math inline">\(w_{1}\)</span>) with a restriction that <span class="math inline">\(w_{1} + w_{2} = 1\)</span>. The weights can be specified as required (Table 2).</p>
+<p>The most stable genotype need not necessarily be the highest yielding
+genotype. Hence, simultaneous selection indices (SSIs) have been
+proposed for the selection of stable as well as high yielding
+genotypes.</p>
+<p>A family of simultaneous selection indices (<span class="math inline">\(I_{i}\)</span>) were proposed by <span class="citation">Rao and Prabhakaran (<a href="#ref-rao_use_2005" role="doc-biblioref">2005</a>)</span> similar to those proposed by <span class="citation">Bajpai and Prabhakaran (<a href="#ref-bajpai_new_2000" role="doc-biblioref">2000</a>)</span> by incorporating the AMMI Based
+Stability Parameter (<span class="math inline">\(ASTAB\)</span>) and
+Yield as components. These indices consist of yield component, measured
+as the ratio of the average performance of the <span class="math inline">\(i\)</span>th genotype to the overall mean
+performance of the genotypes under test and a stability component,
+measured as the ratio of stability information (<span class="math inline">\(\frac{1}{ASTAB}\)</span>) of the <span class="math inline">\(i\)</span>th genotype to the mean stability
+information of the genotypes under test.</p>
+<p><span class="math display">\[I_{i} =
+\frac{\overline{Y}_{i}}{\overline{Y}_{..}} + \alpha
+\frac{\frac{1}{ASTAB_{i}}}{\frac{1}{T}\sum_{i=1}^{T}\frac{1}{ASTAB_{i}}}\]</span></p>
+<p>Where <span class="math inline">\(ASTAB_{i}\)</span> is the stability
+measure of the <span class="math inline">\(i\)</span>th genotype under
+AMMI procedure; <span class="math inline">\(Y_{i}\)</span> is mean
+performance of <span class="math inline">\(i\)</span>th genotype; <span class="math inline">\(Y_{..}\)</span> is the overall mean; <span class="math inline">\(T\)</span> is the number of genotypes under test
+and <span class="math inline">\(\alpha\)</span> is the ratio of the
+weights given to the stability components (<span class="math inline">\(w_{2}\)</span>) and yield (<span class="math inline">\(w_{1}\)</span>) with a restriction that <span class="math inline">\(w_{1} + w_{2} = 1\)</span>. The weights can be
+specified as required (Table 2).</p>
 <p><strong>Table 2 :</strong> <span class="math inline">\(\alpha\)</span> and corresponding weights (<span class="math inline">\(w_{1}\)</span> and <span class="math inline">\(w_{2}\)</span>)</p>
 <table class="table">
 <thead><tr class="header">
@@ -2027,12 +2124,27 @@ Unica   0.21646330 1.4542544  26  2 39.10400</code></pre>
 </tr>
 </tbody>
 </table>
-<p>In <code>ammistability</code>, the above expression has been implemented for all the stability parameters (<span class="math inline">\(SP\)</span>) including ASTAB.</p>
-<p><span class="math display">\[I_{i} = \frac{\overline{Y}_{i}}{\overline{Y}_{..}} + \alpha \frac{\frac{1}{SP_{i}}}{\frac{1}{T}\sum_{i=1}^{T}\frac{1}{SP_{i}}}\]</span></p>
-<p>Genotype stability index (<span class="math inline">\(GSI\)</span>) <span class="citation">(Farshadfar, <a href="#ref-farshadfar_incorporation_2008" role="doc-biblioref">2008</a>)</span> or Yield stability index (<span class="math inline">\(YSI\)</span>) <span class="citation">(Farshadfar et al., <a href="#ref-farshadfar_ammi_2011" role="doc-biblioref">2011</a>; Jambhulkar et al., <a href="#ref-jambhulkar_stability_2017" role="doc-biblioref">2017</a>)</span> is a simultaneous selection index for yield and yield stability which is computed by summation of the ranks of the stability index/parameter and the ranks of the mean yields. <span class="math inline">\(YSI\)</span> is computed for all the stability parameters/indices implemented in this package.</p>
+<p>In <code>ammistability</code>, the above expression has been
+implemented for all the stability parameters (<span class="math inline">\(SP\)</span>) including ASTAB.</p>
+<p><span class="math display">\[I_{i} =
+\frac{\overline{Y}_{i}}{\overline{Y}_{..}} + \alpha
+\frac{\frac{1}{SP_{i}}}{\frac{1}{T}\sum_{i=1}^{T}\frac{1}{SP_{i}}}\]</span></p>
+<p>Genotype stability index (<span class="math inline">\(GSI\)</span>)
+<span class="citation">(<a href="#ref-farshadfar_incorporation_2008" role="doc-biblioref">Farshadfar, 2008</a>)</span> or Yield stability
+index (<span class="math inline">\(YSI\)</span>) <span class="citation">(<a href="#ref-farshadfar_ammi_2011" role="doc-biblioref">Farshadfar et al., 2011</a>; <a href="#ref-jambhulkar_stability_2017" role="doc-biblioref">Jambhulkar et
+al., 2017</a>)</span> is a simultaneous selection index for yield and
+yield stability which is computed by summation of the ranks of the
+stability index/parameter and the ranks of the mean yields. <span class="math inline">\(YSI\)</span> is computed for all the stability
+parameters/indices implemented in this package.</p>
 <p><span class="math display">\[GSI = YSI = R_{SP} + R_{Y}\]</span></p>
-<p>Where, <span class="math inline">\(R_{SP}\)</span> is the stability parameter/index rank of the genotype and <span class="math inline">\(R_{Y}\)</span> is the mean yield rank of the genotype.</p>
-<p>The function <code>SSI</code> implements both these indices in <code>ammistability</code>. Further, for each of the stability parameter functions, the simultaneous selection index is also computed by either of these functions as specified by the argument <code>ssi.method</code>.</p>
+<p>Where, <span class="math inline">\(R_{SP}\)</span> is the stability
+parameter/index rank of the genotype and <span class="math inline">\(R_{Y}\)</span> is the mean yield rank of the
+genotype.</p>
+<p>The function <code>SSI</code> implements both these indices in
+<code>ammistability</code>. Further, for each of the stability parameter
+functions, the simultaneous selection index is also computed by either
+of these functions as specified by the argument
+<code>ssi.method</code>.</p>
 <div class="section level4">
 <h4 id="examples-1">Examples<a class="anchor" aria-label="anchor" href="#examples-1"></a>
 </h4>
@@ -2151,7 +2263,12 @@ Unica   0.48083049 1.4391795  25  2 39.10400</code></pre>
 <div class="section level2">
 <h2 id="wrapper-function">Wrapper function<a class="anchor" aria-label="anchor" href="#wrapper-function"></a>
 </h2>
-<p>A function <code>ammistability</code> has also been implemented which is a wrapper around all the available functions in the package to compute simultaneously multiple AMMI stability parameters along with the corresponding SSIs. Correlation among the computed values as well as visualization of the differences in genotype ranks for the computed parameters is also generated.</p>
+<p>A function <code>ammistability</code> has also been implemented which
+is a wrapper around all the available functions in the package to
+compute simultaneously multiple AMMI stability parameters along with the
+corresponding SSIs. Correlation among the computed values as well as
+visualization of the differences in genotype ranks for the computed
+parameters is also generated.</p>
 <div class="section level4">
 <h4 id="examples-2">Examples<a class="anchor" aria-label="anchor" href="#examples-2"></a>
 </h4>
@@ -2181,94 +2298,94 @@ $Details$`SSI method`
 
 $`Stability Parameters`
    genotype    means          AMGE       ASV           EV      MASV      SIPC
-1    102.18 26.31947 -8.659740e-15 3.3801820 0.0232206231 4.7855876 2.9592568
-2    104.22 31.28887  1.110223e-15 1.4627695 0.0175897578 3.8328358 2.2591593
-3    121.31 30.10174  4.440892e-16 2.2937918 0.0342010876 4.0446758 3.3872806
-4    141.28 39.75624  1.021405e-14 4.4672401 0.0529036285 5.1867706 4.3846248
-5    157.26 36.95181  2.220446e-15 3.2923168 0.0965635719 7.6459224 5.4846596
-6     163.9 21.41747 -1.243450e-14 4.4269636 0.0236900961 4.4977055 2.6263670
-7    221.19 22.98480 -4.440892e-15 1.8014494 0.0127574566 2.1905344 2.0218098
-8    233.11 28.66655  2.275957e-15 1.0582263 0.0211138628 3.1794345 2.1624442
-9     235.6 38.63477  5.773160e-15 3.7647078 0.0723274691 8.4913020 4.8273551
-10    241.2 26.34039 -5.329071e-15 1.6774241 0.0153823821 2.0338659 2.0056410
-11    255.7 30.58975 -3.774758e-15 3.3289736 0.0317506280 4.7013868 3.6075128
-12   314.12 28.17335  5.773160e-15 2.9170536 0.0170302467 3.1376678 2.4584089
-13    317.6 35.32583  2.220446e-15 2.1874274 0.0136347120 2.3345492 1.8698826
-14   319.20 38.75767  1.731948e-14 6.7164864 0.0855988994 8.6398087 5.9590451
-15   320.16 26.34808 -6.217249e-15 3.3208950 0.0180662044 3.8822326 2.7040109
-16   342.15 26.01336 -2.442491e-15 2.9219360 0.0225156118 3.6438425 2.9755899
-17    346.2 23.84175 -1.110223e-14 5.1827747 0.0459434537 5.3987165 3.9525017
-18   351.26 36.11581  1.021405e-14 2.9786832 0.0639652186 5.4005468 4.5622439
-19   364.21 34.05974  1.415534e-15 0.7236998 0.0018299284 1.4047546 0.7526264
-20    402.7 27.47748 -3.885781e-16 0.2801470 0.0001339385 0.3537818 0.2284995
-21    405.2 28.98663 -1.088019e-14 3.9832546 0.0229492190 4.1095727 2.7952381
-22   406.12 32.68323  3.108624e-15 2.5631734 0.0264692745 5.3218165 2.8834753
-23    427.7 36.19020  1.110223e-16 1.1467970 0.0135698145 2.4124676 2.0049278
-24    450.3 36.19602  6.439294e-15 3.1430174 0.0216161656 4.6608954 2.8200387
-25    506.2 33.26623 -5.773160e-15 0.7511331 0.0318266934 1.9330143 2.2178470
-26  Canchan 27.00126  9.325873e-15 3.0975884 0.0461305761 3.6665608 3.5328212
-27  Desiree 16.15569 -1.132427e-14 7.7833445 0.0901534938 9.0626072 5.8073242
-28    Unica 39.10400  5.329071e-15 3.8380782 0.0770659860 8.5447632 5.0654615
+1    102.18 26.31947  1.598721e-14 3.3801820 0.0232206231 4.7855876 2.9592568
+2    104.22 31.28887 -8.881784e-15 1.4627695 0.0175897578 3.8328358 2.2591593
+3    121.31 30.10174  1.643130e-14 2.2937918 0.0342010876 4.0446758 3.3872806
+4    141.28 39.75624 -4.440892e-15 4.4672401 0.0529036285 5.1867706 4.3846248
+5    157.26 36.95181  3.241851e-14 3.2923168 0.0965635719 7.6459224 5.4846596
+6     163.9 21.41747  3.108624e-15 4.4269636 0.0236900961 4.4977055 2.6263670
+7    221.19 22.98480  8.881784e-15 1.8014494 0.0127574566 2.1905344 2.0218098
+8    233.11 28.66655 -1.476597e-14 1.0582263 0.0211138628 3.1794345 2.1624442
+9     235.6 38.63477 -2.975398e-14 3.7647078 0.0723274691 8.4913020 4.8273551
+10    241.2 26.34039  7.105427e-15 1.6774241 0.0153823821 2.0338659 2.0056410
+11    255.7 30.58975 -1.598721e-14 3.3289736 0.0317506280 4.7013868 3.6075128
+12   314.12 28.17335 -1.776357e-15 2.9170536 0.0170302467 3.1376678 2.4584089
+13    317.6 35.32583  1.776357e-15 2.1874274 0.0136347120 2.3345492 1.8698826
+14   319.20 38.75767  8.437695e-15 6.7164864 0.0855988994 8.6398087 5.9590451
+15   320.16 26.34808  1.154632e-14 3.3208950 0.0180662044 3.8822326 2.7040109
+16   342.15 26.01336 -9.325873e-15 2.9219360 0.0225156118 3.6438425 2.9755899
+17    346.2 23.84175 -3.552714e-15 5.1827747 0.0459434537 5.3987165 3.9525017
+18   351.26 36.11581  1.110223e-15 2.9786832 0.0639652186 5.4005468 4.5622439
+19   364.21 34.05974 -4.940492e-15 0.7236998 0.0018299284 1.4047546 0.7526264
+20    402.7 27.47748 -4.163336e-16 0.2801470 0.0001339385 0.3537818 0.2284995
+21    405.2 28.98663  8.881784e-16 3.9832546 0.0229492190 4.1095727 2.7952381
+22   406.12 32.68323 -1.731948e-14 2.5631734 0.0264692745 5.3218165 2.8834753
+23    427.7 36.19020 -2.553513e-15 1.1467970 0.0135698145 2.4124676 2.0049278
+24    450.3 36.19602  1.021405e-14 3.1430174 0.0216161656 4.6608954 2.8200387
+25    506.2 33.26623  6.439294e-15 0.7511331 0.0318266934 1.9330143 2.2178470
+26  Canchan 27.00126 -7.993606e-15 3.0975884 0.0461305761 3.6665608 3.5328212
+27  Desiree 16.15569  1.754152e-14 7.7833445 0.0901534938 9.0626072 5.8073242
+28    Unica 39.10400 -2.042810e-14 3.8380782 0.0770659860 8.5447632 5.0654615
 
 $`Simultaneous Selection Indices`
    genotype    means AMGE_SSI ASV_SSI EV_SSI MASV_SSI SIPC_SSI
-1    102.18 26.31947     28.0      43     37       42       39
-2    104.22 31.28887     28.0      19     21       25       22
-3    121.31 30.10174     29.0      25     34       29       33
-4    141.28 39.75624     27.5      26     23       21       23
-5    157.26 36.95181     22.5      22     33       29       31
-6     163.9 21.41747     28.0      51     42       43       38
-7    221.19 22.98480     35.0      34     29       31       32
-8    233.11 28.66655     36.0      21     27       26       24
-9     235.6 38.63477     26.5      25     28       29       28
-10    241.2 26.34039     30.0      29     28       26       27
-11    255.7 30.58975     24.0      33     31       32       34
-12   314.12 28.17335     40.5      30     25       26       28
-13    317.6 35.32583     26.5      18     14       15       12
-14   319.20 38.75767     31.0      30     29       30       31
-15   320.16 26.34808     27.0      39     30       34       33
-16   342.15 26.01336     35.0      37     36       34       41
-17    346.2 23.84175     28.0      51     45       47       46
-18   351.26 36.11581     34.5      22     31       31       31
-19   364.21 34.05974     26.0      12     12       12       12
-20    402.7 27.47748     31.0      20     20       20       20
-21    405.2 28.98663     20.0      39     29       31       29
-22   406.12 32.68323     32.0      23     28       33       27
-23    427.7 36.19020     20.0      12     11       14       11
-24    450.3 36.19602     30.0      22     17       23       20
-25    506.2 33.26623     18.0      14     29       14       19
-26  Canchan 27.00126     45.0      35     41       31       39
-27  Desiree 16.15569     30.0      56     55       56       55
-28    Unica 39.10400     23.0      24     27       28       27
+1    102.18 26.31947       48      43     37       42       39
+2    104.22 31.28887       20      19     21       25       22
+3    121.31 30.10174       41      25     34       29       33
+4    141.28 39.75624       11      26     23       21       23
+5    157.26 36.95181       33      22     33       29       31
+6     163.9 21.41747       45      51     42       43       38
+7    221.19 22.98480       48      34     29       31       32
+8    233.11 28.66655       22      21     27       26       24
+9     235.6 38.63477        5      25     28       29       28
+10    241.2 26.34039       42      29     28       26       27
+11    255.7 30.58975       18      33     31       32       34
+12   314.12 28.17335       31      30     25       26       28
+13    317.6 35.32583       26      18     14       15       12
+14   319.20 38.75767       24      30     29       30       31
+15   320.16 26.34808       45      39     30       34       33
+16   342.15 26.01336       30      37     36       34       41
+17    346.2 23.84175       36      51     45       47       46
+18   351.26 36.11581       24      22     31       31       31
+19   364.21 34.05974       19      12     12       12       12
+20    402.7 27.47748       33      20     20       20       20
+21    405.2 28.98663       31      39     29       31       29
+22   406.12 32.68323       15      23     28       33       27
+23    427.7 36.19020       19      12     11       14       11
+24    450.3 36.19602       29      22     17       23       20
+25    506.2 33.26623       30      14     29       14       19
+26  Canchan 27.00126       28      35     41       31       39
+27  Desiree 16.15569       55      56     55       56       55
+28    Unica 39.10400        4      24     27       28       27
 
 $`SP Correlation`
        AMGE    ASV     EV   MASV   SIPC
 AMGE 1.00**   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;
-ASV   -0.03 1.00**   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;
-EV     0.31 0.70** 1.00**   &lt;NA&gt;   &lt;NA&gt;
-MASV   0.21 0.81** 0.90** 1.00**   &lt;NA&gt;
-SIPC   0.28 0.81** 0.96** 0.94** 1.00**
+ASV    0.16 1.00**   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;
+EV     0.12 0.70** 1.00**   &lt;NA&gt;   &lt;NA&gt;
+MASV  -0.01 0.81** 0.90** 1.00**   &lt;NA&gt;
+SIPC   0.10 0.81** 0.96** 0.94** 1.00**
 
 $`SSI Correlation`
        AMGE    ASV     EV   MASV   SIPC
 AMGE 1.00**   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;
-ASV    0.20 1.00**   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;
-EV     0.24 0.84** 1.00**   &lt;NA&gt;   &lt;NA&gt;
-MASV   0.23 0.92** 0.90** 1.00**   &lt;NA&gt;
-SIPC   0.32 0.89** 0.96** 0.95** 1.00**
+ASV  0.61** 1.00**   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;
+EV   0.53** 0.84** 1.00**   &lt;NA&gt;   &lt;NA&gt;
+MASV 0.52** 0.92** 0.90** 1.00**   &lt;NA&gt;
+SIPC 0.53** 0.89** 0.96** 0.95** 1.00**
 
 $`SP and SSI Correlation`
-            AMGE    ASV     EV   MASV   SIPC AMGE_SSI ASV_SSI EV_SSI MASV_SSI
-AMGE      1.00**   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;
-ASV        -0.03 1.00**   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;
-EV          0.31 0.70** 1.00**   &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;
-MASV        0.21 0.81** 0.90** 1.00**   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;
-SIPC        0.28 0.81** 0.96** 0.94** 1.00**     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;
-AMGE_SSI    0.34   0.03  -0.08  -0.10  -0.03   1.00**    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;
-ASV_SSI  -0.56** 0.71**   0.21   0.35   0.34     0.20  1.00**   &lt;NA&gt;     &lt;NA&gt;
-EV_SSI    -0.42* 0.64** 0.48**  0.47* 0.53**     0.24  0.84** 1.00**     &lt;NA&gt;
-MASV_SSI  -0.46* 0.73**  0.40* 0.54** 0.51**     0.23  0.92** 0.90**   1.00**
-SIPC_SSI  -0.38* 0.70**  0.45* 0.50** 0.54**     0.32  0.89** 0.96**   0.95**
+           AMGE    ASV     EV   MASV   SIPC AMGE_SSI ASV_SSI EV_SSI MASV_SSI
+AMGE     1.00**   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;
+ASV        0.16 1.00**   &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;
+EV         0.12 0.70** 1.00**   &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;
+MASV      -0.01 0.81** 0.90** 1.00**   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;
+SIPC       0.10 0.81** 0.96** 0.94** 1.00**     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;
+AMGE_SSI 0.75**   0.17  -0.16  -0.18  -0.12   1.00**    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;
+ASV_SSI    0.21 0.71**   0.21   0.35   0.34   0.61**  1.00**   &lt;NA&gt;     &lt;NA&gt;
+EV_SSI     0.23 0.64** 0.48**  0.47* 0.53**   0.53**  0.84** 1.00**     &lt;NA&gt;
+MASV_SSI   0.18 0.73**  0.40* 0.54** 0.51**   0.52**  0.92** 0.90**   1.00**
+SIPC_SSI   0.20 0.70**  0.45* 0.50** 0.54**   0.53**  0.89** 0.96**   0.95**
          SIPC_SSI
 AMGE         &lt;NA&gt;
 ASV          &lt;NA&gt;
@@ -2282,32 +2399,31 @@ MASV_SSI     &lt;NA&gt;
 SIPC_SSI   1.00**
 
 $`SP Correlogram`</code></pre>
-<p><img src="Introduction_files/figure-html/runCode-1.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/runCode-ammistability-1.png" width="700"></p>
 <pre><code>
 $`SSI Correlogram`</code></pre>
-<p><img src="Introduction_files/figure-html/runCode-2.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/runCode-ammistability-2.png" width="700"></p>
 <pre><code>
 $`SP and SSI Correlogram`</code></pre>
-<p><img src="Introduction_files/figure-html/runCode-3.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/runCode-ammistability-3.png" width="700"></p>
 <pre><code>
 $`SP Slopegraph`</code></pre>
-<p><img src="Introduction_files/figure-html/runCode-4.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/runCode-ammistability-4.png" width="700"></p>
 <pre><code>
 $`SSI Slopegraph`</code></pre>
-<p><img src="Introduction_files/figure-html/runCode-5.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/runCode-ammistability-5.png" width="700"></p>
 <pre><code>
 $`SP Heatmap`</code></pre>
-<p><img src="Introduction_files/figure-html/runCode-6.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/runCode-ammistability-6.png" width="700"></p>
 <pre><code>
 $`SSI Heatmap`</code></pre>
-<p><img src="Introduction_files/figure-html/runCode-7.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/runCode-ammistability-7.png" width="700"></p>
 </div>
 </div>
 <div class="section level2">
 <h2 id="citing-ammistability">Citing <code>ammistability</code><a class="anchor" aria-label="anchor" href="#citing-ammistability"></a>
 </h2>
-<pre><code>
-To cite the R package 'ammistability' in publications use:
+<pre><code>To cite the R package 'ammistability' in publications use:
 
   Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2019). ammistability:
   R package for ranking genotypes based on stability parameters derived
@@ -2315,7 +2431,7 @@ To cite the R package 'ammistability' in publications use:
   79(2), 460-466.
   https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model
 
-  Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2022).  ammistability:
+  Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2023).  ammistability:
   Additive Main Effects and Multiplicative Interaction Model Stability
   Parameters. R package version 0.1.3.9000,
   https://ajaygpb.github.io/ammistability/,
@@ -2324,6 +2440,7 @@ To cite the R package 'ammistability' in publications use:
 This free and open-source software implements academic research by the
 authors and co-workers. If you use it, please support the project by
 citing the package.
+
 To see these entries in BibTeX format, use 'print(&lt;citation&gt;,
 bibtex=TRUE)', 'toBibtex(.)', or set
 'options(citation.bibtex.max=999)'.</code></pre>
@@ -2333,16 +2450,19 @@ bibtex=TRUE)', 'toBibtex(.)', or set
 </h2>
 <div class="sourceCode" id="cb114"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code>R version 4.2.1 (2022-06-23)
-Platform: x86_64-apple-darwin17.0 (64-bit)
-Running under: macOS Big Sur ... 10.16
+<pre><code>R version 4.3.0 (2023-04-21)
+Platform: x86_64-apple-darwin20 (64-bit)
+Running under: macOS Monterey 12.6.5
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib
-LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
+BLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: UTC
+tzcode source: internal
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
@@ -2351,97 +2471,164 @@ other attached packages:
 [1] agricolae_1.3-5          ammistability_0.1.3.9000
 
 loaded via a namespace (and not attached):
- [1] httr_1.4.3        sass_0.4.2        jsonlite_1.8.0    bslib_0.4.0      
- [5] shiny_1.7.1       Rdpack_2.3.1      highr_0.9         pander_0.6.5     
- [9] yaml_2.3.5        pillar_1.8.0      lattice_0.20-45   glue_1.6.2       
-[13] digest_0.6.29     promises_1.2.0.1  rbibutils_2.2.8   colorspace_2.0-3 
-[17] htmltools_0.5.3   httpuv_1.6.5      plyr_1.8.7        klaR_1.7-1       
-[21] XML_3.99-0.10     pkgconfig_2.0.3   ggcorrplot_0.1.3  labelled_2.9.1   
-[25] haven_2.5.0       questionr_0.7.7   purrr_0.3.4       xtable_1.8-4     
-[29] scales_1.2.0      later_1.3.0       tibble_3.1.7      combinat_0.0-8   
-[33] generics_0.1.3    farver_2.1.1      ggplot2_3.3.6     ellipsis_0.3.2   
-[37] cachem_1.0.6      cli_3.3.0         magrittr_2.0.3    mime_0.12        
-[41] memoise_2.0.1     evaluate_0.15     fs_1.5.2          fansi_1.0.3      
-[45] nlme_3.1-157      MASS_7.3-57       forcats_0.5.1     textshaping_0.3.6
-[49] tools_4.2.1       hms_1.1.1         lifecycle_1.0.1   stringr_1.4.0    
-[53] munsell_0.5.0     cluster_2.1.3     compiler_4.2.1    pkgdown_2.0.6    
-[57] jquerylib_0.1.4   systemfonts_1.0.4 rlang_1.0.4       grid_4.2.1       
-[61] RCurl_1.98-1.7    rstudioapi_0.13   miniUI_0.1.1.1    labeling_0.4.2   
-[65] bitops_1.0-7      rmarkdown_2.14    gtable_0.3.0      curl_4.3.2       
-[69] reshape2_1.4.4    R6_2.5.1          AlgDesign_1.2.1   knitr_1.39       
-[73] dplyr_1.0.9       fastmap_1.1.0     utf8_1.2.2        mathjaxr_1.6-0   
-[77] rprojroot_2.0.3   ragg_1.2.2        desc_1.4.1        stringi_1.7.8    
-[81] Rcpp_1.0.9        vctrs_0.4.1       tidyselect_1.1.2  xfun_0.31        </code></pre>
+ [1] gtable_0.3.3      xfun_0.39         bslib_0.4.2       ggplot2_3.4.2    
+ [5] klaR_1.7-2        lattice_0.21-8    mathjaxr_1.6-0    bitops_1.0-7     
+ [9] vctrs_0.6.2       tools_4.3.0       Rdpack_2.4        generics_0.1.3   
+[13] curl_5.0.0        tibble_3.2.1      fansi_1.0.4       AlgDesign_1.2.1  
+[17] cluster_2.1.4     highr_0.10        pkgconfig_2.0.3   desc_1.4.2       
+[21] lifecycle_1.0.3   farver_2.1.1      compiler_4.3.0    stringr_1.5.0    
+[25] textshaping_0.3.6 munsell_0.5.0     combinat_0.0-8    httpuv_1.6.11    
+[29] htmltools_0.5.5   sass_0.4.6        RCurl_1.98-1.12   yaml_2.3.7       
+[33] pillar_1.9.0      pkgdown_2.0.7     later_1.3.1       jquerylib_0.1.4  
+[37] MASS_7.3-58.4     ellipsis_0.3.2    cachem_1.0.8      ggcorrplot_0.1.4 
+[41] nlme_3.1-162      mime_0.12         tidyselect_1.2.0  digest_0.6.31    
+[45] stringi_1.7.12    pander_0.6.5      reshape2_1.4.4    dplyr_1.1.2      
+[49] purrr_1.0.1       labeling_0.4.2    forcats_1.0.0     labelled_2.11.0  
+[53] rprojroot_2.0.3   fastmap_1.1.1     grid_4.3.0        colorspace_2.1-0 
+[57] cli_3.6.1         magrittr_2.0.3    XML_3.99-0.14     utf8_1.2.3       
+[61] withr_2.5.0       scales_1.2.1      promises_1.2.0.1  httr_1.4.6       
+[65] rmarkdown_2.21    hms_1.1.3         ragg_1.2.5        memoise_2.0.1    
+[69] shiny_1.7.4       evaluate_0.21     knitr_1.42        haven_2.5.2      
+[73] rbibutils_2.2.13  miniUI_0.1.1.1    rlang_1.1.1       Rcpp_1.0.10      
+[77] xtable_1.8-4      glue_1.6.2        rstudioapi_0.14   jsonlite_1.8.4   
+[81] plyr_1.8.8        questionr_0.7.8   R6_2.5.1          systemfonts_1.0.4
+[85] fs_1.6.2         </code></pre>
 </div>
 <div class="section level2 unnumbered">
-<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+<h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>
-<div id="refs" class="references">
-<div id="ref-ajay_modified_2018">
-<p>Ajay, B. C., Aravind, J., Abdul Fiyaz, R., Bera, S. K., Kumar, N., Gangadhar, K., et al. (2018). Modified AMMI Stability Index (MASI) for stability analysis. <em>ICAR-DGR Newsletter</em> 18, 4–5.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-ajay_modified_2018" class="csl-entry">
+Ajay, B. C., Aravind, J., Abdul Fiyaz, R., Bera, S. K., Kumar, N.,
+Gangadhar, K., et al. (2018). Modified <span>AMMI</span>
+<span>Stability</span> <span>Index</span> (<span>MASI</span>) for
+stability analysis. <em>ICAR-DGR Newsletter</em> 18, 4–5.
 </div>
-<div id="ref-ajay2019ammistability">
-<p>Ajay, B. C., Aravind, J., and Fiyaz, R. A. (2019a). ammistability: R package for ranking genotypes based on stability parameters derived from AMMI model. <em>Indian Journal of Genetics and Plant Breeding (The)</em> 79, 460–466. doi:<a href="https://doi.org/10.31742/IJGPB.79.2.10" class="external-link">10.31742/IJGPB.79.2.10</a>.</p>
+<div id="ref-ajay2019ammistability" class="csl-entry">
+Ajay, B. C., Aravind, J., and Fiyaz, R. A. (2019a). <span class="nocase">ammistability</span>: <span>R</span> package for ranking
+genotypes based on stability parameters derived from <span>AMMI</span>
+model. <em>Indian Journal of Genetics and Plant Breeding (The)</em> 79,
+460–466. doi:<a href="https://doi.org/10.31742/IJGPB.79.2.10" class="external-link">10.31742/IJGPB.79.2.10</a>.
 </div>
-<div id="ref-ajay_rectification_2019">
-<p>Ajay, B. C., Aravind, J., Fiyaz, R. A., Kumar, N., Lal, C., Gangadhar, K., et al. (2019b). Rectification of modified AMMI stability value (MASV). <em>Indian Journal of Genetics and Plant Breeding (The)</em> 79, 726–731. Available at: <a href="https://www.isgpb.org/article/rectification-of-modified-ammi-stability-value-masv" class="external-link">https://www.isgpb.org/article/rectification-of-modified-ammi-stability-value-masv</a>.</p>
+<div id="ref-ajay_rectification_2019" class="csl-entry">
+Ajay, B. C., Aravind, J., Fiyaz, R. A., Kumar, N., Lal, C., Gangadhar,
+K., et al. (2019b). Rectification of modified <span>AMMI</span>
+stability value (<span>MASV</span>). <em>Indian Journal of Genetics and
+Plant Breeding (The)</em> 79, 726–731. Available at: <a href="https://www.isgpb.org/article/rectification-of-modified-ammi-stability-value-masv" class="external-link">https://www.isgpb.org/article/rectification-of-modified-ammi-stability-value-masv</a>.
 </div>
-<div id="ref-annicchiarico_joint_1997">
-<p>Annicchiarico, P. (1997). Joint regression vs AMMI analysis of genotype-environment interactions for cereals in Italy. <em>Euphytica</em> 94, 53–62. doi:<a href="https://doi.org/10.1023/A:1002954824178" class="external-link">10.1023/A:1002954824178</a>.</p>
+<div id="ref-annicchiarico_joint_1997" class="csl-entry">
+Annicchiarico, P. (1997). Joint regression vs <span>AMMI</span> analysis
+of genotype-environment interactions for cereals in <span>Italy</span>.
+<em>Euphytica</em> 94, 53–62. doi:<a href="https://doi.org/10.1023/A:1002954824178" class="external-link">10.1023/A:1002954824178</a>.
 </div>
-<div id="ref-bajpai_new_2000">
-<p>Bajpai, P. K., and Prabhakaran, V. T. (2000). A new procedure of simultaneous selection for high yielding and stable crop genotypes. <em>Indian Journal of Genetics &amp; Plant Breeding</em> 60, 141–146.</p>
+<div id="ref-bajpai_new_2000" class="csl-entry">
+Bajpai, P. K., and Prabhakaran, V. T. (2000). A new procedure of
+simultaneous selection for high yielding and stable crop genotypes.
+<em>Indian Journal of Genetics &amp; Plant Breeding</em> 60, 141–146.
 </div>
-<div id="ref-farshadfar_incorporation_2008">
-<p>Farshadfar, E. (2008). Incorporation of AMMI stability value and grain yield in a single non-parametric index (GSI) in bread wheat. <em>Pakistan Journal of biological sciences</em> 11, 1791. doi:<a href="https://doi.org/10.3923/pjbs.2008.1791.1796" class="external-link">10.3923/pjbs.2008.1791.1796</a>.</p>
+<div id="ref-farshadfar_incorporation_2008" class="csl-entry">
+Farshadfar, E. (2008). Incorporation of <span>AMMI</span> stability
+value and grain yield in a single non-parametric index
+(<span>GSI</span>) in bread wheat. <em>Pakistan Journal of biological
+sciences</em> 11, 1791. doi:<a href="https://doi.org/10.3923/pjbs.2008.1791.1796" class="external-link">10.3923/pjbs.2008.1791.1796</a>.
 </div>
-<div id="ref-farshadfar_ammi_2011">
-<p>Farshadfar, E., Mahmodi, N., and Yaghotipoor, A. (2011). AMMI stability value and simultaneous estimation of yield and yield stability in bread wheat (<em>Triticum aestivum</em> L.). <em>Australian Journal of Crop Science</em> 5, 1837–1844.</p>
+<div id="ref-farshadfar_ammi_2011" class="csl-entry">
+Farshadfar, E., Mahmodi, N., and Yaghotipoor, A. (2011).
+<span>AMMI</span> stability value and simultaneous estimation of yield
+and yield stability in bread wheat (<em><span>Triticum</span>
+aestivum</em> <span>L</span>.). <em>Australian Journal of Crop
+Science</em> 5, 1837–1844.
 </div>
-<div id="ref-gauch_model_1988">
-<p>Gauch, H. G. (1988). Model selection and validation for yield trials with interaction. <em>Biometrics</em> 44, 705–715. doi:<a href="https://doi.org/10.2307/2531585" class="external-link">10.2307/2531585</a>.</p>
+<div id="ref-gauch_model_1988" class="csl-entry">
+Gauch, H. G. (1988). Model selection and validation for yield trials
+with interaction. <em>Biometrics</em> 44, 705–715. doi:<a href="https://doi.org/10.2307/2531585" class="external-link">10.2307/2531585</a>.
 </div>
-<div id="ref-gauch_statistical_1992">
-<p>Gauch, H. G. (1992). <em>Statistical Analysis of Regional Yield Trials: AMMI Analysis of Factorial Designs</em>. Amsterdam ; New York: Elsevier.</p>
+<div id="ref-gauch_statistical_1992" class="csl-entry">
+Gauch, H. G. (1992). <em>Statistical <span>Analysis</span> of
+<span>Regional</span> <span>Yield</span> <span>Trials</span>:
+<span>AMMI</span> <span>Analysis</span> of <span>Factorial</span>
+<span>Designs</span></em>. Amsterdam ; New York: Elsevier.
 </div>
-<div id="ref-jambhulkar_genotype_2015">
-<p>Jambhulkar, N. N., Bose, L. K., Pande, K., and Singh, O. N. (2015). Genotype by environment interaction and stability analysis in rice genotypes. <em>Ecology, Environment and Conservation</em> 21, 1427–1430. Available at: <a href="http://www.envirobiotechjournals.com/article_abstract.php?aid=6346&amp;iid=200&amp;jid=3" class="external-link">http://www.envirobiotechjournals.com/article_abstract.php?aid=6346&amp;iid=200&amp;jid=3</a>.</p>
+<div id="ref-jambhulkar_genotype_2015" class="csl-entry">
+Jambhulkar, N. N., Bose, L. K., Pande, K., and Singh, O. N. (2015).
+Genotype by environment interaction and stability analysis in rice
+genotypes. <em>Ecology, Environment and Conservation</em> 21, 1427–1430.
+Available at: <a href="http://www.envirobiotechjournals.com/article_abstract.php?aid=6346&amp;iid=200&amp;jid=3" class="external-link">http://www.envirobiotechjournals.com/article_abstract.php?aid=6346&amp;iid=200&amp;jid=3</a>.
 </div>
-<div id="ref-jambhulkar_ammi_2014">
-<p>Jambhulkar, N. N., Bose, L. K., and Singh, O. N. (2014). “AMMI stability index for stability analysis,” in <em>CRRI Newsletter, January-March 2014</em>, ed. T. Mohapatra (Cuttack, Orissa: Central Rice Research Institute), 15. Available at: <a href="https://crri.icar.gov.in/crnl_jan_mar_14_web.pdf" class="external-link">https://crri.icar.gov.in/crnl_jan_mar_14_web.pdf</a>.</p>
+<div id="ref-jambhulkar_ammi_2014" class="csl-entry">
+Jambhulkar, N. N., Bose, L. K., and Singh, O. N. (2014).
+<span>“<span>AMMI</span> stability index for stability analysis,”</span>
+in <em><span>CRRI</span> <span>Newsletter</span>,
+<span>January</span>-<span>March</span> 2014</em>, ed. T. Mohapatra
+(Cuttack, Orissa: Central Rice Research Institute), 15. Available at: <a href="https://crri.icar.gov.in/crnl_jan_mar_14_web.pdf" class="external-link">https://crri.icar.gov.in/crnl_jan_mar_14_web.pdf</a>.
 </div>
-<div id="ref-jambhulkar_stability_2017">
-<p>Jambhulkar, N. N., Rath, N. C., Bose, L. K., Subudhi, H., Biswajit, M., Lipi, D., et al. (2017). Stability analysis for grain yield in rice in demonstrations conducted during rabi season in India. <em>Oryza</em> 54, 236–240. doi:<a href="https://doi.org/10.5958/2249-5266.2017.00030.3" class="external-link">10.5958/2249-5266.2017.00030.3</a>.</p>
+<div id="ref-jambhulkar_stability_2017" class="csl-entry">
+Jambhulkar, N. N., Rath, N. C., Bose, L. K., Subudhi, H., Biswajit, M.,
+Lipi, D., et al. (2017). Stability analysis for grain yield in rice in
+demonstrations conducted during rabi season in <span>India</span>.
+<em>Oryza</em> 54, 236–240. doi:<a href="https://doi.org/10.5958/2249-5266.2017.00030.3" class="external-link">10.5958/2249-5266.2017.00030.3</a>.
 </div>
-<div id="ref-purchase_parametric_1997">
-<p>Purchase, J. L. (1997). Parametric analysis to describe genotype × environment interaction and yield stability in winter wheat. Available at: <a href="https://scholar.ufs.ac.za:8080/xmlui/handle/11660/1966" class="external-link">https://scholar.ufs.ac.za:8080/xmlui/handle/11660/1966</a>.</p>
+<div id="ref-purchase_parametric_1997" class="csl-entry">
+Purchase, J. L. (1997). Parametric analysis to describe genotype ×
+environment interaction and yield stability in winter wheat. Available
+at: <a href="https://scholar.ufs.ac.za:8080/xmlui/handle/11660/1966" class="external-link">https://scholar.ufs.ac.za:8080/xmlui/handle/11660/1966</a>.
 </div>
-<div id="ref-purchase_use_1999">
-<p>Purchase, J. L., Hatting, H., and Deventer, C. S. van (1999). “The use of the AMMI model and AMMI stability value to describe genotype x environment interaction and yield stability in winter wheat (<em>Triticum aestivum</em> L.),” in <em>Proceedings of the Tenth Regional Wheat Workshop for Eastern, Central and Southern Africa, 14-18 September 1998</em> (South Africa: University of Stellenbosch).</p>
+<div id="ref-purchase_use_1999" class="csl-entry">
+Purchase, J. L., Hatting, H., and Deventer, C. S. van (1999). <span>“The
+use of the <span>AMMI</span> model and <span>AMMI</span> stability value
+to describe genotype x environment interaction and yield stability in
+winter wheat (<em><span>Triticum</span> aestivum</em>
+<span>L</span>.),”</span> in <em>Proceedings of the <span>Tenth</span>
+<span>Regional</span> <span>Wheat</span> <span>Workshop</span> for
+<span>Eastern</span>, <span>Central</span> and <span>Southern</span>
+<span>Africa</span>, 14-18 <span>September</span> 1998</em> (South
+Africa: University of Stellenbosch).
 </div>
-<div id="ref-purchase_genotype_2000">
-<p>Purchase, J. L., Hatting, H., and Deventer, C. S. van (2000). Genotype × environment interaction of winter wheat (<em>Triticum aestivum</em> L.) In South Africa: II. Stability analysis of yield performance. <em>South African Journal of Plant and Soil</em> 17, 101–107. doi:<a href="https://doi.org/10.1080/02571862.2000.10634878" class="external-link">10.1080/02571862.2000.10634878</a>.</p>
+<div id="ref-purchase_genotype_2000" class="csl-entry">
+Purchase, J. L., Hatting, H., and Deventer, C. S. van (2000). Genotype ×
+environment interaction of winter wheat (<em><span>Triticum</span>
+aestivum</em> <span>L</span>.) In <span>South</span>
+<span>Africa</span>: <span>II</span>. <span>Stability</span> analysis of
+yield performance. <em>South African Journal of Plant and Soil</em> 17,
+101–107. doi:<a href="https://doi.org/10.1080/02571862.2000.10634878" class="external-link">10.1080/02571862.2000.10634878</a>.
 </div>
-<div id="ref-raju_study_2002">
-<p>Raju, B. M. K. (2002). A study on AMMI model and its biplots. <em>Journal of the Indian Society of Agricultural Statistics</em> 55, 297–322.</p>
+<div id="ref-raju_study_2002" class="csl-entry">
+Raju, B. M. K. (2002). A study on <span>AMMI</span> model and its
+biplots. <em>Journal of the Indian Society of Agricultural
+Statistics</em> 55, 297–322.
 </div>
-<div id="ref-rao_use_2005">
-<p>Rao, A. R., and Prabhakaran, V. T. (2005). Use of AMMI in simultaneous selection of genotypes for yield and stability. <em>Journal of the Indian Society of Agricultural Statistics</em> 59, 76–82.</p>
+<div id="ref-rao_use_2005" class="csl-entry">
+Rao, A. R., and Prabhakaran, V. T. (2005). Use of <span>AMMI</span> in
+simultaneous selection of genotypes for yield and stability. <em>Journal
+of the Indian Society of Agricultural Statistics</em> 59, 76–82.
 </div>
-<div id="ref-sneller_repeatability_1997">
-<p>Sneller, C. H., Kilgore-Norquest, L., and Dombek, D. (1997). Repeatability of yield stability statistics in soybean. <em>Crop Science</em> 37, 383–390. doi:<a href="https://doi.org/10.2135/cropsci1997.0011183X003700020013x" class="external-link">10.2135/cropsci1997.0011183X003700020013x</a>.</p>
+<div id="ref-sneller_repeatability_1997" class="csl-entry">
+Sneller, C. H., Kilgore-Norquest, L., and Dombek, D. (1997).
+Repeatability of yield stability statistics in soybean. <em>Crop
+Science</em> 37, 383–390. doi:<a href="https://doi.org/10.2135/cropsci1997.0011183X003700020013x" class="external-link">10.2135/cropsci1997.0011183X003700020013x</a>.
 </div>
-<div id="ref-wricke_method_1962">
-<p>Wricke, G. (1962). On a method of understanding the biological diversity in field research. <em>Zeitschrift für Pflanzenzüchtung</em> 47, 92–146.</p>
+<div id="ref-wricke_method_1962" class="csl-entry">
+Wricke, G. (1962). On a method of understanding the biological diversity
+in field research. <em>Zeitschrift für Pflanzenzüchtung</em> 47, 92–146.
 </div>
-<div id="ref-zali_evaluation_2012">
-<p>Zali, H., Farshadfar, E., Sabaghpour, S. H., and Karimizadeh, R. (2012). Evaluation of genotype × environment interaction in chickpea using measures of stability from AMMI model. <em>Annals of Biological Research</em> 3, 3126–3136.</p>
+<div id="ref-zali_evaluation_2012" class="csl-entry">
+Zali, H., Farshadfar, E., Sabaghpour, S. H., and Karimizadeh, R. (2012).
+Evaluation of genotype × environment interaction in chickpea using
+measures of stability from <span>AMMI</span> model. <em>Annals of
+Biological Research</em> 3, 3126–3136.
 </div>
-<div id="ref-zhang_analysis_1998">
-<p>Zhang, Z., Lu, C., and Xiang, Z. (1998). Analysis of variety stability based on AMMI model. <em>Acta Agronomica Sinica</em> 24, 304–309. Available at: <a href="https://zwxb.chinacrops.org/EN/Y1998/V24/I03/304" class="external-link">https://zwxb.chinacrops.org/EN/Y1998/V24/I03/304</a>.</p>
+<div id="ref-zhang_analysis_1998" class="csl-entry">
+Zhang, Z., Lu, C., and Xiang, Z. (1998). Analysis of variety stability
+based on <span>AMMI</span> model. <em>Acta Agronomica Sinica</em> 24,
+304–309. Available at: <a href="https://zwxb.chinacrops.org/EN/Y1998/V24/I03/304" class="external-link">https://zwxb.chinacrops.org/EN/Y1998/V24/I03/304</a>.
 </div>
-<div id="ref-zobel_stress_1994">
-<p>Zobel, R. W. (1994). “Stress resistance and root systems,” in <em>Proceedings of the Workshop on Adaptation of Plants to Soil Stress. 1-4 August, 1993. INTSORMIL Publication 94-2</em> (Institute of Agriculture; Natural Resources, University of Nebraska-Lincoln), 80–99.</p>
+<div id="ref-zobel_stress_1994" class="csl-entry">
+Zobel, R. W. (1994). <span>“Stress resistance and root systems,”</span>
+in <em>Proceedings of the <span>Workshop</span> on
+<span>Adaptation</span> of <span>Plants</span> to <span>Soil</span>
+<span>Stress</span>. 1-4 <span>August</span>, 1993.
+<span>INTSORMIL</span> <span>Publication</span> 94-2</em> (Institute of
+Agriculture; Natural Resources, University of Nebraska-Lincoln), 80–99.
 </div>
 </div>
 </div>
@@ -2464,7 +2651,7 @@ loaded via a namespace (and not attached):
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
