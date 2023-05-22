@@ -1,11 +1,7 @@
 citHeader("To cite the R package 'ammistability' in publications use:")
 
-if(!exists("meta") || is.null(meta)) meta <- packageDescription("ammistability")
-year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
-if (!length(year)) {
- year <- format(packageDate("ammistability"), "%Y")
-}
-vers <- paste("R package version", meta$Version)
+year <- sub("-.*", "", meta$Date)
+vers <- sprintf("R package version %s", meta$Version)
 
 bibentry(bibtype  = "article",
          title  = "ammistability: {R} package for ranking genotypes based on stability parameters derived from {AMMI} model",
@@ -41,7 +37,7 @@ bibentry(bibtype  = "Manual",
                     person(given = "R.", family = c("Abdul Fiyaz"),
                            email = "fiyaz.ra@icar.gov.in",
                            role = "aut")),
-         year = year,
+         year = sub("-.*", "", meta$Date),
          textVersion = paste(
            "Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (",
            year, ").  ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters. ",
