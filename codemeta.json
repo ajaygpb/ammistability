@@ -1,0 +1,294 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "identifier": "ammistability",
+  "description": "Computes various stability parameters from Additive Main Effects and Multiplicative Interaction (AMMI) analysis results such as Modified AMMI Stability Value (MASV), Sums of the Absolute Value of the Interaction Principal Component Scores (SIPC), Sum Across Environments of Genotype-Environment Interaction Modelled by AMMI (AMGE), Sum Across Environments of Absolute Value of Genotype-Environment Interaction Modelled by AMMI (AV_(AMGE)), AMMI Stability Index (ASI), Modified ASI (MASI), AMMI Based Stability Parameter (ASTAB), Annicchiarico's D Parameter (DA), Zhang's D Parameter (DZ), Averages of the Squared Eigenvector Values (EV), Stability Measure Based on Fitted AMMI Model (FA), Absolute Value of the Relative Contribution of IPCs to the Interaction (Za). Further calculates the Simultaneous Selection Index for Yield and Stability from the computed stability parameters. See the vignette for complete list of citations for the methods implemented.",
+  "name": "ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters",
+  "relatedLink": ["https://CRAN.R-project.org/package=ammistability", "https://ajaygpb.github.io/ammistability/", "https://doi.org/10.5281/zenodo.1344756"],
+  "codeRepository": "https://github.com/ajaygpb/ammistability/",
+  "issueTracker": "https://github.com/ajaygpb/ammistability/issues",
+  "license": "https://spdx.org/licenses/GPL-2.0",
+  "version": "0.1.4",
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "R",
+    "url": "https://r-project.org"
+  },
+  "runtimePlatform": "R Under development (unstable) (2023-04-28 r84338 ucrt)",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": ["B.", "C."],
+      "familyName": "Ajay",
+      "email": "ajaygpb@yahoo.co.in",
+      "@id": "https://orcid.org/0000-0001-7222-8483"
+    },
+    {
+      "@type": "Person",
+      "givenName": "J.",
+      "familyName": "Aravind",
+      "email": "j.aravind@icar.gov.in",
+      "@id": "https://orcid.org/0000-0002-4791-442X"
+    },
+    {
+      "@type": "Person",
+      "givenName": "R.",
+      "familyName": "Abdul Fiyaz",
+      "email": "fiyaz.ra@icar.gov.in",
+      "@id": "https://orcid.org/0000-0001-6261-7071"
+    }
+  ],
+  "copyrightHolder": [
+    {
+      "@type": "Organization",
+      "name": "ICAR"
+    }
+  ],
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": ["B.", "C."],
+      "familyName": "Ajay",
+      "email": "ajaygpb@yahoo.co.in",
+      "@id": "https://orcid.org/0000-0001-7222-8483"
+    }
+  ],
+  "softwareSuggestions": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "knitr",
+      "name": "knitr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=knitr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "rmarkdown",
+      "name": "rmarkdown",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "pander",
+      "name": "pander",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=pander"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "XML",
+      "name": "XML",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=XML"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "httr",
+      "name": "httr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=httr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "RCurl",
+      "name": "RCurl",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=RCurl"
+    }
+  ],
+  "softwareRequirements": {
+    "1": {
+      "@type": "SoftwareApplication",
+      "identifier": "R",
+      "name": "R",
+      "version": ">= 3.5.0"
+    },
+    "2": {
+      "@type": "SoftwareApplication",
+      "identifier": "agricolae",
+      "name": "agricolae",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=agricolae"
+    },
+    "3": {
+      "@type": "SoftwareApplication",
+      "identifier": "ggcorrplot",
+      "name": "ggcorrplot",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=ggcorrplot"
+    },
+    "4": {
+      "@type": "SoftwareApplication",
+      "identifier": "ggplot2",
+      "name": "ggplot2",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=ggplot2"
+    },
+    "5": {
+      "@type": "SoftwareApplication",
+      "identifier": "methods",
+      "name": "methods"
+    },
+    "6": {
+      "@type": "SoftwareApplication",
+      "identifier": "reshape2",
+      "name": "reshape2",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=reshape2"
+    },
+    "7": {
+      "@type": "SoftwareApplication",
+      "identifier": "stats",
+      "name": "stats"
+    },
+    "8": {
+      "@type": "SoftwareApplication",
+      "identifier": "Rdpack",
+      "name": "Rdpack",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=Rdpack"
+    },
+    "9": {
+      "@type": "SoftwareApplication",
+      "identifier": "mathjaxr",
+      "name": "mathjaxr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=mathjaxr"
+    },
+    "SystemRequirements": null
+  },
+  "fileSize": "2687.073KB",
+  "citation": [
+    {
+      "@type": "ScholarlyArticle",
+      "datePublished": "2019",
+      "author": [
+        {
+          "@type": "Person",
+          "givenName": ["B.", "C."],
+          "familyName": "Ajay",
+          "email": "ajaygpb@yahoo.co.in",
+          "@id": "https://orcid.org/0000-0001-7222-8483"
+        },
+        {
+          "@type": "Person",
+          "givenName": "J.",
+          "familyName": "Aravind",
+          "email": "j.aravind@icar.gov.in",
+          "@id": "https://orcid.org/0000-0002-4791-442X"
+        },
+        {
+          "@type": "Person",
+          "givenName": "R.",
+          "familyName": "Abdul Fiyaz",
+          "email": "fiyaz.ra@icar.gov.in"
+        }
+      ],
+      "name": "ammistability: {R} package for ranking genotypes based on stability parameters derived from {AMMI} model",
+      "url": "https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model",
+      "pagination": "460--466",
+      "isPartOf": {
+        "@type": "PublicationIssue",
+        "issueNumber": "2",
+        "datePublished": "2019",
+        "isPartOf": {
+          "@type": ["PublicationVolume", "Periodical"],
+          "volumeNumber": "79",
+          "name": "Indian Journal of Genetics and Plant Breeding (The)"
+        }
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "author": [
+        {
+          "@type": "Person",
+          "givenName": ["B.", "C."],
+          "familyName": "Ajay",
+          "email": "ajaygpb@yahoo.co.in",
+          "@id": "https://orcid.org/0000-0001-7222-8483"
+        },
+        {
+          "@type": "Person",
+          "givenName": "J.",
+          "familyName": "Aravind",
+          "email": "j.aravind@icar.gov.in",
+          "@id": "https://orcid.org/0000-0002-4791-442X"
+        },
+        {
+          "@type": "Person",
+          "givenName": "R.",
+          "familyName": "Abdul Fiyaz",
+          "email": "fiyaz.ra@icar.gov.in"
+        }
+      ],
+      "name": "ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters",
+      "description": ["R package version 0.1.4", "https://ajaygpb.github.io/ammistability/", "https://CRAN.R-project.org/package=ammistability"]
+    }
+  ],
+  "releaseNotes": "https://github.com/ajaygpb/ammistability/blob/master/NEWS.md",
+  "readme": "https://github.com/ajaygpb/ammistability/blob/master/README.md",
+  "contIntegration": "https://github.com/ajaygpb/ammistability/actions",
+  "developmentStatus": ["https://www.repostatus.org/#inactive", "https://lifecycle.r-lib.org/articles/stages.html#stable"]
+}

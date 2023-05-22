@@ -12,6 +12,7 @@
 ^vignettes/Introduction\.aux$
 ^vignettes/Introduction\.out$
 ^vignettes/Introduction\.log$
+^vignettes/.*\.log$
 ^ammistability\.pdf$
 ^_pkgdown\.yml$
 ^pkgdown$
@@ -20,3 +21,5 @@
 ^cran-comments\.md$
 ^cran-comments-archive\.md$
 ^\.github$
+^CITATION\.cff$
+^codemeta\.json$

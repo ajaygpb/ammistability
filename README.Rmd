@@ -3,6 +3,12 @@ output: rmarkdown::github_document
 always_allow_html: true
 ---
 
+```{r, results='asis', echo=FALSE}
+glue::glue('<script type="application/ld+json">
+      {glue::glue_collapse(readLines("inst/schemaorg.json"), sep = "\n")}
+    </script>')
+```
+
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -18,7 +24,7 @@ devtools::load_all(".")
 
 ```
 
-###### Version : [`r getNamespaceVersion("ammistability")`](https://ajaygpb.github.io/ammistability/); Copyright (C) 2017-`r  format(Sys.Date(), "%Y")`: [ICAR-DGR](https://www.dgr.org.in/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [`r getNamespaceVersion("ammistability")`](https://ajaygpb.github.io/ammistability/); Copyright (C) 2017-`r  format(Sys.Date(), "%Y")`: [ICAR-DGR](https://en.wikipedia.org/wiki/Directorate_of_Groundnut_Research); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Ajay, B. C.^1^, Aravind, J.^2^ and Abdul Fiyaz, R^3^*
 
@@ -100,6 +106,7 @@ news(package='ammistability')
 
 [Zenodo DOI](https://doi.org/10.5281/zenodo.1344756)
 
+<!-- 
 ## CRAN checks
 
 ```{r, echo = FALSE}
@@ -116,8 +123,8 @@ osdf <-
         # data.frame(OS = "Solaris", 
         #            Flavour = c("r-patched-solaris-x86")),
         data.frame(OS = "Windows", 
-                   Flavour = c("r-devel-windows-x86_64", 
-                               "r-release-windows-x86_64",
+                   Flavour = c("r-devel-windows-ix86+x86_64", 
+                               "r-release-windows-ix86+x86_64",
                                "r-oldrel-windows-ix86+x86_64")),
         data.frame(OS = "macOS", 
                    Flavour = c("r-release-macos-x86_64", 
@@ -144,28 +151,28 @@ osdf$`CRAN check` <- paste("[![CRAN check - ", osdf$Flavour, "]",
 
 
 ```{r, echo = FALSE, results='asis'}
-library(kableExtra, warn.conflicts = FALSE)
+cat("[![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)", "\n")
 
-kosdf <- kbl(osdf[, c("Flavour", "CRAN check")], row.names = FALSE)
+knitr::kable(osdf[osdf$OS == "Linux", c(2, 3)], format = "simple", 
+             col.names = c("", ""), 
+             row.names = FALSE)
 
-kosdf2 <- kable_styling(kosdf, bootstrap_options = c("striped", "hover"),
-              full_width = F, position = "left")
+cat("[![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)", "\n")
 
-# os_index <- c(6, 1, 3, 2)
-os_index <- c(6, 3, 4)
+knitr::kable(osdf[osdf$OS == "Windows", c(2, 3)], format = "simple", 
+             col.names = c("", ""),
+             row.names = FALSE)
 
-names(os_index) <- c(paste("[![Linux](https://shields.io/badge/Linux--9cf?logo=Linux&style=social)]",
-                           chklink, sep = ""),
-                     # paste("[![Solaris](https://shields.io/badge/Solaris--9cf?logo=Oracle&style=social)]",
-                     #       chklink, sep = ""),
-                     paste("[![Windows](https://shields.io/badge/Windows--9cf?logo=Windows&style=social)]",
-                           chklink, sep = ""),
-                     paste("[![MacOS](https://shields.io/badge/MacOS--9cf?logo=Apple&style=social)]",
-                           chklink, sep = ""))
+cat("[![MacOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)", "\n")
 
-pack_rows(kosdf2, index = os_index)
+knitr::kable(osdf[osdf$OS == "macOS", c(2, 3)], format = "simple", 
+             col.names = c("", ""),
+             row.names = FALSE)
 
+cat("\n")
 ```
+
+-->
 
 ## Citing `ammistability`
 To cite the methods in the package use:

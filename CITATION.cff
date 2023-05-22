@@ -1,0 +1,97 @@
+# -----------------------------------------------------------
+# CITATION file created with {cffr} R package, v0.5.0
+# See also: https://docs.ropensci.org/cffr/
+# -----------------------------------------------------------
+ 
+cff-version: 1.2.0
+message: 'To cite package "ammistability" in publications use:'
+type: software
+license:
+- GPL-2.0-only
+- GPL-3.0-only
+title: 'ammistability: Additive Main Effects and Multiplicative Interaction Model
+  Stability Parameters'
+version: 0.1.4
+abstract: Computes various stability parameters from Additive Main Effects and Multiplicative
+  Interaction (AMMI) analysis results such as Modified AMMI Stability Value (MASV),
+  Sums of the Absolute Value of the Interaction Principal Component Scores (SIPC),
+  Sum Across Environments of Genotype-Environment Interaction Modelled by AMMI (AMGE),
+  Sum Across Environments of Absolute Value of Genotype-Environment Interaction Modelled
+  by AMMI (AV_(AMGE)), AMMI Stability Index (ASI), Modified ASI (MASI), AMMI Based
+  Stability Parameter (ASTAB), Annicchiarico's D Parameter (DA), Zhang's D Parameter
+  (DZ), Averages of the Squared Eigenvector Values (EV), Stability Measure Based on
+  Fitted AMMI Model (FA), Absolute Value of the Relative Contribution of IPCs to the
+  Interaction (Za). Further calculates the Simultaneous Selection Index for Yield
+  and Stability from the computed stability parameters. See the vignette for complete
+  list of citations for the methods implemented.
+authors:
+- family-names: Ajay
+  given-names: B. C.
+  email: ajaygpb@yahoo.co.in
+  orcid: https://orcid.org/0000-0001-7222-8483
+- family-names: Aravind
+  given-names: J.
+  email: j.aravind@icar.gov.in
+  orcid: https://orcid.org/0000-0002-4791-442X
+- family-names: Abdul Fiyaz
+  given-names: R.
+  email: fiyaz.ra@icar.gov.in
+  orcid: https://orcid.org/0000-0001-6261-7071
+preferred-citation:
+  type: article
+  title: 'ammistability: R package for ranking genotypes based on stability parameters
+    derived from AMMI model'
+  authors:
+  - family-names: Ajay
+    given-names: B. C.
+    email: ajaygpb@yahoo.co.in
+    orcid: https://orcid.org/0000-0001-7222-8483
+  - family-names: Aravind
+    given-names: J.
+    email: j.aravind@icar.gov.in
+    orcid: https://orcid.org/0000-0002-4791-442X
+  - family-names: Abdul Fiyaz
+    given-names: R.
+    email: fiyaz.ra@icar.gov.in
+    orcid: https://orcid.org/0000-0001-6261-7071
+  journal: Indian Journal of Genetics and Plant Breeding (The)
+  year: '2019'
+  volume: '79'
+  issue: '2'
+  url: https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model
+  start: '460'
+  end: '466'
+repository-code: https://github.com/ajaygpb/ammistability
+url: https://github.com/ajaygpb/ammistability/
+contact:
+- family-names: Ajay
+  given-names: B. C.
+  email: ajaygpb@yahoo.co.in
+  orcid: https://orcid.org/0000-0001-7222-8483
+references:
+- type: manual
+  title: 'ammistability: Additive Main Effects and Multiplicative Interaction Model
+    Stability Parameters'
+  authors:
+  - family-names: Ajay
+    given-names: B. C.
+    email: ajaygpb@yahoo.co.in
+    orcid: https://orcid.org/0000-0001-7222-8483
+  - family-names: Aravind
+    given-names: J.
+    email: j.aravind@icar.gov.in
+    orcid: https://orcid.org/0000-0002-4791-442X
+  - family-names: Abdul Fiyaz
+    given-names: R.
+    email: fiyaz.ra@icar.gov.in
+  notes:
+  - R package version 0.1.4
+  - https://ajaygpb.github.io/ammistability/
+  - https://CRAN.R-project.org/package=ammistability
+identifiers:
+- type: url
+  value: https://CRAN.R-project.org/package=ammistability
+- type: url
+  value: https://ajaygpb.github.io/ammistability/
+- type: url
+  value: https://doi.org/10.5281/zenodo.1344756
