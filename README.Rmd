@@ -106,11 +106,11 @@ news(package='ammistability')
 
 [Zenodo DOI](https://doi.org/10.5281/zenodo.1344756)
 
-<!-- 
+
 ## CRAN checks
 
 ```{r, echo = FALSE}
-pkgname <- "ammistability"
+pkgname <- "augmentedRCBD"
 
 osdf <-
   rbind(data.frame(OS = "Linux", 
@@ -128,9 +128,9 @@ osdf <-
                                "r-oldrel-windows-ix86+x86_64")),
         data.frame(OS = "macOS", 
                    Flavour = c("r-release-macos-x86_64", 
-                               "r-oldrel-macos-x86_64",
-                               "r-release-macos-arm64",
-                               "r-oldrel-macos-arm64")))
+                               # "r-release-macos-arm64",
+                               # "r-oldrel-macos-arm64",
+                               "r-oldrel-macos-x86_64")))
 
 chkurl <- paste("https://cran.r-project.org/web/checks/check_results_",
                 pkgname, ".html", sep = "")
@@ -139,12 +139,12 @@ library(RCurl)
 if (url.exists(chkurl)) {
   chklink <- paste("(", chkurl,  ")", sep = "")
 } else {
-  chklink <- "(https://cran.r-project.org/src/contrib/Archive/ammistability/)"
+  chklink <- "(https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)"
 }
 
 osdf$`CRAN check` <- paste("[![CRAN check - ", osdf$Flavour, "]",
-                           "(https://cranchecks.info/badges/flavor/",
-                           osdf$Flavour, "/", pkgname, ")]",
+                           "(https://badges.cranchecks.info/flavor/",
+                           osdf$Flavour, "/", pkgname, ".svg)]",
                            chklink,
                            sep = "")
 ```
@@ -171,8 +171,6 @@ knitr::kable(osdf[osdf$OS == "macOS", c(2, 3)], format = "simple",
 
 cat("\n")
 ```
-
--->
 
 ## Citing `ammistability`
 To cite the methods in the package use:
