@@ -8,13 +8,19 @@
   "codeRepository": "https://github.com/ajaygpb/ammistability/",
   "issueTracker": "https://github.com/ajaygpb/ammistability/issues",
   "license": "https://spdx.org/licenses/GPL-2.0",
-  "version": "0.1.4",
+  "version": "0.1.4.9000",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2023-04-28 r84338 ucrt)",
+  "runtimePlatform": "R Under development (unstable) (2023-08-09 r84924 ucrt)",
+  "provider": {
+    "@id": "https://cran.r-project.org",
+    "@type": "Organization",
+    "name": "Comprehensive R Archive Network (CRAN)",
+    "url": "https://cran.r-project.org"
+  },
   "author": [
     {
       "@type": "Person",
@@ -218,7 +224,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "2687.073KB",
+  "fileSize": "2743.713KB",
   "citation": [
     {
       "@type": "ScholarlyArticle",
@@ -284,7 +290,7 @@
         }
       ],
       "name": "ammistability: Additive Main Effects and Multiplicative Interaction Model Stability Parameters",
-      "description": ["R package version 0.1.4", "https://ajaygpb.github.io/ammistability/", "https://CRAN.R-project.org/package=ammistability"]
+      "description": ["R package version 0.1.4.9000", "https://ajaygpb.github.io/ammistability/", "https://CRAN.R-project.org/package=ammistability"]
     }
   ],
   "releaseNotes": "https://github.com/ajaygpb/ammistability/blob/master/NEWS.md",

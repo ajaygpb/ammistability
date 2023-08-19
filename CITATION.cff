@@ -11,7 +11,7 @@ license:
 - GPL-3.0-only
 title: 'ammistability: Additive Main Effects and Multiplicative Interaction Model
   Stability Parameters'
-version: 0.1.4
+version: 0.1.4.9000
 abstract: Computes various stability parameters from Additive Main Effects and Multiplicative
   Interaction (AMMI) analysis results such as Modified AMMI Stability Value (MASV),
   Sums of the Absolute Value of the Interaction Principal Component Scores (SIPC),
@@ -61,6 +61,7 @@ preferred-citation:
   url: https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model
   start: '460'
   end: '466'
+repository: https://CRAN.R-project.org/package=ammistability
 repository-code: https://github.com/ajaygpb/ammistability
 url: https://github.com/ajaygpb/ammistability/
 contact:
@@ -85,7 +86,7 @@ references:
     given-names: R.
     email: fiyaz.ra@icar.gov.in
   notes:
-  - R package version 0.1.4
+  - R package version 0.1.4.9000
   - https://ajaygpb.github.io/ammistability/
   - https://CRAN.R-project.org/package=ammistability
 identifiers:
