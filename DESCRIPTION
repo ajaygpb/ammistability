@@ -2,25 +2,25 @@ Package: ammistability
 Type: Package
 Title: Additive Main Effects and Multiplicative Interaction Model Stability Parameters
 Version: 0.1.4.9000
-Authors@R: 
-    c(person(given = c("B.", "C."),
-             family = "Ajay",
-             role = c("aut", "cre"),
-             email = "ajaygpb@yahoo.co.in",
-             comment = c(ORCID = "0000-0001-7222-8483")),
-      person(given = "J.",
-             family = "Aravind",
-             role = "aut",
-             email = "j.aravind@icar.gov.in",
-             comment = c(ORCID = "0000-0002-4791-442X")),
-      person(given = "R.",
-             family = "Abdul Fiyaz",
-             role = "aut",
-             email = "fiyaz.ra@icar.gov.in",
-             comment = c(ORCID = "0000-0001-6261-7071")),
-      person(given = "ICAR",
-             role = "cph",
-             comment = c(url = "https://www.icar.org.in")))
+Authors@R: c(
+    person(given = c("B.", "C."),
+           family = "Ajay",
+           role = c("aut", "cre"),
+           email = "ajaygpb@yahoo.co.in",
+           comment = c(ORCID = "0000-0001-7222-8483")),
+    person(given = "J.",
+           family = "Aravind",
+           role = "aut",
+           email = "j.aravind@icar.gov.in",
+           comment = c(ORCID = "0000-0002-4791-442X")),
+    person(given = "R.",
+           family = "Abdul Fiyaz",
+           role = "aut",
+           email = "fiyaz.ra@icar.gov.in",
+           comment = c(ORCID = "0000-0001-6261-7071")),
+    person(given = "ICAR",
+           role = "cph",
+           comment = c(url = "https://www.icar.org.in")))
 Description: Computes various stability parameters from Additive Main Effects
     and Multiplicative Interaction (AMMI) analysis results such as  Modified
     AMMI Stability Value (MASV), Sums of the Absolute Value of the Interaction
@@ -35,12 +35,13 @@ Description: Computes various stability parameters from Additive Main Effects
     Simultaneous Selection Index for Yield and Stability from the computed
     stability parameters. See the vignette for complete list of citations for
     the methods implemented.
-Copyright: 2017-2023, ICAR-DGR
 License: GPL-2 | GPL-3
-Encoding: UTF-8
+URL: https://github.com/ajaygpb/ammistability/
+    https://CRAN.R-project.org/package=ammistability
+    https://ajaygpb.github.io/ammistability/
+    https://doi.org/10.5281/zenodo.1344756
+BugReports: https://github.com/ajaygpb/ammistability/issues
 Depends: R (>= 3.5.0)
-VignetteBuilder: knitr
-RoxygenNote: 7.2.3
 Imports:
     agricolae,
     ggcorrplot,
@@ -57,10 +58,10 @@ Suggests:
     XML,
     httr,
     RCurl
-RdMacros: Rdpack,
+RdMacros: 
+    Rdpack,
     mathjaxr
-URL: https://github.com/ajaygpb/ammistability/
-    https://CRAN.R-project.org/package=ammistability
-    https://ajaygpb.github.io/ammistability/
-    https://doi.org/10.5281/zenodo.1344756
-BugReports: https://github.com/ajaygpb/ammistability/issues
+Copyright: 2017-2023, ICAR-DGR
+Encoding: UTF-8
+VignetteBuilder: knitr
+RoxygenNote: 7.2.3
