@@ -229,14 +229,22 @@ citation("ammistability")
 
     To cite the R package 'ammistability' in publications use:
 
-      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2019). ammistability: R package for ranking genotypes based on stability parameters
-      derived from AMMI model. Indian Journal of Genetics and Plant Breeding (The), 79(2), 460-466.
+      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2019). ammistability:
+      R package for ranking genotypes based on stability parameters derived
+      from AMMI model. Indian Journal of Genetics and Plant Breeding (The),
+      79(2), 460-466.
       https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model
 
-      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. ().  ammistability: Additive Main Effects and Multiplicative Interaction Model Stability
-      Parameters. R package version 0.1.4.9000, https://ajaygpb.github.io/ammistability/, https://CRAN.R-project.org/package=ammistability.
+      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. ().  ammistability:
+      Additive Main Effects and Multiplicative Interaction Model Stability
+      Parameters. R package version 0.1.4.9000,
+      https://ajaygpb.github.io/ammistability/,
+      https://CRAN.R-project.org/package=ammistability.
 
-    This free and open-source software implements academic research by the authors and co-workers. If you use it, please support the project
-    by citing the package.
+    This free and open-source software implements academic research by the
+    authors and co-workers. If you use it, please support the project by
+    citing the package.
 
-    To see these entries in BibTeX format, use 'print(<citation>, bibtex=TRUE)', 'toBibtex(.)', or set 'options(citation.bibtex.max=999)'.
+    To see these entries in BibTeX format, use 'print(<citation>,
+    bibtex=TRUE)', 'toBibtex(.)', or set
+    'options(citation.bibtex.max=999)'.
