@@ -5,7 +5,6 @@
 #' considering the first two interaction principal components (IPCs) in the AMMI
 #' model. Using ASI, the Simultaneous Selection Index for Yield and Stability
 #' (SSI) is also calculated according to the argument \code{ssi.method}.
-#' \loadmathjax
 #'
 #' The AMMI Stability Index (\mjseqn{ASI})
 #' \insertCite{jambhulkar_ammi_2014,jambhulkar_genotype_2015,jambhulkar_stability_2017}{ammistability}

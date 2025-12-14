@@ -7,7 +7,7 @@
 #' calculates AMMI stability value considering all significant interaction
 #' principal components (IPCs) in the AMMI model. Using MASV, the Simultaneous
 #' Selection Index for Yield and Stability (SSI) is also calculated according to
-#' the argument \code{ssi.method}. \loadmathjax
+#' the argument \code{ssi.method}.
 #'
 #' The Modified AMMI Stability Value (\mjseqn{MASV})
 #' \insertCite{ajay_rectification_2019}{ammistability} is computed as follows:

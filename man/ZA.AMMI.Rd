@@ -41,7 +41,7 @@ IPCs to the Interaction (\mjseqn{\textrm{Z}_{\textrm{a}}})
 interaction principal components (IPCs) in the AMMI model. Using
 \mjseqn{\textrm{Z}_{\textrm{a}}}, the Simultaneous Selection Index for Yield
 and Stability (SSI) is also calculated according to the argument
-\code{ssi.method}. \loadmathjax
+\code{ssi.method}.
 }
 \details{
 The Absolute Value of the Relative Contribution of IPCs to the Interaction

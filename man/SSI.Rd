@@ -32,7 +32,6 @@ A data frame with the following columns:  \item{SP}{The stability
 \description{
 \code{SSI} computes the Simultaneous Selection Index for Yield and Stability
 (SSI) according to the methods specified in the argument \code{method}.
-\loadmathjax
 }
 \details{
 The SSI according to \insertCite{rao_use_2005;textual}{ammistability}

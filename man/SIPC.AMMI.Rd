@@ -39,7 +39,7 @@ A data frame with the following columns:  \item{SIPC}{The SIPC
 (ASI) \insertCite{sneller_repeatability_1997}{ammistability} considering all
 significant interaction principal components (IPCs) in the AMMI model. Using
 SIPC, the Simultaneous Selection Index for Yield and Stability (SSI) is also
-calculated according to the argument \code{ssi.method}. \loadmathjax
+calculated according to the argument \code{ssi.method}.
 }
 \details{
 The Sums of the Absolute Value of the IPC Scores (\mjseqn{SIPC})

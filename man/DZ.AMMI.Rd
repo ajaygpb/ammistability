@@ -43,7 +43,7 @@ interaction principal components (IPCs) in the AMMI model. It is the distance
 of IPC  point  from  origin  in space. Using
 \mjseqn{\textrm{D}_{\textrm{z}}}, the Simultaneous Selection Index for Yield
 and Stability (SSI) is also calculated according to the argument
-\code{ssi.method}. \loadmathjax
+\code{ssi.method}.
 }
 \details{
 The Zhang's D Parameter value (\mjseqn{D_{z}})

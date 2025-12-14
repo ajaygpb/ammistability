@@ -5,7 +5,7 @@
 #' \insertCite{zali_evaluation_2012}{ammistability} considering all significant
 #' interaction principal components (IPCs) in the AMMI model. Using AVAMGE, the
 #' Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
-#' according to the argument \code{ssi.method}. \loadmathjax
+#' according to the argument \code{ssi.method}.
 #'
 #' The Sum Across Environments of Absolute Value of GEI Modelled by AMMI
 #' (\mjseqn{AV_{(AMGE)}}) \insertCite{zali_evaluation_2012}{ammistability} is

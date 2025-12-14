@@ -4,7 +4,7 @@
 #' \insertCite{raju_study_2002}{ammistability} considering all significant
 #' interaction principal components (IPCs) in the AMMI model. Using FA, the
 #' Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
-#' according to the argument \code{ssi.method}. \loadmathjax
+#' according to the argument \code{ssi.method}.
 #'
 #' The Stability Measure Based on Fitted AMMI Model (\mjseqn{FA})
 #' \insertCite{raju_study_2002}{ammistability} is computed as follows:

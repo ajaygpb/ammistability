@@ -34,7 +34,6 @@ A data frame with the following columns:  \item{ASI}{The ASI values.}
 considering the first two interaction principal components (IPCs) in the AMMI
 model. Using ASI, the Simultaneous Selection Index for Yield and Stability
 (SSI) is also calculated according to the argument \code{ssi.method}.
-\loadmathjax
 }
 \details{
 The AMMI Stability Index (\mjseqn{ASI})

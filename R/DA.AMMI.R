@@ -7,7 +7,7 @@
 #' the unsquared Euclidean distance from the origin of significant IPC axes in
 #' the AMMI model. Using \mjseqn{\textrm{D}_{\textrm{a}}}, the Simultaneous
 #' Selection Index for Yield and Stability (SSI) is also calculated according to
-#' the argument \code{ssi.method}. \loadmathjax
+#' the argument \code{ssi.method}.
 #'
 #' The Annicchiarico's D Parameter value (\mjseqn{D_{a}})
 #' \insertCite{annicchiarico_joint_1997}{ammistability} is computed as follows:

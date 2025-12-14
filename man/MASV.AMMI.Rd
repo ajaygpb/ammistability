@@ -42,7 +42,7 @@ A data frame with the following columns:  \item{MASV}{The MASV
 calculates AMMI stability value considering all significant interaction
 principal components (IPCs) in the AMMI model. Using MASV, the Simultaneous
 Selection Index for Yield and Stability (SSI) is also calculated according to
-the argument \code{ssi.method}. \loadmathjax
+the argument \code{ssi.method}.
 }
 \details{
 The Modified AMMI Stability Value (\mjseqn{MASV})

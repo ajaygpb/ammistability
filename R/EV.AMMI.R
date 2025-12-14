@@ -4,7 +4,7 @@
 #' Values (EV) \insertCite{zobel_stress_1994}{ammistability} considering all
 #' significant interaction principal components (IPCs) in the AMMI model. Using
 #' EV, the Simultaneous Selection Index for Yield and Stability (SSI) is also
-#' calculated according to the argument \code{ssi.method}. \loadmathjax
+#' calculated according to the argument \code{ssi.method}.
 #'
 #' The Averages of the Squared Eigenvector Values (\mjseqn{EV})
 #' \insertCite{zobel_stress_1994}{ammistability} is computed as follows:

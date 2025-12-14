@@ -7,7 +7,7 @@
 #' Unlike ASI, MASI calculates stability value considering all significant
 #' interaction principal components (IPCs) in the AMMI model. Using MASI, the
 #' Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
-#' according to the argument \code{ssi.method}. \loadmathjax
+#' according to the argument \code{ssi.method}.
 #'
 #' The Modified AMMI Stability Index (\mjseqn{MASI})
 #' \insertCite{ajay_modified_2018}{ammistability} is computed as follows:

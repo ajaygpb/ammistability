@@ -4,7 +4,7 @@
 #' \insertCite{rao_use_2005}{ammistability} considering all significant
 #' interaction principal components (IPCs) in the AMMI model. Using ASTAB, the
 #' Simultaneous Selection Index for Yield and Stability (SSI) is also calculated
-#' according to the argument \code{ssi.method}. \loadmathjax
+#' according to the argument \code{ssi.method}.
 #'
 #' The AMMI Based Stability Parameter value (\mjseqn{ASTAB})
 #' \insertCite{rao_use_2005}{ammistability} is computed as follows:

@@ -2,7 +2,6 @@
 #'
 #' \code{SSI} computes the Simultaneous Selection Index for Yield and Stability
 #' (SSI) according to the methods specified in the argument \code{method}.
-#' \loadmathjax
 #'
 #' The SSI according to \insertCite{rao_use_2005;textual}{ammistability}
 #' (\mjseqn{I_{i}}) is computed as follows:
