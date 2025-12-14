@@ -11,12 +11,12 @@ Authors@R: c(
     person(given = "J.",
            family = "Aravind",
            role = "aut",
-           email = "j.aravind@icar.gov.in",
+           email = "j.aravind@icar.org.in",
            comment = c(ORCID = "0000-0002-4791-442X")),
     person(given = "R.",
            family = "Abdul Fiyaz",
            role = "aut",
-           email = "fiyaz.ra@icar.gov.in",
+           email = "fiyaz.ra@icar.org.in",
            comment = c(ORCID = "0000-0001-6261-7071")),
     person(given = "ICAR",
            role = "cph",
@@ -64,4 +64,4 @@ RdMacros:
 Copyright: 2017-2023, ICAR-DGR
 Encoding: UTF-8
 VignetteBuilder: knitr
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
