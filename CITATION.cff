@@ -1,7 +1,7 @@
-# -----------------------------------------------------------
-# CITATION file created with {cffr} R package, v0.5.0
+# --------------------------------------------
+# CITATION file created with {cffr} R package
 # See also: https://docs.ropensci.org/cffr/
-# -----------------------------------------------------------
+# --------------------------------------------
  
 cff-version: 1.2.0
 message: 'To cite package "ammistability" in publications use:'
@@ -12,6 +12,15 @@ license:
 title: 'ammistability: Additive Main Effects and Multiplicative Interaction Model
   Stability Parameters'
 version: 0.1.4.9000
+identifiers:
+- type: doi
+  value: 10.32614/CRAN.package.ammistability
+- type: url
+  value: https://CRAN.R-project.org/package=ammistability
+- type: url
+  value: https://ajaygpb.github.io/ammistability/
+- type: url
+  value: https://doi.org/10.5281/zenodo.1344756
 abstract: Computes various stability parameters from Additive Main Effects and Multiplicative
   Interaction (AMMI) analysis results such as Modified AMMI Stability Value (MASV),
   Sums of the Absolute Value of the Interaction Principal Component Scores (SIPC),
@@ -31,11 +40,11 @@ authors:
   orcid: https://orcid.org/0000-0001-7222-8483
 - family-names: Aravind
   given-names: J.
-  email: j.aravind@icar.gov.in
+  email: j.aravind@icar.org.in
   orcid: https://orcid.org/0000-0002-4791-442X
 - family-names: Abdul Fiyaz
   given-names: R.
-  email: fiyaz.ra@icar.gov.in
+  email: fiyaz.ra@icar.org.in
   orcid: https://orcid.org/0000-0001-6261-7071
 preferred-citation:
   type: article
@@ -48,11 +57,11 @@ preferred-citation:
     orcid: https://orcid.org/0000-0001-7222-8483
   - family-names: Aravind
     given-names: J.
-    email: j.aravind@icar.gov.in
+    email: j.aravind@icar.org.in
     orcid: https://orcid.org/0000-0002-4791-442X
   - family-names: Abdul Fiyaz
     given-names: R.
-    email: fiyaz.ra@icar.gov.in
+    email: fiyaz.ra@icar.org.in
     orcid: https://orcid.org/0000-0001-6261-7071
   journal: Indian Journal of Genetics and Plant Breeding (The)
   year: '2019'
@@ -80,19 +89,252 @@ references:
     orcid: https://orcid.org/0000-0001-7222-8483
   - family-names: Aravind
     given-names: J.
-    email: j.aravind@icar.gov.in
+    email: j.aravind@icar.org.in
     orcid: https://orcid.org/0000-0002-4791-442X
   - family-names: Abdul Fiyaz
     given-names: R.
-    email: fiyaz.ra@icar.gov.in
-  notes:
-  - R package version 0.1.4.9000
-  - https://ajaygpb.github.io/ammistability/
-  - https://CRAN.R-project.org/package=ammistability
-identifiers:
-- type: url
-  value: https://CRAN.R-project.org/package=ammistability
-- type: url
-  value: https://ajaygpb.github.io/ammistability/
-- type: url
-  value: https://doi.org/10.5281/zenodo.1344756
+    email: fiyaz.ra@icar.org.in
+  notes: R package version 0.1.4.9000 https://ajaygpb.github.io/ammistability/ https://CRAN.R-project.org/package=ammistability
+- type: software
+  title: 'R: A Language and Environment for Statistical Computing'
+  notes: Depends
+  url: https://www.R-project.org/
+  authors:
+  - name: R Core Team
+  institution:
+    name: R Foundation for Statistical Computing
+    address: Vienna, Austria
+  year: '2025'
+  version: '>= 3.5.0'
+- type: software
+  title: agricolae
+  abstract: 'agricolae: Statistical Procedures for Agricultural Research'
+  notes: Imports
+  repository: https://CRAN.R-project.org/package=agricolae
+  authors:
+  - family-names: Mendiburu
+    given-names: Felipe
+    name-particle: de
+  year: '2025'
+  doi: 10.32614/CRAN.package.agricolae
+- type: software
+  title: ggcorrplot
+  abstract: 'ggcorrplot: Visualization of a Correlation Matrix using ''ggplot2'''
+  notes: Imports
+  url: http://www.sthda.com/english/wiki/ggcorrplot-visualization-of-a-correlation-matrix-using-ggplot2
+  repository: https://CRAN.R-project.org/package=ggcorrplot
+  authors:
+  - family-names: Kassambara
+    given-names: Alboukadel
+    email: alboukadel.kassambara@gmail.com
+  year: '2025'
+  doi: 10.32614/CRAN.package.ggcorrplot
+- type: software
+  title: ggplot2
+  abstract: 'ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics'
+  notes: Imports
+  url: https://ggplot2.tidyverse.org
+  repository: https://CRAN.R-project.org/package=ggplot2
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@posit.co
+    orcid: https://orcid.org/0000-0003-4757-117X
+  - family-names: Chang
+    given-names: Winston
+    orcid: https://orcid.org/0000-0002-1576-2126
+  - family-names: Henry
+    given-names: Lionel
+  - family-names: Pedersen
+    given-names: Thomas Lin
+    email: thomas.pedersen@posit.co
+    orcid: https://orcid.org/0000-0002-5147-4711
+  - family-names: Takahashi
+    given-names: Kohske
+  - family-names: Wilke
+    given-names: Claus
+    orcid: https://orcid.org/0000-0002-7470-9261
+  - family-names: Woo
+    given-names: Kara
+    orcid: https://orcid.org/0000-0002-5125-4188
+  - family-names: Yutani
+    given-names: Hiroaki
+    orcid: https://orcid.org/0000-0002-3385-7233
+  - family-names: Dunnington
+    given-names: Dewey
+    orcid: https://orcid.org/0000-0002-9415-4582
+  - family-names: Brand
+    given-names: Teun
+    name-particle: van den
+    orcid: https://orcid.org/0000-0002-9335-7468
+  year: '2025'
+  doi: 10.32614/CRAN.package.ggplot2
+- type: software
+  title: methods
+  abstract: 'R: A Language and Environment for Statistical Computing'
+  notes: Imports
+  authors:
+  - name: R Core Team
+  institution:
+    name: R Foundation for Statistical Computing
+    address: Vienna, Austria
+  year: '2025'
+- type: software
+  title: reshape2
+  abstract: 'reshape2: Flexibly Reshape Data: A Reboot of the Reshape Package'
+  notes: Imports
+  url: https://github.com/hadley/reshape
+  repository: https://CRAN.R-project.org/package=reshape2
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@posit.co
+  year: '2025'
+  doi: 10.32614/CRAN.package.reshape2
+- type: software
+  title: stats
+  abstract: 'R: A Language and Environment for Statistical Computing'
+  notes: Imports
+  authors:
+  - name: R Core Team
+  institution:
+    name: R Foundation for Statistical Computing
+    address: Vienna, Austria
+  year: '2025'
+- type: software
+  title: Rdpack
+  abstract: 'Rdpack: Update and Manipulate Rd Documentation Objects'
+  notes: Imports
+  url: https://geobosh.github.io/Rdpack/
+  repository: https://CRAN.R-project.org/package=Rdpack
+  authors:
+  - family-names: Boshnakov
+    given-names: Georgi N.
+    email: georgi.boshnakov@manchester.ac.uk
+    orcid: https://orcid.org/0000-0003-2839-346X
+  year: '2025'
+  doi: 10.32614/CRAN.package.Rdpack
+- type: software
+  title: mathjaxr
+  abstract: 'mathjaxr: Using ''Mathjax'' in Rd Files'
+  notes: Imports
+  url: https://github.com/wviechtb/mathjaxr
+  repository: https://CRAN.R-project.org/package=mathjaxr
+  authors:
+  - family-names: Viechtbauer
+    given-names: Wolfgang
+    email: wvb@wvbauer.com
+    orcid: https://orcid.org/0000-0003-3463-4063
+  year: '2025'
+  doi: 10.32614/CRAN.package.mathjaxr
+- type: software
+  title: knitr
+  abstract: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
+  notes: Suggests
+  url: https://yihui.org/knitr/
+  repository: https://CRAN.R-project.org/package=knitr
+  authors:
+  - family-names: Xie
+    given-names: Yihui
+    email: xie@yihui.name
+    orcid: https://orcid.org/0000-0003-0645-5666
+  year: '2025'
+  doi: 10.32614/CRAN.package.knitr
+- type: software
+  title: rmarkdown
+  abstract: 'rmarkdown: Dynamic Documents for R'
+  notes: Suggests
+  url: https://pkgs.rstudio.com/rmarkdown/
+  repository: https://CRAN.R-project.org/package=rmarkdown
+  authors:
+  - family-names: Allaire
+    given-names: JJ
+    email: jj@posit.co
+  - family-names: Xie
+    given-names: Yihui
+    email: xie@yihui.name
+    orcid: https://orcid.org/0000-0003-0645-5666
+  - family-names: Dervieux
+    given-names: Christophe
+    email: cderv@posit.co
+    orcid: https://orcid.org/0000-0003-4474-2498
+  - family-names: McPherson
+    given-names: Jonathan
+    email: jonathan@posit.co
+  - family-names: Luraschi
+    given-names: Javier
+  - family-names: Ushey
+    given-names: Kevin
+    email: kevin@posit.co
+  - family-names: Atkins
+    given-names: Aron
+    email: aron@posit.co
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@posit.co
+  - family-names: Cheng
+    given-names: Joe
+    email: joe@posit.co
+  - family-names: Chang
+    given-names: Winston
+    email: winston@posit.co
+  - family-names: Iannone
+    given-names: Richard
+    email: rich@posit.co
+    orcid: https://orcid.org/0000-0003-3925-190X
+  year: '2025'
+  doi: 10.32614/CRAN.package.rmarkdown
+- type: software
+  title: pander
+  abstract: 'pander: An R ''Pandoc'' Writer'
+  notes: Suggests
+  url: https://rapporter.github.io/pander/
+  repository: https://CRAN.R-project.org/package=pander
+  authors:
+  - family-names: Daróczi
+    given-names: Gergely
+    email: daroczig@rapporter.net
+    orcid: https://orcid.org/0000-0003-3149-8537
+  - family-names: Tsegelskyi
+    given-names: Roman
+    email: roman.tsegelskyi@gmail.com
+  year: '2025'
+  doi: 10.32614/CRAN.package.pander
+- type: software
+  title: XML
+  abstract: 'XML: Tools for Parsing and Generating XML Within R and S-Plus'
+  notes: Suggests
+  url: https://www.omegahat.net/RSXML/
+  repository: https://CRAN.R-project.org/package=XML
+  authors:
+  - family-names: Temple Lang
+    given-names: Duncan
+    email: duncan@r-project.org
+    orcid: https://orcid.org/0000-0003-0159-1546
+  year: '2025'
+  doi: 10.32614/CRAN.package.XML
+- type: software
+  title: httr
+  abstract: 'httr: Tools for Working with URLs and HTTP'
+  notes: Suggests
+  url: https://httr.r-lib.org/
+  repository: https://CRAN.R-project.org/package=httr
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@posit.co
+  year: '2025'
+  doi: 10.32614/CRAN.package.httr
+- type: software
+  title: RCurl
+  abstract: 'RCurl: General Network (HTTP/FTP/...) Client Interface for R'
+  notes: Suggests
+  repository: https://CRAN.R-project.org/package=RCurl
+  authors:
+  - family-names: Temple Lang
+    given-names: Duncan
+    email: duncan@r-project.org
+    orcid: https://orcid.org/0000-0003-0159-1546
+  year: '2025'
+  doi: 10.32614/CRAN.package.RCurl
+
