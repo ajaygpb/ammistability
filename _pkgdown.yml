@@ -1,35 +1,50 @@
 template:
-  params:
+  bootstrap: 5
+  math-rendering: mathjax
+  light-switch: true
+  bslib:
     bootswatch: yeti
+  params:
     ganalytics: UA-123032895-1
-    docsearch:
-      api_key: 3254bc205198a098361afb3d5b2c2f8b
-      index_name: ammistability
 
-home:
-  sidebar:
-    structure: [links, license, community, citation, authors, dev]
+deploy:
+  install_metadata: true
 
 url: https://ajaygpb.github.io/ammistability/
 
+home:
+  sidebar:
+    structure:
+      - links
+      - license
+      - community
+      - citation
+      - authors
+      - dev
+
 navbar:
-  title: ammistability
-  type: default
-  left:
-    - icon: fa-home fa-lg
+  structure:
+    left:  [home, reference, introduction, news]
+    right: [search, github]
+  components:
+    home:
+      icon: fa-home fa-lg
       text: Home
       href: index.html
-    - icon: fa-code
+    reference:
+      icon: fa-code
       text: Reference
       href: reference/index.html
-    - icon: far fa-file
+    introduction:
+      icon: far fa-file
       text: Introduction
       href: articles/Introduction.html
-    - icon: far fa-newspaper
+    news:
+      icon: far fa-newspaper
       text: News
       href: news/index.html
-  right:
-    - icon: fab fa-github-alt
+    github:
+      icon: fab fa-github-alt
       text: Github
       href: https://github.com/ajaygpb/ammistability
 
