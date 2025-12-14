@@ -233,14 +233,7 @@ citation("ammistability")
       genotypes based on stability parameters derived from AMMI model. Indian Journal of Genetics
       and Plant Breeding (The), 79(2), 460-466.
       https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model
-      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2025).  ammistability: Additive Main Effects
-      and Multiplicative Interaction Model Stability Parameters. R package version 0.1.4.9000,
-      https://ajaygpb.github.io/ammistability/, https://CRAN.R-project.org/package=ammistability.
 
-      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2019). ammistability: R package for ranking
-      genotypes based on stability parameters derived from AMMI model. Indian Journal of Genetics
-      and Plant Breeding (The), 79(2), 460-466.
-      https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model
       Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2025).  ammistability: Additive Main Effects
       and Multiplicative Interaction Model Stability Parameters. R package version 0.1.4.9000,
       https://ajaygpb.github.io/ammistability/, https://CRAN.R-project.org/package=ammistability.

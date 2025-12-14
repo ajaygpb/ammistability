@@ -218,9 +218,9 @@ cit <- citation("ammistability")
 # class(cit) <- oc
 if (is.null(cit[2]$year)) {
   cit[2]$year <- format(Sys.Date(), "%Y")
-  cit$textVersion <- gsub("()", 
+  cit$textVersion[[2]] <- gsub("()", 
                           paste("(", format(Sys.Date(), "%Y"), ")", sep =""), 
-                          cit$textVersion, fixed = TRUE)
+                          cit$textVersion[[2]], fixed = TRUE)
 }
 cit
 ```
