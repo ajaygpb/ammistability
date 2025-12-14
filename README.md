@@ -114,7 +114,7 @@ Size](https://img.shields.io/github/languages/code-size/ajaygpb/ammistability.sv
 [![Project Status:
 Inactive](http://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2025--12--14-yellowgreen.svg)](https://github.com/ajaygpb/ammistability/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2025--12--15-yellowgreen.svg)](https://github.com/ajaygpb/ammistability/commits/master)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1344756.svg)](https://doi.org/10.5281/zenodo.1344756)
 [![Pub
@@ -233,9 +233,16 @@ citation("ammistability")
       genotypes based on stability parameters derived from AMMI model. Indian Journal of Genetics
       and Plant Breeding (The), 79(2), 460-466.
       https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model
+      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2025).  ammistability: Additive Main Effects
+      and Multiplicative Interaction Model Stability Parameters. R package version 0.1.4.9000,
+      https://ajaygpb.github.io/ammistability/, https://CRAN.R-project.org/package=ammistability.
 
-      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. ().  ammistability: Additive Main Effects and
-      Multiplicative Interaction Model Stability Parameters. R package version 0.1.4.9000,
+      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2019). ammistability: R package for ranking
+      genotypes based on stability parameters derived from AMMI model. Indian Journal of Genetics
+      and Plant Breeding (The), 79(2), 460-466.
+      https://www.isgpb.org/article/ammistability-r-package-for-ranking-genotypes-based-on-stability-parameters-derived-from-ammi-model
+      Ajay, B. C., Aravind, J., and Abdul Fiyaz, R. (2025).  ammistability: Additive Main Effects
+      and Multiplicative Interaction Model Stability Parameters. R package version 0.1.4.9000,
       https://ajaygpb.github.io/ammistability/, https://CRAN.R-project.org/package=ammistability.
 
     This free and open-source software implements academic research by the authors and co-workers.
