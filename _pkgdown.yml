@@ -1,7 +1,7 @@
 template:
   bootstrap: 5
   math-rendering: mathjax
-  light-switch: true
+  light-switch: false
   bslib:
     bootswatch: yeti
   params:
@@ -25,7 +25,7 @@ home:
 navbar:
   structure:
     left:  [home, reference, introduction, news]
-    right: [search, github]
+    right: [search, github, lightswitch]
   components:
     home:
       icon: fa-home fa-lg
